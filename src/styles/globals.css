@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	@font-face {
+		font-family: 'Open Sans';
+		font-style: normal;
+		font-weight: 400;
+		font-display: block; /* This property will help us not flash unstyled text for a couple hundred milliseconds, and then it would act like font-display: swap */
+		src: url('/fonts/open-sans-v36-latin-400.woff2') format('woff2');
+	}
+
+	@font-face {
+		font-family: 'Open Sans';
+		font-style: normal;
+		font-weight: 500;
+		font-display: block; /* This property will help us not flash unstyled text for a couple hundred milliseconds, and then it would act like font-display: swap */
+		src: url('/fonts/open-sans-v36-latin-500.woff2') format('woff2');
+	}
+
+	@font-face {
+		font-family: 'Open Sans';
+		font-style: normal;
+		font-weight: 600;
+		font-display: block; /* This property will help us not flash unstyled text for a couple hundred milliseconds, and then it would act like font-display: swap */
+		src: url('/fonts/open-sans-v36-latin-600.woff2') format('woff2');
+	}
+
+	@font-face {
+		font-family: 'Open Sans';
+		font-style: normal;
+		font-weight: 700;
+		font-display: block; /* This property will help us not flash unstyled text for a couple hundred milliseconds, and then it would act like font-display: swap */
+		src: url('/fonts/open-sans-v36-latin-700.woff2') format('woff2');
+	}
+
+	@font-face {
+		font-family: 'Open Sans';
+		font-style: normal;
+		font-weight: 800;
+		font-display: block; /* This property will help us not flash unstyled text for a couple hundred milliseconds, and then it would act like font-display: swap */
+		src: url('/fonts/open-sans-v36-latin-800.woff2') format('woff2');
+	}
+
+	/* italic from here */
+	@font-face {
+		font-family: 'Open Sans';
+		font-style: normal;
+		font-weight: 400;
+		font-display: block; /* This property will help us not flash unstyled text for a couple hundred milliseconds, and then it would act like font-display: swap */
+		src: url('/fonts/open-sans-v36-latin-400italic.woff2') format('woff2');
+	}
+
+	@font-face {
+		font-family: 'Open Sans';
+		font-style: normal;
+		font-weight: 500;
+		font-display: block; /* This property will help us not flash unstyled text for a couple hundred milliseconds, and then it would act like font-display: swap */
+		src: url('/fonts/open-sans-v36-latin-500italic.woff2') format('woff2');
+	}
+
+	@font-face {
+		font-family: 'Open Sans';
+		font-style: normal;
+		font-weight: 600;
+		font-display: block; /* This property will help us not flash unstyled text for a couple hundred milliseconds, and then it would act like font-display: swap */
+		src: url('/fonts/open-sans-v36-latin-600italic.woff2') format('woff2');
+	}
+
+	@font-face {
+		font-family: 'Open Sans';
+		font-style: normal;
+		font-weight: 700;
+		font-display: block; /* This property will help us not flash unstyled text for a couple hundred milliseconds, and then it would act like font-display: swap */
+		src: url('/fonts/open-sans-v36-latin-700italic.woff2') format('woff2');
+	}
+
+	@font-face {
+		font-family: 'Open Sans';
+		font-style: normal;
+		font-weight: 800;
+		font-display: block; /* This property will help us not flash unstyled text for a couple hundred milliseconds, and then it would act like font-display: swap */
+		src: url('/fonts/open-sans-v36-latin-800italic.woff2') format('woff2');
+	}
+}
+
+@layer utilities {
+	@media (prefers-reduced-motion: reduce) {
+		html:focus-within {
+			scroll-behavior: auto;
+		}
+		*,
+		*::before,
+		*::after {
+			-webkit-animation-duration: 0.01ms !important;
+			animation-duration: 0.01ms !important;
+			-webkit-animation-iteration-count: 1 !important;
+			animation-iteration-count: 1 !important;
+			-webkit-transition-duration: 0.01ms !important;
+			-o-transition-duration: 0.01ms !important;
+			transition-duration: 0.01ms !important;
+			scroll-behavior: auto !important;
+		}
+	}
+}

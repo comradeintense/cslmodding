@@ -1,0 +1,36 @@
+---
+import '../styles/globals.css';
+
+import Sidebar from '../components/Sidebar.astro';
+
+// import ScrollTop from '@/components/ScrollTop.astro';
+const { description = 'Cities Skylines Modding & Asset Creation', title = 'Cities Skylines Modding & Asset Creation' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="/images/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={description} />
+		<link rel="preload" href="/fonts/open-sans-v36-latin-400.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/fonts/open-sans-v36-latin-500.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/fonts/open-sans-v36-latin-600.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/fonts/open-sans-v36-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/fonts/open-sans-v36-latin-800.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/fonts/open-sans-v36-latin-400italic.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/fonts/open-sans-v36-latin-500italic.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/fonts/open-sans-v36-latin-600italic.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/fonts/open-sans-v36-latin-700italic.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/fonts/open-sans-v36-latin-800italic.woff2" as="font" type="font/woff2" crossorigin />
+		<title>{title}</title>
+	</head>
+	<body class="bg-red-200">
+		<Sidebar />
+		<!-- <ScrollTop /> -->
+		<div>
+			<slot />
+		</div>
+	</body>
+</html>
