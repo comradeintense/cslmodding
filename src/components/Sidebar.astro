@@ -91,7 +91,10 @@ const sidebarItems = [
 		<div class="sm:hidden flex items-center justify-between pb-2 mb-4 border-b border-b-gray-700">
 			<span class="text-subtitle font-bold">Menu</span>
 			<!-- ?Close button for small screens -->
-			<button id="close-sidebar" class="block p-1 text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 rounded-lg">
+			<button
+				id="close-sidebar"
+				class="block p-1 text-hit-gray-100 hover:bg-gray-100 hover:text-hit-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-200 rounded-lg"
+			>
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
 				</svg>
@@ -111,11 +114,11 @@ const sidebarItems = [
 			{
 				sidebarItems.map(({ category, items }) => (
 					<div class="mt-6">
-						<h2 class="text-subtitle text-xs mb-2">{category}</h2>
+						<h2 class="text-hit-gray-500 text-[.875rem] leading-[1.75rem] mb-2">{category}</h2>
 						<ul>
 							{items.map((item) => (
 								<li class="mt-1">
-									<a class="text-title inline-flex ps-2 rounded-md hover:text-hoverlink group" href={item.href}>
+									<a class="text-hit-gray-200 text-[1rem] leading-[1.25rem] inline-flex ps-2 rounded-md hover:text-hoverlink group" href={item.href}>
 										{item.name}
 									</a>
 								</li>

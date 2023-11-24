@@ -12,3 +12,7 @@ links: #7aaacc
 
 highlight-orange: #b3937d
 highlight-green: #8fa68d
+
+h1: text4xl text-hit-gray-400 font-bold
+h2: text2xl text-hit-gray-400 font-semibold
+h3: textxl text-hit-gray-500 font-medium

@@ -62,6 +62,10 @@
 		font-display: block; /* This property will help us not flash unstyled text for a couple hundred milliseconds, and then it would act like font-display: swap */
 		src: url('/fonts/open-sans-v36-latin-800.woff2') format('woff2');
 	}
+
+	.explanation {
+		@apply text-sm mt-2 text-hit-gray-500;
+	}
 }
 
 @layer utilities {

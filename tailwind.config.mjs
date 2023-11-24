@@ -30,7 +30,30 @@ export default {
 			fontFamily: {
 				sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
 			},
+			fontSize: {
+				paragraphpage: [
+					'1.125rem',
+					{
+						lineHeight: '1.75rem',
+						fontWeight: '400',
+					},
+				],
+			},
 			colors: {
+				'hit-gray': {
+					50: '#f6f7f8',
+					100: '#eaedef',
+					200: '#d9e0e4',
+					300: '#bfcbd1',
+					400: '#a8b6bf',
+					500: '#899aa8',
+					600: '#788798',
+					700: '#6b788a',
+					800: '#5b6472',
+					900: '#4b535d',
+					950: '#31343a',
+				},
+
 				darkbg: '#212326',
 				lightbg: '#282B2F',
 				title: '#C0D1DC',
