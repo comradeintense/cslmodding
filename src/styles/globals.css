@@ -3,6 +3,26 @@
 @tailwind utilities;
 
 @layer base {
+	/* Works on Firefox */
+	* {
+		scrollbar-width: thin;
+		scrollbar-color: #575d65 #282b2f;
+	}
+
+	/* Works on Chrome, Edge, and Safari */
+	*::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	*::-webkit-scrollbar-track {
+		background: #282b2f;
+	}
+
+	*::-webkit-scrollbar-thumb {
+		background-color: #575d65;
+		border-radius: 20px;
+	}
+
 	@font-face {
 		font-family: 'Open Sans';
 		font-style: normal;
@@ -42,47 +62,6 @@
 		font-display: block; /* This property will help us not flash unstyled text for a couple hundred milliseconds, and then it would act like font-display: swap */
 		src: url('/fonts/open-sans-v36-latin-800.woff2') format('woff2');
 	}
-
-	/* italic from here */
-	@font-face {
-		font-family: 'Open Sans';
-		font-style: normal;
-		font-weight: 400;
-		font-display: block; /* This property will help us not flash unstyled text for a couple hundred milliseconds, and then it would act like font-display: swap */
-		src: url('/fonts/open-sans-v36-latin-400italic.woff2') format('woff2');
-	}
-
-	@font-face {
-		font-family: 'Open Sans';
-		font-style: normal;
-		font-weight: 500;
-		font-display: block; /* This property will help us not flash unstyled text for a couple hundred milliseconds, and then it would act like font-display: swap */
-		src: url('/fonts/open-sans-v36-latin-500italic.woff2') format('woff2');
-	}
-
-	@font-face {
-		font-family: 'Open Sans';
-		font-style: normal;
-		font-weight: 600;
-		font-display: block; /* This property will help us not flash unstyled text for a couple hundred milliseconds, and then it would act like font-display: swap */
-		src: url('/fonts/open-sans-v36-latin-600italic.woff2') format('woff2');
-	}
-
-	@font-face {
-		font-family: 'Open Sans';
-		font-style: normal;
-		font-weight: 700;
-		font-display: block; /* This property will help us not flash unstyled text for a couple hundred milliseconds, and then it would act like font-display: swap */
-		src: url('/fonts/open-sans-v36-latin-700italic.woff2') format('woff2');
-	}
-
-	@font-face {
-		font-family: 'Open Sans';
-		font-style: normal;
-		font-weight: 800;
-		font-display: block; /* This property will help us not flash unstyled text for a couple hundred milliseconds, and then it would act like font-display: swap */
-		src: url('/fonts/open-sans-v36-latin-800italic.woff2') format('woff2');
-	}
 }
 
 @layer utilities {
@@ -90,6 +69,7 @@
 		html:focus-within {
 			scroll-behavior: auto;
 		}
+
 		*,
 		*::before,
 		*::after {

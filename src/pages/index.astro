@@ -1,9 +1,37 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import { Icon } from 'astro-icon';
+
+const itemlinks = [
+	{
+		href: '/asset/building/',
+		title: 'Building',
+		description: 'The basics of Building asset creation',
+		svgname: 'icon_Building',
+	},
+	{
+		href: '/asset/building/',
+		title: 'Prop',
+		description: 'The basics of Prop asset creation',
+		svgname: 'icon_Prop',
+	},
+];
 ---
 
 <MainLayout>
-	<section class="border-b-4 border-b-black">
-		<h1 class="mt-20 text-lg font-bold">HELLO</h1>
+	<section class="py-4 sm:ml-64">
+		<h1 class="text-2xl font-bold text-title">Cities: Skylines I</h1>
+
+		<div class="grid grid-cols-4 p-4 border-2 border-gray-700 border-dashed rounded-lg">
+			{
+				itemlinks.map((item) => (
+					<a href={item.href} class="inline-flex flex-col items-center justify-start text-center ">
+						<Icon class="w-24 h-24 mb-4" name={item.svgname} />
+						<span>{item.title}</span>
+						<p class="mt-4">{item.description}</p>
+					</a>
+				))
+			}
+		</div>
 	</section>
 </MainLayout>

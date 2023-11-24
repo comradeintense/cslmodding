@@ -11,7 +11,7 @@ const { description = 'Cities Skylines Modding & Asset Creation', title = 'Citie
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/png" href="/images/favicon.png" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content={description} />
 		<link rel="preload" href="/fonts/open-sans-v36-latin-400.woff2" as="font" type="font/woff2" crossorigin />
@@ -19,18 +19,11 @@ const { description = 'Cities Skylines Modding & Asset Creation', title = 'Citie
 		<link rel="preload" href="/fonts/open-sans-v36-latin-600.woff2" as="font" type="font/woff2" crossorigin />
 		<link rel="preload" href="/fonts/open-sans-v36-latin-700.woff2" as="font" type="font/woff2" crossorigin />
 		<link rel="preload" href="/fonts/open-sans-v36-latin-800.woff2" as="font" type="font/woff2" crossorigin />
-		<link rel="preload" href="/fonts/open-sans-v36-latin-400italic.woff2" as="font" type="font/woff2" crossorigin />
-		<link rel="preload" href="/fonts/open-sans-v36-latin-500italic.woff2" as="font" type="font/woff2" crossorigin />
-		<link rel="preload" href="/fonts/open-sans-v36-latin-600italic.woff2" as="font" type="font/woff2" crossorigin />
-		<link rel="preload" href="/fonts/open-sans-v36-latin-700italic.woff2" as="font" type="font/woff2" crossorigin />
-		<link rel="preload" href="/fonts/open-sans-v36-latin-800italic.woff2" as="font" type="font/woff2" crossorigin />
 		<title>{title}</title>
 	</head>
-	<body class="bg-red-200">
+	<body class="bg-darkbg container">
 		<Sidebar />
 		<!-- <ScrollTop /> -->
-		<div>
-			<slot />
-		</div>
+		<slot />
 	</body>
 </html>

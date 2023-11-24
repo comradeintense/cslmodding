@@ -30,6 +30,13 @@ export default {
 			fontFamily: {
 				sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
 			},
+			colors: {
+				darkbg: '#212326',
+				lightbg: '#282B2F',
+				title: '#C0D1DC',
+				subtitle: '#B2B7BB',
+				hoverlink: '#45a3e6',
+			},
 		},
 	},
 	plugins: [],
