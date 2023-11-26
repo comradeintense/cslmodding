@@ -4,6 +4,7 @@ import Link from '../../components/Link.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 ---
 
+<!-- TODO: Add relevant videos in TOC -->
 <MainLayout>
 	<TableOfContents />
 	<section class="py-12 sm:ml-64 xl:mr-64">
@@ -394,7 +395,9 @@ import TableOfContents from '../../components/TableOfContents.astro';
 			<a href="https://cslmodding.info/asset/building/#example-asset">Example Asset</a>
 		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">Source files of an example building ready for import.</p>
-		<div class="content-download"><a href="https://drive.google.com/open?id=1ff3geFWoI3b-wnFfg7869JC4rLCzNmqX" target="null"> Download</a></div>
+		<div class="content-download mt-4">
+			<Link href="https://drive.google.com/open?id=1ff3geFWoI3b-wnFfg7869JC4rLCzNmqX" theme="downloadbutton" text="Download" classes="" />
+		</div>
 
 		<!-- !SECTION -->
 		<h3 id="naming" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
@@ -633,7 +636,7 @@ import TableOfContents from '../../components/TableOfContents.astro';
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">
 					You can place networks such as roads, train/tram tracks, and pedestrian paths.
-					<Link href="#specific-cases" theme="internallink" text="Read more about network usage in specific cases such as train stations" classes="" />.
+					<Link href="#specific-cases" theme="internallink" text="Read more about network usage in specific cases such as train stations" classes="" />
 				</p>
 			</div>
 			<div class="lg:w-1/3">

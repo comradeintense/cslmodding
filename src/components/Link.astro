@@ -14,7 +14,6 @@ interface Props {
 }
 
 const defaultIconForTheme = {
-	downloadbutton: { name: 'ic:sharp-cloud-download', side: 'right' },
 	externallink: { name: 'mdi:arrow-top-right', side: 'right' },
 };
 
@@ -27,7 +26,7 @@ const themeClasses = {
 	externallink: 'inline-flex items-center text-urllink hover:text-hoverlink paragraph underline decoration-2 hover:underline-offset-4 ',
 	internallink: 'inline-flex items-center text-urllink hover:text-hoverlink paragraph underline decoration-2 hover:underline-offset-4 ',
 	externalparagraph: 'inline-flex items-center hover:text-linkhover text-lg font-bold underline decoration-2 hover:underline-offset-4 ',
-	downloadbutton: 'inline-flex gap-4 border-4 border-black py-4 px-6 hover:bg-black hover:text-white textbutton',
+	downloadbutton: 'text-urllink py-[.375rem] px-3 border rounded-md border-[#34383d] bg-[#282b2f] uppercase hover:bg-[#2b3033] hover:text-hoverlink',
 };
 
 const computedThemeClass = themeClasses[theme];

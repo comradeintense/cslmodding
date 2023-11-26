@@ -13,7 +13,7 @@ links: #7aaacc
 highlight-orange: #b3937d
 highlight-green: #8fa68d
 
-<h1 class="border-b-4 border-hit-gray-600 pb-8 text-5xl font-bold text-hit-gray-400">Building Asset Creation</h1>
-<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">Mesh</h2>
-<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4">Main Mesh</h3>
-<h4 class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">Model Complexity</h4>
+<h1 class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400"></h1>
+<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"></h2>
+<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"></h3>
+<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"></h4>

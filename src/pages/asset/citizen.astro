@@ -1,0 +1,308 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Link from '../../components/Link.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
+---
+
+<MainLayout>
+	<TableOfContents />
+	<section class="py-12 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
+		<div class="content">
+			<h2 id="mesh">Mesh</h2>
+			<h3 id="main-mesh">Main Mesh</h3>
+			<p>This is a 3D model of the citizen, which will be visible when the camera is close to it.</p>
+			<p>
+				It's created using 3D modeling software such as Blender, 3ds Max, Maya or SketchUp.<br />The actual mesh file contains vertices (their coordinates, UV
+				mapping, normals, and colors) and triangles. For citizens, this also contains the skeleton bones to which the mesh is bound to using bone weights.
+			</p>
+			<h4 id="model-complexity">Model Complexity</h4>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>
+						It's recommended to stay within reasonable triangle counts based on the size and detail of your model. You may look at examples of vanilla citizens
+						or assets by other creators for reference.
+					</p><p>The absolute limit for a mesh is 65536 vertices.</p>
+				</div><div class="lg:w-1/3">
+					<img src="https://i.imgur.com/jBtrlSE.jpg" />
+					<p>Main model and LOD of a vanilla citizen.</p>
+				</div>
+			</div>
+
+			<div class="content-info">
+				<em>
+					You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=453956891">Mesh Info by SamsamTS</a> to check triangle counts of assets.
+				</em>
+			</div>
+			<h3 id="lod-mesh">LOD Mesh</h3>
+			<p>
+				LOD stands for level of detail. This is the mesh visible from a distance. It must be as simple as possible. Citizens are small and the LOD is only
+				visible very far away, so a model under 100 triangles could be enough.
+			</p>
+			<p>The LOD is not animated, so you don't need to import a skeleton for it.</p>
+			<h3 id="skeleton">Skeleton</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>You must fit your mesh to one of the available skeleton templates, which can be found in this folder:</p><p>
+						<span class="path">C:\Program Files (x86)\Steam\steamapps\common\Cities_Skylines\Files\Templates</span>
+					</p><p>You need to bind your mesh to the bones of the skeleton, in 3ds Max this is done using the skin modifier and adding all the bones</p>
+				</div><div class="lg:w-1/3">
+					<img src="https://i.imgur.com/UH2WI1f.jpg" />
+					<p>One of the skeleton templates.</p>
+				</div>
+			</div>
+
+			<h3 id="pivot-origin">Pivot / Origin</h3>
+			<p>The pivot point or origin represents the center point on the ground. It's usually represented using a red/green/blue axis gizmo.</p>
+			<h3 id="formats">Formats</h3>
+			<ul>
+				<li>FBX (2015 or older) (most commonly used)</li>
+				<li>DAE</li>
+			</ul>
+			<h2 id="textures">Textures</h2>
+			<p>These determine the color and material properties of your citizen.</p>
+			<h3 id="resolution">Resolution</h3>
+			<p>All imported main textures must be the same resolution.</p>
+			<p>
+				Powers of 2 is a standard practice in 3D graphics, which means sizes such as 512x512, 512x256, 256x256, 128x256 etc. It is recommended to stick to this
+				standard, but the most important thing is that your width and height must be divisible by 32, otherwise, your texture will be corrupted by compression.
+			</p>
+			<div class="content-warning">
+				<em>
+					Make sure texture quality is set to high in the game's graphics settings. otherwise, your imported textures will be downscaled to a lower resolution.
+				</em>
+			</div>
+			<h3 id="lod-textures">LOD Textures</h3>
+			<p>
+				If you don't provide LOD textures, the game will try to bake them using the UV mapping your LOD mesh has, and that may cause visual issues, so it's
+				recommended that you create your own LOD textures using baking.
+			</p>
+			<h3 id="diffuse">Diffuse</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>The main color and texture of your asset.</p><p>
+						It will look very bright, contrasty, and saturated in the game, so make sure to reduce the saturation and limit the brightest parts to a
+						medium/light gray below 140 RGB.
+					</p><p>If you don't import a diffuse map, it will default to white.</p>
+				</div><div class="lg:w-1/3">
+					<img src="https://i.imgur.com/zQ8Y6dP.jpg" />
+					<p>Example diffuse textures for some vanilla citizens.</p>
+				</div>
+			</div>
+
+			<h3 id="specular">Specular</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>Reflectivity, black means no reflection and white means max reflection.</p><p>
+						The specular highlight from the sun is very big and bright, so you might want to use very low (0-10%) specularity for surfaces facing upwards.
+					</p><p>If you don't import a specular map, it will default to no specularity.</p>
+				</div><div class="lg:w-1/3">
+					<div class="">
+						<img src="https://i.imgur.com/dpTKCTS.jpg" />
+						<p>Example specular map for a roof water tank.</p>
+					</div><div class="mt-4">
+						<img src="https://i.imgur.com/xZnShPJ.jpg" />
+						<p>Transitions between different specular values produce artifacts on the normal map and vice versa, even if a normal map is not imported.</p>
+					</div>
+				</div>
+			</div>
+
+			<h3 id="normal">Normal</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.</p><p>
+						This can be made from the diffuse or a height map (brighter colors will look extruded out more) using <a
+							href="http://cpetry.github.io/NormalMap-Online/">a normal map generator online</a
+						>, a photoshop plugin like <a href="http://www.xnormal.net/">xNormal</a>, or standalone software such as <a href="https://www.crazybump.com/"
+							>CrazyBump</a
+						>.
+					</p><p>The normal map generator should be set to +X +Y, which means no color channel inversions are required.</p><p>
+						High specularity and normal map don't work well together because of the compression, so you might want to paint over shiny parts with a solid color
+						before generating a normal map or paint over these parts 128,128,255 on the final normal map.
+					</p><p>Read more in the <a href="https://cslmodding.info/normal-maps/">normal map article</a>.</p><p>
+						If you don't import a normal map, it will default to a flat normal map - no bump.
+					</p>
+				</div><div class="lg:w-1/3">
+					<div class="">
+						<img src="https://i.imgur.com/Tep5ZIS.jpg" />
+						<p>Example normal map for rocks.</p>
+					</div><div class="mt-4">
+						<img src="https://i.imgur.com/BP3Vj1J.jpg" />
+						<p>
+							Problem: default normal map value is 0.5, which isn't possible by using 127(left) or 128(right). Image shows the same flat normal map on faces
+							with different UV rotation/flip.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<h2 id="import">Import</h2>
+			<h3 id="naming">Naming</h3>
+			<p>The mesh can have any name, but it's not recommended to use spaces or underscores, as the name for the lod mesh name will be meshname_lod.</p>
+			<p>
+				The textures must have the same name as the mesh, but with the texture type identifier after it, so the result will be names like meshname_d.png and
+				meshname_lod_d.png
+			</p>
+			<h3 id="import-folder">Import Folder</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>You should place the mesh and texture files in the import folder located here:</p><p>
+						<span class="path">%LocalAppData%\Colossal Order\Cities_Skylines\Addons\Import</span>
+					</p><p>
+						The AppData folder is hidden by default, you can access it by copying and pasting the path into the file explorer, or pressing <span class="key"
+							>Windows + R</span
+						> and typing in appdata.
+					</p>
+				</div><div class="lg:w-1/3">
+					<img src="https://i.imgur.com/kcqp2OQ.jpg" />
+					<p>Files ready for import.</p>
+				</div>
+			</div>
+
+			<h3 id="template">Template</h3>
+			<p>The template you choose will determine some things about your citizen:</p>
+			<ul>
+				<li>AI</li>
+				<li>gender</li>
+				<li>age phase</li>
+				<li>animation</li>
+				<li>walk speed</li>
+				<li>shader, material properties (color variations)</li>
+			</ul>
+			<div class="content-info">
+				<em>
+					Some of those things can be changed later in the editor itself or using <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484"
+						>ModTools</a
+					> or other mods.
+				</em>
+			</div>
+			<h3 id="import-1">Import</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>For citizens, you can't rotate or scale the mesh on import, so you have to make sure it's correct in your 3d software or when exporting.</p>
+				</div><div class="lg:w-1/3">
+					<img src="https://i.imgur.com/IYxkWqj.jpg" />
+					<p>Importing a mesh in asset importer.</p>
+				</div>
+			</div>
+
+			<div class="content-warning">
+				<em>
+					If you get an unsupported color error, one of your textures might be a 16 bits/channel file, you need to change it to 8 bits/channel, in Photoshop:
+					Image &gt; Mode &gt; 8 Bits/Channel.
+				</em>
+			</div>
+			<div class="content-warning">
+				<em>
+					If the mesh preview doesn't display or you can't continue, you may have a problem with it such as a missing skeleton, multiple mesh objects, other
+					entities like dummies, cameras, lights, or layers in the exported file.
+				</em>
+			</div>
+			<h2 id="editor">Editor</h2>
+			<h3 id="general-properties">General Properties</h3>
+			<ul>
+				<li>gender</li>
+				<li>age phase</li>
+			</ul>
+			<h3 id="material-properties">Material properties</h3>
+			<p>You can change the 4 color variations.</p>
+			<h2 id="editor-advanced">Editor Advanced</h2>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>
+						Various things can be changed with the use of <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484">ModTools</a> scene explorer
+						<span class="key">Ctrl+E</span> or running scripts in the console <span class="key">F7</span>, or other mods:
+					</p>
+				</div><div class="lg:w-1/3">
+					<img src="https://i.imgur.com/0ztXu62.jpg" />
+					<p>ModTools scene explorer and console.</p>
+				</div>
+			</div>
+
+			<h3 id="ai">AI</h3>
+			<p>
+				AI defines what kind of citizen it is and how it behaves. It can be changed using <a
+					href="https://steamcommunity.com/sharedfiles/filedetails/?id=421616513">Asset AI Changer by Snow_Cat &amp; cerebellum</a
+				>.
+			</p>
+			<h3 id="item-class">Item Class</h3>
+			<p>
+				Contains information about what type of citizen it is. It can be changed using <a
+					href="https://steamcommunity.com/sharedfiles/filedetails/?id=455068042">Asset ItemClass Changer by Snow_Cat</a
+				>.
+			</p>
+			<h2 id="save">Save</h2>
+			<h3 id="filename">Filename</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>
+						The filename input is on the bottom left, this is what the actual file will be called. It's not recommended to use spaces, dots, or special symbols.
+					</p>
+				</div><div class="lg:w-1/3">
+					<img src="https://i.imgur.com/mPQKPhW.jpg" />
+					<p>Save asset window.</p>
+				</div>
+			</div>
+
+			<h3 id="asset-name">Asset Name</h3>
+			<p>The asset name visible ingame.</p>
+			<h3 id="images">Images</h3>
+			<p>There are 2 different folders you can open by clicking the folder icons:</p>
+			<h2 id="publish">Publish</h2>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>Once you have saved the asset and reloaded the game, you can publish the asset.</p><p>
+						Go to the content manager &gt; assets and find your asset, then click share.
+					</p>
+				</div><div class="lg:w-1/3">
+					<img src="https://i.imgur.com/4OPnZac.jpg" />
+					<p>Share button in content manager.</p>
+				</div>
+			</div>
+
+			<h3 id="title-and-description">Title and Description</h3>
+			<p>You can change these on the Steam Workshop later.</p>
+			<h3 id="steam-preview-image-and-content-folder">Steam Preview Image and Content Folder</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>
+						There is a folder icon again on the snapshot image, bottom right corner. Here you can change the Steam preview image, which is the thumbnail visible
+						on steam. The largest size the image will be visible is 437x437 (on the front page) but it will get upscaled to 512x512 by Steam so that's the size
+						you should use.
+					</p><p>
+						There is also the content folder, which is where the actual asset file is. You can paste multiple .crp files here if you would like to upload a pack
+						of assets.
+					</p>
+				</div><div class="lg:w-1/3">
+					<img src="https://i.imgur.com/Y53Uqxy.jpg" />
+					<p>Publish window and content folder.</p>
+				</div>
+			</div>
+
+			<h3 id="steam-workshop">Steam Workshop</h3>
+			<p>On the Steam Workshop page for your asset, you can:</p>
+			<ul>
+				<li>add it to a collection<br /></li>
+				<li>add images and videos<br /></li>
+				<li>add contributors and links<br /></li>
+				<li>add required items and DLC<br /></li>
+				<li>change visibility to friends only or private</li>
+			</ul>
+			<h2 id="update">Update</h2>
+			<p>
+				To update your own item, you must subscribe to it first, then it will show up in the content manager. It won't be the same as a local asset, as it will
+				show an "update" button.
+			</p>
+			<p>
+				When you click update, click the folder icon, and now you can change the Steam preview image and put your new asset in the content folder. If updating a
+				pack, remember to put all the assets inside the content folder.
+			</p>
+			<p>You can also add more assets to make it a bigger pack.</p>
+			<div class="content-warning">
+				<em>
+					Make sure your updated assets are saved with exactly the same name as before, otherwise, it will disappear from your subscribers' saves, as the game
+					uses the internal prefab name to refer to it. In the case of networks (roads, tracks etc.) it may completely break a save.
+				</em>
+			</div>
+		</div>
+	</section>
+</MainLayout>
