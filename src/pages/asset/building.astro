@@ -17,7 +17,7 @@ import { Icon } from 'astro-icon';
 		<p class="text-lg mt-4 text-hit-gray-500">It's created using 3D modeling software such as Blender, 3ds Max, Maya or SketchUp.</p>
 
 		<!-- ?MINI-SECTION -->
-		<h4 id="model-complexity" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">Model Complexity</h4>
+		<h4 id="model-complexity" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Model Complexity</h4>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<!-- ?left -->
 			<div class="lg:w-2/3">
@@ -85,7 +85,7 @@ import { Icon } from 'astro-icon';
 		</div>
 
 		<!-- ?MINI-SECTION -->
-		<h4 id="uv-mapping-lod" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">LOD</h4>
+		<h4 id="uv-mapping-lod" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">LOD</h4>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<p class="text-lg mt-4 text-hit-gray-500 lg:w-2/3">
 				For the LOD mesh, the UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed. This is because ingame all the LOD
@@ -122,8 +122,8 @@ import { Icon } from 'astro-icon';
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">The vertex color blue channel determines snow behavior on winter maps:</p>
 				<ul class="text-lg mt-4 text-hit-gray-500 list-disc">
-					<li>128 means 3D snow will not be generated<br /></li>
-					<li>0 means no snow will be visible at all</li>
+					<li class="mt-4">128 means 3D snow will not be generated<br /></li>
+					<li class="mt-4">0 means no snow will be visible at all</li>
 				</ul>
 			</div>
 			<div class="lg:w-1/3">
@@ -135,9 +135,9 @@ import { Icon } from 'astro-icon';
 		<!-- !SECTION -->
 		<h3 id="formats" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Formats</h3>
 		<ul class="text-lg mt-4 text-hit-gray-500 list-disc">
-			<li>FBX (2015 or older) (most commonly used)</li>
-			<li>OBJ (doesn't support vertex colors)</li>
-			<li>DAE</li>
+			<li class="mt-4">FBX (2015 or older) (most commonly used)</li>
+			<li class="mt-4">OBJ (doesn't support vertex colors)</li>
+			<li class="mt-4">DAE</li>
 		</ul>
 
 		<!-- !SECTION -->
@@ -260,14 +260,14 @@ import { Icon } from 'astro-icon';
 		<p class="text-lg mt-4 text-hit-gray-500">If you don't import an illumination map, it will default to no illumination.</p>
 
 		<!-- !SECTION -->
-		<h4 id="random-night-windows" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">Random Night Windows</h4>
+		<h4 id="random-night-windows" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Random Night Windows</h4>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">Colors for randomly illuminated night windows:</p>
 				<ul class="text-lg mt-4 text-hit-gray-500 list-disc">
-					<li>192 (Neutral Background Color)</li>
-					<li>192-128 Inverted (First Set of Windows)</li>
-					<li>192-255 (Second Set of Windows)</li>
+					<li class="mt-4">192 (Neutral Background Color)</li>
+					<li class="mt-4">192-128 Inverted (First Set of Windows)</li>
+					<li class="mt-4">192-255 (Second Set of Windows)</li>
 				</ul>
 				<p class="text-lg mt-4 text-hit-gray-500">
 					You can create a black and white illumination texture and use a levels adjustment to set the output colors so that black becomes 192 and white becomes
@@ -283,7 +283,7 @@ import { Icon } from 'astro-icon';
 		</div>
 
 		<!-- !SECTION -->
-		<h4 id="diffuse-contribution" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">Diffuse Contribution</h4>
+		<h4 id="diffuse-contribution" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Diffuse Contribution</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			0-120 is always turned on illumination based on the diffuse. It's not recommended to mix the two different types of illumination on one texture as it can
 			create aliasing problems.
@@ -360,9 +360,9 @@ import { Icon } from 'astro-icon';
 			</div>
 		</div>
 
-		<h3 id="format" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#format">Format</a>
-		</h3>
+		<!-- !SECTION -->
+
+		<h3 id="format" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Format</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">Use a lossless format like .PNG.</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			The game supports other formats as well, but there is no reason to use another one, it doesn't matter how much your texture is compressed or even if it's
@@ -372,16 +372,18 @@ import { Icon } from 'astro-icon';
 			Make sure the texture is 8 bits/channel because a 16 bits/channel image can't be imported. Do not use the "Smaller File (8-bit)" feature in the Photoshop
 			Export As window, as that creates an indexed color image, not an 8 bits/channel one.
 		</p>
-		<div style="clear:both"></div>
-		<hr />
-		<h2 id="import" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">
-			<a href="https://cslmodding.info/asset/building/#import">Import</a>
-		</h2>
+
+		<!-- !SECTION -->
+		<h2 id="import" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">Import</h2>
+
+		<!-- !SECTION -->
 		<h3 id="example-asset" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
 			<a href="https://cslmodding.info/asset/building/#example-asset">Example Asset</a>
 		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">Source files of an example building ready for import.</p>
 		<div class="content-download"><a href="https://drive.google.com/open?id=1ff3geFWoI3b-wnFfg7869JC4rLCzNmqX" target="null"> Download</a></div>
+
+		<!-- !SECTION -->
 		<h3 id="naming" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
 			<a href="https://cslmodding.info/asset/building/#naming">Naming</a>
 		</h3>
@@ -392,370 +394,537 @@ import { Icon } from 'astro-icon';
 			The textures must have the same name as the mesh, but with the texture type identifier after it, so the result will be names like meshname_d.png and
 			meshname_lod_d.png
 		</p>
+
+		<!-- !SECTION -->
 		<h3 id="import-folder" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
 			<a href="https://cslmodding.info/asset/building/#import-folder">Import Folder</a>
 		</h3>
-		<div class="lg:w-1/3">
-			<a href="https://i.imgur.com/HcMrgsF.jpg" target="null"><img src="https://i.imgur.com/HcMrgsF.jpg" /></a>
-			<p class="text-lg mt-4 text-hit-gray-500">Files ready for import.</p>
+		<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="lg:w-2/3">
+				<p class="text-lg mt-4 text-hit-gray-500">You should place the mesh and texture files in the import folder located here:</p>
+				<p class="text-lg mt-4 text-hit-gray-500"><span class="path">%LocalAppData%\Colossal Order\Cities_Skylines\Addons\Import</span></p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					The AppData folder is hidden by default, you can access it by copying and pasting the path into the file explorer, or pressing <span class="key"
+						>Windows + R</span
+					> and typing in appdata.
+				</p>
+			</div>
+			<div class="lg:w-1/3">
+				<a href="https://i.imgur.com/HcMrgsF.jpg" target="null"><img src="https://i.imgur.com/HcMrgsF.jpg" /></a>
+				<p class="explanation">Files ready for import.</p>
+			</div>
 		</div>
-		<p class="text-lg mt-4 text-hit-gray-500">You should place the mesh and texture files in the import folder located here:</p>
-		<p class="text-lg mt-4 text-hit-gray-500"><span class="path">%LocalAppData%\Colossal Order\Cities_Skylines\Addons\Import</span></p>
-		<p class="text-lg mt-4 text-hit-gray-500">
-			The AppData folder is hidden by default, you can access it by copying and pasting the path into the file explorer, or pressing <span class="key"
-				>Windows + R</span
-			> and typing in appdata.
-		</p>
-		<h3 id="template" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#template">Template</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="template" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Template</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			There is a "load existing props and decorations" toggle on the bottom left, this will load props and networks like roads/tracks/paths from your chosen
 			template as well, useful when you need to reimport an already imported asset but don't want to place those things again.
 		</p>
 		<p class="text-lg mt-4 text-hit-gray-500">The template you choose will determine many things about your building:</p>
 		<ul class="text-lg mt-4 text-hit-gray-500 list-disc">
-			<li>AI and corresponding stats (a school with students, a fire station with fire trucks etc.)<br /></li>
-			<li>milestone at which it is unlocked<br /></li>
-			<li>UI category<br /></li>
-			<li>item class (UI sub-category)<br /></li>
-			<li>general settings (flatten terrain, use color variations etc.)<br /></li>
-			<li>shader, material properties (color variations)</li>
+			<li class="mt-4">AI and corresponding stats (a school with students, a fire station with fire trucks etc.)<br /></li>
+			<li class="mt-4">milestone at which it is unlocked<br /></li>
+			<li class="mt-4">UI category<br /></li>
+			<li class="mt-4">item class (UI sub-category)<br /></li>
+			<li class="mt-4">general settings (flatten terrain, use color variations etc.)<br /></li>
+			<li class="mt-4">shader, material properties (color variations)</li>
 		</ul>
-		<div class="content-info">
-			<img src="https://cslmodding.info/icons/icon_info.svg" height="32px" width="32px" class="icon1" /><em>
+		<!-- TODO: div info -->
+		<div class="flex gap-2 mt-6 items-start justify-start">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="w-8 h-8 text-hoverlink flex-shrink-0"
+			>
+				<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"></path>
+			</svg>
+
+			<p class="text-lg text-hit-gray-500 italic">
 				All of those things can be changed later in the editor itself or using <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484"
 					>ModTools</a
 				> or other mods.
-			</em>
+			</p>
 		</div>
-		<div class="content-info">
-			<img src="https://cslmodding.info/icons/icon_info.svg" height="32px" width="32px" class="icon1" /><em
-				>Some types of buildings don't have a template, <a href="#specific-cases">see specific cases</a> for downloadable premade templates and instructions.</em
+		<!-- TODO: div info -->
+		<div class="flex gap-2 mt-6 items-start justify-start">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="w-8 h-8 text-hoverlink flex-shrink-0"
 			>
+				<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"></path>
+			</svg>
+
+			<p class="text-lg text-hit-gray-500 italic">
+				Some types of buildings don't have a template, <a href="#specific-cases">see specific cases</a> for downloadable premade templates and instructions.
+			</p>
 		</div>
-		<h3 id="import-1" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#import-1">Import</a>
-		</h3>
-		<div class="lg:w-1/3">
-			<a href="https://i.imgur.com/WAIi5wX.jpg" target="null"><img src="https://i.imgur.com/WAIi5wX.jpg" /></a>
-			<p class="text-lg mt-4 text-hit-gray-500">Importing a mesh in asset importer.</p>
+
+		<!-- !SECTION -->
+		<h3 id="import-1" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Import</h3>
+		<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="w-2/3">
+				<p class="text-lg mt-4 text-hit-gray-500">
+					After you choose your mesh, depending on how it was exported, you might need to set the correct scale and rotation, scale 100 and rotating 3 times
+					around X-axis are common necessities.
+				</p>
+			</div>
+			<div class="lg:w-1/3">
+				<a href="https://i.imgur.com/WAIi5wX.jpg" target="null"><img src="https://i.imgur.com/WAIi5wX.jpg" /></a>
+				<p class="explanation">Importing a mesh in asset importer.</p>
+			</div>
 		</div>
-		<p class="text-lg mt-4 text-hit-gray-500">
-			After you choose your mesh, depending on how it was exported, you might need to set the correct scale and rotation, scale 100 and rotating 3 times around
-			X-axis are common necessities.
-		</p>
-		<div class="flex gap-2 mt-4 items-center justify-start">
-			<img src="https://cslmodding.info/icons/icon_warning.svg" height="32px" width="32px" class="icon1" /><em>
+
+		<!-- TODO: div warning -->
+		<div class="flex gap-2 mt-6 items-start justify-start">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="w-8 h-8 text-orange flex-shrink-0"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+				></path>
+			</svg>
+			<p class="text-lg text-hit-gray-500 italic">
 				Using the mesh rotation feature will result in broken mesh tangents - that means the normal maps will appear incorrectly or not at all on some parts. To
 				fix this, don't use the rotation feature and make sure the mesh is rotated properly before import. If you need to use the mesh rotation feature - use
 				the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1518485094">Mesh Import Rotation Tangents Fix mod</a> to fix it.
-			</em>
+			</p>
 		</div>
-		<div class="flex gap-2 mt-4 items-center justify-start">
-			<img src="https://cslmodding.info/icons/icon_warning.svg" height="32px" width="32px" class="icon1" /><em>
+
+		<!-- TODO: div warning -->
+		<div class="flex gap-2 mt-6 items-start justify-start">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="w-8 h-8 text-orange flex-shrink-0"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+				></path>
+			</svg>
+			<p class="text-lg text-hit-gray-500 italic">
 				If you get an unsupported color error, one of your textures might be a 16 bits/channel file, you need to change it to 8 bits/channel, in Photoshop:
 				Image &gt; Mode &gt; 8 Bits/Channel.
-			</em>
+			</p>
 		</div>
-		<div class="flex gap-2 mt-4 items-center justify-start">
-			<img src="https://cslmodding.info/icons/icon_warning.svg" height="32px" width="32px" class="icon1" /><em>
+
+		<!-- TODO: div warning -->
+		<div class="flex gap-2 mt-6 items-start justify-start">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="w-8 h-8 text-orange flex-shrink-0"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+				></path>
+			</svg>
+			<p class="text-lg text-hit-gray-500 italic">
 				If the mesh preview doesn't display or you can't continue, you may have a problem with it such as multiple mesh objects, other entities like dummies,
 				cameras, lights, or layers in the exported file.
-			</em>
+			</p>
 		</div>
-		<div style="clear:both"></div>
-		<hr />
-		<h2 id="editor" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">
-			<a href="https://cslmodding.info/asset/building/#editor">Editor</a>
-		</h2>
-		<h3 id="lot-size" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#lot-size">Lot Size</a>
-		</h3>
-		<div class="lg:w-1/3">
-			<a href="https://i.imgur.com/GZiqIy7.jpg" target="null"><img src="https://i.imgur.com/GZiqIy7.jpg" /></a>
-			<p class="text-lg mt-4 text-hit-gray-500">For growables, the lot also includes an optional yard area for props.</p>
+
+		<h2 id="editor" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">Editor</h2>
+
+		<!-- !SECTION -->
+		<h3 id="lot-size" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Lot Size</h3>
+		<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="lg:w-2/3">
+				<p class="text-lg mt-4 text-hit-gray-500">Size of the building area in cells, each cell is 8x8m.</p>
+				<p class="text-lg mt-4 text-hit-gray-500">For growables, the size is limited to 4x4.</p>
+				<p class="text-lg mt-4 text-hit-gray-500">For other buildings, max sizes are 16x8, 15x9, 14x11, 13x12, 12x13, 11x14, 9x15 and 8x16.</p>
+			</div>
+			<div class="lg:w-1/3">
+				<a href="https://i.imgur.com/GZiqIy7.jpg" target="null"><img src="https://i.imgur.com/GZiqIy7.jpg" /></a>
+				<p class="explanation">For growables, the lot also includes an optional yard area for props.</p>
+			</div>
 		</div>
-		<p class="text-lg mt-4 text-hit-gray-500">Size of the building area in cells, each cell is 8x8m.</p>
-		<p class="text-lg mt-4 text-hit-gray-500">For growables, the size is limited to 4x4.</p>
-		<p class="text-lg mt-4 text-hit-gray-500">For other buildings, max sizes are 16x8, 15x9, 14x11, 13x12, 12x13, 11x14, 9x15 and 8x16.</p>
-		<div class="flex gap-2 mt-4 items-center justify-start">
-			<img src="https://cslmodding.info/icons/icon_warning.svg" height="32px" width="32px" class="icon1" /><em>
+		<!-- TODO: div warning -->
+		<div class="flex gap-2 mt-6 items-start justify-start">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="w-8 h-8 text-orange flex-shrink-0"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+				></path>
+			</svg>
+			<p class="text-lg text-hit-gray-500 italic">
 				Make sure your building doesn't overhang the lot too much, as the overhanging parts will disappear when the building inside the lot isn't visible.
-			</em>
+			</p>
 		</div>
-		<h3 id="general-properties" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#general-properties">General Properties</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="general-properties" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">General Properties</h3>
 		<ul class="text-lg mt-4 text-hit-gray-500 list-disc">
-			<li>use color variations (may require to save/load for the toggle to take effect)<br /></li>
-			<li>availability (ingame, map editor etc.)<br /></li>
-			<li>circular lot (used for the vanilla wind turbine, water tower)<br /></li>
-			<li>expand front yard (puts optional yard for props in front instead of back)<br /></li>
-			<li>flatten full area (makes sure the terrain is flat up to the lot edges)<br /></li>
-			<li>flatten terrain (tries to flatten terrain in a softer way)</li>
+			<li class="mt-4">use color variations (may require to save/load for the toggle to take effect)<br /></li>
+			<li class="mt-4">availability (ingame, map editor etc.)<br /></li>
+			<li class="mt-4">circular lot (used for the vanilla wind turbine, water tower)<br /></li>
+			<li class="mt-4">expand front yard (puts optional yard for props in front instead of back)<br /></li>
+			<li class="mt-4">flatten full area (makes sure the terrain is flat up to the lot edges)<br /></li>
+			<li class="mt-4">flatten terrain (tries to flatten terrain in a softer way)</li>
 		</ul>
-		<h3 id="stats" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#stats">Stats</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="stats" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Stats</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			Based on which AI the building has, it can have different stats like electricity consumption, worker amount, police car count for a police station etc.
 		</p>
-		<h3 id="material-properties" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#material-properties">Material properties</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="material-properties" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Material properties</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			You can change the 4 color variations, and also floor parameters which are used for the fake interior for 100% specular windows.
 		</p>
-		<h3 id="networks" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#networks">Networks</a>
-		</h3>
-		<div class="lg:w-1/3">
-			<a href="https://i.imgur.com/bUjwQBI.jpg" target="null"><img src="https://i.imgur.com/bUjwQBI.jpg" /></a>
-			<p class="text-lg mt-4 text-hit-gray-500">Vanilla train station pedestrian paths (magenta) connecting the roadside to the platform.</p>
+
+		<!-- !SECTION -->
+		<h3 id="networks" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Networks</h3>
+		<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="lg:w-2/3">
+				<p class="text-lg mt-4 text-hit-gray-500">
+					You can place networks such as roads, train/tram tracks, and pedestrian paths. <a href="#specific-cases"
+						>Read more about network usage in specific cases such as train stations</a
+					>.
+				</p>
+			</div>
+			<div class="lg:w-1/3">
+				<a href="https://i.imgur.com/bUjwQBI.jpg" target="null"><img src="https://i.imgur.com/bUjwQBI.jpg" /></a>
+				<p class="explanation">Vanilla train station pedestrian paths (magenta) connecting the roadside to the platform.</p>
+			</div>
 		</div>
-		<p class="text-lg mt-4 text-hit-gray-500">
-			You can place networks such as roads, train/tram tracks, and pedestrian paths. <a href="#specific-cases"
-				>Read more about network usage in specific cases such as train stations</a
-			>.
-		</p>
-		<div class="content-info">
-			<img src="https://cslmodding.info/icons/icon_info.svg" height="32px" width="32px" class="icon1" /><em>
+		<!-- TODO: div info -->
+		<div class="flex gap-2 mt-6 items-start justify-start">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="w-8 h-8 text-hoverlink flex-shrink-0"
+			>
+				<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"></path>
+			</svg>
+
+			<p class="text-lg text-hit-gray-500 italic">
 				You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=512314255">More Network Stuff by BloodyPenguin</a> to use paths and other
 				networks in the editor.
-			</em>
+			</p>
 		</div>
-		<h3 id="props-trees" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#props-trees">Props &amp; Trees</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="props-trees" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Props &amp; Trees</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">You can place props such as benches, lights, and antennas.</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			If you place a prop on the ground, it will follow the terrain if the building is placed on uneven terrain. But if you place it on the building, it becomes
 			fixed height, so it will always be at that height relative to the building.
 		</p>
-		<div class="flex gap-2 mt-4 items-center justify-start">
-			<img src="https://cslmodding.info/icons/icon_warning.svg" height="32px" width="32px" class="icon1" /><em>
+		<!-- TODO: div warning -->
+		<div class="flex gap-2 mt-6 items-start justify-start">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="w-8 h-8 text-orange flex-shrink-0"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+				></path>
+			</svg>
+			<p class="text-lg text-hit-gray-500 italic">
 				You must use either vanilla or custom workshop published props and networks, not local custom ones, otherwise, they won't show up for the subscribers of
 				your asset.
-			</em>
+			</p>
 		</div>
-		<div class="content-info">
-			<img src="https://cslmodding.info/icons/icon_info.svg" height="32px" width="32px" class="icon1" /><em>
+		<!-- TODO: div info -->
+		<div class="flex gap-2 mt-6 items-start justify-start">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="w-8 h-8 text-hoverlink flex-shrink-0"
+			>
+				<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"></path>
+			</svg>
+
+			<p class="text-lg text-hit-gray-500 italic">
 				You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1361644472">Precise Prop Positioning by TPB</a> to set the exact coordinates
 				and rotation angle of props.
-			</em>
+			</p>
 		</div>
-		<h3 id="surface" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#surface">Surface</a>
-		</h3>
-		<div class="lg:w-1/3">
-			<a href="https://i.imgur.com/EKbUPgi.jpg" target="null"><img src="https://i.imgur.com/EKbUPgi.jpg" /></a>
-			<p class="text-lg mt-4 text-hit-gray-500">The clip brush is uneven and unreliable.</p>
+
+		<!-- !SECTION -->
+		<h3 id="surface" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Surface</h3>
+		<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="lg:w-2/3">
+				<p class="text-lg mt-4 text-hit-gray-500">Each cell can have its own surface:</p>
+				<ul class="text-lg mt-4 text-hit-gray-500 list-disc">
+					<li class="mt-4">Pavement (map theme texture)<br /></li>
+					<li class="mt-4">Gravel (map theme texture)<br /></li>
+					<li class="mt-4">Ruined (map theme texture)<br /></li>
+					<li class="mt-4">Field (map theme color)<br /></li>
+					<li class="mt-4">Clip (hole in the ground)</li>
+				</ul>
+			</div>
+			<div class="lg:w-1/3">
+				<a href="https://i.imgur.com/EKbUPgi.jpg" target="null"><img src="https://i.imgur.com/EKbUPgi.jpg" /></a>
+				<p class="explanation">The clip brush is uneven and unreliable.</p>
+			</div>
 		</div>
-		<p class="text-lg mt-4 text-hit-gray-500">Each cell can have its own surface:</p>
-		<ul class="text-lg mt-4 text-hit-gray-500 list-disc">
-			<li>Pavement (map theme texture)<br /></li>
-			<li>Gravel (map theme texture)<br /></li>
-			<li>Ruined (map theme texture)<br /></li>
-			<li>Field (map theme color)<br /></li>
-			<li>Clip (hole in the ground)</li>
-		</ul>
-		<h3 id="markers" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#markers">Markers</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="markers" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Markers</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			These are invisible props which have functionality such as building entry points, parking spaces or smoke particle effects.
 		</p>
-		<h3 id="sub-buildings" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#sub-buildings">Sub-buildings</a>
-		</h3>
-		<div class="lg:w-1/3">
-			<a href="https://i.imgur.com/wrSG4gC.jpg" target="null"><img src="https://i.imgur.com/wrSG4gC.jpg" /></a>
-			<p class="text-lg mt-4 text-hit-gray-500">Once a sub-building has been added, you can change its position precisely.</p>
+
+		<!-- !SECTION -->
+		<h3 id="sub-buildings" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Sub-buildings</h3>
+		<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="lg:w-2/3">
+				<p class="text-lg mt-4 text-hit-gray-500">
+					You can add other buildings as sub-buildings to your main building. Unlike props, they are not references to another asset, they actually get embedded
+					and saved into the main building asset.
+				</p>
+				<p class="text-lg mt-4 text-hit-gray-500">This is useful for multi-function buildings or adding a part using a different shader.</p>
+				<p class="text-lg mt-4 text-hit-gray-500">The fixed height option makes sure the sub-building stays the same height even on uneven terrain.</p>
+				<p class="text-lg mt-4 text-hit-gray-500">Sub-buildings don't grow on growables, they are only visible if the growable is plopped manually.</p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					If you just imported a building for it to be used as a sub-building, you need to reload the game for it to be properly loaded and available as a
+					sub-building.
+				</p>
+			</div>
+			<div class="lg:w-1/3">
+				<a href="https://i.imgur.com/wrSG4gC.jpg" target="null"><img src="https://i.imgur.com/wrSG4gC.jpg" /></a>
+				<p class="text-lg mt-4 text-hit-gray-500">Once a sub-building has been added, you can change its position precisely.</p>
+			</div>
 		</div>
-		<p class="text-lg mt-4 text-hit-gray-500">
-			You can add other buildings as sub-buildings to your main building. Unlike props, they are not references to another asset, they actually get embedded and
-			saved into the main building asset.
-		</p>
-		<p class="text-lg mt-4 text-hit-gray-500">This is useful for multi-function buildings or adding a part using a different shader.</p>
-		<p class="text-lg mt-4 text-hit-gray-500">The fixed height option makes sure the sub-building stays the same height even on uneven terrain.</p>
-		<p class="text-lg mt-4 text-hit-gray-500">Sub-buildings don't grow on growables, they are only visible if the growable is plopped manually.</p>
-		<p class="text-lg mt-4 text-hit-gray-500">
-			If you just imported a building for it to be used as a sub-building, you need to reload the game for it to be properly loaded and available as a
-			sub-building.
-		</p>
-		<h3 id="sub-meshes" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#sub-meshes">Sub-meshes</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="sub-meshes" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Sub-meshes</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			You can add additional meshes as sub-meshes, which appear only when specific conditions are met, for example - the vanilla landfill uses multiple
 			sub-meshes to display how filled up it is.
 		</p>
-		<h4 id="sub-mesh-flags" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flags">Flags</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flags" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Flags</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Flags are required and forbidden conditions, which determine when the sub-mesh shows up.</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			There are many flags and their use is not always obvious so their descriptions might be incomplete or not relevant in all cases.
 		</p>
-		<div class="content-info">
-			<img src="https://cslmodding.info/icons/icon_info.svg" height="32px" width="32px" class="icon1" /><em>
+		<!-- TODO: div info -->
+		<div class="flex gap-2 mt-6 items-start justify-start">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="w-8 h-8 text-hoverlink flex-shrink-0"
+			>
+				<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"></path>
+			</svg>
+
+			<p class="text-lg text-hit-gray-500 italic">
 				By default, not all sub-mesh flags (conditions) are visible, use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1393831156"
 					>the sub-mesh Flags mod by TPB</a
 				> to show all flags in the asset editor UI.
-			</em>
+			</p>
 		</div>
-		<h4 id="sub-mesh-flag-created" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-created">Created</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-created" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Created</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Active for all created buildings.</p>
-		<h4 id="sub-mesh-flag-deleted" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-deleted">Deleted</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-deleted" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Deleted</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Unknown.</p>
-		<h4 id="sub-mesh-flag-original" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-original">Original</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-original" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Original</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Likely active for buildings which were on the map originally, not created by the user.</p>
-		<h4 id="sub-mesh-flag-customname" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-customname">CustomName</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-customname" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">CustomName</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Active for buildings which the user has renamed.</p>
-		<h4 id="sub-mesh-flag-untouchable" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-untouchable">Untouchable</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-untouchable" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Untouchable</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Likely active for buildings which cannot be clicked by the user.</p>
-		<h4 id="sub-mesh-flag-fixedheight" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-fixedheight">FixedHeight</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-fixedheight" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">FixedHeight</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Likely active for buildings which will not change their height based on water level changes.</p>
-		<h4 id="sub-mesh-flag-incoming" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-incoming">Incoming</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-incoming" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Incoming</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Likely related to vehicles arriving at the building.</p>
-		<h4 id="sub-mesh-flag-outgoing" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-outgoing">Outgoing</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-outgoing" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Outgoing</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Likely related to vehicles leaving the building.</p>
-		<h4 id="sub-mesh-flag-capacitystep1" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-capacitystep1">CapacityStep1 (First Half Filled)</a>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-capacitystep1" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">
+			CapacityStep1 (First Half Filled)
 		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			Active for buildings which have their capacity at 50%, such as cemetaries, landfills, snow dumps, warehouses, or processing facilities.
 		</p>
-		<h4 id="sub-mesh-flag-capacitystep2" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-capacitystep2">CapacityStep2 (Second Half Filled)</a>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-capacitystep2" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">
+			CapacityStep2 (Second Half Filled)
 		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Same as CapacityStep1 but 100%.</p>
-		<h4 id="sub-mesh-flag-ratereduced" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-ratereduced">RateReduced</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-ratereduced" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">RateReduced</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Likely active for buildings which are operating at a reduced rate.</p>
-		<h4 id="sub-mesh-flag-highdensity" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-highdensity">HighDensity</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-highdensity" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">HighDensity</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Likely active for high density residential and commercial buildings.</p>
-		<h4 id="sub-mesh-flag-levelupeducation" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-levelupeducation">LevelUpEducation</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-levelupeducation" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">LevelUpEducation</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Unknown.</p>
-		<h4 id="sub-mesh-flag-leveluplandvalue" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-leveluplandvalue">LevelUpLandValue</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-leveluplandvalue" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">LevelUpLandValue</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Unknown.</p>
-		<h4 id="sub-mesh-flag-roadaccessfailed" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-roadaccessfailed">RoadAccessFailed</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-roadaccessfailed" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">RoadAccessFailed</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Likely related to pathfinding failure.</p>
-		<h4 id="sub-mesh-flag-evacuating" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-evacuating">Evacuating</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-evacuating" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Evacuating</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Likely active for buildings during disaster evacuation.</p>
-		<h4 id="sub-mesh-flag-completed" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-completed">Completed</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-completed" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Completed</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Active for buildings which have completed being constructed.</p>
-		<h4 id="sub-mesh-flag-active" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-active">Active</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-active" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Active</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Active for operating buildings.</p>
-		<h4 id="sub-mesh-flag-abandoned" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-abandoned">Abandoned</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-abandoned" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Abandoned</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Active for abandoned buildings.</p>
-		<h4 id="sub-mesh-flag-demolishing" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-demolishing">Demolishing</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-demolishing" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Demolishing</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Unknown.</p>
-		<h4 id="sub-mesh-flag-zonesupdated" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-zonesupdated">ZonesUpdated</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-zonesupdated" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">ZonesUpdated</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Related to zoning being updated.</p>
-		<h4 id="sub-mesh-flag-downgrading" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-downgrading">Downgrading</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-downgrading" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Downgrading</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Unknown, likely related to buildings with capacity being emptied.</p>
-		<h4 id="sub-mesh-flag-collapsed" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-collapsed">Collapsed</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-collapsed" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Collapsed</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Likely active for collapsed buildings.</p>
-		<h4 id="sub-mesh-flag-burneddown" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-burneddown">BurnedDown</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-burneddown" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">BurnedDown</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Same as Collapsed. Likely active for buildings which have burned down.</p>
-		<h4 id="sub-mesh-flag-upgrading" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-upgrading">Upgrading</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-upgrading" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Upgrading</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Likely active for buildings which are leveling up.</p>
-		<h4 id="sub-mesh-flag-loading1" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-loading1">Loading1</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-loading1" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Loading1</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Related to animation playback on cargo station buildings.</p>
-		<h4 id="sub-mesh-flag-loading2" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-loading2">Loading2</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-loading2" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Loading2</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Related to animation playback on cargo station buildings.</p>
-		<h4 id="sub-mesh-flag-secondaryloading" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-secondaryloading">SecondaryLoading</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-secondaryloading" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">SecondaryLoading</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Related to animation playback on cargo station buildings.</p>
-		<h4 id="sub-mesh-flag-hidden" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-hidden">Hidden</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-hidden" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Hidden</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Unknown.</p>
-		<h4 id="sub-mesh-flag-eventactive" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-eventactive">EventActive</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-eventactive" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">EventActive</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Unknown.</p>
-		<h4 id="sub-mesh-flag-flooded" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-flooded">Flooded</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-flooded" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Flooded</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Likely active for buildings which are flooded.</p>
-		<h4 id="sub-mesh-flag-filling" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-filling">Filling</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-filling" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Filling</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Unknown.</p>
-		<h4 id="sub-mesh-flag-historical" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#sub-mesh-flag-historical">Historical</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="sub-mesh-flag-historical" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Historical</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Likely used for buildings which have been marked as historical by the player.</p>
-		<div style="clear:both"></div>
-		<hr />
-		<h2 id="editor-advanced" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">
-			<a href="https://cslmodding.info/asset/building/#editor-advanced">Editor Advanced</a>
-		</h2>
-		<div class="lg:w-1/3">
-			<a href="https://i.imgur.com/0ztXu62.jpg" target="null"><img src="https://i.imgur.com/0ztXu62.jpg" /></a>
-			<p class="text-lg mt-4 text-hit-gray-500">ModTools scene explorer and console.</p>
+
+		<!-- !SECTION -->
+		<h2 id="editor-advanced" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">Editor Advanced</h2>
+		<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="lg:w-2/3">
+				<p class="text-lg mt-4 text-hit-gray-500">
+					Various things can be changed with the use of <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484">ModTools</a> scene explorer <span
+						class="key">Ctrl+E</span
+					> or running scripts in the console <span class="key">F7</span>, or specific mods.
+				</p>
+			</div>
+			<div class="lg:w-1/3">
+				<a href="https://i.imgur.com/0ztXu62.jpg" target="null"><img src="https://i.imgur.com/0ztXu62.jpg" /></a>
+				<p class="explanation">ModTools scene explorer and console.</p>
+			</div>
 		</div>
-		<p class="text-lg mt-4 text-hit-gray-500">
-			Various things can be changed with the use of <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484">ModTools</a> scene explorer <span
-				class="key">Ctrl+E</span
-			> or running scripts in the console <span class="key">F7</span>, or specific mods.
-		</p>
-		<h3 id="ai" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#ai">AI</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="ai" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">AI</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			AI defines how the building behaves and what values it has. It can be changed using <a
 				href="https://steamcommunity.com/sharedfiles/filedetails/?id=421616513">Asset AI Changer by Snow_Cat &amp; cerebellum</a
@@ -766,121 +935,126 @@ import { Icon } from 'astro-icon';
 			But if you want your building to be sinkable into the ground without lowering terrain - use BuildingAI, however, a side effect is it won't get wet in the
 			rain, or snowy on winter maps.
 		</p>
-		<h3 id="item-class" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#item-class">Item Class</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="item-class" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Item Class</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			Contains information about what type and level of building it is. It can be changed using <a
 				href="https://steamcommunity.com/sharedfiles/filedetails/?id=455068042">Asset ItemClass Changer by Snow_Cat</a
 			>.
 		</p>
-		<h3 id="ui-category" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#ui-category">UI Category</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="ui-category" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">UI Category</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			UI category determines in which menu your asset will appear. It can be changed using <a
 				href="https://steamcommunity.com/sharedfiles/filedetails/?id=458396767">Asset UI Category Changer by Snow_Cat</a
 			>
 		</p>
-		<h3 id="ui-priority" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#ui-priority">UI Priority</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="ui-priority" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">UI Priority</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			UIPriority determines item order in the menu. It can be changed <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=466485089"
 				>Asset UI Priority Changer by Snow_Cat</a
 			> or <a href="https://gist.github.com/ronyx69/60e9297695ff983b655b05b21f0407e5">a script</a>.
 		</p>
-		<h3 id="shaders" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#shaders">Shaders</a>
-		</h3>
-		<h4 id="shader-default" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#shader-default">Default</a>
-		</h4>
-		<div class="lg:w-1/3">
-			<a href="https://i.imgur.com/S3kSt2w.jpg" target="null"><img src="https://i.imgur.com/S3kSt2w.jpg" /></a>
-			<p class="text-lg mt-4 text-hit-gray-500">Comparison between Default (left), NoBase (middle) and Fence (right) building shaders.</p>
+
+		<h3 id="shaders" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Shaders</h3>
+
+		<!-- !SECTION -->
+		<h4 id="shader-default" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Default</h4>
+		<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="lg:w-2/3">
+				<p class="text-lg mt-4 text-hit-gray-500">
+					<a href="https://gist.github.com/ronyx69/a5029e0369e45117285b113ffe1a6d48">Default</a> extends the base mesh into the ground and applies the map theme
+					building base texture to it.
+				</p>
+			</div>
+			<div class="lg:w-1/3">
+				<a href="https://i.imgur.com/S3kSt2w.jpg" target="null"><img src="https://i.imgur.com/S3kSt2w.jpg" /></a>
+				<p class="explanation">Comparison between Default (left), NoBase (middle) and Fence (right) building shaders.</p>
+			</div>
 		</div>
-		<p class="text-lg mt-4 text-hit-gray-500">
-			<a href="https://gist.github.com/ronyx69/a5029e0369e45117285b113ffe1a6d48">Default</a> extends the base mesh into the ground and applies the map theme
-			building base texture to it.
-		</p>
-		<h4 id="shader-nobase" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#shader-nobase">NoBase</a>
-		</h4>
-		<div class="lg:w-1/3">
-			<a href="https://i.imgur.com/a1D7hrz.jpg" target="null"><img src="https://i.imgur.com/a1D7hrz.jpg" /></a>
-			<p class="text-lg mt-4 text-hit-gray-500">On winter maps, snow doesn't appear on the NoBase shader.</p>
+
+		<!-- !SECTION -->
+		<h4 id="shader-nobase" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">NoBase</h4>
+		<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="lg:w-2/3">
+				<p class="text-lg mt-4 text-hit-gray-500">
+					When using the default building shader, parts that are under 0 (ground) will get the map theme building base texture.
+				</p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					<a href="https://gist.github.com/ronyx69/24a430d610fe5bb2070c1a9cbb793e0d">NoBase</a> doesn't replace the underground texture with the building base
+					texture.
+				</p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					The base mesh may still be visible, as it's generated on import for edges closer than 5cm to 0 (ground). It is possible to delete the base mesh
+					completely using <a href="https://gist.github.com/ronyx69/a5fd0eb2627131de12cd21878fa320be">this script</a>.
+				</p>
+				<p class="text-lg mt-4 text-hit-gray-500">This shader also has a side-effect of increased reflectivity for high specularity areas.</p>
+			</div>
+			<div class="lg:w-1/3">
+				<a href="https://i.imgur.com/a1D7hrz.jpg" target="null"><img src="https://i.imgur.com/a1D7hrz.jpg" /></a>
+				<p class="explanation">On winter maps, snow doesn't appear on the NoBase shader.</p>
+			</div>
 		</div>
-		<p class="text-lg mt-4 text-hit-gray-500">
-			When using the default building shader, parts that are under 0 (ground) will get the map theme building base texture.
-		</p>
-		<p class="text-lg mt-4 text-hit-gray-500">
-			<a href="https://gist.github.com/ronyx69/24a430d610fe5bb2070c1a9cbb793e0d">NoBase</a> doesn't replace the underground texture with the building base
-			texture.
-		</p>
-		<p class="text-lg mt-4 text-hit-gray-500">
-			The base mesh may still be visible, as it's generated on import for edges closer than 5cm to 0 (ground). It is possible to delete the base mesh completely
-			using <a href="https://gist.github.com/ronyx69/a5fd0eb2627131de12cd21878fa320be">this script</a>.
-		</p>
-		<p class="text-lg mt-4 text-hit-gray-500">This shader also has a side-effect of increased reflectivity for high specularity areas.</p>
-		<h4 id="shader-fence" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#shader-fence">Fence</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="shader-fence" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Fence</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			<a href="https://gist.github.com/ronyx69/7a720c7c7f767d8441b824da4e0ea5f2">Fence</a> conforms to the terrain. (used for the vanilla cemetery and Japanese
 			garden)
 		</p>
-		<h4 id="shader-floating" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#shader-floating">Floating</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="shader-floating" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Floating</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			<a href="https://gist.github.com/ronyx69/ce0ec6b39ab7a5c379dea8e10a4686f5">Floating</a> waves in water. (used for Mass Transit DLC boat museum steamboat)
 		</p>
-		<h3 id="shader-properties" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#shader-properties">Shader Properties</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="shader-properties" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Shader Properties</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			Some shaders have specific hidden properties, such as the <a href="https://gist.github.com/ronyx69/18486e905c4ddf50ce14cafbd9c55ba0">WindTurbine shader</a
 			> and <a href="https://cslmodding.info/shader/animuv/">AnimUV building shader</a>.
 		</p>
-		<h3 id="placement-mode" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#placement-mode">Placement Mode</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="placement-mode" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Placement Mode</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">This determines how your asset must be placed:</p>
 		<ul class="text-lg mt-4 text-hit-gray-500 list-disc">
-			<li>Roadside<br /></li>
-			<li>Shoreline<br /></li>
-			<li>OnWater (also disables water collision)<br /></li>
-			<li>OnGround (can't be placed on water)<br /></li>
-			<li>OnSurface (same as OnGround but can be placed on water)<br /></li>
-			<li>OnTerrain (same as OnSurface but in water, not on it)<br /></li>
-			<li>ShorelineOrGround</li>
-			<li>PathsideOrGround</li>
+			<li class="mt-4">Roadside<br /></li>
+			<li class="mt-4">Shoreline<br /></li>
+			<li class="mt-4">OnWater (also disables water collision)<br /></li>
+			<li class="mt-4">OnGround (can't be placed on water)<br /></li>
+			<li class="mt-4">OnSurface (same as OnGround but can be placed on water)<br /></li>
+			<li class="mt-4">OnTerrain (same as OnSurface but in water, not on it)<br /></li>
+			<li class="mt-4">ShorelineOrGround</li>
+			<li class="mt-4">PathsideOrGround</li>
 		</ul>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			It can be changed with <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484">ModTools</a> scene explorer <span class="key"
 				>Ctrl+E</span
 			> by going to <span class="path">Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_placementMode</span>.
 		</p>
-		<h3 id="zoning-mode" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#zoning-mode">Zoning Mode</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="zoning-mode" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Zoning Mode</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">This is used only for growables to make them grow only on corners:</p>
 		<ul class="text-lg mt-4 text-hit-gray-500 list-disc">
-			<li>Straight (default)<br /></li>
-			<li>CornerLeft<br /></li>
-			<li>CornerRight</li>
+			<li class="mt-4">Straight (default)<br /></li>
+			<li class="mt-4">CornerLeft<br /></li>
+			<li class="mt-4">CornerRight</li>
 		</ul>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			It can be changed with <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484">ModTools</a> scene explorer <span class="key"
 				>Ctrl+E</span
 			> and going to <span class="path">Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_zoningMode</span>.
 		</p>
-		<div style="clear:both"></div>
-		<hr />
-		<h2 id="specific-cases" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">
-			<a href="https://cslmodding.info/asset/building/#specific-cases">Specific Cases</a>
-		</h2>
+
+		<!-- !SECTION -->
+		<h2 id="specific-cases" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">Specific Cases</h2>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			This section covers some specific types of buildings which do not have a template or require special instructions. It will also make references to <a
 				href="https://cslmodding.info/modtools/">using ModTools</a
@@ -896,17 +1070,17 @@ import { Icon } from 'astro-icon';
 				href="https://steamcommunity.com/sharedfiles/filedetails/?id=512314255">More Network Stuff by BloodyPenguin</a
 			> and they can be moved using <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1619685021&searchtext=move+it">Move It!</a>.
 		</p>
-		<h3 id="train-station" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#train-station">Train Station</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="train-station" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Train Station</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">The train station has a template.</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			Train stations require a train station track, which contains pedestrian stop paths 1 meter above the track where citizens wait for the train. The stations
 			also have invisible pedestrian connection paths leading to the station track.
 		</p>
-		<h3 id="cargo-train-station" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#cargo-train-station">Cargo Train Station</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="cargo-train-station" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Cargo Train Station</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			Cargo train station doesn't have a template. You can <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=527544869"
 				>download a premade template here</a
@@ -916,28 +1090,28 @@ import { Icon } from 'astro-icon';
 			Cargo train stations work with any train station track, but a special cargo station track which doesn't have pedestrian stop paths exists. They also have
 			invisible cargo connection paths which are used by the cargo vehicles to enter and exit the station.
 		</p>
-		<h3 id="harbor" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#harbor">Harbor</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="harbor" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Harbor</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">The harbor has a template.</p>
 		<p class="text-lg mt-4 text-hit-gray-500">Harbors require a ship dock path and ship dockway paths, and also a pedestrian connection path.</p>
-		<h3 id="cargo-harbor" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#cargo-harbor">Cargo Harbor</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="cargo-harbor" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Cargo Harbor</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			Cargo harbor doesn't have a template. You can <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=707939755"
 				>download a premade template here</a
 			> or you can use the regular harbor template, but change the AI to CargoHarborAI and the item class to Ship Cargo Facility.
 		</p>
 		<p class="text-lg mt-4 text-hit-gray-500">Cargo harbors require a ship dock path and ship dockway paths, and also a pedestrian connection path.</p>
-		<h3 id="airport" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#airport">Airport</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="airport" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Airport</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">Airports have templates.</p>
 		<p class="text-lg mt-4 text-hit-gray-500">Airports use runways and taxiways as expected. For the terminals they use airplane stop paths.</p>
-		<h3 id="monorail-station" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#monorail-station">Monorail Station</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="monorail-station" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Monorail Station</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">Monorail stations have templates.</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			The monorail station track and road can be accessed by using the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484">ModTools</a>
@@ -945,23 +1119,21 @@ import { Icon } from 'astro-icon';
 				>Expansion 4 &gt; NetCollection &gt; m_prefabs &gt; Monorail Station Track / Medium Road Monorail Elevated &gt; Plop</span
 			>.
 		</p>
-		<h3 id="cable-car-stop" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#cable-car-stop">Cable Car Stop</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="cable-car-stop" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Cable Car Stop</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">Cable car stops have templates.</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			The cable car stop networks can be accessed by using the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484">ModTools</a> scene
 			explorer <span class="key">Ctrl+E</span> and going to <span class="path">Expansion 4 &gt; NetCollection &gt; m_prefabs &gt; CableCar Stop &gt; Plop</span
 			>.
 		</p>
-		<div style="clear:both"></div>
-		<hr />
-		<h2 id="save" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">
-			<a href="https://cslmodding.info/asset/building/#save">Save</a>
-		</h2>
-		<h3 id="filename" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#filename">Filename</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h2 id="save" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">Save</h2>
+
+		<!-- !SECTION -->
+		<h3 id="filename" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Filename</h3>
 		<div class="lg:w-1/3">
 			<a href="https://i.imgur.com/KYxmvPI.jpg" target="null"><img src="https://i.imgur.com/KYxmvPI.jpg" /></a>
 			<p class="text-lg mt-4 text-hit-gray-500">Save asset window.</p>
@@ -969,32 +1141,32 @@ import { Icon } from 'astro-icon';
 		<p class="text-lg mt-4 text-hit-gray-500">
 			The filename input is on the bottom left, this is what the actual file will be called. It's not recommended to use spaces, dots, or special symbols.
 		</p>
-		<h3 id="asset-name" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#asset-name">Asset Name</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="asset-name" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Asset Name</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">The asset name visible ingame, the name people should search for.</p>
-		<h3 id="images" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#images">Images</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="images" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Images</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">There are 2 different folders you can open by clicking the folder icons:</p>
-		<h4 id="snapshot" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#snapshot">Snapshot</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="snapshot" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Snapshot</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			On the snapshot image, bottom right corner. Use this one to replace the snapshot, you can replace it with a 1x1 px image to save on the asset file size.
 			This image will only be visible in the content manager. It will also default as the Steam preview image, but you can change that separately when
 			publishing.
 		</p>
-		<h4 id="thumbnail-tooltip" class="text-xl text-hit-gray-500 font-medium border-b border-hit-gray-950 pb-4 mt-8">
-			<a href="https://cslmodding.info/asset/building/#thumbnail-tooltip">Thumbnail &amp; Tooltip</a>
-		</h4>
+
+		<!-- !SECTION -->
+		<h4 id="thumbnail-tooltip" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Thumbnail &amp; Tooltip</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			Below thumbnail, on the right side. Use this one to change the thumbnail (109x100) and tooltip (492x147) of your asset.<br /> Once you change the main
 			thumbnail, the hover/active states will update automatically.
 		</p>
-		<h3 id="local-assets-folder" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#local-assets-folder">Local Assets Folder</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="local-assets-folder" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Local Assets Folder</h3>
 		<div class="lg:w-1/3">
 			<a href="https://i.imgur.com/CNfdvdz.jpg" target="null"><img src="https://i.imgur.com/CNfdvdz.jpg" /></a>
 			<p class="text-lg mt-4 text-hit-gray-500">CRP files in the local assets folder.</p>
@@ -1006,8 +1178,8 @@ import { Icon } from 'astro-icon';
 				>Windows+R</span
 			> and typing in appdata.
 		</p>
-		<div style="clear:both"></div>
-		<hr />
+
+		<!-- !SECTION -->
 		<h2 id="publish" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">
 			<a href="https://cslmodding.info/asset/building/#publish">Publish</a>
 		</h2>
@@ -1017,12 +1189,14 @@ import { Icon } from 'astro-icon';
 		</div>
 		<p class="text-lg mt-4 text-hit-gray-500">Once you have saved the asset and reloaded the game, you can publish the asset.</p>
 		<p class="text-lg mt-4 text-hit-gray-500">Go to the content manager &gt; assets and find your asset, then click share.</p>
-		<h3 id="title-and-description" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#title-and-description">Title and Description</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="title-and-description" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Title and Description</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">You can change these on the Steam Workshop later.</p>
+
+		<!-- !SECTION -->
 		<h3 id="steam-preview-image-and-content-folder" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#steam-preview-image-and-content-folder">Steam Preview Image and Content Folder</a>
+			Steam Preview Image and Content Folder
 		</h3>
 		<div class="lg:w-1/3">
 			<a href="https://i.imgur.com/Y53Uqxy.jpg" target="null"><img src="https://i.imgur.com/Y53Uqxy.jpg" /></a>
@@ -1037,19 +1211,19 @@ import { Icon } from 'astro-icon';
 			There is also the content folder, which is where the actual asset file is. You can paste multiple .crp files here if you would like to upload a pack of
 			assets.
 		</p>
-		<h3 id="steam-workshop" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
-			<a href="https://cslmodding.info/asset/building/#steam-workshop">Steam Workshop</a>
-		</h3>
+
+		<!-- !SECTION -->
+		<h3 id="steam-workshop" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Steam Workshop</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">On the Steam Workshop page for your asset, you can:</p>
 		<ul class="text-lg mt-4 text-hit-gray-500 list-disc">
-			<li>add it to a collection<br /></li>
-			<li>add images and videos<br /></li>
-			<li>add contributors and links<br /></li>
-			<li>add required items and DLC<br /></li>
-			<li>change visibility to friends only or private</li>
+			<li class="mt-4">add it to a collection<br /></li>
+			<li class="mt-4">add images and videos<br /></li>
+			<li class="mt-4">add contributors and links<br /></li>
+			<li class="mt-4">add required items and DLC<br /></li>
+			<li class="mt-4">change visibility to friends only or private</li>
 		</ul>
-		<div style="clear:both"></div>
-		<hr />
+
+		<!-- !SECTION -->
 		<h2 id="update" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">
 			<a href="https://cslmodding.info/asset/building/#update">Update</a>
 		</h2>
@@ -1068,11 +1242,9 @@ import { Icon } from 'astro-icon';
 				uses the internal prefab name to refer to it. In the case of networks (roads, tracks etc.) it may completely break a save.
 			</em>
 		</div>
-		<div style="clear:both"></div>
-		<hr />
-		<h2 id="prefab-name" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">
-			<a href="https://cslmodding.info/asset/building/#prefab-name">Prefab Name</a>
-		</h2>
+
+		<!-- !SECTION -->
+		<h2 id="prefab-name" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">Prefab Name</h2>
 		<div class="lg:w-1/3">
 			<a href="https://i.imgur.com/f3Tr6NM.jpg" target="null"><img src="https://i.imgur.com/f3Tr6NM.jpg" /></a>
 			<p class="text-lg mt-4 text-hit-gray-500">Comparison between local (top) and workshop published (bottom) prefab names shown in ModTools.</p>
