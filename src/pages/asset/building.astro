@@ -1,11 +1,13 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
-import { Icon } from 'astro-icon';
+import Link from '../../components/Link.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
 ---
 
 <MainLayout>
-	<section class="py-12 sm:ml-64">
-		<h1 id="overview" class="border-b-4 border-hit-gray-600 pb-8 text-5xl font-bold text-hit-gray-400">Building Asset Creation</h1>
+	<TableOfContents />
+	<section class="py-12 sm:ml-64 xl:mr-64">
+		<h1 id="overview" class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400">Building Asset Creation</h1>
 
 		<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">Mesh</h2>
 		<!-- !SECTION -->
@@ -47,8 +49,12 @@ import { Icon } from 'astro-icon';
 			</svg>
 
 			<p class="text-lg text-hit-gray-500 italic">
-				You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=453956891" class="text-hoverlink">Mesh Info by SamsamTS</a> to check
-				triangle counts of assets.
+				You can use <Link
+					href="https://steamcommunity.com/sharedfiles/filedetails/?id=453956891"
+					theme="externallink"
+					text="Mesh Info by SamsamTS"
+					classes=""
+				/> to check triangle counts of assets.
 			</p>
 		</div>
 
@@ -107,13 +113,20 @@ import { Icon } from 'astro-icon';
 		<!-- !SECTION -->
 		<h3 id="transform" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Transform</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			Make sure you are exporting a single object, which doesn't have any rotation or scale.<br />This can be done using <a
+			Make sure you are exporting a single object, which doesn't have any rotation or scale.<br />This can be done using
+			<Link
 				href="https://wiki.blender.org/index.php/User:Fade/Doc:2.6/Manual/3D_interaction/Transform_Control/Reset_Object_Transformations#Apply_Object_transformations"
-				>"apply rotation &amp; scale" in Blender</a
-			>, or <a
+				theme="externallink"
+				text='"apply rotation & scale" in Blender'
+				classes=""
+			/>, or
+			<Link
 				href="https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2017/ENU/3DSMax/files/GUID-B98414B9-4F28-45F4-A1F4-9DA994548ED9-htm.html"
-				>"reset xform" in 3ds Max</a
-			>, and exporting only the selected object.
+				theme="externallink"
+				text='"reset xform" in 3ds Max'
+				classes=""
+			/>
+			 , and exporting only the selected object.
 		</p>
 
 		<!-- !SECTION -->
@@ -221,7 +234,8 @@ import { Icon } from 'astro-icon';
 					Transparency, white means opaque or visible, black means transparent or invisible. Gray values may affect how it looks from a distance or at an angle.
 				</p>
 				<p class="text-lg mt-4 text-hit-gray-500">
-					Semi-transparency is not supported, you need to use the <a href="https://cslmodding.info/shader/rotors/">rotors shader</a> for that.
+					Semi-transparency is not supported, you need to use the
+					<Link href="https://cslmodding.info/shader/rotors/" theme="externallink" text="rotors shader" classes="" /> for that.
 				</p>
 				<p class="text-lg mt-4 text-hit-gray-500">If you don't import an alpha map, it will default to fully opaque or fully visible.</p>
 			</div>
@@ -324,16 +338,15 @@ import { Icon } from 'astro-icon';
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.</p>
 				<p class="text-lg mt-4 text-hit-gray-500">
-					This can be made from the diffuse or a height map (brighter colors will look extruded out more) using <a
-						href="http://cpetry.github.io/NormalMap-Online/">a normal map generator online</a
-					>, a photoshop plugin like <a href="http://www.xnormal.net/">xNormal</a>, or standalone software such as <a href="https://www.crazybump.com/"
-						>CrazyBump</a
-					>.
+					This can be made from the diffuse or a height map (brighter colors will look extruded out more) using
+					<Link href="http://cpetry.github.io/NormalMap-Online/" theme="externallink" text="a normal map generator online" classes="" /> , a photoshop plugin
+					like
+					<Link href="http://www.xnormal.net/" theme="externallink" text="xNormal" classes="" /> , or standalone software such as
+					<Link href="https://www.crazybump.com/" theme="externallink" text="CrazyBump" classes="" />.
 				</p>
 				<p class="text-lg mt-4 text-hit-gray-500">
-					The normal map generator should be set to +X +Y, which means no color channel inversions are required. Read more in the <a
-						href="https://cslmodding.info/normal-maps/">normal map article</a
-					>.
+					The normal map generator should be set to +X +Y, which means no color channel inversions are required. Read more in the
+					<Link href="https://cslmodding.info/normal-maps/" theme="externallink" text="normal map article" classes="" />.
 				</p>
 				<p class="text-lg mt-4 text-hit-gray-500">
 					High specularity and normal map don't work well together because of the compression, so you might want to paint over your windows and other shiny
@@ -444,9 +457,8 @@ import { Icon } from 'astro-icon';
 			</svg>
 
 			<p class="text-lg text-hit-gray-500 italic">
-				All of those things can be changed later in the editor itself or using <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484"
-					>ModTools</a
-				> or other mods.
+				All of those things can be changed later in the editor itself or using
+				<Link href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484" theme="externallink" text="ModTools" classes="" /> or other mods.
 			</p>
 		</div>
 		<!-- TODO: div info -->
@@ -463,7 +475,8 @@ import { Icon } from 'astro-icon';
 			</svg>
 
 			<p class="text-lg text-hit-gray-500 italic">
-				Some types of buildings don't have a template, <a href="#specific-cases">see specific cases</a> for downloadable premade templates and instructions.
+				Some types of buildings don't have a template,
+				<Link href="#specific-cases" theme="internallink" text="see specific cases" classes="" /> for downloadable premade templates and instructions.
 			</p>
 		</div>
 
@@ -501,7 +514,13 @@ import { Icon } from 'astro-icon';
 			<p class="text-lg text-hit-gray-500 italic">
 				Using the mesh rotation feature will result in broken mesh tangents - that means the normal maps will appear incorrectly or not at all on some parts. To
 				fix this, don't use the rotation feature and make sure the mesh is rotated properly before import. If you need to use the mesh rotation feature - use
-				the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1518485094">Mesh Import Rotation Tangents Fix mod</a> to fix it.
+				the
+				<Link
+					href="https://steamcommunity.com/sharedfiles/filedetails/?id=1518485094"
+					theme="externallink"
+					text="Mesh Import Rotation Tangents Fix mod"
+					classes=""
+				/> to fix it.
 			</p>
 		</div>
 
@@ -613,9 +632,8 @@ import { Icon } from 'astro-icon';
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">
-					You can place networks such as roads, train/tram tracks, and pedestrian paths. <a href="#specific-cases"
-						>Read more about network usage in specific cases such as train stations</a
-					>.
+					You can place networks such as roads, train/tram tracks, and pedestrian paths.
+					<Link href="#specific-cases" theme="internallink" text="Read more about network usage in specific cases such as train stations" classes="" />.
 				</p>
 			</div>
 			<div class="lg:w-1/3">
@@ -637,8 +655,13 @@ import { Icon } from 'astro-icon';
 			</svg>
 
 			<p class="text-lg text-hit-gray-500 italic">
-				You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=512314255">More Network Stuff by BloodyPenguin</a> to use paths and other
-				networks in the editor.
+				You can use
+				<Link
+					href="https://steamcommunity.com/sharedfiles/filedetails/?id=512314255"
+					theme="externallink"
+					text="More Network Stuff by BloodyPenguin"
+					classes=""
+				/> to use paths and other networks in the editor.
 			</p>
 		</div>
 
@@ -684,8 +707,9 @@ import { Icon } from 'astro-icon';
 			</svg>
 
 			<p class="text-lg text-hit-gray-500 italic">
-				You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1361644472">Precise Prop Positioning by TPB</a> to set the exact coordinates
-				and rotation angle of props.
+				You can use
+				<Link href="https://steamcommunity.com/sharedfiles/filedetails/?id=1361644472" theme="externallink" text="Precise Prop Positioning by TPB" classes="" />
+				 to set the exact coordinates and rotation angle of props.
 			</p>
 		</div>
 
@@ -763,9 +787,9 @@ import { Icon } from 'astro-icon';
 			</svg>
 
 			<p class="text-lg text-hit-gray-500 italic">
-				By default, not all sub-mesh flags (conditions) are visible, use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1393831156"
-					>the sub-mesh Flags mod by TPB</a
-				> to show all flags in the asset editor UI.
+				By default, not all sub-mesh flags (conditions) are visible, use
+				<Link href="https://steamcommunity.com/sharedfiles/filedetails/?id=1393831156" theme="externallink" text="the sub-mesh Flags mod by TPB" classes="" />
+				 to show all flags in the asset editor UI.
 			</p>
 		</div>
 
@@ -912,7 +936,8 @@ import { Icon } from 'astro-icon';
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">
-					Various things can be changed with the use of <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484">ModTools</a> scene explorer <span
+					Various things can be changed with the use of
+					<Link href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484" theme="externallink" text="ModTools" classes="" /> scene explorer <span
 						class="key">Ctrl+E</span
 					> or running scripts in the console <span class="key">F7</span>, or specific mods.
 				</p>
@@ -926,9 +951,13 @@ import { Icon } from 'astro-icon';
 		<!-- !SECTION -->
 		<h3 id="ai" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">AI</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			AI defines how the building behaves and what values it has. It can be changed using <a
-				href="https://steamcommunity.com/sharedfiles/filedetails/?id=421616513">Asset AI Changer by Snow_Cat &amp; cerebellum</a
-			>.
+			AI defines how the building behaves and what values it has. It can be changed using
+			<Link
+				href="https://steamcommunity.com/sharedfiles/filedetails/?id=421616513"
+				theme="externallink"
+				text="Asset AI Changer by Snow_Cat & cerebellum"
+				classes=""
+			/>.
 		</p>
 		<p class="text-lg mt-4 text-hit-gray-500">If you want a functionless decorative building, DecorationBuildingAI is a good choice.</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
@@ -939,25 +968,38 @@ import { Icon } from 'astro-icon';
 		<!-- !SECTION -->
 		<h3 id="item-class" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Item Class</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			Contains information about what type and level of building it is. It can be changed using <a
-				href="https://steamcommunity.com/sharedfiles/filedetails/?id=455068042">Asset ItemClass Changer by Snow_Cat</a
-			>.
+			Contains information about what type and level of building it is. It can be changed using
+			<Link
+				href="https://steamcommunity.com/sharedfiles/filedetails/?id=455068042"
+				theme="externallink"
+				text="Asset ItemClass Changer by Snow_Cat"
+				classes=""
+			/>.
 		</p>
 
 		<!-- !SECTION -->
 		<h3 id="ui-category" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">UI Category</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			UI category determines in which menu your asset will appear. It can be changed using <a
-				href="https://steamcommunity.com/sharedfiles/filedetails/?id=458396767">Asset UI Category Changer by Snow_Cat</a
-			>
+			UI category determines in which menu your asset will appear. It can be changed using
+			<Link
+				href="https://steamcommunity.com/sharedfiles/filedetails/?id=458396767"
+				theme="externallink"
+				text="Asset UI Category Changer by Snow_Cat"
+				classes=""
+			/>.
 		</p>
 
 		<!-- !SECTION -->
 		<h3 id="ui-priority" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">UI Priority</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			UIPriority determines item order in the menu. It can be changed <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=466485089"
-				>Asset UI Priority Changer by Snow_Cat</a
-			> or <a href="https://gist.github.com/ronyx69/60e9297695ff983b655b05b21f0407e5">a script</a>.
+			UIPriority determines item order in the menu. It can be changed
+			<Link
+				href="https://steamcommunity.com/sharedfiles/filedetails/?id=466485089"
+				theme="externallink"
+				text="Asset UI Priority Changer by Snow_Cat"
+				classes=""
+			/> or
+			<Link href="https://gist.github.com/ronyx69/60e9297695ff983b655b05b21f0407e5" theme="externallink" text="a script" classes="" />.
 		</p>
 
 		<h3 id="shaders" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Shaders</h3>
@@ -967,8 +1009,8 @@ import { Icon } from 'astro-icon';
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">
-					<a href="https://gist.github.com/ronyx69/a5029e0369e45117285b113ffe1a6d48">Default</a> extends the base mesh into the ground and applies the map theme
-					building base texture to it.
+					<Link href="https://gist.github.com/ronyx69/a5029e0369e45117285b113ffe1a6d48" theme="externallink" text="Default" classes="" /> extends the base mesh
+					into the ground and applies the map theme building base texture to it.
 				</p>
 			</div>
 			<div class="lg:w-1/3">
@@ -985,12 +1027,13 @@ import { Icon } from 'astro-icon';
 					When using the default building shader, parts that are under 0 (ground) will get the map theme building base texture.
 				</p>
 				<p class="text-lg mt-4 text-hit-gray-500">
-					<a href="https://gist.github.com/ronyx69/24a430d610fe5bb2070c1a9cbb793e0d">NoBase</a> doesn't replace the underground texture with the building base
-					texture.
+					<Link href="https://gist.github.com/ronyx69/24a430d610fe5bb2070c1a9cbb793e0d" theme="externallink" text="NoBase" classes="" /> doesn't replace the
+					underground texture with the building base texture.
 				</p>
 				<p class="text-lg mt-4 text-hit-gray-500">
 					The base mesh may still be visible, as it's generated on import for edges closer than 5cm to 0 (ground). It is possible to delete the base mesh
-					completely using <a href="https://gist.github.com/ronyx69/a5fd0eb2627131de12cd21878fa320be">this script</a>.
+					completely using
+					<Link href="https://gist.github.com/ronyx69/a5fd0eb2627131de12cd21878fa320be" theme="externallink" text="this script" classes="" />.
 				</p>
 				<p class="text-lg mt-4 text-hit-gray-500">This shader also has a side-effect of increased reflectivity for high specularity areas.</p>
 			</div>
@@ -1003,21 +1046,23 @@ import { Icon } from 'astro-icon';
 		<!-- !SECTION -->
 		<h4 id="shader-fence" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Fence</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			<a href="https://gist.github.com/ronyx69/7a720c7c7f767d8441b824da4e0ea5f2">Fence</a> conforms to the terrain. (used for the vanilla cemetery and Japanese
-			garden)
+			<Link href="https://gist.github.com/ronyx69/7a720c7c7f767d8441b824da4e0ea5f2" theme="externallink" text="Fence" classes="" /> conforms to the terrain.
+			(used for the vanilla cemetery and Japanese garden)
 		</p>
 
 		<!-- !SECTION -->
 		<h4 id="shader-floating" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Floating</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			<a href="https://gist.github.com/ronyx69/ce0ec6b39ab7a5c379dea8e10a4686f5">Floating</a> waves in water. (used for Mass Transit DLC boat museum steamboat)
+			<Link href="https://gist.github.com/ronyx69/ce0ec6b39ab7a5c379dea8e10a4686f5" theme="externallink" text="Floating" classes="" /> waves in water. (used for
+			Mass Transit DLC boat museum steamboat)
 		</p>
 
 		<!-- !SECTION -->
 		<h3 id="shader-properties" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Shader Properties</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			Some shaders have specific hidden properties, such as the <a href="https://gist.github.com/ronyx69/18486e905c4ddf50ce14cafbd9c55ba0">WindTurbine shader</a
-			> and <a href="https://cslmodding.info/shader/animuv/">AnimUV building shader</a>.
+			Some shaders have specific hidden properties, such as the
+			<Link href="https://gist.github.com/ronyx69/18486e905c4ddf50ce14cafbd9c55ba0" theme="externallink" text="WindTurbine shader" classes="" /> and
+			<Link href="/shader/animuv/" theme="internallink" text="AnimUV building shader" classes="" />.
 		</p>
 
 		<!-- !SECTION -->
@@ -1034,8 +1079,9 @@ import { Icon } from 'astro-icon';
 			<li class="mt-4">PathsideOrGround</li>
 		</ul>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			It can be changed with <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484">ModTools</a> scene explorer <span class="key"
-				>Ctrl+E</span
+			It can be changed with
+			<Link href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484" theme="externallink" text="ModTools" classes="" /> scene explorer <span
+				class="key">Ctrl+E</span
 			> by going to <span class="path">Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_placementMode</span>.
 		</p>
 
@@ -1048,27 +1094,38 @@ import { Icon } from 'astro-icon';
 			<li class="mt-4">CornerRight</li>
 		</ul>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			It can be changed with <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484">ModTools</a> scene explorer <span class="key"
-				>Ctrl+E</span
+			It can be changed with
+			<Link href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484" theme="externallink" text="ModTools" classes="" /> scene explorer <span
+				class="key">Ctrl+E</span
 			> and going to <span class="path">Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_zoningMode</span>.
 		</p>
 
 		<!-- !SECTION -->
 		<h2 id="specific-cases" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">Specific Cases</h2>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			This section covers some specific types of buildings which do not have a template or require special instructions. It will also make references to <a
-				href="https://cslmodding.info/modtools/">using ModTools</a
-			>, and other mods mentioned in the <a href="#editor-advanced">editor advanced section</a>.
+			This section covers some specific types of buildings which do not have a template or require special instructions. It will also make references to
+			<Link href="/modtools/" theme="internallink" text="using ModTools" classes="" />, and other mods mentioned in the
+			<Link href="#editor-advanced" theme="internallink" text="editor advanced section" classes="" />
+			<a href=""></a>.
 		</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			For buildings such as stations and harbors, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=790347696"
-				>Advanced Buildings Editor by BloodyPenguin</a
-			> is recommended for making all segments editable and auto-placing spawn points which are used to spawn trains, ships, or planes.
+			For buildings such as stations and harbors,
+			<Link
+				href="https://steamcommunity.com/sharedfiles/filedetails/?id=790347696"
+				theme="externallink"
+				text="Advanced Buildings Editor by BloodyPenguin"
+				classes=""
+			/> is recommended for making all segments editable and auto-placing spawn points which are used to spawn trains, ships, or planes.
 		</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			Various station tracks and invisible connection paths can be accessed in the asset editor road and decoration menu by using <a
-				href="https://steamcommunity.com/sharedfiles/filedetails/?id=512314255">More Network Stuff by BloodyPenguin</a
-			> and they can be moved using <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1619685021&searchtext=move+it">Move It!</a>.
+			Various station tracks and invisible connection paths can be accessed in the asset editor road and decoration menu by using
+			<Link
+				href="https://steamcommunity.com/sharedfiles/filedetails/?id=512314255"
+				theme="externallink"
+				text="More Network Stuff by BloodyPenguin"
+				classes=""
+			/> and they can be moved using
+			<Link href="https://steamcommunity.com/sharedfiles/filedetails/?id=1619685021&searchtext=move+it" theme="externallink" text="Move It!" classes="" />.
 		</p>
 
 		<!-- !SECTION -->
@@ -1082,9 +1139,9 @@ import { Icon } from 'astro-icon';
 		<!-- !SECTION -->
 		<h3 id="cargo-train-station" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Cargo Train Station</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			Cargo train station doesn't have a template. You can <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=527544869"
-				>download a premade template here</a
-			> or you can use the regular train station template, but change the AI to CargoStationAI and the item class to Train Cargo Facility.
+			Cargo train station doesn't have a template. You can
+			<Link href="https://steamcommunity.com/sharedfiles/filedetails/?id=527544869" theme="externallink" text="download a premade template here" classes="" />
+			 or you can use the regular train station template, but change the AI to CargoStationAI and the item class to Train Cargo Facility.
 		</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			Cargo train stations work with any train station track, but a special cargo station track which doesn't have pedestrian stop paths exists. They also have
@@ -1099,9 +1156,9 @@ import { Icon } from 'astro-icon';
 		<!-- !SECTION -->
 		<h3 id="cargo-harbor" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Cargo Harbor</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			Cargo harbor doesn't have a template. You can <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=707939755"
-				>download a premade template here</a
-			> or you can use the regular harbor template, but change the AI to CargoHarborAI and the item class to Ship Cargo Facility.
+			Cargo harbor doesn't have a template. You can
+			<Link href="https://steamcommunity.com/sharedfiles/filedetails/?id=707939755" theme="externallink" text="download a premade template here" classes="" />
+			 or you can use the regular harbor template, but change the AI to CargoHarborAI and the item class to Ship Cargo Facility.
 		</p>
 		<p class="text-lg mt-4 text-hit-gray-500">Cargo harbors require a ship dock path and ship dockway paths, and also a pedestrian connection path.</p>
 
@@ -1114,8 +1171,10 @@ import { Icon } from 'astro-icon';
 		<h3 id="monorail-station" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Monorail Station</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">Monorail stations have templates.</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			The monorail station track and road can be accessed by using the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484">ModTools</a>
-			 scene explorer <span class="key">Ctrl+E</span> and going to <span class="path"
+			The monorail station track and road can be accessed by using the
+			<Link href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484" theme="externallink" text="ModTools" classes="" /> scene explorer <span
+				class="key">Ctrl+E</span
+			> and going to <span class="path"
 				>Expansion 4 &gt; NetCollection &gt; m_prefabs &gt; Monorail Station Track / Medium Road Monorail Elevated &gt; Plop</span
 			>.
 		</p>
@@ -1124,9 +1183,10 @@ import { Icon } from 'astro-icon';
 		<h3 id="cable-car-stop" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Cable Car Stop</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">Cable car stops have templates.</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			The cable car stop networks can be accessed by using the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484">ModTools</a> scene
-			explorer <span class="key">Ctrl+E</span> and going to <span class="path">Expansion 4 &gt; NetCollection &gt; m_prefabs &gt; CableCar Stop &gt; Plop</span
-			>.
+			The cable car stop networks can be accessed by using the
+			<Link href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484" theme="externallink" text="ModTools" classes="" /> scene explorer <span
+				class="key">Ctrl+E</span
+			> and going to <span class="path">Expansion 4 &gt; NetCollection &gt; m_prefabs &gt; CableCar Stop &gt; Plop</span>.
 		</p>
 
 		<!-- !SECTION -->
@@ -1134,13 +1194,17 @@ import { Icon } from 'astro-icon';
 
 		<!-- !SECTION -->
 		<h3 id="filename" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Filename</h3>
-		<div class="lg:w-1/3">
-			<a href="https://i.imgur.com/KYxmvPI.jpg" target="null"><img src="https://i.imgur.com/KYxmvPI.jpg" /></a>
-			<p class="text-lg mt-4 text-hit-gray-500">Save asset window.</p>
+		<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="lg:w-2/3">
+				<p class="text-lg mt-4 text-hit-gray-500">
+					The filename input is on the bottom left, this is what the actual file will be called. It's not recommended to use spaces, dots, or special symbols.
+				</p>
+			</div>
+			<div class="lg:w-1/3">
+				<a href="https://i.imgur.com/KYxmvPI.jpg" target="null"><img src="https://i.imgur.com/KYxmvPI.jpg" /></a>
+				<p class="explanation">Save asset window.</p>
+			</div>
 		</div>
-		<p class="text-lg mt-4 text-hit-gray-500">
-			The filename input is on the bottom left, this is what the actual file will be called. It's not recommended to use spaces, dots, or special symbols.
-		</p>
 
 		<!-- !SECTION -->
 		<h3 id="asset-name" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Asset Name</h3>
@@ -1167,28 +1231,36 @@ import { Icon } from 'astro-icon';
 
 		<!-- !SECTION -->
 		<h3 id="local-assets-folder" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Local Assets Folder</h3>
-		<div class="lg:w-1/3">
-			<a href="https://i.imgur.com/CNfdvdz.jpg" target="null"><img src="https://i.imgur.com/CNfdvdz.jpg" /></a>
-			<p class="text-lg mt-4 text-hit-gray-500">CRP files in the local assets folder.</p>
+		<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="lg:w-2/3">
+				<p class="text-lg mt-4 text-hit-gray-500">Once the asset is saved, the .crp file will appear in the local assets folder:</p>
+				<p class="text-lg mt-4 text-hit-gray-500"><span class="path">%LocalAppData%\Colossal Order\Cities_Skylines\Addons\Assets</span></p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					The AppData folder is hidden by default, you can access it by copying and pasting the path into the file explorer, or pressing <span class="key"
+						>Windows+R</span
+					> and typing in appdata.
+				</p>
+			</div>
+			<div class="lg:w-1/3">
+				<a href="https://i.imgur.com/CNfdvdz.jpg" target="null"><img src="https://i.imgur.com/CNfdvdz.jpg" /></a>
+				<p class="explanation">CRP files in the local assets folder.</p>
+			</div>
 		</div>
-		<p class="text-lg mt-4 text-hit-gray-500">Once the asset is saved, the .crp file will appear in the local assets folder:</p>
-		<p class="text-lg mt-4 text-hit-gray-500"><span class="path">%LocalAppData%\Colossal Order\Cities_Skylines\Addons\Assets</span></p>
-		<p class="text-lg mt-4 text-hit-gray-500">
-			The AppData folder is hidden by default, you can access it by copying and pasting the path into the file explorer, or pressing <span class="key"
-				>Windows+R</span
-			> and typing in appdata.
-		</p>
 
 		<!-- !SECTION -->
 		<h2 id="publish" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">
 			<a href="https://cslmodding.info/asset/building/#publish">Publish</a>
 		</h2>
-		<div class="lg:w-1/3">
-			<a href="https://i.imgur.com/4OPnZac.jpg" target="null"><img src="https://i.imgur.com/4OPnZac.jpg" /></a>
-			<p class="text-lg mt-4 text-hit-gray-500">Share button in content manager.</p>
+		<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="lg:w-2/3">
+				<p class="text-lg mt-4 text-hit-gray-500">Once you have saved the asset and reloaded the game, you can publish the asset.</p>
+				<p class="text-lg mt-4 text-hit-gray-500">Go to the content manager &gt; assets and find your asset, then click share.</p>
+			</div>
+			<div class="lg:w-1/3">
+				<a href="https://i.imgur.com/4OPnZac.jpg" target="null"><img src="https://i.imgur.com/4OPnZac.jpg" /></a>
+				<p class="explanation">Share button in content manager.</p>
+			</div>
 		</div>
-		<p class="text-lg mt-4 text-hit-gray-500">Once you have saved the asset and reloaded the game, you can publish the asset.</p>
-		<p class="text-lg mt-4 text-hit-gray-500">Go to the content manager &gt; assets and find your asset, then click share.</p>
 
 		<!-- !SECTION -->
 		<h3 id="title-and-description" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Title and Description</h3>
@@ -1198,19 +1270,23 @@ import { Icon } from 'astro-icon';
 		<h3 id="steam-preview-image-and-content-folder" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
 			Steam Preview Image and Content Folder
 		</h3>
-		<div class="lg:w-1/3">
-			<a href="https://i.imgur.com/Y53Uqxy.jpg" target="null"><img src="https://i.imgur.com/Y53Uqxy.jpg" /></a>
-			<p class="text-lg mt-4 text-hit-gray-500">Publish window and content folder.</p>
+		<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="lg:w-2/3">
+				<p class="text-lg mt-4 text-hit-gray-500">
+					There is a folder icon again on the snapshot image, bottom right corner. Here you can change the Steam preview image, which is the thumbnail visible
+					on steam. The largest size the image will be visible is 437x437 (on the front page) but it will get upscaled to 512x512 by Steam so that's the size
+					you should use.
+				</p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					There is also the content folder, which is where the actual asset file is. You can paste multiple .crp files here if you would like to upload a pack
+					of assets.
+				</p>
+			</div>
+			<div class="lg:w-1/3">
+				<a href="https://i.imgur.com/Y53Uqxy.jpg" target="null"><img src="https://i.imgur.com/Y53Uqxy.jpg" /></a>
+				<p class="explanation">Publish window and content folder.</p>
+			</div>
 		</div>
-		<p class="text-lg mt-4 text-hit-gray-500">
-			There is a folder icon again on the snapshot image, bottom right corner. Here you can change the Steam preview image, which is the thumbnail visible on
-			steam. The largest size the image will be visible is 437x437 (on the front page) but it will get upscaled to 512x512 by Steam so that's the size you
-			should use.
-		</p>
-		<p class="text-lg mt-4 text-hit-gray-500">
-			There is also the content folder, which is where the actual asset file is. You can paste multiple .crp files here if you would like to upload a pack of
-			assets.
-		</p>
 
 		<!-- !SECTION -->
 		<h3 id="steam-workshop" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Steam Workshop</h3>
@@ -1236,24 +1312,71 @@ import { Icon } from 'astro-icon';
 			pack, remember to put all the assets inside the content folder.
 		</p>
 		<p class="text-lg mt-4 text-hit-gray-500">You can also add more assets to make it a bigger pack.</p>
-		<div class="flex gap-2 mt-4 items-center justify-start">
-			<img src="https://cslmodding.info/icons/icon_warning.svg" height="32px" width="32px" class="icon1" /><em>
+
+		<!-- TODO: div warning -->
+		<div class="flex gap-2 mt-6 items-start justify-start">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="w-8 h-8 text-orange flex-shrink-0"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+				></path>
+			</svg>
+			<p class="text-lg text-hit-gray-500 italic">
 				Make sure your updated assets are saved with exactly the same name as before, otherwise, it will disappear from your subscribers' saves, as the game
 				uses the internal prefab name to refer to it. In the case of networks (roads, tracks etc.) it may completely break a save.
-			</em>
+			</p>
 		</div>
 
 		<!-- !SECTION -->
 		<h2 id="prefab-name" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">Prefab Name</h2>
-		<div class="lg:w-1/3">
-			<a href="https://i.imgur.com/f3Tr6NM.jpg" target="null"><img src="https://i.imgur.com/f3Tr6NM.jpg" /></a>
-			<p class="text-lg mt-4 text-hit-gray-500">Comparison between local (top) and workshop published (bottom) prefab names shown in ModTools.</p>
+
+		<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="lg:w-2/3">
+				<p class="text-lg mt-4 text-hit-gray-500">This is not something you can change.</p>
+				<p class="text-lg mt-4 text-hit-gray-500">It's the hidden internal name used to refer to your asset in savefiles.</p>
+				<p class="text-lg mt-4 text-hit-gray-500">It's the reason why a local asset is not the same as a workshop published asset.</p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					For local assets: filename.Asset Name_Data<br />For published workshop assets: SteamID.Asset Name_Data
+				</p>
+			</div>
+			<div class="lg:w-1/3">
+				<a href="https://i.imgur.com/f3Tr6NM.jpg" target="null"><img src="https://i.imgur.com/f3Tr6NM.jpg" /></a>
+				<p class="explanation">Comparison between local (top) and workshop published (bottom) prefab names shown in ModTools.</p>
+			</div>
 		</div>
-		<p class="text-lg mt-4 text-hit-gray-500">This is not something you can change.</p>
-		<p class="text-lg mt-4 text-hit-gray-500">It's the hidden internal name used to refer to your asset in savefiles.</p>
-		<p class="text-lg mt-4 text-hit-gray-500">It's the reason why a local asset is not the same as a workshop published asset.</p>
-		<p class="text-lg mt-4 text-hit-gray-500">
-			For local assets: filename.Asset Name_Data<br />For published workshop assets: SteamID.Asset Name_Data
-		</p>
 	</section>
 </MainLayout>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const tocElement = document.querySelector('.table-of-contents ul');
+		if (!tocElement) return;
+
+		document.querySelectorAll('h2, h3').forEach((heading) => {
+			const id = heading.id;
+			const title = heading.textContent;
+			const isH2 = heading.tagName === 'H2';
+
+			const listItem = document.createElement('li');
+			listItem.className = isH2 ? '' : 'mt-1'; // Add Tailwind classes here
+
+			const link = document.createElement('a');
+			link.href = `#${id}`;
+			link.textContent = title;
+			link.className = isH2
+				? 'text-hit-gray-200 text-lg inline-flex rounded-md hover:text-hoverlink mt-6'
+				: 'text-hit-gray-400 text-[1rem] leading-[1.25rem] inline-flex ps-2 rounded-md hover:text-hoverlink'; // Add Tailwind classes here
+
+			listItem.appendChild(link);
+			tocElement.appendChild(listItem);
+		});
+	});
+</script>

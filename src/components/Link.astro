@@ -1,0 +1,42 @@
+---
+import { Icon } from 'astro-icon';
+
+interface Props {
+	text: string;
+	href: string;
+	theme: 'primarybutton' | 'defaultlink' | 'externallink' | 'internallink' | 'externalparagraph' | 'downloadbutton';
+	icon?: {
+		name: string;
+		side: 'left' | 'right';
+	};
+	classes?: string;
+	[key: string]: any; // This allows any additional properties
+}
+
+const defaultIconForTheme = {
+	downloadbutton: { name: 'ic:sharp-cloud-download', side: 'right' },
+	externallink: { name: 'mdi:arrow-top-right', side: 'right' },
+};
+
+const { text, href, theme, icon = defaultIconForTheme[theme], classes, ...rest } = Astro.props as Props;
+
+// Map themes to TailwindCSS classes
+const themeClasses = {
+	primarybutton: 'inline-block bg-accent border-4 border-black py-4 px-6 hover:bg-black hover:text-white textbutton',
+	defaultlink: 'inline-block hover:text-linkhover paragraph underline decoration-2 mt-2 hover:underline-offset-4',
+	externallink: 'inline-flex items-center text-urllink hover:text-hoverlink paragraph underline decoration-2 hover:underline-offset-4 ',
+	internallink: 'inline-flex items-center text-urllink hover:text-hoverlink paragraph underline decoration-2 hover:underline-offset-4 ',
+	externalparagraph: 'inline-flex items-center hover:text-linkhover text-lg font-bold underline decoration-2 hover:underline-offset-4 ',
+	downloadbutton: 'inline-flex gap-4 border-4 border-black py-4 px-6 hover:bg-black hover:text-white textbutton',
+};
+
+const computedThemeClass = themeClasses[theme];
+---
+
+<a href={href} class={`${classes || ''} ${computedThemeClass}`} {...rest}>
+	{icon && icon.side === 'left' && <Icon name={icon.name} height="24" width="24" />}
+
+	{text}
+
+	{icon && icon.side === 'right' && <Icon name={icon.name} height="24" width="24" />}
+</a>

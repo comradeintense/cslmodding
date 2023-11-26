@@ -59,6 +59,7 @@ export default {
 				title: '#C0D1DC',
 				subtitle: '#B2B7BB',
 				hoverlink: '#45a3e6',
+				urllink: '#89c4f0',
 				orange: '#E08143',
 			},
 		},

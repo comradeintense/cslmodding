@@ -63,6 +63,14 @@
 		src: url('/fonts/open-sans-v36-latin-800.woff2') format('woff2');
 	}
 
+	.path {
+		@apply bg-[#1f2022] text-[#b3937d] px-[.25rem] break-words;
+	}
+
+	.key {
+		@apply bg-[#282b2f] text-[#8fa68d] px-[.375rem] border rounded-md border-[#34383d];
+	}
+
 	.explanation {
 		@apply text-sm mt-2 text-hit-gray-500;
 	}
