@@ -135,7 +135,7 @@ import TableOfContents from '../../components/TableOfContents.astro';
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">The vertex color blue channel determines snow behavior on winter maps:</p>
-				<ul class="text-lg mt-4 text-hit-gray-500 list-disc">
+				<ul class="text-lg mt-4 text-hit-gray-500 list-disc list-inside">
 					<li class="mt-4">128 means 3D snow will not be generated<br /></li>
 					<li class="mt-4">0 means no snow will be visible at all</li>
 				</ul>
@@ -148,7 +148,7 @@ import TableOfContents from '../../components/TableOfContents.astro';
 
 		<!-- !SECTION -->
 		<h3 id="formats" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Formats</h3>
-		<ul class="text-lg mt-4 text-hit-gray-500 list-disc">
+		<ul class="text-lg mt-4 text-hit-gray-500 list-disc list-inside">
 			<li class="mt-4">FBX (2015 or older) (most commonly used)</li>
 			<li class="mt-4">OBJ (doesn't support vertex colors)</li>
 			<li class="mt-4">DAE</li>
@@ -279,7 +279,7 @@ import TableOfContents from '../../components/TableOfContents.astro';
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">Colors for randomly illuminated night windows:</p>
-				<ul class="text-lg mt-4 text-hit-gray-500 list-disc">
+				<ul class="text-lg mt-4 text-hit-gray-500 list-disc list-inside">
 					<li class="mt-4">192 (Neutral Background Color)</li>
 					<li class="mt-4">192-128 Inverted (First Set of Windows)</li>
 					<li class="mt-4">192-255 (Second Set of Windows)</li>
@@ -438,7 +438,7 @@ import TableOfContents from '../../components/TableOfContents.astro';
 			template as well, useful when you need to reimport an already imported asset but don't want to place those things again.
 		</p>
 		<p class="text-lg mt-4 text-hit-gray-500">The template you choose will determine many things about your building:</p>
-		<ul class="text-lg mt-4 text-hit-gray-500 list-disc">
+		<ul class="text-lg mt-4 text-hit-gray-500 list-disc list-inside">
 			<li class="mt-4">AI and corresponding stats (a school with students, a fire station with fire trucks etc.)<br /></li>
 			<li class="mt-4">milestone at which it is unlocked<br /></li>
 			<li class="mt-4">UI category<br /></li>
@@ -609,7 +609,7 @@ import TableOfContents from '../../components/TableOfContents.astro';
 
 		<!-- !SECTION -->
 		<h3 id="general-properties" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">General Properties</h3>
-		<ul class="text-lg mt-4 text-hit-gray-500 list-disc">
+		<ul class="text-lg mt-4 text-hit-gray-500 list-disc list-inside">
 			<li class="mt-4">use color variations (may require to save/load for the toggle to take effect)<br /></li>
 			<li class="mt-4">availability (ingame, map editor etc.)<br /></li>
 			<li class="mt-4">circular lot (used for the vanilla wind turbine, water tower)<br /></li>
@@ -721,7 +721,7 @@ import TableOfContents from '../../components/TableOfContents.astro';
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">Each cell can have its own surface:</p>
-				<ul class="text-lg mt-4 text-hit-gray-500 list-disc">
+				<ul class="text-lg mt-4 text-hit-gray-500 list-disc list-inside">
 					<li class="mt-4">Pavement (map theme texture)<br /></li>
 					<li class="mt-4">Gravel (map theme texture)<br /></li>
 					<li class="mt-4">Ruined (map theme texture)<br /></li>
@@ -1071,7 +1071,7 @@ import TableOfContents from '../../components/TableOfContents.astro';
 		<!-- !SECTION -->
 		<h3 id="placement-mode" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Placement Mode</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">This determines how your asset must be placed:</p>
-		<ul class="text-lg mt-4 text-hit-gray-500 list-disc">
+		<ul class="text-lg mt-4 text-hit-gray-500 list-disc list-inside">
 			<li class="mt-4">Roadside<br /></li>
 			<li class="mt-4">Shoreline<br /></li>
 			<li class="mt-4">OnWater (also disables water collision)<br /></li>
@@ -1091,7 +1091,7 @@ import TableOfContents from '../../components/TableOfContents.astro';
 		<!-- !SECTION -->
 		<h3 id="zoning-mode" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Zoning Mode</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">This is used only for growables to make them grow only on corners:</p>
-		<ul class="text-lg mt-4 text-hit-gray-500 list-disc">
+		<ul class="text-lg mt-4 text-hit-gray-500 list-disc list-inside">
 			<li class="mt-4">Straight (default)<br /></li>
 			<li class="mt-4">CornerLeft<br /></li>
 			<li class="mt-4">CornerRight</li>
@@ -1294,7 +1294,7 @@ import TableOfContents from '../../components/TableOfContents.astro';
 		<!-- !SECTION -->
 		<h3 id="steam-workshop" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Steam Workshop</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">On the Steam Workshop page for your asset, you can:</p>
-		<ul class="text-lg mt-4 text-hit-gray-500 list-disc">
+		<ul class="text-lg mt-4 text-hit-gray-500 list-disc list-inside">
 			<li class="mt-4">add it to a collection<br /></li>
 			<li class="mt-4">add images and videos<br /></li>
 			<li class="mt-4">add contributors and links<br /></li>

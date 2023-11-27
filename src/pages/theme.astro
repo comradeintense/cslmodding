@@ -7,13 +7,13 @@ import TableOfContents from '../components/TableOfContents.astro';
 <MainLayout>
 	<TableOfContents />
 	<section class="py-12 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
+		<h1 id="overview" class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400">Map Theme</h1>
 		<div class="content">
 			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="environment">Environment</h2>
 			<p class="mt-4">
 				Affects the cubemap which is visible in the water and highly specular asset reflections. Also affects the availability of some environment-specific
 				vanilla assets.
 			</p>
-
 			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="terrain-properties">Terrain Properties</h2>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="textures">Textures</h3>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="folder">Folder</h4>
@@ -38,27 +38,31 @@ import TableOfContents from '../components/TableOfContents.astro';
 			</p>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="grass">Grass</h4>
 			<p class="mt-4">The main texture of grass, transparency controls how much the grass texture is affected by the grass color offsets.</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="ruined">Ruined</h4>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="ruined">Ruined</h4><div
+				class="flex flex-col lg:flex-row gap-6 mt-4"
+			>
 				<div class="lg:w-2/3">
-					<p class="mt-4">
+					<p>
 						Appears near buildings, some props, networks, and hills which are not steep enough for the cliff texture to be visible. Also visible near pavement
 						surface and can also be painted using surface painter. Also visible under sand, if the opacity of the sand texture is low enough. The opacity is
 						usually very high.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/a0pa1Gz.jpg" target="_blank"><img src="https://i.imgur.com/a0pa1Gz.jpg" /></a>
-					<p class="mt-4">Example of ruined texture.</p>
+					<a href="https://i.imgur.com/a0pa1Gz.jpg" target="null"><img src="https://i.imgur.com/a0pa1Gz.jpg" /></a><p class="explanation">
+						Example of ruined texture.
+					</p>
 				</div>
-			</div><h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="cliff">Cliff</h4>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
-				<div class="lg:w-2/3">
-					<p class="mt-4">Visible if the terrain is steep enough. Usually high opacity.</p>
-				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/0WX4fvb.jpg" target="_blank"><img src="https://i.imgur.com/0WX4fvb.jpg" /></a>
-					<p class="mt-4">Example of cliff texture.</p>
+			</div>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="cliff">Cliff</h4><div
+				class="flex flex-col lg:flex-row gap-6 mt-4"
+			>
+				<div class="lg:w-2/3"><p>Visible if the terrain is steep enough. Usually high opacity.</p></div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/0WX4fvb.jpg" target="null"><img src="https://i.imgur.com/0WX4fvb.jpg" /></a><p class="explanation">
+						Example of cliff texture.
+					</p>
 				</div>
-			</div><h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="cliff-normal">Cliff Normal</h4>
+			</div>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="cliff-normal">Cliff Normal</h4>
 			<p class="mt-4">
 				Adds bump to the cliff texture. <Link
 					classes=""
@@ -67,18 +71,21 @@ import TableOfContents from '../components/TableOfContents.astro';
 					theme="internallink"
 				/>.
 			</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sand">Sand</h4>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sand">Sand</h4><div
+				class="flex flex-col lg:flex-row gap-6 mt-4"
+			>
 				<div class="lg:w-2/3">
-					<p class="mt-4">
+					<p>
 						Can be painted. If the opacity is low, the ruined texture might be visible before the sand becomes fully visible. Can't coexist with the fertile
 						color.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/QoQD4lA.jpg" target="_blank"><img src="https://i.imgur.com/QoQD4lA.jpg" /></a>
-					<p class="mt-4">Example of sand texture.</p>
+					<a href="https://i.imgur.com/QoQD4lA.jpg" target="null"><img src="https://i.imgur.com/QoQD4lA.jpg" /></a><p class="explanation">
+						Example of sand texture.
+					</p>
 				</div>
-			</div><h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sand-normal">Sand Normal</h4>
+			</div>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sand-normal">Sand Normal</h4>
 			<p class="mt-4">
 				Adds bump to the sand texture. <Link
 					classes=""
@@ -87,45 +94,55 @@ import TableOfContents from '../components/TableOfContents.astro';
 					theme="internallink"
 				/>.
 			</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="pavement">Pavement</h4>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="pavement">Pavement</h4><div
+				class="flex flex-col lg:flex-row gap-6 mt-4"
+			>
 				<div class="lg:w-2/3">
-					<p class="mt-4">
+					<p>
 						Appears as surface paint on buildings, networks, or when painted using surface painter. Also can appear on network bridges using the bridge shader.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/JkpQzI7.jpg" target="_blank"><img src="https://i.imgur.com/JkpQzI7.jpg" /></a>
-					<p class="mt-4">Example of pavement texture.</p>
+					<a href="https://i.imgur.com/JkpQzI7.jpg" target="null"><img src="https://i.imgur.com/JkpQzI7.jpg" /></a><p class="explanation">
+						Example of pavement texture.
+					</p>
 				</div>
-			</div><h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="gravel">Gravel</h4>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			</div>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="gravel">Gravel</h4><div
+				class="flex flex-col lg:flex-row gap-6 mt-4"
+			>
 				<div class="lg:w-2/3">
-					<p class="mt-4">
+					<p>
 						Appears as surface paint on buildings, networks, or when painted using surface painter. Also can appear on network bridges using the rail shader.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/jOoWIMu.jpg" target="_blank"><img src="https://i.imgur.com/jOoWIMu.jpg" /></a>
-					<p class="mt-4">Example of gravel texture.</p>
+					<a href="https://i.imgur.com/jOoWIMu.jpg" target="null"><img src="https://i.imgur.com/jOoWIMu.jpg" /></a><p class="explanation">
+						Example of gravel texture.
+					</p>
 				</div>
-			</div><h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="oil">Oil</h4>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			</div>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="oil">Oil</h4><div
+				class="flex flex-col lg:flex-row gap-6 mt-4"
+			>
 				<div class="lg:w-2/3">
-					<p class="mt-4">Can be painted using the resource brush. Half-transparent by default, unless it's very bright. Can't coexist with ore.</p>
+					<p>Can be painted using the resource brush. Half-transparent by default, unless it's very bright. Can't coexist with ore.</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/TXnm0ks.jpg" target="_blank"><img src="https://i.imgur.com/TXnm0ks.jpg" /></a>
-					<p class="mt-4">Example of oil and ore textures.</p>
+					<a href="https://i.imgur.com/TXnm0ks.jpg" target="null"><img src="https://i.imgur.com/TXnm0ks.jpg" /></a><p class="explanation">
+						Example of oil and ore textures.
+					</p>
 				</div>
-			</div><h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="ore">Ore</h4>
+			</div>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="ore">Ore</h4>
 			<p class="mt-4">Can be painted using the resource brush. Half-transparent by default, unless it's very bright. Can't coexist with oil</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="grass-color-offsets">Grass Color Offsets</h3>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
-				<div class="lg:w-2/3">
-					<p class="mt-4">Colors which affect the grass texture based on its opacity.</p>
-				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/TxBavHC.jpg" target="_blank"><img src="https://i.imgur.com/TxBavHC.jpg" /></a>
-					<p class="mt-4">Example of color offsets.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="grass-color-offsets">Grass Color Offsets</h3><div
+				class="flex flex-col lg:flex-row gap-6 mt-4"
+			>
+				<div class="lg:w-2/3"><p>Colors which affect the grass texture based on its opacity.</p></div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/TxBavHC.jpg" target="null"><img src="https://i.imgur.com/TxBavHC.jpg" /></a><p class="explanation">
+						Example of color offsets.
+					</p>
 				</div>
-			</div><h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="pollution">Pollution</h4>
+			</div>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="pollution">Pollution</h4>
 			<p class="mt-4">Appears where there is ground pollution.</p>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="field">Field</h4>
 			<p class="mt-4">Appears as surface paint on buildings, or when painted using surface painter.</p>
@@ -133,50 +150,53 @@ import TableOfContents from '../components/TableOfContents.astro';
 			<p class="mt-4">Appears when painted using the fertile resource brush. Can't coexist with sand.</p>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="forest">Forest</h4>
 			<p class="mt-4">Appears where there are trees.</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="geometry-details">Geometry Details</h3>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
-				<div class="lg:w-2/3">
-					<p class="mt-4">2D sprites which are visible on the terrain.</p>
-				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/tSwogPh.jpg" target="_blank"><img src="https://i.imgur.com/tSwogPh.jpg" /></a>
-					<p class="mt-4">Example of sprites.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="geometry-details">Geometry Details</h3><div
+				class="flex flex-col lg:flex-row gap-6 mt-4"
+			>
+				<div class="lg:w-2/3"><p>2D sprites which are visible on the terrain.</p></div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/tSwogPh.jpg" target="null"><img src="https://i.imgur.com/tSwogPh.jpg" /></a><p class="explanation">
+						Example of sprites.
+					</p>
 				</div>
-			</div><h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="grass-1">Grass</h4>
+			</div>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="grass-1">Grass</h4>
 			<p class="mt-4">Visible on normal grass.</p>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="fertile">Fertile</h4>
 			<p class="mt-4">Visible on fertile resource paint.</p>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="rocks">Rocks</h4>
 			<p class="mt-4">Visible on cliffs and gravel.</p>
-
 			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="water-properties">Water Properties</h2>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="textures-1">Textures</h3>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="water-normal">Water Normal</h4>
 			<p class="mt-4">Constantly fades between the normal and a flipped and rotated version.</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="water-foam">Water Foam</h4>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="water-foam">Water Foam</h4><div
+				class="flex flex-col lg:flex-row gap-6 mt-4"
+			>
 				<div class="lg:w-2/3">
-					<p class="mt-4">
+					<p>
 						The red channel controls the normal foam when the water is moving. The green channel controls the foam on polluted water. It's safe to import a
 						simple black &amp; white foam texture.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/paPFaCY.jpg" target="_blank"><img src="https://i.imgur.com/paPFaCY.jpg" /></a>
-					<p class="mt-4">Example of water normal and foam.</p>
+					<a href="https://i.imgur.com/paPFaCY.jpg" target="null"><img src="https://i.imgur.com/paPFaCY.jpg" /></a><p class="explanation">
+						Example of water normal and foam.
+					</p>
 				</div>
-			</div><h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="water-colors">Water Colors</h3>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="clean">Clean</h4>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
-				<div class="lg:w-2/3">
-					<p class="mt-4">Deep water.</p>
-				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/jXX1hhO.jpg" target="_blank"><img src="https://i.imgur.com/jXX1hhO.jpg" /></a>
-					<p class="mt-4">Example of water colors.</p>
+			</div>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="water-colors">Water Colors</h3>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="clean">Clean</h4><div
+				class="flex flex-col lg:flex-row gap-6 mt-4"
+			>
+				<div class="lg:w-2/3"><p>Deep water.</p></div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/jXX1hhO.jpg" target="null"><img src="https://i.imgur.com/jXX1hhO.jpg" /></a><p class="explanation">
+						Example of water colors.
+					</p>
 				</div>
-			</div><h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="dirty">Dirty</h4>
+			</div>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="dirty">Dirty</h4>
 			<p class="mt-4">Polluted water.</p>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="underwater">Underwater</h4>
 			<p class="mt-4">Shallow water.</p>
-
 			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="atmosphere-properties">Atmosphere Properties</h2>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="sun">Sun</h3>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="longitude-latitude">Longitude &amp; Latitude</h4>
@@ -189,40 +209,47 @@ import TableOfContents from '../components/TableOfContents.astro';
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="outer-corona">Outer Corona</h4>
 			<p class="mt-4">Color and intensity of the big highlight of the moon.</p>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="sky">Sky</h3>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="rayleigh-scattering">Rayleigh Scattering</h4>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="rayleigh-scattering">Rayleigh Scattering</h4><div
+				class="flex flex-col lg:flex-row gap-6 mt-4"
+			>
 				<div class="lg:w-2/3">
-					<p class="mt-4">
+					<p>
 						Affects the scattering of blue light. 0 means no blue light is scattered so the sky will be black. High values mean blue light is scattered a lot,
 						therefore sunsets and sunrises will be very red.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/hxO8vq6.jpg" target="_blank"><img src="https://i.imgur.com/hxO8vq6.jpg" /></a>
-					<p class="mt-4">Example of Rayleigh scattering.</p>
+					<a href="https://i.imgur.com/hxO8vq6.jpg" target="null"><img src="https://i.imgur.com/hxO8vq6.jpg" /></a><p class="explanation">
+						Example of Rayleigh scattering.
+					</p>
 				</div>
-			</div><h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="mie-scattering">Mie Scattering</h4>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
-				<div class="lg:w-2/3">
-					<p class="mt-4">Affects the visibility of the sun and fog.</p>
-				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/HLWuwVh.jpg" target="_blank"><img src="https://i.imgur.com/HLWuwVh.jpg" /></a>
-					<p class="mt-4">Example of Mie scattering.</p>
+			</div>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="mie-scattering">Mie Scattering</h4><div
+				class="flex flex-col lg:flex-row gap-6 mt-4"
+			>
+				<div class="lg:w-2/3"><p>Affects the visibility of the sun and fog.</p></div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/HLWuwVh.jpg" target="null"><img src="https://i.imgur.com/HLWuwVh.jpg" /></a><p class="explanation">
+						Example of Mie scattering.
+					</p>
 				</div>
-			</div><h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="stars-intensity">Stars Intensity</h4>
+			</div>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="stars-intensity">Stars Intensity</h4>
 			<p class="mt-4">Affects the visibility of the stars at night.</p>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="outer-space-intensity">Outer Space Intensity</h4>
 			<p class="mt-4">Affects the visibility of the night space cubemap.</p>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="exposure">Exposure</h4>
 			<p class="mt-4">Affects the brightness of ambient light.</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sky-tint">Sky Tint</h4>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sky-tint">Sky Tint</h4><div
+				class="flex flex-col lg:flex-row gap-6 mt-4"
+			>
 				<div class="lg:w-2/3">
-					<p class="mt-4">Tints the color of the sky and ambient light. Note that sunsets and sunrises will be tinted the opposite of this color.</p>
+					<p>Tints the color of the sky and ambient light. Note that sunsets and sunrises will be tinted the opposite of this color.</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/kPCVAqZ.jpg" target="_blank"><img src="https://i.imgur.com/kPCVAqZ.jpg" /></a>
-					<p class="mt-4">Example of sky tint.</p>
+					<a href="https://i.imgur.com/kPCVAqZ.jpg" target="null"><img src="https://i.imgur.com/kPCVAqZ.jpg" /></a><p class="explanation">
+						Example of sky tint.
+					</p>
 				</div>
-			</div><h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="night-horizon-color">Night Horizon Color</h4>
+			</div>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="night-horizon-color">Night Horizon Color</h4>
 			<p class="mt-4">The color of the horizon during the night.</p>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="early-night-zenith-color">
 				Early Night Zenith Color
@@ -232,29 +259,28 @@ import TableOfContents from '../components/TableOfContents.astro';
 				Late Night Zenith Color
 			</h4>
 			<p class="mt-4">Tints the sky and ambient light during the night.</p>
-
 			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="structures-properties">Structures Properties</h2>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="upward-road">Upward Road</h4>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
-				<div class="lg:w-2/3">
-					<p class="mt-4">Asphalt texture which gets multiplied by the road segment color.</p>
-				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/e3kMwWN.jpg" target="_blank"><img src="https://i.imgur.com/e3kMwWN.jpg" /></a>
-					<p class="mt-4">Example of asphalt texture.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="upward-road">Upward Road</h4><div
+				class="flex flex-col lg:flex-row gap-6 mt-4"
+			>
+				<div class="lg:w-2/3"><p>Asphalt texture which gets multiplied by the road segment color.</p></div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/e3kMwWN.jpg" target="null"><img src="https://i.imgur.com/e3kMwWN.jpg" /></a><p class="explanation">
+						Example of asphalt texture.
+					</p>
 				</div>
-			</div><h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="downward-road">Downward Road</h4>
+			</div>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="downward-road">Downward Road</h4>
 			<p class="mt-4">Unknown, likely not used.</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="building-base">Building Base</h4>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
-				<div class="lg:w-2/3">
-					<p class="mt-4">The texture of the underground parts of buildings.</p>
-				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/SI2uKKC.jpg" target="_blank"><img src="https://i.imgur.com/SI2uKKC.jpg" /></a>
-					<p class="mt-4">Example of base texture.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="building-base">Building Base</h4><div
+				class="flex flex-col lg:flex-row gap-6 mt-4"
+			>
+				<div class="lg:w-2/3"><p>The texture of the underground parts of buildings.</p></div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/SI2uKKC.jpg" target="null"><img src="https://i.imgur.com/SI2uKKC.jpg" /></a><p class="explanation">
+						Example of base texture.
+					</p>
 				</div>
-			</div><h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="building-base-normal">
-				Building Base Normal
-			</h4>
+			</div>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="building-base-normal">Building Base Normal</h4>
 			<p class="mt-4">
 				Adds bump to the underground parts of buildings. Doesn't import correctly normally, requires an image which has the X channel of the normal map gamma
 				lifted and applied to each RGB channel, but the Y channel as the opacity. You can convert a <Link
@@ -273,23 +299,27 @@ import TableOfContents from '../components/TableOfContents.astro';
 			<p class="mt-4">Used for buildings which are burned down.</p>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="abandoned-building">Abandoned Building</h4>
 			<p class="mt-4">Used for buildings which are abandoned.</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="floor">Floor</h4>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
-				<div class="lg:w-2/3">
-					<p class="mt-4">Used for fake interiors inside building windows.</p>
-				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/IiAcXQX.jpg" target="_blank"><img src="https://i.imgur.com/IiAcXQX.jpg" /></a>
-					<p class="mt-4">Example of floor texture.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="floor">Floor</h4><div
+				class="flex flex-col lg:flex-row gap-6 mt-4"
+			>
+				<div class="lg:w-2/3"><p>Used for fake interiors inside building windows.</p></div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/IiAcXQX.jpg" target="null"><img src="https://i.imgur.com/IiAcXQX.jpg" /></a><p class="explanation">
+						Example of floor texture.
+					</p>
 				</div>
-			</div><h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="light-color-palette">Light Color Palette</h4>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
-				<div class="lg:w-2/3">
-					<p class="mt-4">Each building samples a random color from this texture to use for window illumination during the night.</p>
-				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/iu4U0zd.jpg" target="_blank"><img src="https://i.imgur.com/iu4U0zd.jpg" /></a>
-					<p class="mt-4">Example of light texture.</p>
+			</div>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="light-color-palette">Light Color Palette</h4><div
+				class="flex flex-col lg:flex-row gap-6 mt-4"
+			>
+				<div class="lg:w-2/3"><p>Each building samples a random color from this texture to use for window illumination during the night.</p></div><div
+					class="lg:w-1/3"
+				>
+					<a href="https://i.imgur.com/iu4U0zd.jpg" target="null"><img src="https://i.imgur.com/iu4U0zd.jpg" /></a><p class="explanation">
+						Example of light texture.
+					</p>
 				</div>
-			</div><h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="script">Script</h2>
+			</div>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="script">Script</h2>
 			<p class="mt-4">
 				You can change textures, tiling and colors related to map themes ingame using <Link
 					classes=""

@@ -1,0 +1,842 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Link from '../../components/Link.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
+---
+
+<MainLayout>
+	<TableOfContents />
+	<section class="py-12 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
+		<h1 id="overview" class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400">Vehicle Asset Creation</h1>
+		<div class="content">
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="mesh">Mesh</h2>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="main-mesh">Main Mesh</h3>
+			<p class="mt-4">This is a 3D model of the vehicle, which will be visible when the camera is close to it.</p>
+			<p class="mt-4">
+				It's created using 3D modeling software such as Blender, 3ds Max, Maya or SketchUp.<br />The actual mesh file contains vertices (their coordinates, UV
+				mapping, normals, and colors) and triangles.
+			</p>
+			<p class="mt-4">
+				Continuously connected parts of the mesh (called elements) which are closer than 5cm to 0 (ground) will be automatically detected as wheels. This is not
+				relevant for ships, monorails, cable cars.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="model-complexity">Model Complexity</h4>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>
+						It's recommended to stay within reasonable triangle counts based on the size and detail of your model. You may look at examples of vanilla vehicles
+						or assets by other creators for reference.
+					</p><p class="mt-4">The absolute limit for a mesh is 65536 vertices.</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/isNHUg5.jpg" target="null"><img src="https://i.imgur.com/isNHUg5.jpg" /></a><p class="explanation">
+						Triangle counts of some vanilla vehicles.
+					</p>
+				</div>
+			</div>
+			<div class="flex gap-2 mt-6 items-start justify-start">
+				<svg
+					class="w-8 h-8 text-hoverlink flex-shrink-0"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="1.5"
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round"></path>
+				</svg>
+				<p class="italic">
+					<em>
+						You can use <Link
+							classes=""
+							href="https://steamcommunity.com/sharedfiles/filedetails/?id=453956891"
+							text="Mesh Info by SamsamTS"
+							theme="externallink"
+						/> to check triangle counts of assets.
+					</em>
+				</p>
+			</div>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="lod-mesh">LOD Mesh</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>LOD stands for level of detail. This is the mesh visible from a distance. It must be as simple as possible.</p><p class="mt-4">
+						If you don't provide an LOD mesh, the game will try to generate one automatically, which may have visual issues, so it's highly recommended to make
+						a custom LOD mesh.
+					</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/Lu9onqw.jpg" target="null"><img src="https://i.imgur.com/Lu9onqw.jpg" /></a><p class="explanation">
+						Comparison between main and LOD meshes for the vanilla police car.
+					</p>
+				</div>
+			</div>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="uv-mapping">UV Mapping</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>
+						For the main mesh, you are allowed to UV map outside the 0-1 area (main tile), so you can tile the entire texture multiple times on a single face.
+					</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/GfAYY35.jpg" target="null"><img src="https://i.imgur.com/GfAYY35.jpg" /></a><p class="explanation">
+						Example UV mapping using visible horizontal tiling on the bottom.
+					</p>
+				</div>
+			</div>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="uv-mapping-lod">LOD</h4>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>
+						For the LOD mesh, the UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed. This is because ingame all the LOD
+						textures are combined into a single texture called an atlas, so having incorrect uv mapping will end up putting the texture of some other random
+						vehicle on your LOD.
+					</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/kAR8cmr.jpg" target="null"><img src="https://i.imgur.com/kAR8cmr.jpg" /></a><p class="explanation">
+						UV mapping for LOD mesh using automatic mapping in 3ds Max. No overlap and contained within the main tile - good for baking.
+					</p>
+				</div>
+			</div>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="pivot-origin">Pivot / Origin</h3>
+			<p class="mt-4">
+				The pivot point or origin represents the center point on the ground, on which the vehicle will drive. It's usually represented using a red/green/blue
+				axis gizmo.
+			</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="transform">Transform</h3>
+			<p class="mt-4">
+				Make sure you are exporting a single object, which doesn't have any rotation or scale.<br />This can be done using <Link
+					classes=""
+					href="https://wiki.blender.org/index.php/User:Fade/Doc:2.6/Manual/3D_interaction/Transform_Control/Reset_Object_Transformations#Apply_Object_transformations"
+					text='"apply rotation & scale" in Blender'
+					theme="externallink"
+				/>, or <Link
+					classes=""
+					href="https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2017/ENU/3DSMax/files/GUID-B98414B9-4F28-45F4-A1F4-9DA994548ED9-htm.html"
+					text='"reset xform" in 3ds Max'
+					theme="externallink"
+				/>, and exporting only the selected object.
+			</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="vertex-paint">Vertex Paint</h3>
+			<p class="mt-4">Vertex colors are automatically generated to determine wheels, which will spin based on the shader of the vehicle.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="formats">Formats</h3>
+			<ul class="mt-4 list-disc list-inside">
+				<li class="mt-4">FBX (2015 or older) (most commonly used)</li>
+				<li class="mt-4">OBJ (doesn't support vertex colors)</li>
+				<li class="mt-4">DAE</li>
+			</ul>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="textures">Textures</h2>
+			<p class="mt-4">These determine the color and material properties of your vehicle.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="resolution">Resolution</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>All imported main textures must be the same resolution.</p><p class="mt-4">
+						Powers of 2 is a standard practice in 3D graphics, which means resolutions such as 1024x1024, 1024x512, 256x512, 2048x128 etc. It is recommended to
+						stick to this standard, otherwise, your texture may be corrupted by compression, which may be more visible at longer distances or grazing angles.
+						The smallest allowed resolution is 32x32.
+					</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/isNHUg5.jpg" target="null"><img src="https://i.imgur.com/isNHUg5.jpg" /></a><p class="explanation">
+						Texture sizes of various vanilla assets. See the resolution in the top right corner of the preview window.
+					</p>
+				</div>
+			</div>
+			<div class="flex gap-2 mt-6 items-start justify-start">
+				<svg
+					class="w-8 h-8 text-orange flex-shrink-0"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="1.5"
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+						stroke-linecap="round"
+						stroke-linejoin="round"></path>
+				</svg>
+				<p class="italic">
+					<em>
+						Make sure texture quality is set to high in the game's graphics settings. otherwise, your imported textures will be downscaled to a lower
+						resolution.
+					</em>
+				</p>
+			</div>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="lod-textures">LOD Textures</h3>
+			<p class="mt-4">
+				If you don't provide LOD textures, the game will try to bake them using the UV mapping your LOD mesh has, and that may cause visual issues, so it's
+				recommended that you create your own LOD textures using baking.
+			</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="diffuse">Diffuse</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>The main color and texture of your asset.</p><p class="mt-4">
+						It will look very bright, contrasty, and saturated in the game, so make sure to reduce the saturation and limit the brightest parts to a
+						medium/light gray below 140 RGB.
+					</p><p class="mt-4">If you don't import a diffuse map, it will default to white.</p>
+				</div><div class="lg:w-1/3">
+					<div class="">
+						<a href="https://i.imgur.com/xkAfU6T.jpg" target="null"><img src="https://i.imgur.com/xkAfU6T.jpg" /></a><p class="explanation">
+							Example diffuse texture for a vehicle.
+						</p>
+					</div><div class="mt-4">
+						<a href="https://i.imgur.com/CQHjaAT.png" target="null"><img src="https://i.imgur.com/CQHjaAT.png" /></a><p class="explanation">
+							Color guidelines.
+						</p>
+					</div>
+				</div>
+			</div>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="alpha">Alpha</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>
+						Transparency, white means opaque or visible, black means transparent or invisible. Gray values may affect how it looks from a distance or at an
+						angle.
+					</p><p class="mt-4">
+						Semi-transparency is not supported, you need to use the <Link
+							classes=""
+							href="https://www.youtube.com/watch?v=ELoMC1rWOSc"
+							text="rotors shader"
+							theme="externallink"
+						/> for that.
+					</p><p class="mt-4">If you don't import an alpha map, it will default to fully opaque or fully visible.</p>
+				</div><div class="lg:w-1/3">
+					<div class="">
+						<a href="https://i.imgur.com/EsrQwEb.jpg" target="null"><img src="https://i.imgur.com/EsrQwEb.jpg" /></a><p class="explanation">
+							Example alpha texture for some railings and metal beams.
+						</p>
+					</div><div class="mt-4">
+						<a href="https://i.imgur.com/et6nTdO.jpg" target="null"><img src="https://i.imgur.com/et6nTdO.jpg" /></a><p class="explanation">
+							Using lighter values for the invisible parts will decrease the chance of small details like railings disappearing completely.
+						</p>
+					</div>
+				</div>
+			</div>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="color">Color</h3>
+			<p class="mt-4">Determines which parts will be affected by color variations. White means fully affected and black means not at all.</p>
+			<p class="mt-4">The diffuse will get multiplied by the color variation, that means the resulting color will look darker than the original diffuse.</p>
+			<p class="mt-4">
+				For emergency vehicles (police, ambulance, firetruck) this determines where the siren is. The sirens are marked white, and everything else is black.
+			</p>
+			<p class="mt-4">
+				If you don't import a color map, it will default to full color, but the "use color variations" setting must be enabled for the colors to appear.
+			</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="illumination">Illumination</h3>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="illumination-default">Default Vehicle</h4>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>
+						For the default vehicle shader (used by cars, trucks, bicycles, scooters, buses, trams), this defines headlights and turn signals. The turn signals
+						are 0 (black) the headlights and taillights are 255 (white), everything else is 128 (medium gray).
+					</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/luBfaI2.jpg" target="null"><img src="https://i.imgur.com/luBfaI2.jpg" /></a><p class="explanation">
+						Example illumination map for a vehicle.
+					</p>
+				</div>
+			</div>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="illumination-train">Train</h4>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>
+						For the train shader, this defines always-on lights (headlights/taillights) and lights which are only on at night (windows). The always-on lights
+						are 255 (white) and the night lights are 0 (black), everything else is 128 (medium gray).
+					</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/Hr9iJu7.jpg" target="null"><img src="https://i.imgur.com/Hr9iJu7.jpg" /></a><p class="explanation">
+						Example illumination map for a train.
+					</p>
+				</div>
+			</div>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="illumination-ship">Ship</h4>
+			<p class="mt-4">
+				For the ship shader (used by ships, monorails, cable cars), this defines lights which are only on at night (windows). The randomly changing night lights
+				are brighter or darker than 128. If they are much darker or brighter than 128 - they will never go dark. Everything else is 128 (medium gray).
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="illumination-aircraft">Aircraft</h4>
+			<p class="mt-4">
+				For the aircraft shader (used by helicopters, blimps, planes), this defines lights which are only on at night (windows) and always-on diffuse
+				contribution illumination. The window lights are above 128 and the diffuse contribution illumination is below 128. Everything else is 128 (medium gray).
+			</p>
+			<p class="mt-4">If you don't import an illumination map, it will default to black.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="specular">Specular</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>
+						Reflectivity, white values will become "windows" where the fake interior floor will be visible. <Link
+							classes=""
+							href="#floor"
+							text="It's possible to control this fake floor using a script"
+							theme="internallink"
+						/>.
+					</p><p class="mt-4">
+						The specular highlight from the sun is very big and bright, so you might want to use very low (0-10%) specularity for surfaces facing upwards, like
+						roofs.
+					</p><p class="mt-4">If you don't import a specular map, it will default to no specularity.</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/xZnShPJ.jpg" target="null"><img src="https://i.imgur.com/xZnShPJ.jpg" /></a><p class="explanation">
+						Transitions between different specular values produce artifacts on the normal map and vice versa, even if a normal map is not imported.
+					</p>
+				</div>
+			</div>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="normal">Normal</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.</p><p class="mt-4">
+						This can be made from the diffuse or a height map (brighter colors will look extruded out more) using <Link
+							classes=""
+							href="http://cpetry.github.io/NormalMap-Online/"
+							text="a normal map generator online"
+							theme="externallink"
+						/>, a photoshop plugin like <Link classes="" href="http://www.xnormal.net/" text="xNormal" theme="externallink" />, or standalone software such as <Link
+							classes=""
+							href="https://www.crazybump.com/"
+							text="CrazyBump"
+							theme="externallink"
+						/>.
+					</p><p class="mt-4">
+						The normal map generator should be set to +X +Y, which means no color channel inversions are required. Read more in the <Link
+							classes=""
+							href="/normal-maps/"
+							text="normal map article"
+							theme="internallink"
+						/>.
+					</p><p class="mt-4">
+						High specularity and normal map don't work well together because of the compression, so you might want to paint over shiny parts with a solid color
+						before generating a normal map or paint over these parts 128,128,255 on the final normal map.
+					</p><p class="mt-4">If you don't import a normal map, it will default to a flat normal map - no bump.</p>
+				</div><div class="lg:w-1/3">
+					<div class="">
+						<a href="https://i.imgur.com/Tep5ZIS.jpg" target="null"><img src="https://i.imgur.com/Tep5ZIS.jpg" /></a><p class="explanation">
+							Example normal map for rocks.
+						</p>
+					</div><div class="mt-4">
+						<a href="https://i.imgur.com/CeKq51I.jpg" target="null"><img src="https://i.imgur.com/CeKq51I.jpg" /></a><p class="explanation">
+							Problem: normal maps appear incorrectly if the asset importer mesh rotation feature is used.
+						</p>
+					</div>
+					<div class="mt-4">
+						<a href="https://i.imgur.com/BP3Vj1J.jpg" target="null"><img src="https://i.imgur.com/BP3Vj1J.jpg" /></a><p class="explanation">
+							Problem: default normal map value is 0.5, which isn't possible by using 127(left) or 128(right). Image shows the same flat normal map on faces
+							with different UV rotation/flip.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="format">Format</h3>
+			<p class="mt-4">Use a lossless format like .PNG.</p>
+			<p class="mt-4">
+				The game supports other formats as well, but there is no reason to use another one, it doesn't matter how much your texture is compressed or even if
+				it's completely solid or complicated, the game will convert it to a DXT format, so the final size won't be affected by anything other than resolution.
+			</p>
+			<p class="mt-4">
+				Make sure the texture is 8 bits/channel because a 16 bits/channel image can't be imported. Do not use the "Smaller File (8-bit)" feature in the
+				Photoshop Export As window, as that creates an indexed color image, not an 8 bits/channel one.
+			</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="import">Import</h2>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="example-asset">Example Asset</h3>
+			<p class="mt-4">Source files of an example vehicle ready for import.</p>
+			<div class="content-download mt-4">
+				<Link classes="" href="https://drive.google.com/open?id=1p63jdL4yuuKIJ5p_wDALO7R78C-adJG8" text="Download" theme="downloadbutton" />
+			</div>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="naming">Naming</h3>
+			<p class="mt-4">
+				The mesh can have any name, but it's not recommended to use spaces or underscores, as the name for the lod mesh name will be meshname_lod.
+			</p>
+			<p class="mt-4">
+				The textures must have the same name as the mesh, but with the texture type identifier after it, so the result will be names like meshname_d.png and
+				meshname_lod_d.png
+			</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="import-folder">Import Folder</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>You should place the mesh and texture files in the import folder located here:</p><p class="mt-4">
+						<span class="path">%LocalAppData%\Colossal Order\Cities_Skylines\Addons\Import</span>
+					</p><p class="mt-4">
+						The AppData folder is hidden by default, you can access it by copying and pasting the path into the file explorer, or pressing <span class="key"
+							>Windows + R</span
+						> and typing in appdata.
+					</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/3S7X17k.jpg" target="null"><img src="https://i.imgur.com/3S7X17k.jpg" /></a><p class="explanation">
+						Files ready for import.
+					</p>
+				</div>
+			</div>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="template">Template</h3>
+			<p class="mt-4">The template you choose will determine many things about your building:</p>
+			<ul class="mt-4 list-disc list-inside">
+				<li class="mt-4">AI and corresponding stats (like capacity for cargo, or passengers for a plane)</li>
+				<li class="mt-4">trailers</li>
+				<li class="mt-4">max speed</li>
+				<li class="mt-4">light effects and their position</li>
+				<li class="mt-4">Item class (defines service, for example industrial - farming for the tractor)</li>
+				<li class="mt-4">use color variations</li>
+				<li class="mt-4">shader, material properties (color variations)</li>
+			</ul>
+			<div class="flex gap-2 mt-6 items-start justify-start">
+				<svg
+					class="w-8 h-8 text-hoverlink flex-shrink-0"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="1.5"
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round"></path>
+				</svg>
+				<p class="italic">
+					<em>
+						All of those things can be changed later in the editor itself or using <Link
+							classes=""
+							href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484"
+							text="ModTools"
+							theme="externallink"
+						/> or other mods.
+					</em>
+				</p>
+			</div>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="import-1">Import</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>
+						After you choose your mesh, depending on how it was exported, you might need to set the correct scale and rotation, scale 100 and rotating 3 times
+						around X-axis are common necessities.
+					</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/O4KIgJr.jpg" target="null"><img src="https://i.imgur.com/O4KIgJr.jpg" /></a><p class="explanation">
+						Importing a mesh in asset importer.
+					</p>
+				</div>
+			</div>
+			<div class="flex gap-2 mt-6 items-start justify-start">
+				<svg
+					class="w-8 h-8 text-orange flex-shrink-0"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="1.5"
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+						stroke-linecap="round"
+						stroke-linejoin="round"></path>
+				</svg>
+				<p class="italic">
+					<em>
+						Using the mesh rotation feature will result in broken mesh tangents - that means the normal maps will appear incorrectly or not at all on some
+						parts. To fix this, don't use the rotation feature and make sure the mesh is rotated properly before import. If you need to use the mesh rotation
+						feature - use the <Link
+							classes=""
+							href="https://steamcommunity.com/sharedfiles/filedetails/?id=1518485094"
+							text="Mesh Import Rotation Tangents Fix mod"
+							theme="externallink"
+						/> to fix it.
+					</em>
+				</p>
+			</div>
+			<div class="flex gap-2 mt-6 items-start justify-start">
+				<svg
+					class="w-8 h-8 text-orange flex-shrink-0"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="1.5"
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+						stroke-linecap="round"
+						stroke-linejoin="round"></path>
+				</svg>
+				<p class="italic">
+					<em>
+						If you get an unsupported color error, one of your textures might be a 16 bits/channel file, you need to change it to 8 bits/channel, in Photoshop:
+						Image &gt; Mode &gt; 8 Bits/Channel.
+					</em>
+				</p>
+			</div>
+			<div class="flex gap-2 mt-6 items-start justify-start">
+				<svg
+					class="w-8 h-8 text-orange flex-shrink-0"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="1.5"
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+						stroke-linecap="round"
+						stroke-linejoin="round"></path>
+				</svg>
+				<p class="italic">
+					<em>
+						If the mesh preview doesn't display or you can't continue, you may have a problem with it such as multiple mesh objects, other entities like
+						dummies, cameras, lights, or layers in the exported file.
+					</em>
+				</p>
+			</div>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="editor">Editor</h2>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="general-properties">General Properties</h3>
+			<ul class="mt-4 list-disc list-inside">
+				<li class="mt-4">max speed</li>
+				<li class="mt-4">use color variations</li>
+			</ul>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="lights">Lights</h3>
+			<p class="mt-4">You can change the positions of light effects.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="trailers">Trailers</h3>
+			<p class="mt-4">You can add other vehicles as trailers which are attached to your vehicle, this is used for cargo trailers, train/tram cars.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="material-properties">Material properties</h3>
+			<p class="mt-4">You can change the 4 color variations.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="sub-meshes">Sub-meshes</h3>
+			<p class="mt-4">
+				You can add additional meshes as sub-meshes, which appear only when certain conditions are met, for example - the vanilla bus has a left hand traffic
+				sub-mesh, and the forestry trailer has a loaded trailer sub-mesh.
+			</p>
+			<p class="mt-4">
+				Train trailers can display different sub-meshes based on the cargo type they are carrying using <Link
+					classes=""
+					href="https://steamcommunity.com/sharedfiles/filedetails/?id=1552053911"
+					text="this mod"
+					theme="externallink"
+				/>.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flags">Sub-mesh Flags</h4>
+			<p class="mt-4">Flags are required and forbidden conditions, which determine when the sub-mesh shows up, and also when the main mesh is hidden.</p>
+			<p class="mt-4">There are many flags and their use is not always obvious so their descriptions might be incomplete or not relevant in all cases.</p>
+			<div class="flex gap-2 mt-6 items-start justify-start">
+				<svg
+					class="w-8 h-8 text-hoverlink flex-shrink-0"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="1.5"
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round"></path>
+				</svg>
+				<p class="italic">
+					<em>
+						By default, not all sub-mesh flags (conditions) are visible, use <Link
+							classes=""
+							href="https://steamcommunity.com/sharedfiles/filedetails/?id=1393831156"
+							text="the sub-mesh Flags mod"
+							theme="externallink"
+						/> to show all flags in the asset editor UI.
+					</em>
+				</p>
+			</div>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-parked">Parked</h4>
+			<p class="mt-4">Restricts the sub-mesh to only appear when the vehicle is parked.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-created">Created</h4>
+			<p class="mt-4">Active for all non-parked vehicles.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-deleted">Deleted</h4>
+			<p class="mt-4">Unknown.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-spawned">Spawned</h4>
+			<p class="mt-4">Likely active for all spawned vehicles.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-inverted">Inverted</h4>
+			<p class="mt-4">
+				Active for vehicle trailers which have been inverted based on the invert probability of the trailer. Usually used for randomly inverted train passenger
+				cars and the last trailer of a train - the inverted train engine.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-transfertotarget">
+				TransferToTarget
+			</h4>
+			<p class="mt-4">
+				Unknown. Usually active for vehicles going to a target, such as trucks exporting, importing, returning to facility, or trains going to the next station.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-transfertosource">
+				TransferToSource
+			</h4>
+			<p class="mt-4">Unknown. Usually active for garbage trucks collecting garbage.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-emergency1">Emergency1</h4>
+			<p class="mt-4">Likely used for firetrucks. Also used for blimps to display different ads.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-emergency2">Emergency2</h4>
+			<p class="mt-4">
+				Active for police cars responding to an emergency. Likely also used for ambulances and firetrucks. Also used for blimps to display different ads.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-waitingpath">WaitingPath</h4>
+			<p class="mt-4">Unknown. Likely active while the vehicle is waiting for its path to be calculated.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-stopped">Stopped</h4>
+			<p class="mt-4">
+				Active for train engines stopped at a station, taxis stopped to pick up a passenger, and emergency vehicles which have arrived at the emergency.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-leaving">Leaving</h4>
+			<p class="mt-4">Active for train engines which are about to leave, but haven't started moving yet.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-arriving">Arriving</h4>
+			<p class="mt-4">Active for train engines arriving to a stop before they are fully stopped. Also active for taxis carrying a passenger.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-reversed">Reversed</h4>
+			<p class="mt-4">Active for a train or monorail engine which is going backwards.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-takingoff">TakingOff</h4>
+			<p class="mt-4">Active for planes which are in the process of taking off. Also required for the left pole of a trolleybus.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-flying">Flying</h4>
+			<p class="mt-4">Active for planes which are flying in the air.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-landing">Landing</h4>
+			<p class="mt-4">Active for planes which are in the process of landing. Also required for the right pole of a trolleybus.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-waitingspace">WaitingSpace</h4>
+			<p class="mt-4">Unknown.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-waitingcargo">WaitingCargo</h4>
+			<p class="mt-4">Unknown.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-goingback">GoingBack</h4>
+			<p class="mt-4">
+				Active for vehicles which are going back to where they came from - such as garbage tracks returning to their facility or trucks which have imported
+				their goods and are leaving the map.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-waitingtarget">WaitingTarget</h4>
+			<p class="mt-4">Unknown. Likely active while a vehicle waits for where to go next.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-importing">Importing</h4>
+			<p class="mt-4">Active for vehicles which are for importing goods, even when they are returning to facility.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-exporting">Exporting</h4>
+			<p class="mt-4">Active for vehicles which are for exporting goods, even when they are returning to facility.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-parking">Parking</h4>
+			<p class="mt-4">Active for vehicles which are in the process of parking.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-customname">CustomName</h4>
+			<p class="mt-4">Active for vehicles which the played has renamed.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-ongravel">OnGravel</h4>
+			<p class="mt-4">Active when a vehicle is driving on a network which activates this flag, such as a gravel road.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-waitingloading">WaitingLoading</h4>
+			<p class="mt-4">Active for cargo trains which are being loaded with cargo.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-congestion">Congestion</h4>
+			<p class="mt-4">Unknown, may be related to vehicles despawning when stuck in traffic.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-dummytraffic">DummyTraffic</h4>
+			<p class="mt-4">Active for vehicles which are "background traffic" driving from and to map outside connections.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-underground">Underground</h4>
+			<p class="mt-4">Active when a vehicle is driving on a network which activates this flag, such as tunnels.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-transition">Transition</h4>
+			<p class="mt-4">Active when a vehicle is driving on a network which activates this flag, such as slopes.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-insidebuilding">InsideBuilding</h4>
+			<p class="mt-4">Unknown, related to bicycles.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-mesh-flag-lefthanddrive">LeftHandDrive</h4>
+			<p class="mt-4">Active for all vehicles when playing on a left hand traffic maps.</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="editor-advanced">Editor Advanced</h2>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>
+						Various things can be changed with the use of <Link
+							classes=""
+							href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484"
+							text="ModTools"
+							theme="externallink"
+						/> scene explorer <span class="key">Ctrl+E</span> or running scripts in the console <span class="key">F7</span>, or specific mods.
+					</p><p class="mt-4">
+						Many vehicle settings can be changed using <Link
+							classes=""
+							href="https://steamcommunity.com/sharedfiles/filedetails/?id=800820816"
+							text="Extended Asset Editor by Acc3ss Violation"
+							theme="externallink"
+						/>
+					</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/0ztXu62.jpg" target="null"><img src="https://i.imgur.com/0ztXu62.jpg" /></a><p class="explanation">
+						ModTools scene explorer and console.
+					</p>
+				</div>
+			</div>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="speed-suspension-more">Speed, Suspension &amp; More</h3>
+			<p class="mt-4">
+				See more advanced speed and suspension related properties in <Link
+					classes=""
+					href="/modtools/vehicle"
+					text="the ModTools article"
+					theme="internallink"
+				/>.
+			</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="ai">AI</h3>
+			<p class="mt-4">
+				AI defines what kind of vehicle it is and how it behaves. It can be changed using <Link
+					classes=""
+					href="https://steamcommunity.com/sharedfiles/filedetails/?id=421616513"
+					text="Asset AI Changer by Snow_Cat & cerebellum"
+					theme="externallink"
+				/>.
+			</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="item-class">Item Class</h3>
+			<p class="mt-4">
+				Contains information about what type of vehicle it is. It can be changed using <Link
+					classes=""
+					href="https://steamcommunity.com/sharedfiles/filedetails/?id=455068042"
+					text="Asset ItemClass Changer by Snow_Cat"
+					theme="externallink"
+				/>.
+			</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="floor">Floor</h3>
+			<p class="mt-4">
+				You can use <Link classes="" href="https://gist.github.com/ronyx69/bfd09d2a7cddad6c71d407c74e45bb71" text="this script" theme="externallink" /> to
+				change the parameters of the fake floor which is visible in fully specular windows.
+			</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="sub-mesh-1">Sub-meshes</h3>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="trailer-sub-mesh">Trailer Sub-mesh</h4>
+			<p class="mt-4">
+				When loading a trailer template, the sub-mesh UI doesn't show up. To fix this, open the scene explorer, go to <span class="path"
+					>Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_placementStyle</span
+				> and set it to automatic, save and load the asset, the sub-mesh UI should show up. Once you add the sub-mesh, change <span class="path"
+					>m_placementStyle</span
+				> back to procedural and save your asset.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="trailer-sub-mesh">Sub-mesh Flags</h4>
+			<p class="mt-4">
+				The flags for the main mesh and sub-meshes are oversimplified in the UI. The main mesh conditions are actually just like for any sub-mesh, and the
+				regular flags and parked flags are separate fields. You can change them using <Link
+					classes=""
+					href="https://gist.github.com/ronyx69/ab2e3fdcbab5f78c9b41a337c1d19280"
+					text="this script"
+					theme="externallink"
+				/>.
+			</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="save">Save</h2>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="filename">Filename</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>
+						The filename input is on the bottom left, this is what the actual file will be called. It's not recommended to use spaces, dots, or special symbols.
+					</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/avuewWu.jpg" target="null"><img src="https://i.imgur.com/avuewWu.jpg" /></a><p class="explanation">Save asset window.</p>
+				</div>
+			</div>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="asset-name">Asset Name</h3>
+			<p class="mt-4">The asset name visible ingame.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="images">Images</h3>
+			<p class="mt-4">There are 2 different folders you can open by clicking the folder icons:</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="snapshot">Snapshot</h4>
+			<p class="mt-4">
+				On the snapshot image, bottom right corner. Use this one to replace the snapshot, you can replace it with a 1x1 px image to save on the asset file size.
+				This image will only be visible in the content manager. It will also default as the Steam preview image, but you can change that separately when
+				publishing.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="thumbnail-tooltip">Thumbnail &amp; Tooltip</h4>
+			<p class="mt-4">
+				Below thumbnail, on the right side. Use this one to change the thumbnail (109x100) and tooltip (492x147) of your asset.<br /> Once you change the main
+				thumbnail, the hover/active states will update automatically.
+			</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="local-assets-folder">Local Assets Folder</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>Once the asset is saved, the .crp file will appear in the local assets folder:</p><p class="mt-4">
+						<span class="path">%LocalAppData%\Colossal Order\Cities_Skylines\Addons\Assets</span>
+					</p><p class="mt-4">
+						The AppData folder is hidden by default, you can access it by copying and pasting the path into the file explorer, or pressing <span class="key"
+							>Windows+R</span
+						> and typing in appdata.
+					</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/CNfdvdz.jpg" target="null"><img src="https://i.imgur.com/CNfdvdz.jpg" /></a><p class="explanation">
+						CRP files in the local assets folder.
+					</p>
+				</div>
+			</div>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="publish">Publish</h2>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>Once you have saved the asset and reloaded the game, you can publish the asset.</p><p class="mt-4">
+						Go to the content manager &gt; assets and find your asset, then click share.
+					</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/4OPnZac.jpg" target="null"><img src="https://i.imgur.com/4OPnZac.jpg" /></a><p class="explanation">
+						Share button in content manager.
+					</p>
+				</div>
+			</div>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="title-and-description">Title and Description</h3>
+			<p class="mt-4">You can change these on the Steam Workshop later.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="steam-preview-image-and-content-folder">
+				Steam Preview Image and Content Folder
+			</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>
+						There is a folder icon again on the snapshot image, bottom right corner. Here you can change the Steam preview image, which is the thumbnail visible
+						on steam. The largest size the image will be visible is 437x437 (on the front page) but it will get upscaled to 512x512 by Steam so that's the size
+						you should use.
+					</p><p class="mt-4">
+						There is also the content folder, which is where the actual asset file is. You can paste multiple .crp files here if you would like to upload a pack
+						of assets.
+					</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/Y53Uqxy.jpg" target="null"><img src="https://i.imgur.com/Y53Uqxy.jpg" /></a><p class="explanation">
+						Publish window and content folder.
+					</p>
+				</div>
+			</div>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="steam-workshop">Steam Workshop</h3>
+			<p class="mt-4">On the Steam Workshop page for your asset, you can:</p>
+			<ul class="mt-4 list-disc list-inside">
+				<li class="mt-4">add it to a collection<br /></li>
+				<li class="mt-4">add images and videos<br /></li>
+				<li class="mt-4">add contributors and links<br /></li>
+				<li class="mt-4">add required items and DLC<br /></li>
+				<li class="mt-4">change visibility to friends only or private</li>
+			</ul>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="update">Update</h2>
+			<p class="mt-4">
+				To update your own item, you must subscribe to it first, then it will show up in the content manager. It won't be the same as a local asset, as it will
+				show an "update" button.
+			</p>
+			<p class="mt-4">
+				When you click update, click the folder icon, and now you can change the Steam preview image and put your new asset in the content folder. If updating a
+				pack, remember to put all the assets inside the content folder.
+			</p>
+			<p class="mt-4">You can also add more assets to make it a bigger pack.</p>
+			<div class="flex gap-2 mt-6 items-start justify-start">
+				<svg
+					class="w-8 h-8 text-orange flex-shrink-0"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="1.5"
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+						stroke-linecap="round"
+						stroke-linejoin="round"></path>
+				</svg>
+				<p class="italic">
+					<em>
+						Make sure your updated assets are saved with exactly the same name as before, otherwise, it will disappear from your subscribers' saves, as the game
+						uses the internal prefab name to refer to it. In the case of networks (roads, tracks etc.) it may completely break a save.
+					</em>
+				</p>
+			</div>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="prefab-name">Prefab Name</h2>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>This is not something you can change.</p><p class="mt-4">It's the hidden internal name used to refer to your asset in savefiles.</p><p
+						class="mt-4"
+					>
+						It's the reason why a local asset is not the same as a workshop published asset.
+					</p><p class="mt-4">For local assets: filename.Asset Name_Data<br />For published workshop assets: SteamID.Asset Name_Data</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/f3Tr6NM.jpg" target="null"><img src="https://i.imgur.com/f3Tr6NM.jpg" /></a><p class="explanation">
+						Comparison between local (top) and workshop published (bottom) prefab names shown in ModTools.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+</MainLayout>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const tocElement = document.querySelector('.table-of-contents ul');
+		if (!tocElement) return;
+
+		document.querySelectorAll('h2, h3').forEach((heading) => {
+			const id = heading.id;
+			const title = heading.textContent;
+			const isH2 = heading.tagName === 'H2';
+
+			const listItem = document.createElement('li');
+			listItem.className = isH2 ? '' : 'mt-1'; // Add Tailwind classes here
+
+			const link = document.createElement('a');
+			link.href = `#${id}`;
+			link.textContent = title;
+			link.className = isH2
+				? 'text-hit-gray-200 text-lg inline-flex rounded-md hover:text-hoverlink mt-6'
+				: 'text-hit-gray-400 text-[1rem] leading-[1.25rem] inline-flex ps-2 rounded-md hover:text-hoverlink'; // Add Tailwind classes here
+
+			listItem.appendChild(link);
+			tocElement.appendChild(listItem);
+		});
+	});
+</script>

@@ -30,9 +30,13 @@ const themeClasses = {
 };
 
 const computedThemeClass = themeClasses[theme];
+// Function to determine if target="_blank" should be added
+function shouldAddTargetBlank(theme: string) {
+	return theme === 'externallink' || theme === 'downloadbutton';
+}
 ---
 
-<a href={href} class={`${classes || ''} ${computedThemeClass}`} {...rest}>
+<a href={href} class={`${classes || ''} ${computedThemeClass}`} {...shouldAddTargetBlank(theme) ? { target: '_blank' } : {}} {...rest}>
 	{icon && icon.side === 'left' && <Icon name={icon.name} height="24" width="24" />}
 
 	{text}
