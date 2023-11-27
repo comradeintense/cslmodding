@@ -1,0 +1,753 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Link from '../../components/Link.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
+---
+
+<MainLayout>
+	<TableOfContents />
+	<section class="py-12 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
+		<div class="content">
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="about">About</h2>
+			<p class="mt-4">Networks consist of nodes and segments, they are used for roads, tracks, canals, walls, fences, powerlines etc.</p>
+			<p class="mt-4">
+				Networks are arguably the most complicated type of assets (depends on what you are creating) so this article assumes you are familiar with basic asset
+				creation such as props and buildings, so it skips basic concepts such as what is a mesh, pivot etc.
+			</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="template">Template</h2>
+			<p class="mt-4">
+				The template you choose will be fully imported as the starting point of your network, so choose one that is closest to your desired result. You can
+				change almost everything later in the asset editor itself, or using ModTools scene explorer <span class="key">Ctrl+E</span> or running scripts in the
+				console <span class="key">F7</span>.
+			</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="elevations">Elevations</h2>
+			<p class="mt-4">
+				Depending on the AI of your network, it may have elevations such as Elevated, Bridge, Slope, Tunnel, which are their own complete networks with their
+				own properties, lanes, segments, and nodes, which are bundled together with the Basic network inside the same .crp file.
+			</p>
+			<p class="mt-4">
+				Elevations trigger at specific build heights, or when chosen by the player using Fine Road Tool. Slope is used for the basic to tunnel transition.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="deleting">Deleting</h4>
+			<p class="mt-4">
+				If you don't need specific elevations, you can delete them by opening ModTools scene explorer <span class="key">Ctrl+E</span>, going to <span
+					class="path">Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_netAI</span
+				> and clicking Unset on the ones you don't need, then saving and loading the asset.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="adding">Adding</h4>
+			<p class="mt-4">
+				If your template didn't have elevations, but you need them, you may be able to add them, depending on what AI your network has. This can be done by
+				copying any other network into one of the possible elevations.
+			</p>
+			<p class="mt-4">
+				You can find the base game networks in scene explorer <span class="key">Ctrl+E</span>: <span class="path">Sunny</span> (or
+				North/Tropical/European/Winter, based on the theme environment you loaded for the asset editor) <span class="path"
+					>Collections &gt; Road &gt; NetCollection &gt; m_prefabs</span
+				>. For example you could go to <span class="path">Basic Road &gt; m_netAI</span>, click Copy on <span class="path">m_bridgeInfo</span>, and then go to <span
+					class="path">Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_netAI</span
+				> and click Paste on <span class="path">m_bridgeInfo</span> here, then save and load the asset.
+			</p>
+			<p class="mt-4">
+				If you would like to copy a custom network into one of the elevations, you can also find those in scene explorer: <span class="path"
+					>Custom Prefabs &gt; ModTools.CustomPrefabs &gt; m_nets</span
+				>.
+			</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="properties">Properties</h2>
+			<p class="mt-4">
+				The general properties are based on the AI the road has, that means for canals or cable car networks some of them might be different, this list is
+				primarily based on the one for RoadBridgeAI, used for elevated networks of any normal road, but also contains properties which only appear on some other
+				AI.
+			</p>
+			<p class="mt-4">
+				You can change the AI using <Link
+					classes=""
+					href="https://steamcommunity.com/sharedfiles/filedetails/?id=421616513"
+					text="Asset AI Changer by Snow_Cat & cerebellum"
+					theme="externallink"
+				/>.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="half-width">Half-width</h4>
+			<p class="mt-4">This is used to determine how roads of different widths connect - nodes of narrow roads will widen to meet wider roads.</p>
+			<p class="mt-4">
+				Used to define the width of surface paint (such as pavement, gravel, or terrain clipping) but becomes very unreliable when lower than 4.
+			</p>
+			<p class="mt-4">It's also the width of the area affected by flatten terrain, drawable/selectable area and affects how the road will snap to the grid.</p>
+			<p class="mt-4">The half-width should be wide enough to cover the entire mesh of the network, otherwise the LOD may display incorrectly.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="pavement-width">Pavement Width</h4>
+			<p class="mt-4">
+				Defines the width of the pavement on each side of the road, used to properly connect curbs with other roads at nodes. For correct nodes when
+				intersecting with other roads, the half-width and pavement width values must be set appropriately.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-length">Segment Length</h4>
+			<p class="mt-4">
+				This needs to match the length of the mesh used for the segment (and node if used), otherwise, the road will overlap itself or have holes.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="min-max-height">Min / Max Height</h4>
+			<p class="mt-4">Defines collision area for water and building other roads over/under it.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="max-slope">Max Slope</h4>
+			<p class="mt-4">Maximum slope angle allowed for building the road.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="max-build-angle">Max Build Angle</h4>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3"><p>Maximum angle allowed for intersecting the road. Limited to 135° by the game.</p></div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/GrOja4L.jpg" target="null"><img src="https://i.imgur.com/GrOja4L.jpg" /></a><p class="explanation">
+						An example 135° intersection.
+					</p>
+				</div>
+			</div>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="max-turn-angle">Max Turn Angle</h4>
+			<p class="mt-4"></p><div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3"><p>When a node between 2 segments exceeds this angle, a node will be used, instead of a regular bent segment.</p></div><div
+					class="lg:w-1/3"
+				>
+					<a href="https://i.imgur.com/d8gTuGK.jpg" target="null"><img src="https://i.imgur.com/d8gTuGK.jpg" /></a><p class="explanation">
+						Example of 90° (left) and 89° (right) max turn angle.
+					</p>
+				</div>
+			</div>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="min-corner-offset">Min Corner Offset</h4>
+			<p class="mt-4"></p><div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>
+						Increases corner smoothing, this is more noticeable for sharp turns at low angles. High values will make the road hard to use in tight situations.
+					</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/yEG7ZOY.jpg" target="null"><img src="https://i.imgur.com/yEG7ZOY.jpg" /></a><p class="explanation">
+						Example of 0 (top) and 16 (bottom) min corner offset.
+					</p>
+				</div>
+			</div>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="build-height">Build Height</h4>
+			<p class="mt-4">When building the road, it will be created higher or lower than the player has chosen based on this value.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="surface-level">Surface Level</h4>
+			<p class="mt-4">
+				CO states this is the default height for vehicles and pedestrians, although it seems ingame the individual vertical offset for lanes is used instead.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="create-pavement-gravel-ruining">
+				Create Pavement / Gravel / Ruining
+			</h4>
+			<p class="mt-4">Applies surface paint based on the half-width of the road.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="flatten-terrain">Flatten Terrain</h4>
+			<p class="mt-4">Flattens terrain based on the half-width of the road.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="lowers-terrain">Lowers Terrain</h4>
+			<p class="mt-4">Lowers terrain based on the half-width of the road. Usually used for elevated roads to prevent the terrain from clipping into them.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="clip-terrain">Clip Terrain</h4>
+			<p class="mt-4">
+				Uses terrain clipping to create a hole in the ground, the actual hole is slightly smaller than the half-width, and it becomes very unreliable when
+				half-width is less than 4. This also creates ruining around the hole.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="follow-terrain">Follow Terrain</h4>
+			<p class="mt-4">Places nodes according to terrain when building the road. Usually disabled for elevated or tunnel networks.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="flat-junctions">Flat Junctions</h4>
+			<p class="mt-4">Forces area around nodes to be completely flat. Note that the centers of intersections will be flat no matter what.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="clip-segment-ends">Clip Segment Ends</h4>
+			<p class="mt-4">
+				Enables the use of bent nodes on intersections, used for most normal roads. If disabled and the network has no nodes, the segments will connect
+				directly, which is used for wall networks, or with an offset based on min corner offset.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="twist-segment-ends">Twist Segment Ends</h4>
+			<p class="mt-4">
+				Twists segment ends to align to the pillar, only used for power lines and cable car paths to make sure the wires connect to the pylon correctly.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="straight-segment-ends">Straight Segment Ends</h4>
+			<p class="mt-4">Tries to prevent the segment ends from bending/skewing at intersections.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="enable-bending-segments">
+				Enable Bending Segments
+			</h4>
+			<p class="mt-4">Automatically bends segments when building intersections at sharp angles.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="enable-bending-nodes">Enable Bending Nodes</h4>
+			<p class="mt-4">Use a bent segment instead of a node on sharp corners.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="can-cross-lanes">Can Cross Lanes</h4>
+			<p class="mt-4">Allows traffic to cross oncoming lanes at intersections, disabled only for roads with medians.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="can-collide">Can Collide</h4>
+			<p class="mt-4">Enables checking for collisions when building.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="block-water">Block Water</h4>
+			<p class="mt-4">Used for the dam, canals, flood wall, quay. Blocks water based on half-width and min/max height properties.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="auto-remove">Auto Remove</h4>
+			<p class="mt-4">
+				Destroys the road when something else is built over it, if can collide is enabled. Used for pedestrian paths, walls, trench, and powerlines
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="connect-group">Connect Group</h4>
+			<p class="mt-4">
+				Nodes of the current or other networks which match this connect group and have direct connect enabled will show up in intersections. For example - tram
+				track nodes do this.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="enable-zoning">Enable Zoning</h4>
+			<p class="mt-4">Creates the zoning grid based on the road half-width, but no closer than 8m to the center.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="double-length">Double Length</h4>
+			<p class="mt-4">
+				Used for the large highway bridges, alternates between two types of pillars and allows building longer segments than usual. Only works with disabled
+				bending segments.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="can-modify">Can Modify</h4>
+			<p class="mt-4">Unknown, enabled for all elevated networks.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="traffic-lights">Traffic Lights</h4>
+			<p class="mt-4">
+				Enables the traffic lights node flag for intersections involving the road. The actual traffic light props themselves must be added as lane props.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="highway-rules">Highway Rules</h4>
+			<p class="mt-4">Unknown, involved in code related to lane routing and simulation. Enabled only for all highways.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="accumulate-snow">Accumulate Snow</h4>
+			<p class="mt-4">Allows for the snow to accumulate on the road on winter maps.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="noise-accumulation-radius">
+				Noise Accumulation / Radius
+			</h4>
+			<p class="mt-4">Affects noise pollution simulation.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="center-area-width">Center Area Width</h4>
+			<p class="mt-4">Unknown.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="water-block-offset">Water Block Offset</h4>
+			<p class="mt-4">Used for canal depth (negative) and flood wall height.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="pillar-pylon-power-pole">
+				Pillar / Pylon / Power Pole
+			</h4>
+			<p class="mt-4">
+				Allows embedding a building inside the network asset for use as a pillar which appears on nodes. Some AIs have specific pillars for different heights,
+				corners, or intersections.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="middle-pillar">Middle Pillar</h4>
+			<p class="mt-4">Only used for Double Length networks, used for the large highway bridges for alternating pillars.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="bridge-middle-pillar-offset">
+				Bridge / Middle Pillar Offset
+			</h4>
+			<p class="mt-4">Raises or lowers the pillars.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="hidden-properties">Hidden Properties</h3>
+			<p class="mt-4">
+				Some properties are not visible in the road editor UI, but can be changed by using <Link
+					classes=""
+					href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484"
+					text="ModTools"
+					theme="externallink"
+				/> scene explorer <span class="key">Ctrl+E</span> and going to <span class="path">Tool Controller &gt; ToolController &gt; m_editPrefabInfo</span> or
+				running scripts in the console <span class="key">F7</span>.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="m_enablemiddlenodes">m_enableMiddleNodes</h4>
+			<p class="mt-4">
+				If this is disabled, every node will be an intersection. This is disabled for train or monorail station tracks so they always have the track cross node,
+				and also for road slope(tunnel entrance) networks.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="m_setvehicleflags">m_setVehicleFlags</h4>
+			<p class="mt-4">
+				Vehicles driving on the network will get these flags applied. Used for OnGravel flag which adds a dust effect on gravel roads, and Underground flag to
+				make vehicles invisible in tunnels. This can be changed using <Link
+					classes=""
+					href="https://gist.github.com/ronyx69/1581ac01ca54e6a563f7bb00a8fd1c4b"
+					text="a script"
+					theme="externallink"
+				/>.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="m_setcitizenflags">m_setCitizenFlags</h4>
+			<p class="mt-4">Same as m_setVehicleFlags but for citizens.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="m_usefixedheight">m_useFixedHeight</h4>
+			<p class="mt-4">
+				Used for networks which are specifically used inside buildings - such as station tracks or the harbor road. If enabled, makes sure the networks stay at
+				the same level relative to the building, even on uneven terrain.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="m_terrainStartOffset_m_terrainendoffset">
+				m_terrainStartOffset &amp; m_terrainEndOffset
+			</h4>
+			<p class="mt-4">Used to force lowered or raised terrain at the start or end nodes of a network. Used for slope networks - tunnel entrances.</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="lanes">Lanes</h2>
+			<p class="mt-4">Lanes are usually used for vehicles and pedestrians, but can also be used as a container for props.</p>
+			<p class="mt-4">Some lane properties have no official documentation, therefore some explanations might be inaccurate.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="position">Position</h4>
+			<p class="mt-4">Distance from the center of the road.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="width">Width</h4>
+			<p class="mt-4">The width of the lane.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="vertical-offset">Vertical Offset</h4>
+			<p class="mt-4">The height position of the lane.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="stop-offset">Stop Offset</h4>
+			<p class="mt-4">Lane position offset used for pedestrian lanes with stop types, used for public transport stops such as bus and tram.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="speed-limit">Speed Limit</h4>
+			<p class="mt-4">
+				1.0 equals 50 km/h speed limit signs on vanilla. Usually 0.25 for pedestrian lanes, 0.8 for vehicle lanes on basic roads, 1 or 1.2 for larger roads, 2
+				for highways.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="direction">Direction</h4>
+			<p class="mt-4">Forward for right-hand lanes, backward for left-hand lanes. Automatically flips on left-hand traffic maps.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="lane-type">Lane Type</h4>
+			<p class="mt-4">Determines the kind of traffic the lane is meant for.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="vehicle-type">Vehicle Type</h4>
+			<p class="mt-4">
+				If the lane type is set to vehicle, this defines which vehicle types can use the lane. Also used for dedicated lanes to define trolleybus left and right
+				poles.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="stop-type">Stop Type</h4>
+			<p class="mt-4">Used for pedestrian lanes, on which people will wait for public transport.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="allow-connect">Allow Connect</h4>
+			<p class="mt-4">
+				Used to find road access for buildings. Likely used for spawning or visiting vehicles. Usually disabled on any slope, elevated and bridge networks, also
+				disabled on blimp, monorail, and cable car paths.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="use-terrain-height">Use Terrain Height</h4>
+			<p class="mt-4">Uses terrain instead of lane vertical offset or surface level. Used for ground pedestrian paths.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="center-platform">Center Platform</h4>
+			<p class="mt-4">Used for pedestrian lanes for tram stops in the middle of the avenue.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="elevated">Elevated</h4>
+			<p class="mt-4">
+				Used for elevated pedestrian lanes which are not accessible from the regular roadside pedestrian lanes. Used only for the medium road monorail station
+				stop lanes.
+			</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="lane-props">Lane Props</h2>
+			<p class="mt-4">
+				You can add props to lanes, such as hydrants, manholes, arrows, traffic lights, signs etc. except terrain conforming props such as fences. Lane props
+				don't get embedded into the road asset .crp file, so you must add published workshop props.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="flags-1">Flags</h4>
+			<p class="mt-4">Required and forbidden conditions which determine when the prop will appear.</p>
+			<p class="mt-4">Start and End flags refer to the direction of the lane, as it goes in one direction from start to end.</p>
+			<p class="mt-4"><Link classes="" href="#flags" text="Read more about flags." theme="internallink" /></p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="color-mode">Color Mode</h4>
+			<p class="mt-4">Determines state of traffic lights and level crossing props.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="position-1">Position</h4>
+			<p class="mt-4">Prop XYZ offset relative to the lane position.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="angle">Angle</h4>
+			<p class="mt-4">Rotation of the prop.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-offset">Segment Offset</h4>
+			<p class="mt-4">Pushes the prop towards the end of the segment</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="repeat-distance">Repeat Distance</h4>
+			<p class="mt-4">When set to 0, repeats once per segment.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="min-length">Min Length</h4>
+			<p class="mt-4">Minimum segment length required for the prop to appear.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="corner-angle">Corner Angle</h4>
+			<p class="mt-4">
+				1 Means the prop will rotate to match the intersection if it's near it. The value 0.5 is used for traffic lights to not be perpendicular to the road at
+				angled intersections.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="probability">Probability</h4>
+			<p class="mt-4">Percentage chance of the prop appearing.</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="segments">Segments</h2>
+			<p class="mt-4">
+				Segments can be the main mesh of your network, or also used for specific segments, like a bus stop on one side, bus stop on both sides.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="flags-1">Flags</h4>
+			<p class="mt-4">Required and forbidden conditions for each direction which determine when the segment will appear.</p>
+			<p class="mt-4"><Link classes="" href="#flags" text="Read more about flags." theme="internallink" /></p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="disable-bend-nodes">Disable Bend Nodes</h4>
+			<p class="mt-4">Disables using the segment as a node on turns which exceed the Max Turn Angle.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="road-color">Road Color</h4>
+			<p class="mt-4">The upward road (asphalt) texture will get multiplied by this color.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="shader">Shader</h3>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="basic">Basic</h4>
+			<p class="mt-4">
+				Used for ground-level roads. Instead of alpha being used for making the mesh transparent, it shows the underlying terrain such as grass or ruined. Will
+				have weird normals/shading in many situations. Doesn't display normal maps.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="bridge">Bridge</h4>
+			<p class="mt-4">Used for elevated roads and bridges.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="rail">Rail</h4>
+			<p class="mt-4">Same as bridge but shows gravel instead of pavement.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="wire">Wire</h4>
+			<p class="mt-4">
+				Used for power lines, tram wires, and cable car cables. Has <Link
+					classes=""
+					href="#wire-shader"
+					text="specific mesh requirements"
+					theme="internallink"
+				/>.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="fence">Fence</h4>
+			<p class="mt-4">
+				Conforms to terrain, used for Parklife fences. Can't be used for nodes. Can't be used in combination with segments/nodes which have other shaders. Lane
+				props may not match the terrain conforming network depending on the AI and other settings.
+			</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="nodes">Nodes</h2>
+			<p class="mt-4">Nodes can be used for intersections, sharp turns, transitions, dead-ends.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="flags-2">Flags</h4>
+			<p class="mt-4">Required and forbidden conditions for each direction which determine when the node will appear.</p>
+			<p class="mt-4"><Link classes="" href="#flags" text="Read more about flags." theme="internallink" /></p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="connect-group-1">Connect Group</h4>
+			<p class="mt-4">Limits the node to connect to networks which have this connect group. Works only when direct connect is enabled.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="direct-connect">Direct Connect</h4>
+			<p class="mt-4">
+				Instead of splitting a node mesh in half and connecting each side separately, connects each segment in an intersection to every other segment. This is
+				used for train tracks.
+			</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="shader-1">Shader</h3>
+			<p class="mt-4"><Link classes="" href="#shader" text="Same as for segments." theme="internallink" /></p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="flags">Flags</h2>
+			<p class="mt-4">
+				There are many node, segment, and lane flags, and some of them might have different uses and results in different situations, so their descriptions
+				might be incomplete or not relevant in all cases.
+			</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="node-flags">Node</h3>
+			<p class="mt-4">Node flags are used to determine when certain nodes or lane props appear.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-created">Created</h4>
+			<p class="mt-4">Active for all created nodes.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-deleted">Deleted</h4>
+			<p class="mt-4">Unknown.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-original">Original</h4>
+			<p class="mt-4">Active for nodes of networks which were on the map originally, not created by the user.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-disabled">Disabled</h4>
+			<p class="mt-4">Unknown.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-end">End</h4>
+			<p class="mt-4">Active for a dead end - where the road ends.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-middle">Middle</h4>
+			<p class="mt-4">Active for nodes between 2 segments of the same network.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-bend">Bend</h4>
+			<p class="mt-4">Active for nodes for sharp corners where a road changes direction suddenly and nodes where an asymmetric network changes direction.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-junction">Junction</h4>
+			<p class="mt-4">Active for nodes which are intersections and transitions between 2 different networks.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-moveable">Moveable</h4>
+			<p class="mt-4">Possibly related to nodes which will be automatically moved when creating an intersection which splits a segment into two.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-untouchable">Untouchable</h4>
+			<p class="mt-4">Active for nodes of networks which are placed within buildings, and therefore can't be deleted or upgraded under normal circumstances.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-outside">Outside</h4>
+			<p class="mt-4">Active for nodes which are at the edge of the map and connected to the "outside world".</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-temporary">Temporary</h4>
+			<p class="mt-4">Unknown.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-double">Double</h4>
+			<p class="mt-4">
+				Active for the "middle" node of a double length network. For example - the node where the big pillar for highway suspension bridges is.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-fixed">Fixed</h4>
+			<p class="mt-4">Related to public transport line stops, unlikely to be related to normal networks created by the player directly.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-onground">OnGround</h4>
+			<p class="mt-4">
+				Active for nodes which are on the ground, as opposed to being part of an elevated, bridge, or tunnel network. Likely to be based on the AI of the
+				network.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-ambiguous">Ambiguous</h4>
+			<p class="mt-4">Unknown. Likely to be related to automatically generated "transport lines" from the "outside world".</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-water">Water</h4>
+			<p class="mt-4">Related to water/sewage pipes.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-sewage">Sewage</h4>
+			<p class="mt-4">Related to water/sewage pipes.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-forbidlaneconnection">
+				ForbidLaneConnection
+			</h4>
+			<p class="mt-4">Related to invisible networks such as pedestrian paths, ship dock or busway networks.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-underground">Underground</h4>
+			<p class="mt-4">Active for nodes of networks which are tunnels.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-transition">Transition</h4>
+			<p class="mt-4">
+				Active for nodes between networks which have different "levels". For roads - dirt road is level 1 and the other roads have level 2 - 5 based on their UI
+				category.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-levelcrossing">LevelCrossing</h4>
+			<p class="mt-4">Active for nodes which are train/road intersections. But also could be used for other things such as the canal lowered end node.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-onewayout">OneWayOut</h4>
+			<p class="mt-4">Active for nodes which have literally only one way out - only one network with lanes which lead "out" from the current node.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-trafficlights">TrafficLights</h4>
+			<p class="mt-4">Active for nodes which have traffic lights.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-onewayin">OneWayIn</h4>
+			<p class="mt-4">Active for nodes which have literally only one way in - only one network with lanes which lead "in" from the surrounding nodes.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-heating">Heating</h4>
+			<p class="mt-4">Related to water/sewage/heating pipes.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-electricity">Electricity</h4>
+			<p class="mt-4">Related to power line networks.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-collapsed">Collapsed</h4>
+			<p class="mt-4">Unknown. Likely related to Natural Disasters DLC.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-disableonlymiddle">DisableOnlyMiddle</h4>
+			<p class="mt-4">Related to ship paths.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-asymforward">AsymForward</h4>
+			<p class="mt-4">
+				Active for nodes where an asymmetric network changes direction from backward to forward, related to the direction in which the player draws the road.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-asymbackward">AsymBackward</h4>
+			<p class="mt-4">
+				Active for nodes where an asymmetric network changes direction from forward to backward, related to the direction in which the player draws the road.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="node-flag-customtrafficlights">
+				CustomTrafficLights
+			</h4>
+			<p class="mt-4">Active for nodes for which the player has toggled traffic lights.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="segment-flags">Segment</h3>
+			<p class="mt-4">Segment flags are used to determine when certain segments appear or how they appear.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-created">Created</h4>
+			<p class="mt-4">Active for all created segments.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-deleted">Deleted</h4>
+			<p class="mt-4">Unknown.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-original">Original</h4>
+			<p class="mt-4">Active for segments of networks which were on the map originally, not created by the user.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-collapsed">Collapsed</h4>
+			<p class="mt-4">Unknown. Likely related to Natural Disasters DLC.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-invert">Invert</h4>
+			<p class="mt-4">
+				Active for every other segment of a continuously drawn network. Can be used to prevent the segment mesh from flipping every other segment.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-untouchable">Untouchable</h4>
+			<p class="mt-4">
+				Active for segments of networks which are placed within buildings, and therefore can't be deleted or upgraded under normal circumstances.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-end">End</h4>
+			<p class="mt-4">Active for a dead end - where the road ends.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-bend">Bend</h4>
+			<p class="mt-4">
+				Used to display a bend segment mesh where a <Link classes="" href="/asset/network/#node-flag-bend" text="Bend node" theme="internallink" /> is.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-waitingpath">WaitingPath</h4>
+			<p class="mt-4">
+				Related to transport lines and combustion engine ban district policy. Unlikely to be related to normal networks created by the player directly.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-pathfailed">PathFailed</h4>
+			<p class="mt-4">Related to transport lines and pathfinding. Unlikely to be related to normal networks created by the player directly.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-pathlength">PathLength</h4>
+			<p class="mt-4">Related to transport lines and pathfinding. Unlikely to be related to normal networks created by the player directly.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-accessfailed">AccessFailed</h4>
+			<p class="mt-4">Related to pathfinding.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-trafficstart">TrafficStart</h4>
+			<p class="mt-4">Related to traffic light state. Also active for some "end" segments of networks using decoration wall AI.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-trafficend">TrafficEnd</h4>
+			<p class="mt-4">Related to traffic light state. Also active for some "end" segments of networks using decoration wall AI.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-crossingstart">CrossingStart</h4>
+			<p class="mt-4">Related to traffic light state. Also active for some "end" segments of cable car networks, canals, or decoration walls.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-crossingend">CrossingEnd</h4>
+			<p class="mt-4">Related to traffic light state. Also active for some "end" segments of cable car networks, canals, or decoration walls.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-stopright">StopRight</h4>
+			<p class="mt-4">Active for segments with a bus stop on the right side based on the direction the road was built.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-stopleft">StopLeft</h4>
+			<p class="mt-4">Active for segments with a bus stop on the left side based on the direction the road was built.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-stopright2">StopRight2</h4>
+			<p class="mt-4">Active for segments with a tram stop on the right side based on the direction the road was built.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-stopleft2">StopLeft2</h4>
+			<p class="mt-4">Active for segments with a tram stop on the left side based on the direction the road was built.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-heavyban">HeavyBan</h4>
+			<p class="mt-4">Active for segments inside a district which has the heavy traffic ban policy.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-blocked">Blocked</h4>
+			<p class="mt-4">Unknown. Likely related to traffic simulation when a building fire blocks nearby segments.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-flooded">Flooded</h4>
+			<p class="mt-4">Active for segments which are flooded with water.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-bikeban">BikeBan</h4>
+			<p class="mt-4">Active for segments inside a district which has the bike ban policy.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-carban">CarBan</h4>
+			<p class="mt-4">Active for segments inside a district which has the old town policy.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-asymforward">AsymForward</h4>
+			<p class="mt-4">
+				Used to display an asymmetric segment mesh where an <Link
+					classes=""
+					href="/asset/network/#node-flag-asymforward"
+					text="AsymForward node"
+					theme="internallink"
+				/> is.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-asymbackward">AsymBackward</h4>
+			<p class="mt-4">
+				Used to display an asymmetric segment mesh where an <Link
+					classes=""
+					href="/asset/network/#node-flag-asymbackward"
+					text="AsymBackward node"
+					theme="internallink"
+				/> is.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-customname">CustomName</h4>
+			<p class="mt-4">Active for segments which have a custom street name assigned by the player.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-namevisible1">NameVisible1</h4>
+			<p class="mt-4">Active for segments which display the street name.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-namevisible2">NameVisible2</h4>
+			<p class="mt-4">Active for segments which display the street name.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-yieldstart">YieldStart</h4>
+			<p class="mt-4">Active for segments which have a player assigned stop sign at the start of the segment based on the direction it was built.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="segment-flag-yieldend">YieldEnd</h4>
+			<p class="mt-4">Active for segments which have a player assigned stop sign at the end of the segment based on the direction it was built.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="lane-flags">Lane</h3>
+			<p class="mt-4">Lane flags can be used to control when lane props are visible.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="lane-flag-created">Created</h4>
+			<p class="mt-4">Active for all lanes of created networks.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="lane-flag-deleted">Deleted</h4>
+			<p class="mt-4">Unknown.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="lane-flag-inverted">Inverted</h4>
+			<p class="mt-4">Active for all lanes on left side traffic maps.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="lane-flag-joinedjunction">JoinedJunction</h4>
+			<p class="mt-4">Related to very short segments, with intersections on both sides. Used to hide traffic lights on such segments.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="lane-flag-forward">Forward</h4>
+			<p class="mt-4">Likely active for all "forward" lanes based on the direction the road was built.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="lane-flag-left">Left</h4>
+			<p class="mt-4">Used for arrow decal lane props.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="lane-flag-right">Right</h4>
+			<p class="mt-4">Used for arrow decal lane props.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="lane-flag-merge">Merge</h4>
+			<p class="mt-4">Likely active for lanes which continue to merge to a lower amount of lanes.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="lane-flag-stop">Stop</h4>
+			<p class="mt-4">Active for lanes which are bus stops. Used in combination with Stop2 for sightseeing bus stops.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="lane-flag-stop2">Stop2</h4>
+			<p class="mt-4">Active for lanes which are tram stops. Used in combination with Stop for sightseeing bus stops.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="lane-flag-yieldstart">YieldStart</h4>
+			<p class="mt-4">Active for lanes of segments which have a player assigned stop sign at the start of the segment based on the direction it was built.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="lane-flag-yieldend">YieldEnd</h4>
+			<p class="mt-4">Active for lanes of segments which have a player assigned stop sign at the end of the segment based on the direction it was built.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="lane-flag-startonewayleft">StartOneWayLeft</h4>
+			<p class="mt-4">
+				Likely active for lanes which begin after splitting off from the right side of a one-way road at a significant enough angle, the same angle required for
+				the previous lane to get the Right flag.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="lane-flag-startonewayright">StartOneWayRight</h4>
+			<p class="mt-4">
+				Likely active for lanes which begin after splitting off from the left side of a one-way road at a significant enough angle, the same angle required for
+				the previous lane to get the Left flag. Also used for "no right turn" signs.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="lane-flag-endonewayleft">EndOneWayLeft</h4>
+			<p class="mt-4">
+				Likely active for lanes of a one-way road which is about to merge with another one-way road from the left side at a significant enough angle, the same
+				angle required for the other one-way road to get the Left flag. Also used for "no left turn" signs.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="lane-flag-endonewayright">EndOneWayRight</h4>
+			<p class="mt-4">
+				Likely active for lanes of a one-way road which is about to merge with another one-way road from the right side at a significant enough angle, the same
+				angle required for the other one-way road to get the Right flag.
+			</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="mesh">Mesh</h2>
+			<p class="mt-4"></p><div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>
+						The mesh for segments and nodes usually is an extruded profile, but some also have railings or other details. The mesh itself is usually 64 meters
+						long, and it will always stretch for the entire segment, so it's not recommended to rely on the segment mesh for anything else other than the
+						extruded profile, and use lane props for other details (like fence beams) instead.
+					</p><p class="mt-4">The mesh is also subdivided multiple times, usually 16. The more subdivisions, the smoother it will look when bending.</p><p
+						class="mt-4"
+					>
+						Node meshes used for intersections require a cut through the middle, so the game can split it, also the center vertex will be placed in the middle
+						of the intersection.
+					</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/asxDJHG.jpg" target="null"><img src="https://i.imgur.com/asxDJHG.jpg" /></a><p class="explanation">
+						Vanilla six-lane road segment mesh.
+					</p>
+				</div>
+			</div>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="uv-mapping">UV Mapping</h3>
+			<p class="mt-4"></p><div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>
+						Normally you only have control over the horizontal (U) UV mapping (horizontal/vertical is called UV when talking about the texture image itself)
+						because the game will automatically tile it along the segment approximately every 20 meters depending on how long the segment is.
+					</p><p class="mt-4">
+						You may have details for which you want to disable this automatic tiling, this can be done using vertex paint - by setting the green channel for
+						those parts to 0, which means those parts would be 255,0,255 (magenta). This will make sure the texture is exactly as you UV map it, so it will
+						stretch together with the segment.
+					</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/V40Y2sG.jpg" target="null"><img src="https://i.imgur.com/V40Y2sG.jpg" /></a><p class="explanation">
+						A road mesh, its uv mapping, and how it appears ingame using tiling or vertex color.
+					</p>
+				</div>
+			</div>
+			<div class="flex gap-2 mt-6 items-start justify-start">
+				<svg
+					class="w-8 h-8 text-hoverlink flex-shrink-0"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="1.5"
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round"></path>
+				</svg>
+				<p class="italic">
+					<em>
+						You can use <Link
+							classes=""
+							href="https://steamcommunity.com/sharedfiles/filedetails/?id=1274199764"
+							text="the Network Tiling mod"
+							theme="externallink"
+						/> to change how much the texture is tiled along the segments and nodes. Tiled textures with alpha mapping will cast shadows which will not have the
+						tiling.
+					</em>
+				</p>
+			</div>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="lod-uv-mapping">LOD</h4>
+			<p class="mt-4">
+				For the LOD mesh, the UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed. This is because ingame all the LOD
+				textures are combined into a single texture called an atlas, so having incorrect uv mapping will end up putting the texture of some other random network
+				on your LOD.
+			</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="wire-shader">Wire Shader</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>
+						The wire shader requires a specific kind of mesh - each "wire" should be a vertical plane, which can be subdivided and curved like the vanilla
+						powerlines.
+					</p><p class="mt-4">
+						It should be UV Mapped horizontally from -1 to 1 but the height of the uv mapping depends on the height of the mesh, for example - on the vanilla
+						powerline mesh each wire is 4m high, so the UV mapping vertically goes from -2 to 2.
+					</p><p class="mt-4">
+						The vertex paint green channel must be 0. The blue channel controls the amount of sway in the wind, 0 means no sway. The red channel controls the
+						phase of the sway.
+					</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/He2diBn.jpg" target="null"><img src="https://i.imgur.com/He2diBn.jpg" /></a><p class="explanation">
+						The vanilla powerline wire mesh showing vertex paint and uv mapping.
+					</p>
+				</div>
+			</div>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="lod-mesh">LOD Mesh</h3>
+			<p class="mt-4">The LOD mesh should not be outside the half-width, otherwise it might display incorrectly.</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="textures">Textures</h2>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="diffuse">Diffuse</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3"><p>Just like any diffuse texture, defines the main color of the network.</p><p class="mt-4">Defaults to white.</p></div><div
+					class="lg:w-1/3"
+				>
+					<a href="https://i.imgur.com/vTKFr8K.jpg" target="null"><img src="https://i.imgur.com/vTKFr8K.jpg" /></a><p class="explanation">
+						An example diffuse texture for an expressway.
+					</p>
+				</div>
+			</div>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="alpha">Alpha</h3>
+			<p class="mt-4">When black, on the basic shader, it displays the terrain underneath, on other shaders it works like an alpha map usually would.</p>
+			<p class="mt-4">Black means invisible, white is visible. Defaults to white.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="pavement">Pavement</h3>
+			<p class="mt-4">Usually displays the map theme pavement texture, but for the rail shader - it shows gravel instead.</p>
+			<p class="mt-4">Black means no pavement, white means pavement. Defaults to black, unless no diffuse is imported.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="road">Road</h3>
+			<p class="mt-4">Displays the map theme upward road (asphalt) texture, which also is multiplied by the segment color.</p>
+			<p class="mt-4">Black means no asphalt, white means asphalt. Defaults to black.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="normal">Normal</h3>
+			<p class="mt-4">Works similarly to any other normal map.</p>
+			<p class="mt-4">
+				Doesn't require any inverted channels for parts which are vertex painted magenta, but it does require the green channel to be inverted for parts using
+				the automatic tiling.
+			</p>
+			<p class="mt-4">Read more in the <Link classes="" href="/normal-maps/" text="normal map article" theme="internallink" />.</p>
+			<p class="mt-4">Defaults to flat.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="specular">Specular</h3>
+			<p class="mt-4">Just like any specular.</p>
+			<p class="mt-4">Defaults to black.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="lod-textures">LOD Textures</h3>
+			<p class="mt-4">
+				Even if you don't need a diffuse texture (because the network uses only asphalt and/or pavement), you should still import a diffuse texture for the LOD,
+				otherwise the LOD will import incorrectly.
+			</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="save-update">Save &amp; Update</h2>
+			<p class="mt-4">
+				Saving, loading, and resaving a network asset which has elevations (elevated, bridge, slope, tunnel) may rename the elevations. This can result in
+				previously placed networks disappearing from a savegame, or even breaking the savegame.
+			</p>
+			<p class="mt-4">
+				<Link classes="" href="https://gist.github.com/ronyx69/466ec13af77d6b44fcf50f7a8d2af152" text="A script" theme="externallink" /> can be used to rename
+				the elevations based on the asset name. You should only run this script when the asset is finished, saved with the final name it should have, loaded
+				again, but not yet placed in a save game. And when updating a network which was saved with this script, the script should be reapplied every time before
+				it is resaved.
+			</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="adaptive-roads">Adaptive Roads</h2>
+			<p class="mt-4">
+				<Link classes="" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2414618415" text="Adaptive Roads by kian.zarrin" theme="externallink" />
+				is a mod which extends the capabilities and UI of the network editor
+			</p>
+		</div>
+	</section>
+</MainLayout>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const tocElement = document.querySelector('.table-of-contents ul');
+		if (!tocElement) return;
+
+		document.querySelectorAll('h2, h3').forEach((heading) => {
+			const id = heading.id;
+			const title = heading.textContent;
+			const isH2 = heading.tagName === 'H2';
+
+			const listItem = document.createElement('li');
+			listItem.className = isH2 ? '' : 'mt-1'; // Add Tailwind classes here
+
+			const link = document.createElement('a');
+			link.href = `#${id}`;
+			link.textContent = title;
+			link.className = isH2
+				? 'text-hit-gray-200 text-lg inline-flex rounded-md hover:text-hoverlink mt-6'
+				: 'text-hit-gray-400 text-[1rem] leading-[1.25rem] inline-flex ps-2 rounded-md hover:text-hoverlink'; // Add Tailwind classes here
+
+			listItem.appendChild(link);
+			tocElement.appendChild(listItem);
+		});
+	});
+</script>
