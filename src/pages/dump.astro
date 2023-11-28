@@ -1,0 +1,141 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Link from '../components/Link.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+---
+
+<MainLayout>
+	<TableOfContents />
+	<section class="py-12 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
+		<h1 id="overview" class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400">Dump & Extract Assets</h1>
+		<div class="content">
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="modtools">ModTools</h2>
+			<p class="mt-4">
+				This assumes you are familiar with <Link classes="" href="/modtools/" text="ModTools usage" theme="internallink" />. For buildings and vehicles, you can
+				simply click on it ingame and press dump asset there.
+			</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="tool-controller">Tool Controller</h3>
+			<p class="mt-4">
+				You can click on the desired item in the menu as if you are about to plop it, and then find the prefab in <span class="path"
+					>Scene Explorer &gt; Tool Controller &gt; BuildingTool / PropTool / TreeTool / NetTool &gt; m_prefab</span
+				>. If you preview it, you can dump it there. Alternatively, inside the prefab you can find the m_mesh and textures inside m_material and dump those.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sub-meshes-sub-buildings">
+				Sub-meshes &amp; Sub-buildings
+			</h4>
+			<p class="mt-4">
+				If a building has sub-buildings or sub-meshes, those can be found inside the prefab in <span class="path">m_subBuildings</span> and <span class="path"
+					>m_subMeshes</span
+				>.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="network-segments-nodes">
+				Network Segments &amp; Nodes
+			</h4>
+			<p class="mt-4">
+				For networks, the nodes and segments can be found inside the prefab in <span class="path">m_nodes</span> and <span class="path">m_segments</span>. There
+				you can find the <span class="path">m_segmentMesh</span> and <span class="path">m_segmentMaterial</span> which contains the textures.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="network-elevations">Network Elevations</h4>
+			<p class="mt-4">Network elevations such as bridge and tunnel can be found inside the prefab in m_netAI.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="prefab-collections">Prefab Collections</h3>
+			<p class="mt-4">
+				To find prefabs when you can't click on them ingame or in the menu, <Link
+					classes=""
+					href="/modtools/prefabs"
+					text="see how to find any vanilla or custom prefab in the ModTools article"
+					theme="internallink"
+				/>.
+			</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="format-conversion-script">Format Conversion Script</h3>
+			<p class="mt-4">
+				ModTools can't dump some textures because of their format, in this case, <Link
+					classes=""
+					href="https://gist.github.com/ronyx69/14655bc04d94fc6557dfc79739cef832"
+					text="a script can be used"
+					theme="externallink"
+				/> to convert the texture, which ModTools can then dump.
+			</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="protected-assets">Protected Assets</h3>
+			<p class="mt-4">
+				Some meshes or textures are not readable, and therefore ModTools can't dump them, in that case, you remember the name of the mesh or material and use
+				one of the other methods.
+			</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="unity-assets-bundle-extractor">
+				Unity Assets Bundle Extractor
+			</h2>
+			<p class="mt-4">
+				<Link classes="" href="https://7daystodie.com/forums/showthread.php?22675-Unity-Assets-Bundle-Extractor" text="UABE is a tool" theme="externallink" />
+				 which can open .assets files which are located in the Cities_Data folder which is in the game folder. Most vanilla assets can be found in the
+				sharedassets11 file, although assets from DLCs can be found in files with a higher number. It can export meshes as OBJ and textures as PNG.
+			</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="utinyripper">uTinyRipper</h2>
+			<p class="mt-4">
+				<Link classes="" href="https://github.com/mafaca/UtinyRipper" text="uTinyRipper is a tool" theme="externallink" /> which can extract an entire .assets
+				file.
+			</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="crper">Crper</h2>
+			<p class="mt-4">
+				<Link classes="" href="http://unera.se/crper/" text="Crper is a web-based tool" theme="externallink" /> which can read .crp files and extract meshes and
+				textures.
+			</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="texture-correction">
+				Texture Correction &amp; Splitting
+			</h2>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>Depending on how the textures were extracted, they may need to be gamma corrected and split into multiple textures.</p><p class="mt-4">
+						ACI textures contain alpha, color, and illumination maps combined into a single texture. Similarly, XYS textures contain normal and specular maps,
+						and APR textures, which are used for roads, contain alpha, pavement, and road maps. These combined textures are sometimes gamma lifted (brighter) so
+						they require a 0.45 gamma adjustment.
+					</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/46jPOVs.jpg" target="null"><img src="https://i.imgur.com/46jPOVs.jpg" /></a><p class="explanation">
+						XYS texture before and after gamma correction.
+					</p>
+				</div>
+			</div>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="splitting">Splitting</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>
+						For combined textures such as ACI, XYS, APR - each RGB channel contains one of the maps. The channels should be separated and some channels need to
+						be inverted as well.
+					</p><p class="mt-4">You can download Photoshop actions which will gamma correct, split, and invert dumped ACI and XYS textures automatically.</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/xnpqlur.jpg" target="null"><img src="https://i.imgur.com/xnpqlur.jpg" /></a><p class="explanation">
+						ACI map gamma corrected, split, some channels inverted.
+					</p>
+				</div>
+			</div>
+			<div class="content-download mt-4">
+				<Link classes="" href="https://drive.google.com/open?id=1SjSEB_6Q_wT4uv_HNZDVUc6qn4zzsK_v" text="Download" theme="downloadbutton" />
+			</div>
+		</div>
+	</section>
+</MainLayout>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const tocElement = document.querySelector('.table-of-contents ul');
+		if (!tocElement) return;
+
+		document.querySelectorAll('h2, h3').forEach((heading) => {
+			const id = heading.id;
+			const title = heading.textContent;
+			const isH2 = heading.tagName === 'H2';
+
+			const listItem = document.createElement('li');
+			listItem.className = isH2 ? '' : 'mt-1'; // Add Tailwind classes here
+
+			const link = document.createElement('a');
+			link.href = `#${id}`;
+			link.textContent = title;
+			link.className = isH2
+				? 'text-hit-gray-200 text-lg inline-flex rounded-md hover:text-hoverlink mt-6'
+				: 'text-hit-gray-400 text-[1rem] leading-[1.25rem] inline-flex ps-2 rounded-md hover:text-hoverlink'; // Add Tailwind classes here
+
+			listItem.appendChild(link);
+			tocElement.appendChild(listItem);
+		});
+	});
+</script>

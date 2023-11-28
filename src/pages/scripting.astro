@@ -1,0 +1,212 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Link from '../components/Link.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+---
+
+<MainLayout>
+	<TableOfContents />
+	<section class="py-12 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
+		<h1 id="overview" class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400">Writing Scripts</h1>
+		<div class="content">
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="about">About</h2>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>
+						While many things can be changed using <Link classes="" href="/modtools/" text="ModTools" theme="internallink" /> scene explorer or other mods, some
+						things require using <Link classes="" href="/scripts/" text="scripts" theme="internallink" />. This article explains some basics of C#(C Sharp)
+						programming in the context of Cities: Skylines scripting.
+					</p><p class="mt-4">
+						It's highly recommended to use a text editor with C# syntax highlighting such as <Link
+							classes=""
+							href="https://www.sublimetext.com/"
+							text="Sublime Text"
+							theme="externallink"
+						/>.
+					</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/yKBhTJx.png" target="null"><img src="https://i.imgur.com/yKBhTJx.png" /></a><p class="explanation">
+						Decal Prop Fix script in Sublime Text.
+					</p>
+				</div>
+			</div>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="basics">Basics</h2>
+			<p class="mt-4">Before getting into examples, this section describes some basic elements of code you will see a lot.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="variables">Variables</h3>
+			<p class="mt-4">
+				Variables are things like numbers, text strings, booleans(true/false), arrays(multiple variables in one), references to any field and many other things.
+			</p>
+			<p class="mt-4">
+				Usually, variables can be initialized(created) by simply writing <code class="csharp">var</code> but it's also possible(and sometimes necessary) to
+				specify what type of variable it is, such as <code class="csharp">string</code> or <code class="csharp">bool</code> etc.
+			</p>
+			<p class="mt-4">Some examples:</p>
+			<pre><code class="csharp hljs"><span class="hljs-keyword">var</span> number = <span class="hljs-number">15</span>;
+<span class="hljs-keyword">string</span> text = <span class="hljs-string">"Lorem ipsum dolor sit amet"</span>;
+<span class="hljs-keyword">bool</span> binary = <span class="hljs-literal">true</span>;</code></pre>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="debug-log">Debug Log</h3>
+			<p class="mt-4">Debug log allows to print messages in the console:</p>
+			<pre><code class="csharp hljs">Debug.Log(<span class="hljs-string">"This will appear in the console when executed."</span>);</code></pre>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="comments">Comments</h3>
+			<p class="mt-4">
+				Comments allow adding notes to your script, they will not affect the code in any way. Everything after a double slash <code class="csharp">//</code>
+				will appear as a comment:
+			</p>
+			<pre><code class="csharp hljs"><span class="hljs-keyword">var</span> number = <span class="hljs-number">69</span>; <span class="hljs-comment">// some random notes</span></code></pre>
+			<p class="mt-4">It's also possible to use <code class="csharp">/* */</code> to comment multiple lines or a specific area:</p>
+			<pre><code class="csharp hljs"><span class="hljs-comment">/*multi
+line
+comment*/</span>
+
+<span class="hljs-keyword">var</span> number = <span class="hljs-comment">/*comment in between code*/</span> <span class="hljs-number">69</span>;</code></pre>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="examples">Examples</h2>
+			<p class="mt-4">In general, each example will be more complicated than the previous one, and may not repeat explanations from simpler scripts.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="ui-priority">UI Priority</h3>
+			<p class="mt-4">
+				The first example is for one of the simplest possible scripts - to change the <Link
+					classes=""
+					href="/asset/building/ui-priority"
+					text="UI Priority"
+					theme="internallink"
+				/> value. It's possible to change this value using <Link
+					classes=""
+					href="/modtools/m_uipriority"
+					text="the ModTools scene explorer"
+					theme="internallink"
+				/> or a specific mod, but this example will show how to change it using a script.
+			</p>
+			<p class="mt-4">Here is a script which changes the UI Priority of the currently loaded building in the asset editor:</p>
+			<pre><code class="csharp hljs"><span class="hljs-keyword">var</span> asset = ToolsModifierControl.toolController.m_editPrefabInfo <span class="hljs-keyword">as</span> BuildingInfo;
+asset.m_UIPriority = <span class="hljs-number">69</span>;</code></pre>
+			<p class="mt-4">
+				The first line is what you will usually see in scripts for use in the asset editor. It creates a variable called <code class="csharp">asset</code> and
+				gets <code class="csharp">m_editPrefabInfo</code>, which is the currently loaded asset in the asset editor. It also specifies to get it as <code
+					class="csharp">BuildingInfo</code
+				>, this makes sure you can access all the fields a building might have.
+			</p>
+			<p class="mt-4">The second line sets the field <code class="csharp">m_UIPriority</code> of <code class="csharp">asset</code> to 69.</p>
+			<p class="mt-4">Each line of code usually has a semicolon <code class="csharp">;</code> at the end of it.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="color-variations">Color Variations</h3>
+			<p class="mt-4">This script can be used to set color variations for a building in the asset editor.</p>
+			<pre><code class="csharp hljs"><span class="hljs-keyword">var</span> color1 = <span class="hljs-keyword">new</span> Color32(<span class="hljs-number">128</span>, <span class="hljs-number">128</span>, <span class="hljs-number">128</span>, <span class="hljs-number">255</span>);
+<span class="hljs-keyword">var</span> color2 = <span class="hljs-keyword">new</span> Color32(<span class="hljs-number">128</span>, <span class="hljs-number">128</span>, <span class="hljs-number">128</span>, <span class="hljs-number">255</span>);
+<span class="hljs-keyword">var</span> color3 = <span class="hljs-keyword">new</span> Color32(<span class="hljs-number">128</span>, <span class="hljs-number">128</span>, <span class="hljs-number">128</span>, <span class="hljs-number">255</span>);
+<span class="hljs-keyword">var</span> color4 = <span class="hljs-keyword">new</span> Color32(<span class="hljs-number">128</span>, <span class="hljs-number">128</span>, <span class="hljs-number">128</span>, <span class="hljs-number">255</span>);
+<span class="hljs-keyword">var</span> asset = ToolsModifierControl.toolController.m_editPrefabInfo <span class="hljs-keyword">as</span> BuildingInfo;
+asset.m_material.SetColor(<span class="hljs-string">"_ColorV0"</span>, color1);
+asset.m_material.SetColor(<span class="hljs-string">"_ColorV1"</span>, color2);
+asset.m_material.SetColor(<span class="hljs-string">"_ColorV2"</span>, color3);
+asset.m_material.SetColor(<span class="hljs-string">"_ColorV3"</span>, color4);</code></pre>
+			<p class="mt-4">
+				The first four lines create new variables which contain the chosen colors. Here <code class="csharp">new Color32</code> means a new variable of the type
+				<code class="csharp">Color32</code> will be created.
+			</p>
+			<p class="mt-4">
+				The difference between <code class="csharp">Color</code> and <code class="csharp">Color32</code> is that <code class="csharp">Color32</code> allows
+				using values of 0-255 instead of floating point values 0.0-1.0. There are four values - red, green, blue, alpha. In this context, the alpha value is not
+				relevant.
+			</p>
+			<p class="mt-4">
+				The last four lines use the method <code class="csharp">SetColor</code> to set the colors of <code class="csharp">asset.m_material</code> to the
+				previously created colors.
+			</p>
+			<p class="mt-4">
+				For the color variations to work, the "use color variations" option for the building must be enabled. It's possible to add a line to the script to
+				enable it as well:
+			</p>
+			<pre><code class="csharp hljs">asset.m_useColorVariations = <span class="hljs-literal">true</span>;</code></pre>
+			<p class="mt-4">For the color variations to be visible in the asset editor, the asset may need to be saved and loaded again.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="placement-mode">Placement Mode</h3>
+			<p class="mt-4">
+				This script can be used to change the <Link classes="" href="/asset/building/placement-mode" text="placement mode" theme="internallink" /> of a
+				building, which determines how the player must place it.
+			</p>
+			<pre><code class="csharp hljs"><span class="hljs-keyword">var</span> asset = ToolsModifierControl.toolController.m_editPrefabInfo <span class="hljs-keyword">as</span> BuildingInfo;
+asset.m_placementMode = BuildingInfo.PlacementMode.Roadside;</code></pre>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>
+						The second line sets the field <code class="csharp">m_placementMode</code> of <code class="csharp">asset</code> to <code class="csharp"
+							>BuildingInfo.PlacementMode.Roadside</code
+						>.
+					</p><p class="mt-4">
+						To find out what values can be used in this field, you can use <Link classes="" href="#ilspy" text="ILSpy" theme="internallink" /> to see the
+						content of <code class="csharp">BuildingInfo.PlacementMode</code>.
+					</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/5eYn8sb.png" target="null"><img src="https://i.imgur.com/5eYn8sb.png" /></a><p class="explanation">
+						BuildingInfo.PlacementMode in ILSpy.
+					</p>
+				</div>
+			</div>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="editable-properties">Editable Properties</h2>
+			<p class="mt-4">Ways to find the names of fields which can be used in scripts.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="scene-explorer">Scene Explorer</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>The ModTools scene explorer can be used to explore game objects and see their properties.</p><p class="mt-4">
+						Read <Link classes="" href="/modtools/" text="the ModTools article" theme="internallink" /> for more information.
+					</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/0ztXu62.jpg" target="null"><img src="https://i.imgur.com/0ztXu62.jpg" /></a><p class="explanation">
+						ModTools scene explorer and console.
+					</p>
+				</div>
+			</div>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="ilspy">ILSpy</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>ILSpy is the open-source .NET assembly browser and decompiler. It can be used to see the game code and which classes contain which fields.</p><p
+						class="mt-4"
+					>
+						Use ILSpy to open this file:<br />
+						<span class="path">C:\Program Files (x86)\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\Assembly-CSharp.dll</span>
+					</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/D6az257.png" target="null"><img src="https://i.imgur.com/D6az257.png" /></a><p class="explanation">
+						BuildingInfo in ILSpy.
+					</p>
+				</div>
+			</div>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="dnspy">dnSpy</h3>
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+				<div class="lg:w-2/3">
+					<p>dnSpy is a .NET debugger and assembly editor. It can be used to see the game code and which classes contain which fields.</p><p class="mt-4">
+						Use dnSpy to open this file:<br />
+						<span class="path">C:\Program Files (x86)\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\Assembly-CSharp.dll</span>
+					</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/YjFFv0W.png" target="null"><img src="https://i.imgur.com/YjFFv0W.png" /></a><p class="explanation">
+						BuildingInfo in dnSpy.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+</MainLayout>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const tocElement = document.querySelector('.table-of-contents ul');
+		if (!tocElement) return;
+
+		document.querySelectorAll('h2, h3').forEach((heading) => {
+			const id = heading.id;
+			const title = heading.textContent;
+			const isH2 = heading.tagName === 'H2';
+
+			const listItem = document.createElement('li');
+			listItem.className = isH2 ? '' : 'mt-1'; // Add Tailwind classes here
+
+			const link = document.createElement('a');
+			link.href = `#${id}`;
+			link.textContent = title;
+			link.className = isH2
+				? 'text-hit-gray-200 text-lg inline-flex rounded-md hover:text-hoverlink mt-6'
+				: 'text-hit-gray-400 text-[1rem] leading-[1.25rem] inline-flex ps-2 rounded-md hover:text-hoverlink'; // Add Tailwind classes here
+
+			listItem.appendChild(link);
+			tocElement.appendChild(listItem);
+		});
+	});
+</script>

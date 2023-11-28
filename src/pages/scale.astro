@@ -1,0 +1,86 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Link from '../components/Link.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+---
+
+<MainLayout>
+	<TableOfContents />
+	<section class="py-12 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
+		<h1 id="overview" class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400">Scale</h1>
+		<div class="content">
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="general">General</h2>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="cells">Cells</h3>
+			<p class="mt-4">One cell is 8 x 8 meters.</p>
+			<p class="mt-4">The area of one cell is 64 m².</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="zoning">Zoning</h3>
+			<p class="mt-4">The zoning grid is 4 cells deep.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="tiles">Tiles</h3>
+			<p class="mt-4">One tile is 240 x 240 cells or 1920 x 1920 meters.</p>
+			<p class="mt-4">The area of one tile is 57,600 cells, 3,686,400 m², 3.6864 km².</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="map">Map</h3>
+			<p class="mt-4">The map is 9 x 9 tiles, 2160 x 2160 cells, 17280 x 17280 meters.</p>
+			<p class="mt-4">The area of the map is 81 tiles, 4,665,600 cells, 298,598,400 m², 298.5984 km².</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="roads">Roads</h2>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="curbs">Curbs</h3>
+			<p class="mt-4">Sunken roads are 30 cm deep, therefore the curbs are 30 cm high.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="basic-road">Basic Road</h3>
+			<p class="mt-4">The basic road is 2 cells or 16 meters wide.</p>
+			<p class="mt-4">The asphalt width is 10 meters.</p>
+			<p class="mt-4">The vehicle lanes are 3 meters wide, and the parking lanes are 2 meters wide.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="four-lane-road">Four-Lane Road</h3>
+			<p class="mt-4">The four-lane road is 4 cells or 32 meters wide.</p>
+			<p class="mt-4">The asphalt width (including the median) is 22.4 meters.</p>
+			<p class="mt-4">The asphalt width on each side is 8 meters.</p>
+			<p class="mt-4">The median is 6.4 meters.</p>
+			<p class="mt-4">The vehicle lanes are 3 meters wide, and the parking lanes are 2 meters wide.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="highway-ramp">Highway Ramp</h3>
+			<p class="mt-4">The ramp is 12 meters wide.</p>
+			<p class="mt-4">The asphalt width is 8 meters.</p>
+			<p class="mt-4">The lane width is 4 meters.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="highway-3-lane">Highway (3 Lane)</h3>
+			<p class="mt-4">The highway is 22 meters wide.</p>
+			<p class="mt-4">The asphalt width is 18 meters.</p>
+			<p class="mt-4">The lane width is 4 meters.</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="tracks">Tracks</h2>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="train">Train</h3>
+			<p class="mt-4">The train track gauge is 1.6046 meters.</p>
+			<p class="mt-4">The distance between the centers of rails is 1.724 meters.</p>
+			<p class="mt-4">The rails are 11.94 cm wide.</p>
+			<p class="mt-4">The distance between the center of tracks in one direction to the other is 4 meters.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="tram">Tram</h3>
+			<p class="mt-4">
+				Tram tracks are the same as train tracks but they are sunken into the ground, and the two directions are closer together with a distance of 3 meters.
+			</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="monorail">Monorail</h3>
+			<p class="mt-4">Each monorail track is 66 cm wide.</p>
+			<p class="mt-4">The distance between the tracks is 3 meters.</p>
+		</div>
+	</section>
+</MainLayout>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const tocElement = document.querySelector('.table-of-contents ul');
+		if (!tocElement) return;
+
+		document.querySelectorAll('h2, h3').forEach((heading) => {
+			const id = heading.id;
+			const title = heading.textContent;
+			const isH2 = heading.tagName === 'H2';
+
+			const listItem = document.createElement('li');
+			listItem.className = isH2 ? '' : 'mt-1'; // Add Tailwind classes here
+
+			const link = document.createElement('a');
+			link.href = `#${id}`;
+			link.textContent = title;
+			link.className = isH2
+				? 'text-hit-gray-200 text-lg inline-flex rounded-md hover:text-hoverlink mt-6'
+				: 'text-hit-gray-400 text-[1rem] leading-[1.25rem] inline-flex ps-2 rounded-md hover:text-hoverlink'; // Add Tailwind classes here
+
+			listItem.appendChild(link);
+			tocElement.appendChild(listItem);
+		});
+	});
+</script>
