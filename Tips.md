@@ -38,3 +38,14 @@ asset/network: done
 /shader/rotors-vehicle: done
 /shader/rotors-propellers: done
 /shader/animuv: add the toc relevant videos at the bottom
+/shader/proprotating: done
+/shader/flag: done
+/shader/vehicle-wheels: done
+/mod/ploppable-asphalt: add the toc relevant videos at the bottom
+/mod/additive-shader: add the toc relevant videos at the bottom
+/mod/custom-animation-loader: add the toc relevant videos at the bottom
+/mod/detail: done
+/files: see if you can make icons properly | add the terms of use page
+/decruft: done
+/search: ???
+/about: have to rewrite some stuff

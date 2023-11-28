@@ -1,0 +1,61 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Link from '../components/Link.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+---
+
+<MainLayout>
+	<TableOfContents />
+	<section class="py-12 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
+		<div class="content">
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="about">About</h2>
+			<p class="mt-4">CSLM is a wiki-style resource for Cities: Skylines asset creation.</p>
+			<p class="mt-4">For easy sharing of information, headings are clickable and will generate a link for that specific section.</p>
+			<p class="mt-4">
+				<Link
+					classes=""
+					href="https://github.com/ronyx69/cslmodding"
+					text="This website is hosted on GitHub Pages, the repository can be viewed here."
+					theme="externallink"
+				/>
+			</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="credits">Credits</h2>
+			<p class="mt-4">Design, development, content: Ronyx69</p>
+			<p class="mt-4">Development help: Cozonaq, Egi, boformer, Quboid, whitemsv</p>
+			<p class="mt-4">Home page icons: Hadece</p>
+			<p class="mt-4">Search: Google Custom Search</p>
+			<p class="mt-4">Syntax Highlighting: <Link classes="" href="https://highlightjs.org/" text="highlight.js" theme="externallink" /></p>
+			<p class="mt-4">Output Log Decrufter: aubergine18</p>
+			<p class="mt-4">
+				Feedback and corrections: Cozonaq, Lost Gecko, Geze, hemeac, mntoes, Simon Royer, Tim The Terrible, Badi_Dea, Bento Gambin, GiometryE, BoldlyBuilding,
+				sebnichols, Armesto, boformer, aubergine18, kian.zarrin
+			</p>
+		</div>
+	</section>
+</MainLayout>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const tocElement = document.querySelector('.table-of-contents ul');
+		if (!tocElement) return;
+
+		document.querySelectorAll('h2, h3').forEach((heading) => {
+			const id = heading.id;
+			const title = heading.textContent;
+			const isH2 = heading.tagName === 'H2';
+
+			const listItem = document.createElement('li');
+			listItem.className = isH2 ? '' : 'mt-1'; // Add Tailwind classes here
+
+			const link = document.createElement('a');
+			link.href = `#${id}`;
+			link.textContent = title;
+			link.className = isH2
+				? 'text-hit-gray-200 text-lg inline-flex rounded-md hover:text-hoverlink mt-6'
+				: 'text-hit-gray-400 text-[1rem] leading-[1.25rem] inline-flex ps-2 rounded-md hover:text-hoverlink'; // Add Tailwind classes here
+
+			listItem.appendChild(link);
+			tocElement.appendChild(listItem);
+		});
+	});
+</script>

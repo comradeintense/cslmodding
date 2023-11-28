@@ -1,0 +1,94 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Link from '../../components/Link.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
+---
+
+<MainLayout>
+	<TableOfContents />
+	<section class="py-12 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
+		<h1 id="overview" class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400">PropRotating Shader</h1>
+		<div class="content">
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="about">About</h2>
+			<p class="mt-4">The PropRotating shader can be used to create props which have rotating parts or clocks.</p>
+			<p class="mt-4">This article assumes you are familiar with regular prop asset creation.</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="textures">Textures</h2>
+			<p class="mt-4">The textures work just like they would for any normal prop.</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="mesh">Mesh</h2>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="vertex-paint">Vertex Paint</h3>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="single-rotating-part">Single Rotating Part</h4>
+			<p class="mt-4">
+				If you are using the script for a single rotating part, the rotating part should be vertex painted black and the rest should be vertex painted white.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="multiple-rotating-parts-or-clocks">
+				Multiple Rotating Parts or Clocks
+			</h4>
+			<p class="mt-4">If you are using the script for multiple rotating parts, you can have up to 4 different rotating parts.</p>
+			<p class="mt-4">For rotating parts - the vertex color blue channel must be 0.</p>
+			<p class="mt-4">Each rotating part can have its own parameters, and which parameters will be used is controlled by the vertex color green channel:</p>
+			<ul class="mt-4 list-disc list-inside">
+				<li class="mt-4">Part 0 - G=0<br /></li>
+				<li class="mt-4">Part 1 - G=64<br /></li>
+				<li class="mt-4">Part 2 - G=128<br /></li>
+				<li class="mt-4">Part 3 - G=192</li>
+			</ul>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="lod">LOD</h2>
+			<p class="mt-4">The LOD can't rotate, it's static just like any regular prop LOD.</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="scripts">Scripts</h2>
+			<p class="mt-4">
+				The script for a single rotating part can be found <Link
+					classes=""
+					href="https://gist.github.com/ronyx69/55f2201f2d1f2d8f6c81042c7a47e47d"
+					text="here"
+					theme="externallink"
+				/>, and the script for multiple rotating parts or clocks can be found <Link
+					classes=""
+					href="https://gist.github.com/ronyx69/595c837a3141eb9c894168e385727217"
+					text="here"
+					theme="externallink"
+				/>.
+			</p>
+			<p class="mt-4">Keep in mind that when dealing with XYZ coordinates - the Y coordinate ingame represents height.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="axis">Axis</h3>
+			<p class="mt-4">Around which axis the rotation happens. Off-axis rotation is not possible.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="pivot">Pivot</h3>
+			<p class="mt-4">The center of the rotation.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="speed">Speed</h3>
+			<p class="mt-4">How many times per minute the rotation happens. Negative values reverse the rotation direction.</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="speed-for-clocks">Speed for Clocks</h3>
+			<p class="mt-4">When the clock parameter is set to 1, the speed defines how many times per day the part will rotate.</p>
+			<p class="mt-4">Speeds for usual clock arms:</p>
+			<ul class="mt-4 list-disc list-inside">
+				<li class="mt-4">12 hour arm = 2<br /></li>
+				<li class="mt-4">minute arm = 24<br /></li>
+				<li class="mt-4">second arm = 1440</li>
+			</ul>
+		</div>
+	</section>
+</MainLayout>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const tocElement = document.querySelector('.table-of-contents ul');
+		if (!tocElement) return;
+
+		document.querySelectorAll('h2, h3').forEach((heading) => {
+			const id = heading.id;
+			const title = heading.textContent;
+			const isH2 = heading.tagName === 'H2';
+
+			const listItem = document.createElement('li');
+			listItem.className = isH2 ? '' : 'mt-1'; // Add Tailwind classes here
+
+			const link = document.createElement('a');
+			link.href = `#${id}`;
+			link.textContent = title;
+			link.className = isH2
+				? 'text-hit-gray-200 text-lg inline-flex rounded-md hover:text-hoverlink mt-6'
+				: 'text-hit-gray-400 text-[1rem] leading-[1.25rem] inline-flex ps-2 rounded-md hover:text-hoverlink'; // Add Tailwind classes here
+
+			listItem.appendChild(link);
+			tocElement.appendChild(listItem);
+		});
+	});
+</script>
