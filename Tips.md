@@ -17,3 +17,24 @@ highlight-green: #8fa68d
 <h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"></h2>
 <h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"></h3>
 <h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"></h4>
+
+asset/building: add the toc relevant videos at the bottom
+asset/prop: done
+asset/tree: done
+asset/vehicle: done
+asset/citizen: done
+asset/network: done
+/theme: done
+/lut: done
+/noworkshop: done
+/normal-maps: done
+/scale: done
+/modtools: done
+/scripts: done
+/dump: done
+/scripting: done
+/shader/decal: add the toc relevant videos at the bottom
+/shader/rotors: add the toc relevant videos at the bottom
+/shader/rotors-vehicle: done
+/shader/rotors-propellers: done
+/shader/animuv: add the toc relevant videos at the bottom

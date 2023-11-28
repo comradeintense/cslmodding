@@ -74,6 +74,14 @@
 	.explanation {
 		@apply text-sm mt-2 text-hit-gray-500;
 	}
+
+	p .csharp {
+		@apply text-base py-[.25rem] px-[.125rem] bg-[#282b2f];
+	}
+
+	.csharp {
+		@apply text-base bg-[#282b2f] mt-4;
+	}
 }
 
 @layer utilities {

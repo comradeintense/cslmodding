@@ -4,6 +4,8 @@ import Link from '../components/Link.astro';
 import TableOfContents from '../components/TableOfContents.astro';
 ---
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css" />
+
 <MainLayout>
 	<TableOfContents />
 	<section class="py-12 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
@@ -50,7 +52,7 @@ import TableOfContents from '../components/TableOfContents.astro';
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="comments">Comments</h3>
 			<p class="mt-4">
 				Comments allow adding notes to your script, they will not affect the code in any way. Everything after a double slash <code class="csharp">//</code>
-				will appear as a comment:
+				 will appear as a comment:
 			</p>
 			<pre><code class="csharp hljs"><span class="hljs-keyword">var</span> number = <span class="hljs-number">69</span>; <span class="hljs-comment">// some random notes</span></code></pre>
 			<p class="mt-4">It's also possible to use <code class="csharp">/* */</code> to comment multiple lines or a specific area:</p>
@@ -65,12 +67,12 @@ comment*/</span>
 			<p class="mt-4">
 				The first example is for one of the simplest possible scripts - to change the <Link
 					classes=""
-					href="/asset/building/ui-priority"
+					href="/asset/building/#ui-priority"
 					text="UI Priority"
 					theme="internallink"
 				/> value. It's possible to change this value using <Link
 					classes=""
-					href="/modtools/m_uipriority"
+					href="/modtools/#m_uipriority"
 					text="the ModTools scene explorer"
 					theme="internallink"
 				/> or a specific mod, but this example will show how to change it using a script.
@@ -99,6 +101,8 @@ asset.m_material.SetColor(<span class="hljs-string">"_ColorV2"</span>, color3);
 asset.m_material.SetColor(<span class="hljs-string">"_ColorV3"</span>, color4);</code></pre>
 			<p class="mt-4">
 				The first four lines create new variables which contain the chosen colors. Here <code class="csharp">new Color32</code> means a new variable of the type
+
+
 				<code class="csharp">Color32</code> will be created.
 			</p>
 			<p class="mt-4">
@@ -118,7 +122,7 @@ asset.m_material.SetColor(<span class="hljs-string">"_ColorV3"</span>, color4);<
 			<p class="mt-4">For the color variations to be visible in the asset editor, the asset may need to be saved and loaded again.</p>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="placement-mode">Placement Mode</h3>
 			<p class="mt-4">
-				This script can be used to change the <Link classes="" href="/asset/building/placement-mode" text="placement mode" theme="internallink" /> of a
+				This script can be used to change the <Link classes="" href="/asset/building/#placement-mode" text="placement mode" theme="internallink" /> of a
 				building, which determines how the player must place it.
 			</p>
 			<pre><code class="csharp hljs"><span class="hljs-keyword">var</span> asset = ToolsModifierControl.toolController.m_editPrefabInfo <span class="hljs-keyword">as</span> BuildingInfo;

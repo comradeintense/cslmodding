@@ -1,0 +1,122 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Link from '../../components/Link.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
+---
+
+<MainLayout>
+	<TableOfContents />
+	<section class="py-12 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
+		<h1 id="overview" class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400">AnimUV Shader</h1>
+		<div class="content">
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="about">About</h2><div
+				class="flex flex-col lg:flex-row gap-6 mt-4"
+			>
+				<div class="lg:w-2/3">
+					<p>
+						The AnimUV shader can be used to create scrolling or multi-frame animations. There are 2 AnimUV shaders - one for props and one for buildings and
+						building sub-meshes.
+					</p><p class="mt-4">The building AnimUV shader doesn't require a mod.</p><p class="mt-4">
+						While vehicle sub-meshes and previously created props still require <Link
+							classes=""
+							href="https://steamcommunity.com/sharedfiles/filedetails/?id=940299505"
+							text="the AnimUV Params mod"
+							theme="externallink"
+						/>, a new method for saving shader parameters by boformer has removed the requirement for a mod. Vehicle sub-meshes still require the mod.
+					</p><p class="mt-4">This article assumes you are familiar with regular prop asset creation.</p>
+				</div><div class="lg:w-1/3">
+					<a href="https://i.imgur.com/MvDLymL.jpg" target="null"><img src="https://i.imgur.com/MvDLymL.jpg" /></a><p class="explanation">
+						Example of a <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=940299860">scrolling LED sign</a> AnimUV prop.
+					</p>
+				</div>
+			</div>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="textures">Textures</h2>
+			<p class="mt-4">The textures work just like they would for any normal prop.</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="mesh">Mesh</h2>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="uv-mapping">UV Mapping</h4>
+			<p class="mt-4">The UV mapping is as usual, but in the case of a multi-frame animation, the first frame should be UV mapped.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="format">Format</h4>
+			<p class="mt-4">Use a format which supports vertex colors, such as FBX (2015 or older) or DAE.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="vertex-paint">Vertex Paint</h4>
+			<p class="mt-4">The vertex colors define which parts will have UV animation.</p>
+			<p class="mt-4">Black vertex paint will be animated and everything else should be white.</p>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="scripts">Scripts</h2>
+			<p class="mt-4">
+				There are 2 types of scripts for each type of asset - one creates a simple scrolling animation, and the other can be used to create multi-frame
+				animations.
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="transform-amount">Transform Amount</h4>
+			<p class="mt-4">
+				For the advanced multi-frame animation scripts, the transform amount is (how many pixels you want the UV mapping to move each frame) divided by (the
+				width or height of the texture).
+			</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="frames">Frames</h4>
+			<p class="mt-4">The frames variable describes how many frames each animation has.</p>
+			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="cycles">Cycles</h4>
+			<p class="mt-4">
+				The cycles variable describes how many times per minute the animation runs. If 60 doesn't divide by this number evenly, the animation will "reset" every
+				minute.
+			</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="buildings">Buildings</h3>
+			<p class="mt-4">
+				<Link
+					classes=""
+					href="https://gist.github.com/ronyx69/92afd0686e31d59d380d98d139874abe"
+					text="The building AnimUV shader scripts"
+					theme="externallink"
+				/> work without any mods. And they can also be applied to building sub-meshes.
+			</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="props">Props</h3>
+			<p class="mt-4">
+				<Link classes="" href="https://gist.github.com/ronyx69/558a2adbe7557da62ea7a7153b86e74c" text="The prop AnimUV shader scripts" theme="externallink" />
+				don't require a mod anymore.
+			</p>
+			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="vehicle-sub-meshes">Vehicle sub-meshes</h3>
+			<p class="mt-4">
+				The prop AnimUV shader can also be applied to vehicle sub-meshes using <Link
+					classes=""
+					href="https://gist.github.com/ronyx69/e69e5d0b0b4a28d6577a5afad1af3dcf"
+					text="these scripts"
+					theme="externallink"
+				/>, this use case still requires <Link
+					classes=""
+					href="https://steamcommunity.com/sharedfiles/filedetails/?id=940299505"
+					text="the AnimUV Params mod"
+					theme="externallink"
+				/>. The mesh must be imported as a prop first, then the game must be reloaded and then the vertex paint can be copied from the prop to the vehicle
+				sub-mesh. This is similar to <Link
+					classes=""
+					href="/shader/rotors-propellers/#prop"
+					text="the process of creating rotors shader propellers for blimps"
+					theme="internallink"
+				/>.
+			</p>
+		</div>
+	</section>
+</MainLayout>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const tocElement = document.querySelector('.table-of-contents ul');
+		if (!tocElement) return;
+
+		document.querySelectorAll('h2, h3').forEach((heading) => {
+			const id = heading.id;
+			const title = heading.textContent;
+			const isH2 = heading.tagName === 'H2';
+
+			const listItem = document.createElement('li');
+			listItem.className = isH2 ? '' : 'mt-1'; // Add Tailwind classes here
+
+			const link = document.createElement('a');
+			link.href = `#${id}`;
+			link.textContent = title;
+			link.className = isH2
+				? 'text-hit-gray-200 text-lg inline-flex rounded-md hover:text-hoverlink mt-6'
+				: 'text-hit-gray-400 text-[1rem] leading-[1.25rem] inline-flex ps-2 rounded-md hover:text-hoverlink'; // Add Tailwind classes here
+
+			listItem.appendChild(link);
+			tocElement.appendChild(listItem);
+		});
+	});
+</script>
