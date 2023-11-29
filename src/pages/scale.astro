@@ -1,10 +1,11 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import Link from '../components/Link.astro';
 import TableOfContents from '../components/TableOfContents.astro';
+const title = 'Scale - Cities Skylines Modding';
+const description = 'Detailed scale measurements for Cities Skylines Modding.';
 ---
 
-<MainLayout>
+<MainLayout title={title} description={description}>
 	<TableOfContents />
 	<section class="py-12 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
 		<h1 id="overview" class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400">Scale</h1>
@@ -58,29 +59,3 @@ import TableOfContents from '../components/TableOfContents.astro';
 		</div>
 	</section>
 </MainLayout>
-
-<script>
-	document.addEventListener('DOMContentLoaded', () => {
-		const tocElement = document.querySelector('.table-of-contents ul');
-		if (!tocElement) return;
-
-		document.querySelectorAll('h2, h3').forEach((heading) => {
-			const id = heading.id;
-			const title = heading.textContent;
-			const isH2 = heading.tagName === 'H2';
-
-			const listItem = document.createElement('li');
-			listItem.className = isH2 ? '' : 'mt-1'; // Add Tailwind classes here
-
-			const link = document.createElement('a');
-			link.href = `#${id}`;
-			link.textContent = title;
-			link.className = isH2
-				? 'text-hit-gray-200 text-lg inline-flex rounded-md hover:text-hoverlink mt-6'
-				: 'text-hit-gray-400 text-[1rem] leading-[1.25rem] inline-flex ps-2 rounded-md hover:text-hoverlink'; // Add Tailwind classes here
-
-			listItem.appendChild(link);
-			tocElement.appendChild(listItem);
-		});
-	});
-</script>

@@ -65,7 +65,7 @@ import TableOfContents from '../components/TableOfContents.astro';
 			</h2>
 			<p class="mt-4">
 				<Link classes="" href="https://7daystodie.com/forums/showthread.php?22675-Unity-Assets-Bundle-Extractor" text="UABE is a tool" theme="externallink" />
-				which can open .assets files which are located in the Cities_Data folder which is in the game folder. Most vanilla assets can be found in the
+				 which can open .assets files which are located in the Cities_Data folder which is in the game folder. Most vanilla assets can be found in the
 				sharedassets11 file, although assets from DLCs can be found in files with a higher number. It can export meshes as OBJ and textures as PNG.
 			</p>
 			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="utinyripper">uTinyRipper</h2>
@@ -113,29 +113,3 @@ import TableOfContents from '../components/TableOfContents.astro';
 		</div>
 	</section>
 </MainLayout>
-
-<script>
-	document.addEventListener('DOMContentLoaded', () => {
-		const tocElement = document.querySelector('.table-of-contents ul');
-		if (!tocElement) return;
-
-		document.querySelectorAll('h2, h3').forEach((heading) => {
-			const id = heading.id;
-			const title = heading.textContent;
-			const isH2 = heading.tagName === 'H2';
-
-			const listItem = document.createElement('li');
-			listItem.className = isH2 ? '' : 'mt-1'; // Add Tailwind classes here
-
-			const link = document.createElement('a');
-			link.href = `#${id}`;
-			link.textContent = title;
-			link.className = isH2
-				? 'text-hit-gray-200 text-lg inline-flex rounded-md hover:text-hoverlink mt-6'
-				: 'text-hit-gray-400 text-[1rem] leading-[1.25rem] inline-flex ps-2 rounded-md hover:text-hoverlink'; // Add Tailwind classes here
-
-			listItem.appendChild(link);
-			tocElement.appendChild(listItem);
-		});
-	});
-</script>

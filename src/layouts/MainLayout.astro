@@ -1,9 +1,6 @@
 ---
 import '../styles/globals.css';
-
 import Sidebar from '../components/Sidebar.astro';
-
-// import ScrollTop from '@/components/ScrollTop.astro';
 const { description = 'Cities Skylines Modding & Asset Creation', title = 'Cities Skylines Modding & Asset Creation' } = Astro.props;
 ---
 
@@ -23,8 +20,6 @@ const { description = 'Cities Skylines Modding & Asset Creation', title = 'Citie
 	</head>
 	<body class="bg-darkbg container">
 		<Sidebar />
-
-		<!-- <ScrollTop /> -->
 		<slot />
 	</body>
 </html>

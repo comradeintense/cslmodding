@@ -10,3 +10,45 @@
 		</nav>
 	</div>
 </aside>
+
+<script is:inline>
+	document.addEventListener('DOMContentLoaded', () => {
+		const tocElement = document.querySelector('.table-of-contents ul');
+		if (!tocElement) return;
+
+		document.querySelectorAll('h2, h3').forEach((heading) => {
+			const id = heading.id;
+			const title = heading.textContent;
+			const isH2 = heading.tagName === 'H2';
+
+			const listItem = document.createElement('li');
+			listItem.className = isH2 ? '' : 'mt-1';
+
+			const link = document.createElement('a');
+			link.href = `#${id}`;
+			link.textContent = title;
+			link.className = isH2
+				? 'text-hit-gray-200 text-lg inline-flex rounded-md hover:text-hoverlink mt-6'
+				: 'text-hit-gray-400 text-[1rem] leading-[1.25rem] inline-flex ps-2 rounded-md hover:text-hoverlink';
+
+			listItem.appendChild(link);
+			tocElement.appendChild(listItem);
+		});
+
+		// Smooth Scrolling
+		tocElement.addEventListener('click', function (e) {
+			if (e.target.tagName === 'A') {
+				e.preventDefault();
+				const targetId = e.target.getAttribute('href').slice(1);
+				const targetElement = document.getElementById(targetId);
+
+				if (targetElement) {
+					targetElement.scrollIntoView({
+						behavior: 'smooth',
+						block: 'start',
+					});
+				}
+			}
+		});
+	});
+</script>

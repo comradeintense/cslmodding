@@ -112,29 +112,3 @@ import TableOfContents from '../../components/TableOfContents.astro';
 		</div>
 	</section>
 </MainLayout>
-
-<script>
-	document.addEventListener('DOMContentLoaded', () => {
-		const tocElement = document.querySelector('.table-of-contents ul');
-		if (!tocElement) return;
-
-		document.querySelectorAll('h2, h3').forEach((heading) => {
-			const id = heading.id;
-			const title = heading.textContent;
-			const isH2 = heading.tagName === 'H2';
-
-			const listItem = document.createElement('li');
-			listItem.className = isH2 ? '' : 'mt-1'; // Add Tailwind classes here
-
-			const link = document.createElement('a');
-			link.href = `#${id}`;
-			link.textContent = title;
-			link.className = isH2
-				? 'text-hit-gray-200 text-lg inline-flex rounded-md hover:text-hoverlink mt-6'
-				: 'text-hit-gray-400 text-[1rem] leading-[1.25rem] inline-flex ps-2 rounded-md hover:text-hoverlink'; // Add Tailwind classes here
-
-			listItem.appendChild(link);
-			tocElement.appendChild(listItem);
-		});
-	});
-</script>

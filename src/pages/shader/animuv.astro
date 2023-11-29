@@ -69,7 +69,7 @@ import TableOfContents from '../../components/TableOfContents.astro';
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="props">Props</h3>
 			<p class="mt-4">
 				<Link classes="" href="https://gist.github.com/ronyx69/558a2adbe7557da62ea7a7153b86e74c" text="The prop AnimUV shader scripts" theme="externallink" />
-				don't require a mod anymore.
+				 don't require a mod anymore.
 			</p>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="vehicle-sub-meshes">Vehicle sub-meshes</h3>
 			<p class="mt-4">
@@ -94,29 +94,3 @@ import TableOfContents from '../../components/TableOfContents.astro';
 		</div>
 	</section>
 </MainLayout>
-
-<script>
-	document.addEventListener('DOMContentLoaded', () => {
-		const tocElement = document.querySelector('.table-of-contents ul');
-		if (!tocElement) return;
-
-		document.querySelectorAll('h2, h3').forEach((heading) => {
-			const id = heading.id;
-			const title = heading.textContent;
-			const isH2 = heading.tagName === 'H2';
-
-			const listItem = document.createElement('li');
-			listItem.className = isH2 ? '' : 'mt-1'; // Add Tailwind classes here
-
-			const link = document.createElement('a');
-			link.href = `#${id}`;
-			link.textContent = title;
-			link.className = isH2
-				? 'text-hit-gray-200 text-lg inline-flex rounded-md hover:text-hoverlink mt-6'
-				: 'text-hit-gray-400 text-[1rem] leading-[1.25rem] inline-flex ps-2 rounded-md hover:text-hoverlink'; // Add Tailwind classes here
-
-			listItem.appendChild(link);
-			tocElement.appendChild(listItem);
-		});
-	});
-</script>

@@ -91,7 +91,8 @@ import TableOfContents from '../../components/TableOfContents.astro';
 			<p class="mt-4">
 				If and how the light should blink: <span class="path">None</span>, <span class="path">Blink_050_050</span>, <span class="path">MildFade_0125_0125</span
 				>, <span class="path">MediumFade_500_500</span>, <span class="path">StrongBlaze_0125_0125</span>, <span class="path">StrongFade_250_250</span>, <span
-					class="path">Blink_025_025</span>
+					class="path">Blink_025_025</span
+				>
 			</p>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="rotationspeed">Rotation Speed</h4>
 			<p class="mt-4">The speed at which the light will rotate around an axis, usually 10 to 50. Rotation works only if batched light is set to false.</p>
@@ -105,29 +106,3 @@ import TableOfContents from '../../components/TableOfContents.astro';
 		</div>
 	</section>
 </MainLayout>
-
-<script>
-	document.addEventListener('DOMContentLoaded', () => {
-		const tocElement = document.querySelector('.table-of-contents ul');
-		if (!tocElement) return;
-
-		document.querySelectorAll('h2, h3').forEach((heading) => {
-			const id = heading.id;
-			const title = heading.textContent;
-			const isH2 = heading.tagName === 'H2';
-
-			const listItem = document.createElement('li');
-			listItem.className = isH2 ? '' : 'mt-1'; // Add Tailwind classes here
-
-			const link = document.createElement('a');
-			link.href = `#${id}`;
-			link.textContent = title;
-			link.className = isH2
-				? 'text-hit-gray-200 text-lg inline-flex rounded-md hover:text-hoverlink mt-6'
-				: 'text-hit-gray-400 text-[1rem] leading-[1.25rem] inline-flex ps-2 rounded-md hover:text-hoverlink'; // Add Tailwind classes here
-
-			listItem.appendChild(link);
-			tocElement.appendChild(listItem);
-		});
-	});
-</script>
