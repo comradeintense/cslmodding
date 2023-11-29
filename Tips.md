@@ -45,7 +45,10 @@ asset/network: done
 /mod/additive-shader: add the toc relevant videos at the bottom
 /mod/custom-animation-loader: add the toc relevant videos at the bottom
 /mod/detail: done
-/files: see if you can make icons properly | add the terms of use page
+/files: add line breaks | add the terms of use page
 /decruft: done
 /search: ???
 /about: have to rewrite some stuff
+
+for the 2 buttons add some js to check if current url contains /cs2 or not
+no duplication, sepparate articles for stuff (like building/prop)
