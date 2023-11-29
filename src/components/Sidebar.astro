@@ -1,4 +1,6 @@
 ---
+const currentPath = Astro.url.pathname;
+
 const sidebarItems = [
 	{
 		category: 'ASSET CREATION',
@@ -102,13 +104,23 @@ const sidebarItems = [
 		</div>
 		<ul>
 			<li>
-				<a href="#" class="inline-flex py-2 text-subtitle rounded-lg hover:text-hoverlink group">
-					<span>Cities: Skylines I Modding</span>
+				<a
+					href="/"
+					class={`inline-flex mt-2 p-2 w-full rounded-lg group" ${
+						currentPath === '/' ? 'text-hit-gray-400 bg-hit-gray-900 border-2 border-hit-gray-700' : 'text-hit-gray-700 bg-hit-gray-950 hover:text-hoverlink'
+					}`}
+				>
+					<span>CS I Modding</span>
 				</a>
 			</li>
 			<li>
-				<a href="#" class="inline-flex text-subtitle rounded-lg hover:text-hoverlink group">
-					<span>Cities: Skylines II Modding</span>
+				<a
+					href="/cs2"
+					class={`inline-flex mt-2 p-2 w-full rounded-lg group" ${
+						currentPath === '/cs2' ? 'text-hit-gray-400 bg-hit-gray-900 border-2 border-hit-gray-700' : 'text-hit-gray-700 bg-hit-gray-950 hover:text-hoverlink'
+					}`}
+				>
+					<span>CS II Modding</span>
 				</a>
 			</li>
 			{
