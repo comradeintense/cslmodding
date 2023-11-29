@@ -2,9 +2,10 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import Link from '../components/Link.astro';
 import TableOfContents from '../components/TableOfContents.astro';
+const title = 'Source Files - Cities Skylines Modding';
 ---
 
-<MainLayout>
+<MainLayout title={title}>
 	<TableOfContents />
 	<section class="py-12 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
 		<h1 id="overview" class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400">Source Files</h1>
