@@ -25,16 +25,21 @@
 
 	:root {
 		--pagefind-ui-scale: 1;
-		--pagefind-ui-primary: #034ad8;
+		--pagefind-ui-primary: #899aa8;
 		--pagefind-ui-text: #a8b6bf;
-		--pagefind-ui-background: #ffffff;
-		--pagefind-ui-border: #eeeeee;
+		--pagefind-ui-background: #282b2f;
+		--pagefind-ui-border: #34383d;
 		--pagefind-ui-tag: #eeeeee;
 		--pagefind-ui-border-width: 2px;
 		--pagefind-ui-border-radius: 8px;
 		--pagefind-ui-image-border-radius: 8px;
 		--pagefind-ui-image-box-ratio: 3 / 2;
 		--pagefind-ui-font: sans-serif;
+	}
+
+	mark {
+		background-color: #a8b6bf;
+		padding: 4px;
 	}
 
 	@font-face {

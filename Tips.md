@@ -50,5 +50,5 @@ asset/network: done
 /search: ???
 /about: have to rewrite some stuff
 
-for the 2 buttons add some js to check if current url contains /cs2 or not
+
 no duplication, sepparate articles for stuff (like building/prop)

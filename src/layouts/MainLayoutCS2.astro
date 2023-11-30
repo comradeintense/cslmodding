@@ -1,0 +1,27 @@
+---
+import '../styles/globals.css';
+import SidebarCS2 from '../components/SidebarCS2.astro';
+const { description = 'Cities Skylines Modding & Asset Creation', title = 'Cities Skylines Modding & Asset Creation' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={description} />
+		<link rel="preload" href="/fonts/open-sans-v36-latin-400.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/fonts/open-sans-v36-latin-500.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/fonts/open-sans-v36-latin-600.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/fonts/open-sans-v36-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/fonts/open-sans-v36-latin-800.woff2" as="font" type="font/woff2" crossorigin />
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+		<script src="/pagefind/pagefind-ui.js" is:inline></script>
+		<title>{title}</title>
+	</head>
+	<body class="bg-darkbg container">
+		<SidebarCS2 />
+		<slot />
+	</body>
+</html>
