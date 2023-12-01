@@ -50,5 +50,8 @@ asset/network: done
 /search: ???
 /about: have to rewrite some stuff
 
-
 no duplication, sepparate articles for stuff (like building/prop)
+
+Images:
+
+/dump: done
