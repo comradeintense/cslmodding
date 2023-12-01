@@ -45,7 +45,7 @@ asset/network: done
 /mod/additive-shader: add the toc relevant videos at the bottom
 /mod/custom-animation-loader: add the toc relevant videos at the bottom
 /mod/detail: done
-/files: add line breaks | add the terms of use page
+/files: add the terms of use page
 /decruft: done
 /search: ???
 /about: have to rewrite some stuff
@@ -55,3 +55,5 @@ no duplication, sepparate articles for stuff (like building/prop)
 Images:
 
 /dump: done
+/asset/building: done
+/noworkshop: done

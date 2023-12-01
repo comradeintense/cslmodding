@@ -1,4 +1,5 @@
 import building_shaders from '../../public/images/asset/building/building_shaders.jpg';
+import color_guidelines from '../../public/images/asset/building/color_guidelines.png';
 import editor_networks from '../../public/images/asset/building/editor_networks.jpg';
 import editor_subb from '../../public/images/asset/building/editor_subb.jpg';
 import editor_surface from '../../public/images/asset/building/editor_surface.jpg';
@@ -28,9 +29,12 @@ import tris from '../../public/images/asset/building/tris.jpg';
 import uv_lod from '../../public/images/asset/building/uv_lod.jpg';
 import uv_main from '../../public/images/asset/building/uv_main.jpg';
 import vertexpaint from '../../public/images/asset/building/vertexpaint.jpg';
+import shortc from '../../public/images/nows/shortc.jpg';
 
 export const images = {
 	building_shaders,
+	shortc,
+	color_guidelines,
 	editor_networks,
 	editor_subb,
 	editor_surface,

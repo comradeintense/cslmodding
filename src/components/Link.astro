@@ -39,6 +39,7 @@ function shouldAddTargetBlank(theme: string) {
 <a href={href} class={`${classes || ''} ${computedThemeClass}`} {...shouldAddTargetBlank(theme) ? { target: '_blank' } : {}} {...rest}>
 	{icon && icon.side === 'left' && <Icon name={icon.name} height="24" width="24" />}
 
+	<slot />
 	{text}
 
 	{icon && icon.side === 'right' && <Icon name={icon.name} height="24" width="24" />}
