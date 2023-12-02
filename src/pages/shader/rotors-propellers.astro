@@ -3,6 +3,8 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Link from '../../components/Link.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 const title = 'Rotors Propellers - Cities Skylines Modding';
+import ResponsiveImage from '../../components/ResponsiveImage.astro';
+import { images } from '../../data/imageImports.js';
 ---
 
 <MainLayout title={title}>
@@ -18,7 +20,19 @@ const title = 'Rotors Propellers - Cities Skylines Modding';
 						This article assumes you are familiar with rotors shader prop/building asset creation and regular vehicle asset creation.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/QqhcAZk.jpg" target="null"><img src="https://i.imgur.com/QqhcAZk.jpg" /></a><p class="explanation">
+					<a href="/images/shader/rotors-propellers.jpeg" target="_blank">
+						<ResponsiveImage
+							src={images.rotorpropellers}
+							naturalHeight={1080}
+							naturalWidth={1920}
+							srcWidths={[300, 400, 500, 600, 800, 1000, 1200, 1500, 1900]}
+							alt="LZ-120 Bodensee by GiometryE"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">
 						<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1433248647">LZ-120 Bodensee by GiometryE</a> using custom propellers.
 					</p>
 				</div>

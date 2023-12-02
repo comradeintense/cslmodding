@@ -3,6 +3,8 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Link from '../../components/Link.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 const title = 'Decal Shader - Cities Skylines Modding';
+import ResponsiveImage from '../../components/ResponsiveImage.astro';
+import { images } from '../../data/imageImports.js';
 ---
 
 <MainLayout title={title}>
@@ -15,9 +17,19 @@ const title = 'Decal Shader - Cities Skylines Modding';
 				<div class="lg:w-2/3"><p>The decal shader can be used to create decal props of any size, and it's also possible to tile the decal texture.</p></div><div
 					class="lg:w-1/3"
 				>
-					<a href="https://i.imgur.com/3JieV0v.jpg" target="null"><img src="https://i.imgur.com/3JieV0v.jpg" /></a><p class="explanation">
-						Example mud decals.
-					</p>
+					<a href="/images/shader/decal/decalmud.jpeg" target="_blank">
+						<ResponsiveImage
+							src={images.decalmud}
+							naturalHeight={1080}
+							naturalWidth={1920}
+							srcWidths={[300, 400, 500, 600, 700, 900, 1200, 1400, 1600, 1900]}
+							alt="Example mud decals"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Example mud decals.</p>
 				</div>
 			</div>
 			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="mesh">Mesh</h2>
@@ -39,13 +51,33 @@ const title = 'Decal Shader - Cities Skylines Modding';
 					</p><p class="mt-4">If you don't import a diffuse map, it will default to white.</p>
 				</div><div class="lg:w-1/3">
 					<div class="">
-						<a href="https://i.imgur.com/FcOV4KM.jpg" target="null"><img src="https://i.imgur.com/FcOV4KM.jpg" /></a><p class="explanation">
-							Example diffuse texture for a mud decal.
-						</p>
+						<a href="/images/shader/decal/decaldiff.jpeg" target="_blank">
+							<ResponsiveImage
+								src={images.decaldiff}
+								naturalHeight={512}
+								naturalWidth={1024}
+								srcWidths={[300, 400, 500, 600, 700, 900, 1000]}
+								alt="Example diffuse texture for a mud decal"
+								format="webp"
+								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+								class="h-auto w-full aspect-video object-cover"
+								loading="eager"
+							/></a
+						><p class="explanation">Example diffuse texture for a mud decal.</p>
 					</div><div class="mt-4">
-						<a href="https://i.imgur.com/CQHjaAT.png" target="null"><img src="https://i.imgur.com/CQHjaAT.png" /></a><p class="explanation">
-							Color guidelines.
-						</p>
+						<a href="/images/color_reference.png" target="_blank">
+							<ResponsiveImage
+								src={images.color_guidelines}
+								naturalHeight={1024}
+								naturalWidth={1024}
+								srcWidths={[300, 400, 500, 600, 700, 900, 1000]}
+								alt="Color guidelines"
+								format="webp"
+								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+								class="h-auto w-full aspect-square object-cover"
+								loading="eager"
+							/></a
+						><p class="explanation">Color guidelines.</p>
 					</div>
 				</div>
 			</div>
@@ -56,9 +88,19 @@ const title = 'Decal Shader - Cities Skylines Modding';
 						If you don't import an alpha map, it will default to white - fully visible.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/9QO5Wrw.jpg" target="null"><img src="https://i.imgur.com/9QO5Wrw.jpg" /></a><p class="explanation">
-						Example alpha texture for a mud decal.
-					</p>
+					<a href="/images/shader/decal/decalalpha.jpeg" target="_blank">
+						<ResponsiveImage
+							src={images.decalalpha}
+							naturalHeight={512}
+							naturalWidth={1024}
+							srcWidths={[300, 400, 500, 600, 700, 900, 1000]}
+							alt="Example alpha texture for a mud decal"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Example alpha texture for a mud decal.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="color">Color</h3>
@@ -82,11 +124,33 @@ const title = 'Decal Shader - Cities Skylines Modding';
 					</p><p class="mt-4">If you don't import a specular map, it will default to no specularity.</p>
 				</div><div class="lg:w-1/3">
 					<div class="">
-						<a href="https://i.imgur.com/Mcx61TZ.jpg" target="null"><img src="https://i.imgur.com/Mcx61TZ.jpg" /></a><p class="explanation">
-							Example specular map for a mud decal.
-						</p>
+						<a href="/images/shader/decal/decalspec.jpeg" target="_blank">
+							<ResponsiveImage
+								src={images.decalspec}
+								naturalHeight={512}
+								naturalWidth={1024}
+								srcWidths={[300, 400, 500, 600, 700, 900, 1000]}
+								alt="Example specular map for a mud decal"
+								format="webp"
+								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+								class="h-auto w-full aspect-video object-cover"
+								loading="eager"
+							/></a
+						><p class="explanation">Example specular map for a mud decal.</p>
 					</div><div class="mt-4">
-						<a href="https://i.imgur.com/xZnShPJ.jpg" target="null"><img src="https://i.imgur.com/xZnShPJ.jpg" /></a><p class="explanation">
+						<a href="/images/shader/decal/decalspec2.jpeg" target="_blank">
+							<ResponsiveImage
+								src={images.decalspec2}
+								naturalHeight={293}
+								naturalWidth={511}
+								srcWidths={[300, 400, 500]}
+								alt="Transitions between different specular values produce artifacts on the normal map"
+								format="webp"
+								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+								class="h-auto w-full aspect-video object-cover"
+								loading="eager"
+							/></a
+						><p class="explanation">
 							Transitions between different specular values produce artifacts on the normal map and vice versa, even if a normal map is not imported.
 						</p>
 					</div>
@@ -154,19 +218,40 @@ const title = 'Decal Shader - Cities Skylines Modding';
 						> and typing in appdata.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/bwFdPuo.jpg" target="null"><img src="https://i.imgur.com/bwFdPuo.jpg" /></a><p class="explanation">
-						Files ready for import.
-					</p>
+					<a href="/images/shader/decal/decalnaming.jpeg" target="_blank">
+						<ResponsiveImage
+							src={images.decalnaming}
+							naturalHeight={154}
+							naturalWidth={466}
+							srcWidths={[300, 400]}
+							alt="Files ready for import"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Files ready for import.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="template">Template</h3>
 			<p class="mt-4">The template you choose doesn't matter, as the script will change all the relevant values.</p>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="import-1">Import</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
-				<div class="lg:w-2/3"><p>No scaling or rotation is necessary for the premade mesh.</p></div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/Yn3fACB.jpg" target="null"><img src="https://i.imgur.com/Yn3fACB.jpg" /></a><p class="explanation">
-						Importing the mesh in asset importer.
-					</p>
+				<div class="lg:w-2/3"><p>No scaling or rotation is necessary for the premade mesh.</p></div>
+				<div class="lg:w-1/3">
+					<a href="/images/shader/decal/decalimport.jpeg" target="_blank">
+						<ResponsiveImage
+							src={images.decalimport}
+							naturalHeight={537}
+							naturalWidth={876}
+							srcWidths={[300, 400]}
+							alt="Importing the mesh in asset importer"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Importing the mesh in asset importer.</p>
 				</div>
 			</div>
 			<div class="flex gap-2 mt-6 items-start justify-start">
@@ -227,9 +312,19 @@ const title = 'Decal Shader - Cities Skylines Modding';
 						/> scene explorer <span class="key">Ctrl+E</span> or running scripts in the console <span class="key">F7</span>, or specific mods.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/0ztXu62.jpg" target="null"><img src="https://i.imgur.com/0ztXu62.jpg" /></a><p class="explanation">
-						ModTools scene explorer and console.
-					</p>
+					<a href="/images/shader/decal/decalmodtools.jpeg" target="_blank">
+						<ResponsiveImage
+							src={images.decalmodtools}
+							naturalHeight={786}
+							naturalWidth={1503}
+							srcWidths={[300, 400]}
+							alt="ModTools scene explorer and console"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">ModTools scene explorer and console.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="ui-category">UI Priority</h3>
@@ -257,9 +352,19 @@ const title = 'Decal Shader - Cities Skylines Modding';
 						/> console <span class="key">F7</span> to set the variation amount, and also calculate equal probability automatically.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/oe3rouc.jpg" target="null"><img src="https://i.imgur.com/oe3rouc.jpg" /></a><p class="explanation">
-						Prop variations menu in the asset editor.
-					</p>
+					<a href="/images/shader/decal/decalvariations.jpeg" target="_blank">
+						<ResponsiveImage
+							src={images.decalvariations}
+							naturalHeight={112}
+							naturalWidth={322}
+							srcWidths={[300]}
+							alt="Prop variations menu in the asset editor"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Prop variations menu in the asset editor.</p>
 				</div>
 			</div>
 			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="save">Save</h2>
@@ -271,7 +376,19 @@ const title = 'Decal Shader - Cities Skylines Modding';
 						symbols.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/hsWwdr5.jpg" target="null"><img src="https://i.imgur.com/hsWwdr5.jpg" /></a><p class="explanation">Save asset window.</p>
+					<a href="/images/shader/decal/decalsave.jpeg" target="_blank">
+						<ResponsiveImage
+							src={images.decalsave}
+							naturalHeight={664}
+							naturalWidth={779}
+							srcWidths={[300, 400, 500, 600, 700]}
+							alt="Save asset window"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-square object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Save asset window.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="asset-name">Asset Name</h3>
@@ -300,9 +417,19 @@ const title = 'Decal Shader - Cities Skylines Modding';
 						> and typing in appdata.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/CNfdvdz.jpg" target="null"><img src="https://i.imgur.com/CNfdvdz.jpg" /></a><p class="explanation">
-						CRP files in the local assets folder.
-					</p>
+					<a href="/images/shader/decal/decalcrp.jpeg" target="_blank">
+						<ResponsiveImage
+							src={images.decalcrp}
+							naturalHeight={226}
+							naturalWidth={595}
+							srcWidths={[300, 400, 500]}
+							alt="CRP files in the local assets folder"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">CRP files in the local assets folder.</p>
 				</div>
 			</div>
 			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="publish">Publish</h2>
@@ -312,9 +439,19 @@ const title = 'Decal Shader - Cities Skylines Modding';
 						Go to the content manager &gt; assets and find your asset, then click share.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/4OPnZac.jpg" target="null"><img src="https://i.imgur.com/4OPnZac.jpg" /></a><p class="explanation">
-						Share button in content manager.
-					</p>
+					<a href="/images/shader/decal/decalshare.jpeg" target="_blank">
+						<ResponsiveImage
+							src={images.decalshare}
+							naturalHeight={194}
+							naturalWidth={684}
+							srcWidths={[300, 400, 500, 600]}
+							alt="Share button in content manager"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Share button in content manager.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="title-and-description">Title and Description</h3>
@@ -333,9 +470,19 @@ const title = 'Decal Shader - Cities Skylines Modding';
 						of assets.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/Y53Uqxy.jpg" target="null"><img src="https://i.imgur.com/Y53Uqxy.jpg" /></a><p class="explanation">
-						Publish window and content folder.
-					</p>
+					<a href="/images/shader/decal/decalpublish.jpeg" target="_blank">
+						<ResponsiveImage
+							src={images.decalpublish}
+							naturalHeight={591}
+							naturalWidth={721}
+							srcWidths={[300, 400, 500, 600, 700]}
+							alt="Share button in content manager"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-square object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Publish window and content folder.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="steam-workshop">Steam Workshop</h3>
@@ -387,9 +534,19 @@ const title = 'Decal Shader - Cities Skylines Modding';
 						It's the reason why a local asset is not the same as a workshop published asset.
 					</p><p class="mt-4">For local assets: filename.Asset Name_Data<br />For published workshop assets: SteamID.Asset Name_Data</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/f3Tr6NM.jpg" target="null"><img src="https://i.imgur.com/f3Tr6NM.jpg" /></a><p class="explanation">
-						Comparison between local (top) and workshop published (bottom) prefab names shown in ModTools.
-					</p>
+					<a href="/images/shader/decal/decalnames.jpeg" target="_blank">
+						<ResponsiveImage
+							src={images.decalnames}
+							naturalHeight={118}
+							naturalWidth={528}
+							srcWidths={[300, 400, 500]}
+							alt="Comparison between local (top) and workshop published (bottom)"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Comparison between local (top) and workshop published (bottom) prefab names shown in ModTools.</p>
 				</div>
 			</div>
 		</div>

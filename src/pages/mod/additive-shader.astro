@@ -3,6 +3,8 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Link from '../../components/Link.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 const title = 'Additive Shader - Cities Skylines Modding';
+import ResponsiveImage from '../../components/ResponsiveImage.astro';
+import { images } from '../../data/imageImports.js';
 ---
 
 <MainLayout title={title}>
@@ -21,9 +23,19 @@ const title = 'Additive Shader - Cities Skylines Modding';
 						produces bloom at high intensities.
 					</p><p class="mt-4">This article assumes you are familiar with regular prop or vehicle asset creation.</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/o0zTYaz.jpg" target="null"><img src="https://i.imgur.com/o0zTYaz.jpg" /></a><p class="explanation">
-						Additive shader vehicle sub-mesh used for LED displays on top of a train.
-					</p>
+					<a href="/images/mod/additive-shader/ex1.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.ex1}
+							naturalHeight={532}
+							naturalWidth={687}
+							srcWidths={[300, 400, 500, 600]}
+							alt="Additive shader vehicle sub-mesh used for LED displays on top of a train"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-square object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Additive shader vehicle sub-mesh used for LED displays on top of a train.</p>
 				</div>
 			</div>
 			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="limitations">Limitations</h2>
@@ -64,9 +76,19 @@ const title = 'Additive Shader - Cities Skylines Modding';
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="diffuse">Diffuse</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3"><p>This is the only texture, it's used as the additive texture.</p></div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/N5zP0zZ.jpg" target="null"><img src="https://i.imgur.com/N5zP0zZ.jpg" /></a><p class="explanation">
-						The imported texture, and how it looks ingame.
-					</p>
+					<a href="/images/mod/additive-shader/diff.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.diff}
+							naturalHeight={610}
+							naturalWidth={800}
+							srcWidths={[300, 400, 500, 600, 800]}
+							alt="The imported texture, and how it looks ingame"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">The imported texture, and how it looks ingame.</p>
 				</div>
 			</div>
 			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="lod">LOD</h2>

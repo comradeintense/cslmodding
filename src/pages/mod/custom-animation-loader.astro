@@ -3,6 +3,8 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Link from '../../components/Link.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 const title = 'Custom Animation Loader - Cities Skylines Modding';
+import ResponsiveImage from '../../components/ResponsiveImage.astro';
+import { images } from '../../data/imageImports.js';
 ---
 
 <MainLayout title={title}>
@@ -30,9 +32,19 @@ const title = 'Custom Animation Loader - Cities Skylines Modding';
 						Unity. Also, the mesh without the bones should be exported for importing into the game as usual.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/lvpvnMq.jpg" target="null"><img src="https://i.imgur.com/lvpvnMq.jpg" /></a><p class="explanation">
-						Mesh with bones and keyframes in blender.
-					</p>
+					<a href="/images/mod/cal/blender.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.blender}
+							naturalHeight={540}
+							naturalWidth={960}
+							srcWidths={[300, 400, 500, 600, 800, 900]}
+							alt="Mesh with bones and keyframes in blender"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Mesh with bones and keyframes in blender.</p>
 				</div>
 			</div>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="inactive-animation">Inactive Animation</h4>
@@ -55,9 +67,19 @@ const title = 'Custom Animation Loader - Cities Skylines Modding';
 						name you will use ingame (not the filename). You may also move the object to 0 by changing all Transform XYZ positions to 0.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/M3zwj57.jpg" target="null"><img src="https://i.imgur.com/M3zwj57.jpg" /></a><p class="explanation">
-						Game objects in Unity Editor.
-					</p>
+					<a href="/images/mod/cal/unity1.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.unity1}
+							naturalHeight={540}
+							naturalWidth={960}
+							srcWidths={[300, 400, 500, 600, 800, 900]}
+							alt="Game objects in Unity Editor"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Game objects in Unity Editor.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="animator">Animator</h3>
@@ -95,9 +117,19 @@ const title = 'Custom Animation Loader - Cities Skylines Modding';
 						In the animator window on the left side click the "Parameters" tab, click the + button and add Float called "Speed" and Int called "State".
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/DSG333M.jpg" target="null"><img src="https://i.imgur.com/DSG333M.jpg" /></a><p class="explanation">
-						Animator window and transition.
-					</p>
+					<a href="/images/mod/cal/unity2.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.unity2}
+							naturalHeight={540}
+							naturalWidth={960}
+							srcWidths={[300, 400, 500, 600, 800, 900]}
+							alt="Animator window and transition"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Animator window and transition.</p>
 				</div>
 			</div>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="transitions">Transitions</h4>
@@ -146,9 +178,19 @@ const title = 'Custom Animation Loader - Cities Skylines Modding';
 						the animation should be playing.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/HHygdqX.jpg" target="null"><img src="https://i.imgur.com/HHygdqX.jpg" /></a><p class="explanation">
-						Still of animation being played in Unity Editor.
-					</p>
+					<a href="/images/mod/cal/unity3.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.unity3}
+							naturalHeight={540}
+							naturalWidth={960}
+							srcWidths={[300, 400, 500, 600, 800, 900]}
+							alt="Still of animation being played in Unity Editor"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Still of animation being played in Unity Editor.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="prefab-asset-bundle">Prefab &amp; Asset Bundle</h3>

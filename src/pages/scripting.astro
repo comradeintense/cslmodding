@@ -3,6 +3,8 @@ import MainLayout from '../layouts/MainLayout.astro';
 import Link from '../components/Link.astro';
 import TableOfContents from '../components/TableOfContents.astro';
 const title = 'Writing Scripts - Cities Skylines Modding';
+import ResponsiveImage from '../components/ResponsiveImage.astro';
+import { images } from '../data/imageImports.js';
 ---
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css" />
@@ -28,9 +30,19 @@ const title = 'Writing Scripts - Cities Skylines Modding';
 						/>.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/yKBhTJx.png" target="null"><img src="https://i.imgur.com/yKBhTJx.png" /></a><p class="explanation">
-						Decal Prop Fix script in Sublime Text.
-					</p>
+					<a href="/images/scripting/sublime.png" target="_blank">
+						<ResponsiveImage
+							src={images.sublime}
+							naturalHeight={1053}
+							naturalWidth={1787}
+							srcWidths={[300, 400, 500, 600, 700, 900, 1200, 1400, 1600, 1700]}
+							alt="Decal Prop Fix script in Sublime Text"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Decal Prop Fix script in Sublime Text.</p>
 				</div>
 			</div>
 			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="basics">Basics</h2>
@@ -139,9 +151,19 @@ asset.m_placementMode = BuildingInfo.PlacementMode.Roadside;</code></pre>
 						content of <code class="csharp">BuildingInfo.PlacementMode</code>.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/5eYn8sb.png" target="null"><img src="https://i.imgur.com/5eYn8sb.png" /></a><p class="explanation">
-						BuildingInfo.PlacementMode in ILSpy.
-					</p>
+					<a href="/images/scripting/placementmode_ilspy.png" target="_blank">
+						<ResponsiveImage
+							src={images.placementmode}
+							naturalHeight={548}
+							naturalWidth={996}
+							srcWidths={[300, 400, 500, 600, 700, 900]}
+							alt="BuildingInfo.PlacementMode in ILSpy"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">BuildingInfo.PlacementMode in ILSpy.</p>
 				</div>
 			</div>
 			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="editable-properties">Editable Properties</h2>
@@ -153,9 +175,19 @@ asset.m_placementMode = BuildingInfo.PlacementMode.Roadside;</code></pre>
 						Read <Link classes="" href="/modtools/" text="the ModTools article" theme="internallink" /> for more information.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/0ztXu62.jpg" target="null"><img src="https://i.imgur.com/0ztXu62.jpg" /></a><p class="explanation">
-						ModTools scene explorer and console.
-					</p>
+					<a href="/images/shader/decal/decalmodtools.jpeg" target="_blank">
+						<ResponsiveImage
+							src={images.decalmodtools}
+							naturalHeight={786}
+							naturalWidth={1503}
+							srcWidths={[300, 400, 500, 600, 700, 900, 1200, 1400, 1500]}
+							alt="ModTools scene explorer and console"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">ModTools scene explorer and console.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="ilspy">ILSpy</h3>
@@ -168,9 +200,19 @@ asset.m_placementMode = BuildingInfo.PlacementMode.Roadside;</code></pre>
 						<span class="path">C:\Program Files (x86)\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\Assembly-CSharp.dll</span>
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/D6az257.png" target="null"><img src="https://i.imgur.com/D6az257.png" /></a><p class="explanation">
-						BuildingInfo in ILSpy.
-					</p>
+					<a href="/images/scripting/ilspy.png" target="_blank">
+						<ResponsiveImage
+							src={images.ilspy}
+							naturalHeight={850}
+							naturalWidth={1368}
+							srcWidths={[300, 400, 500, 600, 700, 900, 1200, 1300]}
+							alt="BuildingInfo in ILSpy"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">BuildingInfo in ILSpy.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="dnspy">dnSpy</h3>
@@ -181,9 +223,19 @@ asset.m_placementMode = BuildingInfo.PlacementMode.Roadside;</code></pre>
 						<span class="path">C:\Program Files (x86)\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\Assembly-CSharp.dll</span>
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/YjFFv0W.png" target="null"><img src="https://i.imgur.com/YjFFv0W.png" /></a><p class="explanation">
-						BuildingInfo in dnSpy.
-					</p>
+					<a href="/images/scripting/dnspy.png" target="_blank">
+						<ResponsiveImage
+							src={images.dnspy}
+							naturalHeight={928}
+							naturalWidth={1645}
+							srcWidths={[300, 400, 500, 600, 700, 900, 1200, 1300, 1500, 1600]}
+							alt="BuildingInfo in dnSpy"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">BuildingInfo in dnSpy.</p>
 				</div>
 			</div>
 		</div>

@@ -57,3 +57,16 @@ Images:
 /dump: done
 /asset/building: done
 /noworkshop: done
+/mod/detail: done
+/mod/custom-animation-loader: done
+/mod/additive-shader: done
+/mod/ploppable-asphalt: done
+/shader/vehicle-wheels: done
+/shader/flag: done
+/shader/animuv: done
+/shader/rotors-vehicle: done
+/shader/rotors: done
+/shader/decal: done
+/scripting: done
+/normal-maps: done
+/lut: done

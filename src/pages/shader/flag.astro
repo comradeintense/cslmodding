@@ -3,6 +3,8 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Link from '../../components/Link.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 const title = 'Flag Shader - Cities Skylines Modding';
+import ResponsiveImage from '../../components/ResponsiveImage.astro';
+import { images } from '../../data/imageImports.js';
 ---
 
 <MainLayout title={title}>
@@ -19,9 +21,19 @@ const title = 'Flag Shader - Cities Skylines Modding';
 						do.
 					</p><p class="mt-4">This article assumes you are familiar with regular prop asset creation.</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/5VfR5o3.jpg" target="null"><img src="https://i.imgur.com/5VfR5o3.jpg" /></a><p class="explanation">
-						Various example props using the flag shader.
-					</p>
+					<a href="/images/shader/flag/flag1.jpeg" target="_blank">
+						<ResponsiveImage
+							src={images.flag1}
+							naturalHeight={1080}
+							naturalWidth={1920}
+							srcWidths={[300, 400, 500, 600, 800, 1000, 1200, 1500, 1900]}
+							alt="Various example props using the flag shader"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Various example props using the flag shader.</p>
 				</div>
 			</div>
 			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="textures">Textures</h2>
@@ -44,9 +56,19 @@ const title = 'Flag Shader - Cities Skylines Modding';
 						tries to change textures. In that case, the flag must be completely black, and you can't control the strength of the wind effect.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/xhoe7KT.png" target="null"><img src="https://i.imgur.com/xhoe7KT.png" /></a><p class="explanation">
-						Vertex paint of example props. Only the flag on the left uses multiple flag textures in the same prop.
-					</p>
+					<a href="/images/shader/flag/flag2.png" target="_blank">
+						<ResponsiveImage
+							src={images.flag2}
+							naturalHeight={793}
+							naturalWidth={1024}
+							srcWidths={[300, 400, 500, 600, 800, 1000]}
+							alt="Vertex paint of example props"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Vertex paint of example props. Only the flag on the left uses multiple flag textures in the same prop.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="lod">LOD</h3>
@@ -68,9 +90,19 @@ const title = 'Flag Shader - Cities Skylines Modding';
 						default values.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/Bvk1dA9.png" target="null"><img src="https://i.imgur.com/Bvk1dA9.png" /></a><p class="explanation">
-						A grid of flags for an example prop. 5 columns, 1 row, top left corner is (0,0), bottom right corner is (1024, 364).
-					</p>
+					<a href="/images/shader/flag/flag3.png" target="_blank">
+						<ResponsiveImage
+							src={images.flag3}
+							naturalHeight={512}
+							naturalWidth={1024}
+							srcWidths={[300, 400, 500, 600, 800, 1000]}
+							alt="A grid of flags for an example prop"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">A grid of flags for an example prop. 5 columns, 1 row, top left corner is (0,0), bottom right corner is (1024, 364).</p>
 				</div>
 			</div>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="columns-and-rows">Columns and Rows</h4>

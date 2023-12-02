@@ -3,6 +3,8 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Link from '../../components/Link.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 const title = 'Ploppable Asphalt+ - Cities Skylines Modding';
+import ResponsiveImage from '../../components/ResponsiveImage.astro';
+import { images } from '../../data/imageImports.js';
 ---
 
 <MainLayout title={title}>
@@ -23,9 +25,19 @@ const title = 'Ploppable Asphalt+ - Cities Skylines Modding';
 						use diffuse, alpha, normal, specular maps depending on which exact shader you use. The props are also decal compatible.
 					</p><p class="mt-4">This article assumes you are familiar with regular prop asset creation.</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/XleNsu3.jpg" target="null"><img src="https://i.imgur.com/XleNsu3.jpg" /></a><p class="explanation">
-						The official PA+ prop packs.
-					</p>
+					<a href="/images/mod/ploppable/1.jpeg" target="_blank">
+						<ResponsiveImage
+							src={images.ploppable1}
+							naturalHeight={720}
+							naturalWidth={1280}
+							srcWidths={[300, 400, 500, 600, 800, 900, 1200]}
+							alt="The official PA+ prop packs"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">The official PA+ prop packs.</p>
 				</div>
 			</div>
 			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="script">Script</h2>
@@ -79,7 +91,19 @@ const title = 'Ploppable Asphalt+ - Cities Skylines Modding';
 				<div class="lg:w-2/3">
 					<p>The textures you need to import are similar to regular props, but the PA+ mod will convert the textures for use on network shaders.</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/eb0CoMl.jpg" target="null"><img src="https://i.imgur.com/eb0CoMl.jpg" /></a><p class="explanation">
+					<a href="/images/mod/ploppable/2.jpeg" target="_blank">
+						<ResponsiveImage
+							src={images.ploppable2}
+							naturalHeight={693}
+							naturalWidth={1519}
+							srcWidths={[300, 400, 500, 600, 800, 900, 1200, 1500]}
+							alt="Comparison between RoadBridge (left), TrainBridge (middle), Road (right) shaders"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">
 						Comparison between RoadBridge (left), TrainBridge (middle), Road (right) shaders. Imported textures are shown at the bottom.
 					</p>
 				</div>
