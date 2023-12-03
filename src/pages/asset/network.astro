@@ -3,6 +3,8 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Link from '../../components/Link.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 const title = 'Network Asset Creation - Cities Skylines Modding';
+import ResponsiveImage from '../../components/ResponsiveImage.astro';
+import { images } from '../../data/imageImports.js';
 ---
 
 <MainLayout title={title}>
@@ -91,9 +93,19 @@ const title = 'Network Asset Creation - Cities Skylines Modding';
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="max-build-angle">Max Build Angle</h4>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3"><p>Maximum angle allowed for intersecting the road. Limited to 135° by the game.</p></div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/GrOja4L.jpg" target="null"><img src="https://i.imgur.com/GrOja4L.jpg" /></a><p class="explanation">
-						An example 135° intersection.
-					</p>
+					<a href="/images/asset/network/properties_1_maxbuildangle.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.properties1}
+							naturalHeight={450}
+							naturalWidth={800}
+							srcWidths={[300, 400, 500, 600, 800]}
+							alt="An example 135° intersection"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">An example 135° intersection.</p>
 				</div>
 			</div>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="max-turn-angle">Max Turn Angle</h4>
@@ -101,9 +113,19 @@ const title = 'Network Asset Creation - Cities Skylines Modding';
 				<div class="lg:w-2/3"><p>When a node between 2 segments exceeds this angle, a node will be used, instead of a regular bent segment.</p></div><div
 					class="lg:w-1/3"
 				>
-					<a href="https://i.imgur.com/d8gTuGK.jpg" target="null"><img src="https://i.imgur.com/d8gTuGK.jpg" /></a><p class="explanation">
-						Example of 90° (left) and 89° (right) max turn angle.
-					</p>
+					<a href="/images/asset/network/properties_2_maxturnangle.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.properties2}
+							naturalHeight={450}
+							naturalWidth={800}
+							srcWidths={[300, 400, 500, 600, 800]}
+							alt="Example of 90° (left) and 89° (right) max turn angle"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Example of 90° (left) and 89° (right) max turn angle.</p>
 				</div>
 			</div>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="min-corner-offset">Min Corner Offset</h4>
@@ -113,9 +135,19 @@ const title = 'Network Asset Creation - Cities Skylines Modding';
 						Increases corner smoothing, this is more noticeable for sharp turns at low angles. High values will make the road hard to use in tight situations.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/yEG7ZOY.jpg" target="null"><img src="https://i.imgur.com/yEG7ZOY.jpg" /></a><p class="explanation">
-						Example of 0 (top) and 16 (bottom) min corner offset.
-					</p>
+					<a href="/images/asset/network/properties_3_mincorneroffset.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.properties3}
+							naturalHeight={450}
+							naturalWidth={800}
+							srcWidths={[300, 400, 500, 600, 800]}
+							alt="Example of 0 (top) and 16 (bottom) min corner offset"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Example of 0 (top) and 16 (bottom) min corner offset.</p>
 				</div>
 			</div>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="build-height">Build Height</h4>
@@ -600,9 +632,19 @@ const title = 'Network Asset Creation - Cities Skylines Modding';
 						of the intersection.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/asxDJHG.jpg" target="null"><img src="https://i.imgur.com/asxDJHG.jpg" /></a><p class="explanation">
-						Vanilla six-lane road segment mesh.
-					</p>
+					<a href="/images/asset/network/netmesh.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.netmesh}
+							naturalHeight={437}
+							naturalWidth={744}
+							srcWidths={[300, 400, 500, 600, 700]}
+							alt="Vanilla six-lane road segment mesh"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Vanilla six-lane road segment mesh.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="uv-mapping">UV Mapping</h3>
@@ -617,9 +659,19 @@ const title = 'Network Asset Creation - Cities Skylines Modding';
 						stretch together with the segment.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/V40Y2sG.jpg" target="null"><img src="https://i.imgur.com/V40Y2sG.jpg" /></a><p class="explanation">
-						A road mesh, its uv mapping, and how it appears ingame using tiling or vertex color.
-					</p>
+					<a href="/images/asset/network/netuv.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.netuv}
+							naturalHeight={740}
+							naturalWidth={1502}
+							srcWidths={[300, 400, 500, 600, 700, 800, 1000, 1200, 1500]}
+							alt="A road mesh, its uv mapping, and how it appears ingame using tiling or vertex color"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">A road mesh, its uv mapping, and how it appears ingame using tiling or vertex color.</p>
 				</div>
 			</div>
 			<div class="flex gap-2 mt-6 items-start justify-start">
@@ -665,9 +717,19 @@ const title = 'Network Asset Creation - Cities Skylines Modding';
 						phase of the sway.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/He2diBn.jpg" target="null"><img src="https://i.imgur.com/He2diBn.jpg" /></a><p class="explanation">
-						The vanilla powerline wire mesh showing vertex paint and uv mapping.
-					</p>
+					<a href="/images/asset/network/netwire.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.netwire}
+							naturalHeight={198}
+							naturalWidth={600}
+							srcWidths={[300, 400, 500, 600]}
+							alt="The vanilla powerline wire mesh showing vertex paint and uv mapping"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">The vanilla powerline wire mesh showing vertex paint and uv mapping.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="lod-mesh">LOD Mesh</h3>
@@ -678,9 +740,19 @@ const title = 'Network Asset Creation - Cities Skylines Modding';
 				<div class="lg:w-2/3"><p>Just like any diffuse texture, defines the main color of the network.</p><p class="mt-4">Defaults to white.</p></div><div
 					class="lg:w-1/3"
 				>
-					<a href="https://i.imgur.com/vTKFr8K.jpg" target="null"><img src="https://i.imgur.com/vTKFr8K.jpg" /></a><p class="explanation">
-						An example diffuse texture for an expressway.
-					</p>
+					<a href="/images/asset/network/netdiff.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.netdiff}
+							naturalHeight={512}
+							naturalWidth={512}
+							srcWidths={[300, 400, 500]}
+							alt="An example diffuse texture for an expressway"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-square object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">An example diffuse texture for an expressway.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="alpha">Alpha</h3>

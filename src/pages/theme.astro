@@ -3,6 +3,8 @@ import MainLayout from '../layouts/MainLayout.astro';
 import Link from '../components/Link.astro';
 import TableOfContents from '../components/TableOfContents.astro';
 const title = 'Map Theme - Cities Skylines Modding';
+import ResponsiveImage from '../components/ResponsiveImage.astro';
+import { images } from '../data/imageImports.js';
 ---
 
 <MainLayout title={title}>
@@ -49,18 +51,38 @@ const title = 'Map Theme - Cities Skylines Modding';
 						usually very high.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/a0pa1Gz.jpg" target="null"><img src="https://i.imgur.com/a0pa1Gz.jpg" /></a><p class="explanation">
-						Example of ruined texture.
-					</p>
+					<a href="/images/theme/ruined.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.ruined}
+							naturalHeight={540}
+							naturalWidth={960}
+							srcWidths={[300, 400, 500, 600, 800, 900]}
+							alt="Example of ruined texture"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Example of ruined texture.</p>
 				</div>
 			</div>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="cliff">Cliff</h4><div
 				class="flex flex-col lg:flex-row gap-6 mt-4"
 			>
 				<div class="lg:w-2/3"><p>Visible if the terrain is steep enough. Usually high opacity.</p></div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/0WX4fvb.jpg" target="null"><img src="https://i.imgur.com/0WX4fvb.jpg" /></a><p class="explanation">
-						Example of cliff texture.
-					</p>
+					<a href="/images/theme/cliff.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.cliff}
+							naturalHeight={540}
+							naturalWidth={960}
+							srcWidths={[300, 400, 500, 600, 800, 900]}
+							alt="Example of cliff texture"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Example of cliff texture.</p>
 				</div>
 			</div>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="cliff-normal">Cliff Normal</h4>
@@ -81,9 +103,19 @@ const title = 'Map Theme - Cities Skylines Modding';
 						color.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/QoQD4lA.jpg" target="null"><img src="https://i.imgur.com/QoQD4lA.jpg" /></a><p class="explanation">
-						Example of sand texture.
-					</p>
+					<a href="/images/theme/sand.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.sand}
+							naturalHeight={540}
+							naturalWidth={960}
+							srcWidths={[300, 400, 500, 600, 800, 900]}
+							alt="Example of sand texture"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Example of sand texture.</p>
 				</div>
 			</div>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="sand-normal">Sand Normal</h4>
@@ -103,9 +135,19 @@ const title = 'Map Theme - Cities Skylines Modding';
 						Appears as surface paint on buildings, networks, or when painted using surface painter. Also can appear on network bridges using the bridge shader.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/JkpQzI7.jpg" target="null"><img src="https://i.imgur.com/JkpQzI7.jpg" /></a><p class="explanation">
-						Example of pavement texture.
-					</p>
+					<a href="/images/theme/pavement.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.pavement}
+							naturalHeight={540}
+							naturalWidth={960}
+							srcWidths={[300, 400, 500, 600, 800, 900]}
+							alt="Example of pavement texture"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Example of pavement texture.</p>
 				</div>
 			</div>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="gravel">Gravel</h4><div
@@ -116,9 +158,19 @@ const title = 'Map Theme - Cities Skylines Modding';
 						Appears as surface paint on buildings, networks, or when painted using surface painter. Also can appear on network bridges using the rail shader.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/jOoWIMu.jpg" target="null"><img src="https://i.imgur.com/jOoWIMu.jpg" /></a><p class="explanation">
-						Example of gravel texture.
-					</p>
+					<a href="/images/theme/gravel.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.gravel}
+							naturalHeight={540}
+							naturalWidth={960}
+							srcWidths={[300, 400, 500, 600, 800, 900]}
+							alt="Example of gravel texture"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Example of gravel texture.</p>
 				</div>
 			</div>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="oil">Oil</h4><div
@@ -127,9 +179,19 @@ const title = 'Map Theme - Cities Skylines Modding';
 				<div class="lg:w-2/3">
 					<p>Can be painted using the resource brush. Half-transparent by default, unless it's very bright. Can't coexist with ore.</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/TXnm0ks.jpg" target="null"><img src="https://i.imgur.com/TXnm0ks.jpg" /></a><p class="explanation">
-						Example of oil and ore textures.
-					</p>
+					<a href="/images/theme/oilore.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.oilore}
+							naturalHeight={540}
+							naturalWidth={960}
+							srcWidths={[300, 400, 500, 600, 800, 900]}
+							alt="Example of oil and ore texture"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Example of oil and ore textures.</p>
 				</div>
 			</div>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="ore">Ore</h4>
@@ -138,9 +200,19 @@ const title = 'Map Theme - Cities Skylines Modding';
 				class="flex flex-col lg:flex-row gap-6 mt-4"
 			>
 				<div class="lg:w-2/3"><p>Colors which affect the grass texture based on its opacity.</p></div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/TxBavHC.jpg" target="null"><img src="https://i.imgur.com/TxBavHC.jpg" /></a><p class="explanation">
-						Example of color offsets.
-					</p>
+					<a href="/images/theme/colors.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.colors}
+							naturalHeight={540}
+							naturalWidth={960}
+							srcWidths={[300, 400, 500, 600, 800, 900]}
+							alt="Example of color offsets"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Example of color offsets.</p>
 				</div>
 			</div>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="pollution">Pollution</h4>
@@ -155,9 +227,19 @@ const title = 'Map Theme - Cities Skylines Modding';
 				class="flex flex-col lg:flex-row gap-6 mt-4"
 			>
 				<div class="lg:w-2/3"><p>2D sprites which are visible on the terrain.</p></div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/tSwogPh.jpg" target="null"><img src="https://i.imgur.com/tSwogPh.jpg" /></a><p class="explanation">
-						Example of sprites.
-					</p>
+					<a href="/images/theme/sprites.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.sprites}
+							naturalHeight={540}
+							naturalWidth={960}
+							srcWidths={[300, 400, 500, 600, 800, 900]}
+							alt="Example of sprites"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Example of sprites.</p>
 				</div>
 			</div>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="grass-1">Grass</h4>
@@ -179,9 +261,19 @@ const title = 'Map Theme - Cities Skylines Modding';
 						simple black &amp; white foam texture.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/paPFaCY.jpg" target="null"><img src="https://i.imgur.com/paPFaCY.jpg" /></a><p class="explanation">
-						Example of water normal and foam.
-					</p>
+					<a href="/images/theme/watertextures.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.watertextures}
+							naturalHeight={540}
+							naturalWidth={960}
+							srcWidths={[300, 400, 500, 600, 800, 900]}
+							alt="Example of water normal and foam"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Example of water normal and foam.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="water-colors">Water Colors</h3>
@@ -189,9 +281,19 @@ const title = 'Map Theme - Cities Skylines Modding';
 				class="flex flex-col lg:flex-row gap-6 mt-4"
 			>
 				<div class="lg:w-2/3"><p>Deep water.</p></div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/jXX1hhO.jpg" target="null"><img src="https://i.imgur.com/jXX1hhO.jpg" /></a><p class="explanation">
-						Example of water colors.
-					</p>
+					<a href="/images/theme/watercolors.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.watercolors}
+							naturalHeight={540}
+							naturalWidth={960}
+							srcWidths={[300, 400, 500, 600, 800, 900]}
+							alt="Example of water colors"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Example of water colors.</p>
 				</div>
 			</div>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="dirty">Dirty</h4>
@@ -219,18 +321,38 @@ const title = 'Map Theme - Cities Skylines Modding';
 						therefore sunsets and sunrises will be very red.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/hxO8vq6.jpg" target="null"><img src="https://i.imgur.com/hxO8vq6.jpg" /></a><p class="explanation">
-						Example of Rayleigh scattering.
-					</p>
+					<a href="/images/theme/rayleigh.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.rayleigh}
+							naturalHeight={367}
+							naturalWidth={960}
+							srcWidths={[300, 400, 500, 600, 800, 900]}
+							alt="Example of Rayleigh scattering"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Example of Rayleigh scattering.</p>
 				</div>
 			</div>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="mie-scattering">Mie Scattering</h4><div
 				class="flex flex-col lg:flex-row gap-6 mt-4"
 			>
 				<div class="lg:w-2/3"><p>Affects the visibility of the sun and fog.</p></div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/HLWuwVh.jpg" target="null"><img src="https://i.imgur.com/HLWuwVh.jpg" /></a><p class="explanation">
-						Example of Mie scattering.
-					</p>
+					<a href="/images/theme/mie.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.mie}
+							naturalHeight={304}
+							naturalWidth={960}
+							srcWidths={[300, 400, 500, 600, 800, 900]}
+							alt="Example of Mie scattering"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Example of Mie scattering.</p>
 				</div>
 			</div>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="stars-intensity">Stars Intensity</h4>
@@ -245,9 +367,19 @@ const title = 'Map Theme - Cities Skylines Modding';
 				<div class="lg:w-2/3">
 					<p>Tints the color of the sky and ambient light. Note that sunsets and sunrises will be tinted the opposite of this color.</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/kPCVAqZ.jpg" target="null"><img src="https://i.imgur.com/kPCVAqZ.jpg" /></a><p class="explanation">
-						Example of sky tint.
-					</p>
+					<a href="/images/theme/skytint.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.skytint}
+							naturalHeight={540}
+							naturalWidth={960}
+							srcWidths={[300, 400, 500, 600, 800, 900]}
+							alt="Example of sky tint"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Example of sky tint.</p>
 				</div>
 			</div>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="night-horizon-color">Night Horizon Color</h4>
@@ -265,9 +397,19 @@ const title = 'Map Theme - Cities Skylines Modding';
 				class="flex flex-col lg:flex-row gap-6 mt-4"
 			>
 				<div class="lg:w-2/3"><p>Asphalt texture which gets multiplied by the road segment color.</p></div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/e3kMwWN.jpg" target="null"><img src="https://i.imgur.com/e3kMwWN.jpg" /></a><p class="explanation">
-						Example of asphalt texture.
-					</p>
+					<a href="/images/theme/road.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.road}
+							naturalHeight={540}
+							naturalWidth={960}
+							srcWidths={[300, 400, 500, 600, 800, 900]}
+							alt="Example of asphalt texture"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Example of asphalt texture.</p>
 				</div>
 			</div>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="downward-road">Downward Road</h4>
@@ -276,9 +418,19 @@ const title = 'Map Theme - Cities Skylines Modding';
 				class="flex flex-col lg:flex-row gap-6 mt-4"
 			>
 				<div class="lg:w-2/3"><p>The texture of the underground parts of buildings.</p></div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/SI2uKKC.jpg" target="null"><img src="https://i.imgur.com/SI2uKKC.jpg" /></a><p class="explanation">
-						Example of base texture.
-					</p>
+					<a href="/images/theme/base.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.base}
+							naturalHeight={540}
+							naturalWidth={960}
+							srcWidths={[300, 400, 500, 600, 800, 900]}
+							alt="Example of base texture"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Example of base texture.</p>
 				</div>
 			</div>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="building-base-normal">Building Base Normal</h4>
@@ -304,9 +456,19 @@ const title = 'Map Theme - Cities Skylines Modding';
 				class="flex flex-col lg:flex-row gap-6 mt-4"
 			>
 				<div class="lg:w-2/3"><p>Used for fake interiors inside building windows.</p></div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/IiAcXQX.jpg" target="null"><img src="https://i.imgur.com/IiAcXQX.jpg" /></a><p class="explanation">
-						Example of floor texture.
-					</p>
+					<a href="/images/theme/floor.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.floor}
+							naturalHeight={538}
+							naturalWidth={960}
+							srcWidths={[300, 400, 500, 600, 800, 900]}
+							alt="Example of floor texture"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Example of floor texture.</p>
 				</div>
 			</div>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="light-color-palette">Light Color Palette</h4><div
@@ -315,9 +477,19 @@ const title = 'Map Theme - Cities Skylines Modding';
 				<div class="lg:w-2/3"><p>Each building samples a random color from this texture to use for window illumination during the night.</p></div><div
 					class="lg:w-1/3"
 				>
-					<a href="https://i.imgur.com/iu4U0zd.jpg" target="null"><img src="https://i.imgur.com/iu4U0zd.jpg" /></a><p class="explanation">
-						Example of light texture.
-					</p>
+					<a href="/images/theme/light.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.light}
+							naturalHeight={538}
+							naturalWidth={960}
+							srcWidths={[300, 400, 500, 600, 800, 900]}
+							alt="Example of light texture"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Example of light texture.</p>
 				</div>
 			</div>
 			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="script">Script</h2>

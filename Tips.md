@@ -70,3 +70,8 @@ Images:
 /scripting: done
 /normal-maps: done
 /lut: done
+/theme: done
+/asset/network: done
+/asset/citizen: done
+/asset/vehicle: done
+/asset/tree: done

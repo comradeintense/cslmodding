@@ -3,6 +3,8 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Link from '../../components/Link.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 const title = 'Citizen Asset Creation - Cities Skylines Modding';
+import ResponsiveImage from '../../components/ResponsiveImage.astro';
+import { images } from '../../data/imageImports.js';
 ---
 
 <MainLayout title={title}>
@@ -25,9 +27,19 @@ const title = 'Citizen Asset Creation - Cities Skylines Modding';
 						or assets by other creators for reference.
 					</p><p class="mt-4">The absolute limit for a mesh is 65536 vertices.</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/jBtrlSE.jpg" target="null"><img src="https://i.imgur.com/jBtrlSE.jpg" /></a><p class="explanation">
-						Main model and LOD of a vanilla citizen.
-					</p>
+					<a href="/images/asset/citizen/citvanilla.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.citvanilla}
+							naturalHeight={512}
+							naturalWidth={1024}
+							srcWidths={[300, 400, 800, 1000]}
+							alt="Main model and LOD of a vanilla citizen"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video"
+							loading="eager"
+						/></a
+					><p class="explanation">Main model and LOD of a vanilla citizen.</p>
 				</div>
 			</div>
 			<div class="flex gap-2 mt-6 items-start justify-start">
@@ -67,9 +79,19 @@ const title = 'Citizen Asset Creation - Cities Skylines Modding';
 						You need to bind your mesh to the bones of the skeleton, in 3ds Max this is done using the skin modifier and adding all the bones
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/UH2WI1f.jpg" target="null"><img src="https://i.imgur.com/UH2WI1f.jpg" /></a><p class="explanation">
-						One of the skeleton templates.
-					</p>
+					<a href="/images/asset/citizen/citskeleton.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.citskeleton}
+							naturalHeight={727}
+							naturalWidth={496}
+							srcWidths={[300, 400]}
+							alt="One of the skeleton templates"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-square object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">One of the skeleton templates.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="uv-mapping">UV Mapping</h3>
@@ -79,9 +101,19 @@ const title = 'Citizen Asset Creation - Cities Skylines Modding';
 						For the main mesh, you are allowed to UV map outside the 0-1 area (main tile), so you can tile the entire texture multiple times on a single face.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/GfAYY35.jpg" target="null"><img src="https://i.imgur.com/GfAYY35.jpg" /></a><p class="explanation">
-						Example UV mapping using visible horizontal tiling on the bottom.
-					</p>
+					<a href="/images/asset/building/uv_main.jpg" target="_blank"
+						><ResponsiveImage
+							src={images.uv_main}
+							naturalHeight={437}
+							naturalWidth={560}
+							srcWidths={[300, 400, 500]}
+							alt="Example UV mapping using visible horizontal tiling on the bottom"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-square object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Example UV mapping using visible horizontal tiling on the bottom.</p>
 				</div>
 			</div>
 			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="uv-mapping-lod">LOD</h4>
@@ -93,7 +125,19 @@ const title = 'Citizen Asset Creation - Cities Skylines Modding';
 						citizen on your LOD.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/kAR8cmr.jpg" target="null"><img src="https://i.imgur.com/kAR8cmr.jpg" /></a><p class="explanation">
+					<a href="/images/asset/building/uv_lod.jpg" target="_blank"
+						><ResponsiveImage
+							src={images.uv_lod}
+							naturalHeight={475}
+							naturalWidth={605}
+							srcWidths={[300, 400, 500, 600]}
+							alt="UV mapping for LOD mesh using automatic mapping in 3ds Max"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-square object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">
 						UV mapping for LOD mesh using automatic mapping in 3ds Max. No overlap and contained within the main tile - good for baking.
 					</p>
 				</div>
@@ -152,9 +196,19 @@ const title = 'Citizen Asset Creation - Cities Skylines Modding';
 						medium/light gray below 140 RGB.
 					</p><p class="mt-4">If you don't import a diffuse map, it will default to white.</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/zQ8Y6dP.jpg" target="null"><img src="https://i.imgur.com/zQ8Y6dP.jpg" /></a><p class="explanation">
-						Example diffuse textures for some vanilla citizens.
-					</p>
+					<a href="/images/asset/citizen/cittextures.jpg" target="_blank"
+						><ResponsiveImage
+							src={images.cittextures}
+							naturalHeight={256}
+							naturalWidth={256}
+							srcWidths={[200, 250]}
+							alt="Example diffuse textures for some vanilla citizens"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-square object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Example diffuse textures for some vanilla citizens.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="alpha">Alpha</h3>
@@ -166,11 +220,33 @@ const title = 'Citizen Asset Creation - Cities Skylines Modding';
 					</p><p class="mt-4">If you don't import an alpha map, it will default to fully opaque or fully visible.</p>
 				</div><div class="lg:w-1/3">
 					<div class="">
-						<a href="https://i.imgur.com/EsrQwEb.jpg" target="null"><img src="https://i.imgur.com/EsrQwEb.jpg" /></a><p class="explanation">
-							Example alpha texture for some railings and metal beams.
-						</p>
+						<a href="/images/asset/building/textures_alpha.jpg" target="_blank"
+							><ResponsiveImage
+								src={images.textures_alpha}
+								naturalHeight={220}
+								naturalWidth={306}
+								srcWidths={[200, 300]}
+								alt="Example alpha texture for some railings and metal beams"
+								format="webp"
+								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+								class="h-auto w-full aspect-video object-cover"
+								loading="eager"
+							/></a
+						><p class="explanation">Example alpha texture for some railings and metal beams.</p>
 					</div><div class="mt-4">
-						<a href="https://i.imgur.com/et6nTdO.jpg" target="null"><img src="https://i.imgur.com/et6nTdO.jpg" /></a><p class="explanation">
+						<a href="/images/asset/building/textures_alpha_rail.jpg" target="_blank">
+							<ResponsiveImage
+								src={images.textures_alpha_rail}
+								naturalHeight={128}
+								naturalWidth={256}
+								srcWidths={[200, 250]}
+								alt="Example alpha texture for some railings and metal beams"
+								format="webp"
+								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+								class="h-auto w-full aspect-video"
+								loading="eager"
+							/></a
+						><p class="explanation">
 							Using lighter values for the invisible parts will decrease the chance of small details like railings disappearing completely.
 						</p>
 					</div>
@@ -188,11 +264,33 @@ const title = 'Citizen Asset Creation - Cities Skylines Modding';
 					</p><p class="mt-4">If you don't import a specular map, it will default to no specularity.</p>
 				</div><div class="lg:w-1/3">
 					<div class="">
-						<a href="https://i.imgur.com/dpTKCTS.jpg" target="null"><img src="https://i.imgur.com/dpTKCTS.jpg" /></a><p class="explanation">
-							Example specular map for a roof water tank.
-						</p>
+						<a href="/images/asset/citizen/citspec.jpeg" target="_blank">
+							<ResponsiveImage
+								src={images.citspec}
+								naturalHeight={512}
+								naturalWidth={512}
+								srcWidths={[200, 300, 400, 500]}
+								alt="Example specular map for a roof water tank"
+								format="webp"
+								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+								class="h-auto w-full aspect-square object-cover"
+								loading="eager"
+							/></a
+						><p class="explanation">Example specular map for a roof water tank.</p>
 					</div><div class="mt-4">
-						<a href="https://i.imgur.com/xZnShPJ.jpg" target="null"><img src="https://i.imgur.com/xZnShPJ.jpg" /></a><p class="explanation">
+						<a href="/images/asset/building/textures_specular_transition.jpg" target="_blank"
+							><ResponsiveImage
+								src={images.textures_specular_transition}
+								naturalHeight={293}
+								naturalWidth={511}
+								srcWidths={[300, 400, 500]}
+								alt="Transitions between different specular values produce artifacts on the normal map and vice versa"
+								format="webp"
+								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+								class="h-auto w-full aspect-video object-cover"
+								loading="eager"
+							/></a
+						><p class="explanation">
 							Transitions between different specular values produce artifacts on the normal map and vice versa, even if a normal map is not imported.
 						</p>
 					</div>
@@ -221,11 +319,33 @@ const title = 'Citizen Asset Creation - Cities Skylines Modding';
 					</p>
 				</div><div class="lg:w-1/3">
 					<div class="">
-						<a href="https://i.imgur.com/Tep5ZIS.jpg" target="null"><img src="https://i.imgur.com/Tep5ZIS.jpg" /></a><p class="explanation">
-							Example normal map for rocks.
-						</p>
+						<a href="/images/asset/citizen/citnormal.jpeg" target="_blank"
+							><ResponsiveImage
+								src={images.citnormal}
+								naturalHeight={512}
+								naturalWidth={512}
+								srcWidths={[300, 400, 500]}
+								alt="Example normal map for rocks"
+								format="webp"
+								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+								class="h-auto w-full aspect-square object-cover"
+								loading="eager"
+							/></a
+						><p class="explanation">Example normal map for rocks.</p>
 					</div><div class="mt-4">
-						<a href="https://i.imgur.com/BP3Vj1J.jpg" target="null"><img src="https://i.imgur.com/BP3Vj1J.jpg" /></a><p class="explanation">
+						<a href="/images/asset/citizen/citnormal2.jpeg" target="_blank"
+							><ResponsiveImage
+								src={images.citnormal2}
+								naturalHeight={241}
+								naturalWidth={780}
+								srcWidths={[300, 400, 500]}
+								alt="Image shows the same flat normal map on faces with different UV rotation/flip"
+								format="webp"
+								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+								class="h-auto w-full aspect-video object-cover"
+								loading="eager"
+							/></a
+						><p class="explanation">
 							Problem: default normal map value is 0.5, which isn't possible by using 127(left) or 128(right). Image shows the same flat normal map on faces
 							with different UV rotation/flip.
 						</p>
@@ -262,9 +382,19 @@ const title = 'Citizen Asset Creation - Cities Skylines Modding';
 						> and typing in appdata.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/kcqp2OQ.jpg" target="null"><img src="https://i.imgur.com/kcqp2OQ.jpg" /></a><p class="explanation">
-						Files ready for import.
-					</p>
+					<a href="/images/asset/building/import.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.importIMG}
+							naturalHeight={426}
+							naturalWidth={1245}
+							srcWidths={[300, 400, 800, 1200]}
+							alt="Files ready for import"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/>
+					</a><p class="explanation">Files ready for import.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="template">Template</h3>
@@ -304,9 +434,19 @@ const title = 'Citizen Asset Creation - Cities Skylines Modding';
 				<div class="lg:w-2/3">
 					<p>For citizens, you can't rotate or scale the mesh on import, so you have to make sure it's correct in your 3d software or when exporting.</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/IYxkWqj.jpg" target="null"><img src="https://i.imgur.com/IYxkWqj.jpg" /></a><p class="explanation">
-						Importing a mesh in asset importer.
-					</p>
+					<a href="/images/asset/citizen/citimport.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.citimport}
+							naturalHeight={534}
+							naturalWidth={876}
+							srcWidths={[300, 400, 500, 600, 800]}
+							alt="Importing a mesh in asset importer"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/>
+					</a><p class="explanation">Importing a mesh in asset importer.</p>
 				</div>
 			</div>
 			<div class="flex gap-2 mt-6 items-start justify-start">
@@ -371,9 +511,19 @@ const title = 'Citizen Asset Creation - Cities Skylines Modding';
 						/> scene explorer <span class="key">Ctrl+E</span> or running scripts in the console <span class="key">F7</span>, or other mods:
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/0ztXu62.jpg" target="null"><img src="https://i.imgur.com/0ztXu62.jpg" /></a><p class="explanation">
-						ModTools scene explorer and console.
-					</p>
+					<a href="/images/asset/building/modtools.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.modtools}
+							naturalHeight={786}
+							naturalWidth={1503}
+							srcWidths={[300, 400, 800, 1000, 1200, 1500]}
+							alt="ModTools scene explorer and console"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/>
+					</a><p class="explanation">ModTools scene explorer and console.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="ai">AI</h3>
@@ -402,7 +552,19 @@ const title = 'Citizen Asset Creation - Cities Skylines Modding';
 						The filename input is on the bottom left, this is what the actual file will be called. It's not recommended to use spaces, dots, or special symbols.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/mPQKPhW.jpg" target="null"><img src="https://i.imgur.com/mPQKPhW.jpg" /></a><p class="explanation">Save asset window.</p>
+					<a href="/images/asset/citizen/citsave.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.citsave}
+							naturalHeight={672}
+							naturalWidth={781}
+							srcWidths={[300, 400, 500, 600, 700]}
+							alt="Save asset window"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/>
+					</a><p class="explanation">Save asset window.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="asset-name">Asset Name</h3>
@@ -431,9 +593,19 @@ const title = 'Citizen Asset Creation - Cities Skylines Modding';
 						> and typing in appdata.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/CNfdvdz.jpg" target="null"><img src="https://i.imgur.com/CNfdvdz.jpg" /></a><p class="explanation">
-						CRP files in the local assets folder.
-					</p>
+					<a href="/images/asset/building/local.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.local}
+							naturalHeight={226}
+							naturalWidth={595}
+							srcWidths={[300, 400, 500]}
+							alt="CRP files in the local assets folder"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video"
+							loading="eager"
+						/>
+					</a><p class="explanation">CRP files in the local assets folder.</p>
 				</div>
 			</div>
 			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="publish">Publish</h2>
@@ -443,9 +615,19 @@ const title = 'Citizen Asset Creation - Cities Skylines Modding';
 						Go to the content manager &gt; assets and find your asset, then click share.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/4OPnZac.jpg" target="null"><img src="https://i.imgur.com/4OPnZac.jpg" /></a><p class="explanation">
-						Share button in content manager.
-					</p>
+					<a href="/images/asset/building/share.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.share}
+							naturalHeight={194}
+							naturalWidth={684}
+							srcWidths={[300, 400, 500, 600]}
+							alt="Share button in content manager"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/>
+					</a><p class="explanation">Share button in content manager.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="title-and-description">Title and Description</h3>
@@ -464,9 +646,19 @@ const title = 'Citizen Asset Creation - Cities Skylines Modding';
 						of assets.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/Y53Uqxy.jpg" target="null"><img src="https://i.imgur.com/Y53Uqxy.jpg" /></a><p class="explanation">
-						Publish window and content folder.
-					</p>
+					<a href="/images/asset/building/publish.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.publish}
+							naturalHeight={591}
+							naturalWidth={721}
+							srcWidths={[300, 400, 500, 700]}
+							alt="Publish window and content folder"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/>
+					</a><p class="explanation">Publish window and content folder.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="steam-workshop">Steam Workshop</h3>
@@ -518,9 +710,19 @@ const title = 'Citizen Asset Creation - Cities Skylines Modding';
 						It's the reason why a local asset is not the same as a workshop published asset.
 					</p><p class="mt-4">For local assets: filename.Asset Name_Data<br />For published workshop assets: SteamID.Asset Name_Data</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/f3Tr6NM.jpg" target="null"><img src="https://i.imgur.com/f3Tr6NM.jpg" /></a><p class="explanation">
-						Comparison between local (top) and workshop published (bottom) prefab names shown in ModTools.
-					</p>
+					<a href="/images/asset/building/prefab.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.prefab}
+							naturalHeight={118}
+							naturalWidth={528}
+							srcWidths={[300, 400, 500]}
+							alt="Publish window and content folder"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/>
+					</a><p class="explanation">Comparison between local (top) and workshop published (bottom) prefab names shown in ModTools.</p>
 				</div>
 			</div>
 		</div>

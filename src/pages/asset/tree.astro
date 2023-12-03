@@ -3,6 +3,8 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Link from '../../components/Link.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 const title = 'Tree Asset Creation - Cities Skylines Modding';
+import ResponsiveImage from '../../components/ResponsiveImage.astro';
+import { images } from '../../data/imageImports.js';
 ---
 
 <MainLayout title={title}>
@@ -38,9 +40,19 @@ const title = 'Tree Asset Creation - Cities Skylines Modding';
 						assets by other creators for reference.
 					</p><p class="mt-4">The absolute limit for a mesh is 65536 vertices.</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/DNBQPCh.jpg" target="null"><img src="https://i.imgur.com/DNBQPCh.jpg" /></a><p class="explanation">
-						Triangle counts for a couple of vanilla trees.
-					</p>
+					<a href="/images/asset/tree/treetris.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.treetris}
+							naturalHeight={437}
+							naturalWidth={1488}
+							srcWidths={[300, 400, 800, 1000]}
+							alt="Triangle counts for a couple of vanilla trees"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Triangle counts for a couple of vanilla trees.</p>
 				</div>
 			</div>
 			<div class="flex gap-2 mt-6 items-start justify-start">
@@ -70,9 +82,19 @@ const title = 'Tree Asset Creation - Cities Skylines Modding';
 				<div class="lg:w-2/3">
 					<p>You are allowed to UV map outside the 0-1 area (main tile), so you can tile the entire texture multiple times on a single face.</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/GfAYY35.jpg" target="null"><img src="https://i.imgur.com/GfAYY35.jpg" /></a><p class="explanation">
-						Example UV mapping using visible horizontal tiling on the bottom.
-					</p>
+					<a href="/images/asset/building/uv_main.jpg" target="_blank"
+						><ResponsiveImage
+							src={images.uv_main}
+							naturalHeight={437}
+							naturalWidth={560}
+							srcWidths={[300, 400, 500]}
+							alt="Example UV mapping using visible horizontal tiling on the bottom"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-square object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Example UV mapping using visible horizontal tiling on the bottom.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="pivot-origin">Pivot / Origin</h3>
@@ -125,13 +147,34 @@ const title = 'Tree Asset Creation - Cities Skylines Modding';
 					</p><p class="mt-4">If you don't import a diffuse map, it will default to white.</p>
 				</div><div class="lg:w-1/3">
 					<div class="">
-						<a href="https://i.imgur.com/251fQ7f.jpg" target="null"><img src="https://i.imgur.com/251fQ7f.jpg" /></a><p class="explanation">
-							Textures for a couple of vanilla trees.
-						</p>
-					</div><div class="mt-4">
-						<a href="https://i.imgur.com/CQHjaAT.png" target="null"><img src="https://i.imgur.com/CQHjaAT.png" /></a><p class="explanation">
-							Color guidelines.
-						</p>
+						<a href="/images/asset/tree/treetextures.jpg" target="_blank">
+							<ResponsiveImage
+								src={images.treetextures}
+								naturalHeight={256}
+								naturalWidth={384}
+								srcWidths={[300, 350]}
+								alt="Textures for a couple of vanilla trees"
+								format="webp"
+								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+								class="h-auto w-full aspect-video object-cover"
+								loading="eager"
+							/></a
+						><p class="explanation">Textures for a couple of vanilla trees.</p>
+					</div>
+					<div class="mt-4">
+						<a href="/images/asset/building/color_guidelines.png" target="_blank"
+							><ResponsiveImage
+								src={images.color_guidelines}
+								naturalHeight={1024}
+								naturalWidth={1024}
+								srcWidths={[300, 400, 800, 1000]}
+								alt="Color guidelines"
+								format="webp"
+								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+								class="h-auto w-full aspect-square object-cover"
+								loading="eager"
+							/></a
+						><p class="explanation">Color guidelines.</p>
 					</div>
 				</div>
 			</div>
@@ -144,11 +187,33 @@ const title = 'Tree Asset Creation - Cities Skylines Modding';
 					</p><p class="mt-4">If you don't import an alpha map, it will default to fully opaque or fully visible.</p>
 				</div><div class="lg:w-1/3">
 					<div class="">
-						<a href="https://i.imgur.com/EsrQwEb.jpg" target="null"><img src="https://i.imgur.com/EsrQwEb.jpg" /></a><p class="explanation">
-							Example alpha texture for some railings and metal beams.
-						</p>
+						<a href="/images/asset/building/textures_alpha.jpg" target="_blank"
+							><ResponsiveImage
+								src={images.textures_alpha}
+								naturalHeight={220}
+								naturalWidth={306}
+								srcWidths={[200, 300]}
+								alt="Example alpha texture for some railings and metal beams"
+								format="webp"
+								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+								class="h-auto w-full aspect-video object-cover"
+								loading="eager"
+							/></a
+						><p class="explanation">Example alpha texture for some railings and metal beams.</p>
 					</div><div class="mt-4">
-						<a href="https://i.imgur.com/et6nTdO.jpg" target="null"><img src="https://i.imgur.com/et6nTdO.jpg" /></a><p class="explanation">
+						<a href="/images/asset/building/textures_alpha_rail.jpg" target="_blank">
+							<ResponsiveImage
+								src={images.textures_alpha_rail}
+								naturalHeight={128}
+								naturalWidth={256}
+								srcWidths={[200, 250]}
+								alt="Example alpha texture for some railings and metal beams"
+								format="webp"
+								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+								class="h-auto w-full aspect-video"
+								loading="eager"
+							/></a
+						><p class="explanation">
 							Using lighter values for the invisible parts will decrease the chance of small details like railings disappearing completely.
 						</p>
 					</div>
@@ -187,13 +252,33 @@ const title = 'Tree Asset Creation - Cities Skylines Modding';
 					</p><p class="mt-4">If you don't import a normal map, it will default to a flat normal map - no bump.</p>
 				</div><div class="lg:w-1/3">
 					<div class="">
-						<a href="https://i.imgur.com/GDOFbuI.jpg" target="null"><img src="https://i.imgur.com/GDOFbuI.jpg" /></a><p class="explanation">
-							Example normal map for a plant.
-						</p>
+						<a href="/images/asset/tree/treenormal.jpg" target="_blank">
+							<ResponsiveImage
+								src={images.treenormal}
+								naturalHeight={256}
+								naturalWidth={256}
+								srcWidths={[200, 250]}
+								alt="Example normal map for a plant"
+								format="webp"
+								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+								class="h-auto w-full aspect-square object-cover"
+								loading="eager"
+							/></a
+						><p class="explanation">Example normal map for a plant.</p>
 					</div><div class="mt-4">
-						<a href="https://i.imgur.com/CeKq51I.jpg" target="null"><img src="https://i.imgur.com/CeKq51I.jpg" /></a><p class="explanation">
-							Problem: normal maps appear incorrectly if the asset importer mesh rotation feature is used.
-						</p>
+						<a href="/images/asset/building/textures_normal_problem.jpg" target="_blank"
+							><ResponsiveImage
+								src={images.textures_normal_problem}
+								naturalHeight={633}
+								naturalWidth={981}
+								srcWidths={[300, 400, 500, 600, 700, 800, 900]}
+								alt="Example normal map problem"
+								format="webp"
+								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+								class="h-auto w-full aspect-video"
+								loading="eager"
+							/></a
+						><p class="explanation">Problem: normal maps appear incorrectly if the asset importer mesh rotation feature is used.</p>
 					</div>
 				</div>
 			</div>
@@ -249,9 +334,19 @@ const title = 'Tree Asset Creation - Cities Skylines Modding';
 						> and typing in appdata.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/xkSai2z.jpg" target="null"><img src="https://i.imgur.com/xkSai2z.jpg" /></a><p class="explanation">
-						Files ready for import.
-					</p>
+					<a href="/images/asset/tree/treeimportfolder.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.treeimportfolder}
+							naturalHeight={149}
+							naturalWidth={459}
+							srcWidths={[200, 300, 400]}
+							alt="Files ready for import"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Files ready for import.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="template">Template</h3>
@@ -292,9 +387,19 @@ const title = 'Tree Asset Creation - Cities Skylines Modding';
 						around X-axis are common necessities.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/0VrHOvI.jpg" target="null"><img src="https://i.imgur.com/0VrHOvI.jpg" /></a><p class="explanation">
-						Importing a mesh in asset importer.
-					</p>
+					<a href="/images/asset/tree/treeimportmesh.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.treeimportmesh}
+							naturalHeight={533}
+							naturalWidth={876}
+							srcWidths={[300, 400, 500, 600, 800]}
+							alt="Importing a mesh in asset importer"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/></a
+					><p class="explanation">Importing a mesh in asset importer.</p>
 				</div>
 			</div>
 			<div class="flex gap-2 mt-6 items-start justify-start">
@@ -388,9 +493,19 @@ const title = 'Tree Asset Creation - Cities Skylines Modding';
 						/> scene explorer <span class="key">Ctrl+E</span> or running scripts in the console <span class="key">F7</span>, or other mods:
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/0ztXu62.jpg" target="null"><img src="https://i.imgur.com/0ztXu62.jpg" /></a><p class="explanation">
-						ModTools scene explorer and console.
-					</p>
+					<a href="/images/asset/building/modtools.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.modtools}
+							naturalHeight={786}
+							naturalWidth={1503}
+							srcWidths={[300, 400, 800, 1000, 1200, 1500]}
+							alt="ModTools scene explorer and console"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/>
+					</a><p class="explanation">ModTools scene explorer and console.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="ui-priority">UI Priority</h3>
@@ -428,9 +543,19 @@ const title = 'Tree Asset Creation - Cities Skylines Modding';
 						/> console <span class="key">F7</span> to set the variation amount, and also calculate equal probability automatically.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/oe3rouc.jpg" target="null"><img src="https://i.imgur.com/oe3rouc.jpg" /></a><p class="explanation">
-						Tree variations menu in the asset editor.
-					</p>
+					<a href="/images/asset/tree/treevariations.jpeg" target="_blank">
+						<ResponsiveImage
+							src={images.treevariations}
+							naturalHeight={112}
+							naturalWidth={322}
+							srcWidths={[300]}
+							alt="Tree variations menu in the asset editor"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/>
+					</a><p class="explanation">Tree variations menu in the asset editor.</p>
 				</div>
 			</div>
 			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="save">Save</h2>
@@ -441,7 +566,19 @@ const title = 'Tree Asset Creation - Cities Skylines Modding';
 						The filename input is on the bottom left, this is what the actual file will be called. It's not recommended to use spaces, dots, or special symbols.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/hsWwdr5.jpg" target="null"><img src="https://i.imgur.com/hsWwdr5.jpg" /></a><p class="explanation">Save asset window.</p>
+					<a href="/images/asset/tree/treesave.jpeg" target="_blank">
+						<ResponsiveImage
+							src={images.treesave}
+							naturalHeight={664}
+							naturalWidth={779}
+							srcWidths={[300, 400, 500, 600, 700]}
+							alt="Save asset window"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/>
+					</a><p class="explanation">Save asset window.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="asset-name">Asset Name</h3>
@@ -470,9 +607,19 @@ const title = 'Tree Asset Creation - Cities Skylines Modding';
 						> and typing in appdata.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/CNfdvdz.jpg" target="null"><img src="https://i.imgur.com/CNfdvdz.jpg" /></a><p class="explanation">
-						CRP files in the local assets folder.
-					</p>
+					<a href="/images/asset/building/local.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.local}
+							naturalHeight={226}
+							naturalWidth={595}
+							srcWidths={[300, 400, 500]}
+							alt="CRP files in the local assets folder"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video"
+							loading="eager"
+						/>
+					</a><p class="explanation">CRP files in the local assets folder.</p>
 				</div>
 			</div>
 			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="publish">Publish</h2>
@@ -482,9 +629,19 @@ const title = 'Tree Asset Creation - Cities Skylines Modding';
 						Go to the content manager &gt; assets and find your asset, then click share.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/4OPnZac.jpg" target="null"><img src="https://i.imgur.com/4OPnZac.jpg" /></a><p class="explanation">
-						Share button in content manager.
-					</p>
+					<a href="/images/asset/building/share.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.share}
+							naturalHeight={194}
+							naturalWidth={684}
+							srcWidths={[300, 400, 500, 600]}
+							alt="Share button in content manager"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/>
+					</a><p class="explanation">Share button in content manager.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="title-and-description">Title and Description</h3>
@@ -503,9 +660,19 @@ const title = 'Tree Asset Creation - Cities Skylines Modding';
 						of assets.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/Y53Uqxy.jpg" target="null"><img src="https://i.imgur.com/Y53Uqxy.jpg" /></a><p class="explanation">
-						Publish window and content folder.
-					</p>
+					<a href="/images/asset/building/publish.jpg" target="_blank">
+						<ResponsiveImage
+							src={images.publish}
+							naturalHeight={591}
+							naturalWidth={721}
+							srcWidths={[300, 400, 500, 700]}
+							alt="Publish window and content folder"
+							format="webp"
+							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							class="h-auto w-full aspect-video object-cover"
+							loading="eager"
+						/>
+					</a><p class="explanation">Publish window and content folder.</p>
 				</div>
 			</div>
 			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="steam-workshop">Steam Workshop</h3>
@@ -557,7 +724,19 @@ const title = 'Tree Asset Creation - Cities Skylines Modding';
 						It's the reason why a local asset is not the same as a workshop published asset.
 					</p><p class="mt-4">For local assets: filename.Asset Name_Data<br />For published workshop assets: SteamID.Asset Name_Data</p>
 				</div><div class="lg:w-1/3">
-					<a href="https://i.imgur.com/f3Tr6NM.jpg" target="null"><img src="https://i.imgur.com/f3Tr6NM.jpg" /></a><p class="explanation">
+					<a href="/images/asset/building/prefab.jpg" target="_blank">
+					<ResponsiveImage
+						src={images.prefab}
+						naturalHeight={118}
+						naturalWidth={528}
+						srcWidths={[300, 400, 500]}
+						alt="Publish window and content folder"
+						format="webp"
+						sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+						class="h-auto w-full aspect-video object-cover"
+						loading="eager"
+					/>
+				</a><p class="explanation">
 						Comparison between local (top) and workshop published (bottom) prefab names shown in ModTools.
 					</p>
 				</div>
