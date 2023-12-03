@@ -1,8 +1,9 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import Link from '../../components/Link.astro';
+import { Picture } from 'astro:assets';
 import TableOfContents from '../../components/TableOfContents.astro';
-import ResponsiveImage from '../../components/ResponsiveImage.astro';
+//import Image from '../../components/Image.astro';
 import { images } from '../../data/imageImports.js';
 
 const title = 'Building Asset Creation - Cities Skylines Modding';
@@ -36,14 +37,13 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			<!-- ?right -->
 			<div class="flex flex-col gap-1 lg:w-1/3">
 				<a href="/images/asset/building/tris.jpg" target="_blank">
-					<ResponsiveImage
+					<Picture
 						src={images.tris}
-						naturalHeight={1024}
-						naturalWidth={1536}
-						srcWidths={[300, 400, 800, 1400, 1500]}
+						width={images.tris.width / 2}
+						densities={[1.5, 2]}
+						formats={['avif', 'webp']}
 						alt="Triangle counts of some vanilla buildings"
 						format="webp"
-						sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 						class="h-auto w-full"
 						loading="eager"
 					/></a
@@ -90,16 +90,13 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			<!-- ?right -->
 			<div class="flex flex-col gap-1 lg:w-1/3">
 				<a href="/images/asset/building/lodmesh.jpg" target="_blank">
-					<ResponsiveImage
+					<Picture
 						src={images.lodmesh}
-						naturalHeight={874}
-						naturalWidth={1488}
-						srcWidths={[300, 400, 800, 1400]}
+						width={images.lodmesh.width / 2}
+						densities={[1.5, 2]}
+						formats={['avif', 'webp']}
 						alt="Comparison between main and LOD meshes for a large and small building."
-						format="webp"
-						sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 						class="h-auto w-full"
-						loading="eager"
 					/></a
 				>
 				<p class="explanation">Comparison between main and LOD meshes for a large and small building.</p>
@@ -114,16 +111,13 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			</p>
 			<div class="flex flex-col gap-1 lg:w-1/3">
 				<a href="/images/asset/building/uv_main.jpg" target="_blank"
-					><ResponsiveImage
+					><Picture
 						src={images.uv_main}
-						naturalHeight={437}
-						naturalWidth={560}
-						srcWidths={[300, 400, 500]}
+						width={images.uv_main.width / 2}
+						densities={[1.5, 2]}
+						formats={['avif', 'webp']}
 						alt="Example UV mapping using visible horizontal tiling on the bottom"
-						format="webp"
-						sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 						class="h-auto w-full"
-						loading="eager"
 					/></a
 				>
 				<p class="explanation">Example UV mapping using visible horizontal tiling on the bottom.</p>
@@ -140,16 +134,13 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			</p>
 			<div class="lg:w-1/3">
 				<a href="/images/asset/building/uv_lod.jpg" target="_blank"
-					><ResponsiveImage
+					><Picture
 						src={images.uv_lod}
-						naturalHeight={475}
-						naturalWidth={605}
-						srcWidths={[300, 400, 500, 600]}
+						width={images.uv_lod.width / 2}
+						densities={[1.5, 2]}
+						formats={['avif', 'webp']}
 						alt="UV mapping for LOD mesh using automatic mapping in 3ds Max"
-						format="webp"
-						sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 						class="h-auto w-full"
-						loading="eager"
 					/></a
 				>
 				<p class="explanation">UV mapping for LOD mesh using automatic mapping in 3ds Max. No overlap and contained within the main tile - good for baking.</p>
@@ -192,16 +183,13 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			</div>
 			<div class="lg:w-1/3">
 				<a href="/images/asset/building/vertexpaint.jpg" target="_blank"
-					><ResponsiveImage
+					><Picture
 						src={images.vertexpaint}
-						naturalHeight={442}
-						naturalWidth={930}
-						srcWidths={[300, 400, 800, 900]}
+						width={images.vertexpaint.width / 2}
+						densities={[1.5, 2]}
+						formats={['avif', 'webp']}
 						alt="Vertex painting in 3ds Max"
-						format="webp"
-						sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 						class="h-auto w-full"
-						loading="eager"
 					/></a
 				>
 				<p class="explanation">Vertex painting in 3ds Max.</p>
@@ -233,16 +221,14 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			</div>
 			<div class="lg:w-1/3">
 				<a href="/images/asset/building/textures.jpg" target="_blank"
-					><ResponsiveImage
+					>
+					<Picture
 						src={images.textures}
-						naturalHeight={1536}
-						naturalWidth={2048}
-						srcWidths={[300, 400, 800, 1200, 1500, 1800, 2000]}
+						width={images.textures.width / 2}
+						densities={[1.5, 2]}
+						formats={['avif', 'webp']}
 						alt="Texture sizes of various vanilla buildings"
-						format="webp"
-						sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 						class="h-auto w-full"
-						loading="eager"
 					/></a
 				>
 				<p class="explanation">Texture sizes of various vanilla buildings. (Not to scale) See resolution in the top right corner of the preview window.</p>
@@ -292,32 +278,26 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			<div class="lg:w-1/3">
 				<div>
 					<a href="/images/asset/building/textures_diffuse.jpg" target="_blank"
-						><ResponsiveImage
+						><Picture
 							src={images.textures_diffuse}
-							naturalHeight={512}
-							naturalWidth={1024}
-							srcWidths={[300, 400, 800, 1000]}
 							alt="Example diffuse texture for a warehouse"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-auto w-full"
-							loading="eager"
+							width={images.textures_diffuse.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 						/></a
 					>
 					<p class="explanation">Example diffuse texture for a warehouse.</p>
 				</div>
 				<div class="mt-4">
 					<a href="/images/asset/building/color_guidelines.png" target="_blank"
-						><ResponsiveImage
+						><Picture
 							src={images.color_guidelines}
-							naturalHeight={1024}
-							naturalWidth={1024}
-							srcWidths={[300, 400, 800, 1000]}
 							alt="Color guidelines"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
+							width={images.color_guidelines.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							class="h-auto w-full"
-							loading="eager"
 						/></a
 					>
 					<p class="explanation">Color guidelines.</p>
@@ -341,32 +321,26 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			<div class="lg:w-1/3">
 				<div>
 					<a href="/images/asset/building/textures_alpha.jpg" target="_blank"
-						><ResponsiveImage
+						><Picture
 							src={images.textures_alpha}
-							naturalHeight={220}
-							naturalWidth={306}
-							srcWidths={[200, 300]}
+							width={images.textures_alpha.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							alt="Example alpha texture for some railings and metal beams"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-auto w-full"
-							loading="eager"
 						/></a
 					>
 					<p class="explanation">Example alpha texture for some railings and metal beams.</p>
 				</div>
 				<div class="mt-4">
 					<a href="/images/asset/building/textures_alpha_rail.jpg" target="_blank">
-						<ResponsiveImage
+						<Picture
 							src={images.textures_alpha_rail}
-							naturalHeight={128}
-							naturalWidth={256}
-							srcWidths={[200, 250]}
+							width={images.textures_alpha_rail.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							alt="Example alpha texture for some railings and metal beams"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-auto w-full"
-							loading="eager"
 						/></a
 					>
 					<p class="explanation">
@@ -413,14 +387,12 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			</div>
 			<div class="lg:w-1/3">
 				<a href="/images/asset/building/textures_illumination.jpg" target="_blank"
-					><ResponsiveImage
+					><Picture
 						src={images.textures_illumination}
-						naturalHeight={415}
-						naturalWidth={792}
-						srcWidths={[300, 400, 500, 700]}
+						width={images.textures_illumination.width / 2}
+						densities={[1.5, 2]}
+						formats={['avif', 'webp']}
 						alt="Example illumination map showing both gradients"
-						format="webp"
-						sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 						class="h-auto w-full"
 						loading="eager"
 					/></a
@@ -454,32 +426,26 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			<div class="lg:w-1/3">
 				<div>
 					<a href="/images/asset/building/textures_specular.jpg" target="_blank"
-						><ResponsiveImage
+						><Picture
 							src={images.textures_specular}
-							naturalHeight={173}
-							naturalWidth={512}
-							srcWidths={[300, 400, 500]}
+							width={images.textures_specular.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							alt="Example specular map showing high values for windows and very low values for the rest"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-auto w-full"
-							loading="eager"
 						/></a
 					>
 					<p class="explanation">Example specular map showing high values for windows and very low values for the rest.</p>
 				</div>
 				<div class="mt-4">
 					<a href="/images/asset/building/textures_specular_transition.jpg" target="_blank"
-						><ResponsiveImage
+						><Picture
 							src={images.textures_specular_transition}
-							naturalHeight={293}
-							naturalWidth={511}
-							srcWidths={[300, 400, 500]}
+							width={images.textures_specular_transition.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							alt="Transitions between different specular values produce artifacts on the normal map and vice versa"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-auto w-full"
-							loading="eager"
 						/></a
 					>
 					<p class="explanation">
@@ -516,48 +482,39 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			<div class="lg:w-1/3">
 				<div>
 					<a href="/images/asset/building/textures_normal.jpg" target="_blank"
-						><ResponsiveImage
+						><Picture
 							src={images.textures_normal}
-							naturalHeight={512}
-							naturalWidth={1024}
-							srcWidths={[300, 400, 800, 1000]}
+							width={images.textures_normal.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							alt="Example normal map showing flat windows"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-auto w-full"
-							loading="eager"
 						/></a
 					>
 					<p class="explanation">Example normal map showing flat windows.</p>
 				</div>
 				<div class="mt-4">
 					<a href="/images/asset/building/textures_normal_problem.jpg" target="_blank"
-						><ResponsiveImage
+						><Picture
 							src={images.textures_normal_problem}
-							naturalHeight={633}
-							naturalWidth={981}
-							srcWidths={[300, 400, 500, 600, 700, 800, 900]}
+							width={images.textures_normal_problem.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							alt="Example normal map problem"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-auto w-full"
-							loading="eager"
 						/></a
 					>
 					<p class="explanation">Problem: normal maps appear incorrectly if the asset importer mesh rotation feature is used.</p>
 				</div>
 				<div class="mt-4">
 					<a href="/images/asset/building/textures_normal_problem2.jpg" target="_blank">
-						<ResponsiveImage
+						<Picture
 							src={images.textures_normal_problem2}
-							naturalHeight={241}
-							naturalWidth={780}
-							srcWidths={[300, 400, 500, 600, 700]}
+							width={images.textures_normal_problem2.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							alt="Image shows the same flat normal map on faces with different UV rotation/flip"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-auto w-full"
-							loading="eager"
 						/>
 					</a>
 					<p class="explanation">
@@ -621,16 +578,13 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			</div>
 			<div class="lg:w-1/3">
 				<a href="/images/asset/building/import.jpg" target="_blank">
-					<ResponsiveImage
+					<Picture
 						src={images.importIMG}
-						naturalHeight={426}
-						naturalWidth={1245}
-						srcWidths={[300, 400, 800, 1200]}
+						width={images.importIMG.width / 2}
+						densities={[1.5, 2]}
+						formats={['avif', 'webp']}
 						alt="Files ready for import"
-						format="webp"
-						sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 						class="h-auto w-full"
-						loading="eager"
 					/>
 				</a>
 				<p class="explanation">Files ready for import.</p>
@@ -700,16 +654,13 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			</div>
 			<div class="lg:w-1/3">
 				<a href="/images/asset/building/importer.jpg" target="_blank">
-					<ResponsiveImage
+					<Picture
 						src={images.importer}
-						naturalHeight={535}
-						naturalWidth={876}
-						srcWidths={[300, 400, 500, 600, 800]}
+						width={images.importer.width / 2}
+						densities={[1.5, 2]}
+						formats={['avif', 'webp']}
 						alt="Importing a mesh in asset importer"
-						format="webp"
-						sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 						class="h-auto w-full"
-						loading="eager"
 					/>
 				</a>
 				<p class="explanation">Importing a mesh in asset importer.</p>
@@ -801,16 +752,13 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			</div>
 			<div class="lg:w-1/3">
 				<a href="/images/asset/building/import_lot.jpg" target="_blank">
-					<ResponsiveImage
+					<Picture
 						src={images.import_lot}
-						naturalHeight={353}
-						naturalWidth={701}
-						srcWidths={[300, 400, 600, 700]}
+						width={images.import_lot.width / 2}
+						densities={[1.5, 2]}
+						formats={['avif', 'webp']}
 						alt="For growables, the lot also includes an optional yard area for props"
-						format="webp"
-						sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 						class="h-auto w-full"
-						loading="eager"
 					/>
 				</a>
 				<p class="explanation">For growables, the lot also includes an optional yard area for props.</p>
@@ -871,16 +819,13 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			</div>
 			<div class="lg:w-1/3">
 				<a href="/images/asset/building/editor_networks.jpg" target="_blank">
-					<ResponsiveImage
+					<Picture
 						src={images.editor_networks}
-						naturalHeight={615}
-						naturalWidth={989}
-						srcWidths={[300, 400, 800, 900]}
+						width={images.editor_networks.width / 2}
+						densities={[1.5, 2]}
+						formats={['avif', 'webp']}
 						alt="Vanilla train station pedestrian paths (magenta) connecting the roadside to the platform"
-						format="webp"
-						sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 						class="h-auto w-full"
-						loading="eager"
 					/>
 				</a>
 				<p class="explanation">Vanilla train station pedestrian paths (magenta) connecting the roadside to the platform.</p>
@@ -973,16 +918,13 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			</div>
 			<div class="lg:w-1/3">
 				<a href="/images/asset/building/editor_surface.jpg" target="_blank">
-					<ResponsiveImage
+					<Picture
 						src={images.editor_surface}
-						naturalHeight={615}
-						naturalWidth={998}
-						srcWidths={[300, 400, 800, 900]}
+						width={images.editor_surface.width / 2}
+						densities={[1.5, 2]}
+						formats={['avif', 'webp']}
 						alt="The clip brush is uneven and unreliable"
-						format="webp"
-						sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 						class="h-auto w-full"
-						loading="eager"
 					/>
 				</a>
 				<p class="explanation">The clip brush is uneven and unreliable.</p>
@@ -1013,16 +955,13 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			</div>
 			<div class="lg:w-1/3">
 				<a href="/images/asset/building/editor_subb.jpg" target="_blank">
-					<ResponsiveImage
+					<Picture
 						src={images.editor_subb}
-						naturalHeight={110}
-						naturalWidth={314}
-						srcWidths={[200, 300]}
+						width={images.editor_subb.width / 2}
+						densities={[1.5, 2]}
+						formats={['avif', 'webp']}
 						alt="Once a sub-building has been added, you can change its position precisely"
-						format="webp"
-						sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 						class="h-auto w-full"
-						loading="eager"
 					/>
 				</a>
 				<p class="explanation">Once a sub-building has been added, you can change its position precisely.</p>
@@ -1213,16 +1152,13 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			</div>
 			<div class="lg:w-1/3">
 				<a href="/images/asset/building/modtools.jpg" target="_blank">
-					<ResponsiveImage
+					<Picture
 						src={images.modtools}
-						naturalHeight={786}
-						naturalWidth={1503}
-						srcWidths={[300, 400, 800, 1000, 1200, 1500]}
+						width={images.modtools.width / 2}
+						densities={[1.5, 2]}
+						formats={['avif', 'webp']}
 						alt="ModTools scene explorer and console"
-						format="webp"
-						sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 						class="h-auto w-full"
-						loading="eager"
 					/>
 				</a>
 				<p class="explanation">ModTools scene explorer and console.</p>
@@ -1296,16 +1232,13 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			</div>
 			<div class="lg:w-1/3">
 				<a href="/images/asset/building/building_shaders.jpg" target="_blank">
-					<ResponsiveImage
+					<Picture
 						src={images.building_shaders}
-						naturalHeight={576}
-						naturalWidth={1024}
-						srcWidths={[300, 400, 600, 800, 1000]}
+						width={images.building_shaders.width / 2}
+						densities={[1.5, 2]}
+						formats={['avif', 'webp']}
 						alt="Comparison between Default (left), NoBase (middle) and Fence (right) building shaders"
-						format="webp"
-						sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 						class="h-auto w-full"
-						loading="eager"
 					/>
 				</a>
 				<p class="explanation">Comparison between Default (left), NoBase (middle) and Fence (right) building shaders.</p>
@@ -1332,16 +1265,13 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			</div>
 			<div class="lg:w-1/3">
 				<a href="/images/asset/building/nobasesnow.jpg" target="_blank">
-					<ResponsiveImage
+					<Picture
 						src={images.nobasesnow}
-						naturalHeight={576}
-						naturalWidth={1024}
-						srcWidths={[300, 400, 600, 800, 1000]}
+						width={images.nobasesnow.width / 2}
+						densities={[1.5, 2]}
+						formats={['avif', 'webp']}
 						alt="On winter maps, snow doesn't appear on the NoBase shader"
-						format="webp"
-						sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 						class="h-auto w-full"
-						loading="eager"
 					/>
 				</a>
 				<p class="explanation">On winter maps, snow doesn't appear on the NoBase shader.</p>
@@ -1507,16 +1437,13 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			</div>
 			<div class="lg:w-1/3">
 				<a href="/images/asset/building/save.jpg" target="_blank">
-					<ResponsiveImage
+					<Picture
 						src={images.save}
-						naturalHeight={669}
-						naturalWidth={787}
-						srcWidths={[300, 400, 500, 700]}
+						width={images.save.width / 2}
+						densities={[1.5, 2]}
+						formats={['avif', 'webp']}
 						alt="Save asset window"
-						format="webp"
-						sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 						class="h-auto w-full"
-						loading="eager"
 					/>
 				</a>
 				<p class="explanation">Save asset window.</p>
@@ -1560,16 +1487,13 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			</div>
 			<div class="lg:w-1/3">
 				<a href="/images/asset/building/local.jpg" target="_blank">
-					<ResponsiveImage
+					<Picture
 						src={images.local}
-						naturalHeight={226}
-						naturalWidth={595}
-						srcWidths={[300, 400, 500]}
+						width={images.local.width / 2}
+						densities={[1.5, 2]}
+						formats={['avif', 'webp']}
 						alt="CRP files in the local assets folder"
-						format="webp"
-						sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 						class="h-auto w-full"
-						loading="eager"
 					/>
 				</a>
 				<p class="explanation">CRP files in the local assets folder.</p>
@@ -1587,16 +1511,13 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			</div>
 			<div class="lg:w-1/3">
 				<a href="/images/asset/building/share.jpg" target="_blank">
-					<ResponsiveImage
+					<Picture
 						src={images.share}
-						naturalHeight={194}
-						naturalWidth={684}
-						srcWidths={[300, 400, 500, 600]}
+						width={images.share.width / 2}
+						densities={[1.5, 2]}
+						formats={['avif', 'webp']}
 						alt="Share button in content manager"
-						format="webp"
-						sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 						class="h-auto w-full"
-						loading="eager"
 					/>
 				</a>
 				<p class="explanation">Share button in content manager.</p>
@@ -1625,16 +1546,13 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			</div>
 			<div class="lg:w-1/3">
 				<a href="/images/asset/building/publish.jpg" target="_blank">
-					<ResponsiveImage
+					<Picture
 						src={images.publish}
-						naturalHeight={591}
-						naturalWidth={721}
-						srcWidths={[300, 400, 500, 700]}
+						width={images.publish.width / 2}
+						densities={[1.5, 2]}
+						formats={['avif', 'webp']}
 						alt="Publish window and content folder"
-						format="webp"
-						sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 						class="h-auto w-full"
-						loading="eager"
 					/>
 				</a>
 				<p class="explanation">Publish window and content folder.</p>
@@ -1702,16 +1620,13 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			</div>
 			<div class="lg:w-1/3">
 				<a href="/images/asset/building/prefab.jpg" target="_blank">
-					<ResponsiveImage
+					<Picture
 						src={images.prefab}
-						naturalHeight={118}
-						naturalWidth={528}
-						srcWidths={[300, 400, 500]}
+						width={images.prefab.width / 2}
+						densities={[1.5, 2]}
+						formats={['avif', 'webp']}
 						alt="Publish window and content folder"
-						format="webp"
-						sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 						class="h-auto w-full"
-						loading="eager"
 					/>
 				</a>
 				<p class="explanation">Comparison between local (top) and workshop published (bottom) prefab names shown in ModTools.</p>
