@@ -50,7 +50,7 @@ asset/network: done
 /search: ???
 /about: have to rewrite some stuff
 
-Terms of condition doesn't change URL but links
+Terms of condition doesn't change URL but links (Fixed, but need to look in the buildings page for proper id's)
 SVG icon should be an "i" not an "!"
 Hover image full size ?
 no duplication, sepparate articles for stuff (like building/prop)

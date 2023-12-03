@@ -31,6 +31,10 @@
 				? 'text-hit-gray-200 text-lg inline-flex rounded-md hover:text-hoverlink mt-6'
 				: 'text-hit-gray-400 text-[1rem] leading-[1.25rem] inline-flex ps-2 rounded-md hover:text-hoverlink';
 
+			link.addEventListener('click', function (e) {
+				window.history.pushState({}, '', this.href);
+			});
+
 			listItem.appendChild(link);
 			tocElement.appendChild(listItem);
 		});
@@ -47,6 +51,8 @@
 						behavior: 'smooth',
 						block: 'start',
 					});
+
+					window.history.pushState({}, '', '#' + targetId);
 				}
 			}
 		});
