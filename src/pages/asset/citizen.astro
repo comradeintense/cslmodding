@@ -3,43 +3,76 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Link from '../../components/Link.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 const title = 'Citizen Asset Creation - Cities Skylines Modding';
-import ResponsiveImage from '../../components/ResponsiveImage.astro';
+import { Picture } from 'astro:assets';
 import { images } from '../../data/imageImports.js';
 ---
 
 <MainLayout title={title}>
 	<TableOfContents />
 	<section class="py-12 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
-		<h1 id="overview" class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400">Citizen Asset Creation</h1>
+		<h1
+			id="overview"
+			class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400"
+		>
+			Citizen Asset Creation
+		</h1>
 		<div class="content">
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="mesh">Mesh</h2>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="main-mesh">Main Mesh</h3>
-			<p class="mt-4">This is a 3D model of the citizen, which will be visible when the camera is close to it.</p>
+			<h2
+				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				id="mesh"
+			>
+				Mesh
+			</h2>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="main-mesh"
+			>
+				Main Mesh
+			</h3>
 			<p class="mt-4">
-				It's created using 3D modeling software such as Blender, 3ds Max, Maya or SketchUp.<br />The actual mesh file contains vertices (their coordinates, UV
-				mapping, normals, and colors) and triangles. For citizens, this also contains the skeleton bones to which the mesh is bound to using bone weights.
+				This is a 3D model of the citizen, which will be visible when
+				the camera is close to it.
 			</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="model-complexity">Model Complexity</h4>
+			<p class="mt-4">
+				It's created using 3D modeling software such as Blender, 3ds
+				Max, Maya or SketchUp.<br />The actual mesh file contains
+				vertices (their coordinates, UV mapping, normals, and colors)
+				and triangles. For citizens, this also contains the skeleton
+				bones to which the mesh is bound to using bone weights.
+			</p>
+			<h4
+				class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+				id="model-complexity"
+			>
+				Model Complexity
+			</h4>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
 					<p>
-						It's recommended to stay within reasonable triangle counts based on the size and detail of your model. You may look at examples of vanilla citizens
-						or assets by other creators for reference.
-					</p><p class="mt-4">The absolute limit for a mesh is 65536 vertices.</p>
+						It's recommended to stay within reasonable triangle
+						counts based on the size and detail of your model. You
+						may look at examples of vanilla citizens or assets by
+						other creators for reference.
+					</p><p class="mt-4">
+						The absolute limit for a mesh is 65536 vertices.
+					</p>
 				</div><div class="lg:w-1/3">
-					<a href="/images/asset/citizen/citvanilla.jpg" target="_blank">
-						<ResponsiveImage
+					<a
+						href="/images/asset/citizen/citvanilla.jpg"
+						target="_blank"
+					>
+						<Picture
+							width={images.citvanilla.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.citvanilla}
-							naturalHeight={512}
-							naturalWidth={1024}
-							srcWidths={[300, 400, 800, 1000]}
 							alt="Main model and LOD of a vanilla citizen"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-							class="h-auto w-full aspect-video"
+							class="h-auto w-full"
 							loading="eager"
 						/></a
-					><p class="explanation">Main model and LOD of a vanilla citizen.</p>
+					><p class="explanation">
+						Main model and LOD of a vanilla citizen.
+					</p>
 				</div>
 			</div>
 			<div class="flex gap-2 mt-6 items-start justify-start">
@@ -51,7 +84,10 @@ import { images } from '../../data/imageImports.js';
 					viewBox="0 0 24 24"
 					xmlns="http://www.w3.org/2000/svg"
 				>
-					<path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round"></path>
+					<path
+						d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+						stroke-linecap="round"
+						stroke-linejoin="round"></path>
 				</svg>
 				<p class="italic">
 					<em>
@@ -64,103 +100,178 @@ import { images } from '../../data/imageImports.js';
 					</em>
 				</p>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="lod-mesh">LOD Mesh</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="lod-mesh"
+			>
+				LOD Mesh
+			</h3>
 			<p class="mt-4">
-				LOD stands for level of detail. This is the mesh visible from a distance. It must be as simple as possible. Citizens are small and the LOD is only
-				visible very far away, so a model under 100 triangles could be enough.
+				LOD stands for level of detail. This is the mesh visible from a
+				distance. It must be as simple as possible. Citizens are small
+				and the LOD is only visible very far away, so a model under 100
+				triangles could be enough.
 			</p>
-			<p class="mt-4">The LOD is not animated, so you don't need to import a skeleton for it.</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="skeleton">Skeleton</h3>
+			<p class="mt-4">
+				The LOD is not animated, so you don't need to import a skeleton
+				for it.
+			</p>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="skeleton"
+			>
+				Skeleton
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
-					<p>You must fit your mesh to one of the available skeleton templates, which can be found in this folder:</p><p class="mt-4">
-						<span class="path">C:\Program Files (x86)\Steam\steamapps\common\Cities_Skylines\Files\Templates</span>
+					<p>
+						You must fit your mesh to one of the available skeleton
+						templates, which can be found in this folder:
 					</p><p class="mt-4">
-						You need to bind your mesh to the bones of the skeleton, in 3ds Max this is done using the skin modifier and adding all the bones
+						<span class="path"
+							>C:\Program FilesResponsiveImage
+							(x86)\Steam\steamapps\common\Cities_Skylines\Files\Templates</span
+						>
+					</p><p class="mt-4">
+						You need to bind your mesh to the bones of the skeleton,
+						in 3ds Max this is done using the skin modifier and
+						adding all the bones
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="/images/asset/citizen/citskeleton.jpg" target="_blank">
-						<ResponsiveImage
+					<a
+						href="/images/asset/citizen/citskeleton.jpg"
+						target="_blank"
+					>
+						<Picture
+							width={images.citskeleton.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.citskeleton}
-							naturalHeight={727}
-							naturalWidth={496}
-							srcWidths={[300, 400]}
 							alt="One of the skeleton templates"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-							class="h-auto w-full aspect-square object-cover"
-							loading="eager"
+							class="h-auto w-full"
 						/></a
 					><p class="explanation">One of the skeleton templates.</p>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="uv-mapping">UV Mapping</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="uv-mapping"
+			>
+				UV Mapping
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
 					<p>
-						For the main mesh, you are allowed to UV map outside the 0-1 area (main tile), so you can tile the entire texture multiple times on a single face.
+						For the main mesh, you are allowed to UV map outside the
+						0-1 area (main tile), so you can tile the entire texture
+						multiple times on a single face.
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/building/uv_main.jpg" target="_blank"
-						><ResponsiveImage
+						><Picture
+							width={images.uv_main.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.uv_main}
-							naturalHeight={437}
-							naturalWidth={560}
-							srcWidths={[300, 400, 500]}
 							alt="Example UV mapping using visible horizontal tiling on the bottom"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-							class="h-auto w-full aspect-square object-cover"
-							loading="eager"
+							class="h-auto w-full"
 						/></a
-					><p class="explanation">Example UV mapping using visible horizontal tiling on the bottom.</p>
+					><p class="explanation">
+						Example UV mapping using visible horizontal tiling on
+						the bottom.
+					</p>
 				</div>
 			</div>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="uv-mapping-lod">LOD</h4>
+			<h4
+				class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+				id="uv-mapping-lod"
+			>
+				LOD
+			</h4>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
 					<p>
-						For the LOD mesh, the UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed. This is because ingame all the LOD
-						textures are combined into a single texture called an atlas, so having incorrect uv mapping will end up putting the texture of some other random
-						citizen on your LOD.
+						For the LOD mesh, the UV mapping must be within the 0-1
+						area (main tile) of the UV map, no tiling is allowed.
+						This is because ingame all the LOD textures are combined
+						into a single texture called an atlas, so having
+						incorrect uv mapping will end up putting the texture of
+						some other random citizen on your LOD.
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/building/uv_lod.jpg" target="_blank"
-						><ResponsiveImage
+						><Picture
+							width={images.uv_lod.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.uv_lod}
-							naturalHeight={475}
-							naturalWidth={605}
-							srcWidths={[300, 400, 500, 600]}
 							alt="UV mapping for LOD mesh using automatic mapping in 3ds Max"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-							class="h-auto w-full aspect-square object-cover"
-							loading="eager"
+							class="h-auto w-full"
 						/></a
 					><p class="explanation">
-						UV mapping for LOD mesh using automatic mapping in 3ds Max. No overlap and contained within the main tile - good for baking.
+						UV mapping for LOD mesh using automatic mapping in 3ds
+						Max. No overlap and contained within the main tile -
+						good for baking.
 					</p>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="pivot-origin">Pivot / Origin</h3>
-			<p class="mt-4">The pivot point or origin represents the center point on the ground. It's usually represented using a red/green/blue axis gizmo.</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="transform">Transform</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="pivot-origin"
+			>
+				Pivot / Origin
+			</h3>
 			<p class="mt-4">
-				Make sure you are exporting a single mesh, and the associated skeleton, which has the correct rotation and scale, as you won't be able to rotate or
-				scale your citizen on import.
+				The pivot point or origin represents the center point on the
+				ground. It's usually represented using a red/green/blue axis
+				gizmo.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="formats">Formats</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="transform"
+			>
+				Transform
+			</h3>
+			<p class="mt-4">
+				Make sure you are exporting a single mesh, and the associated
+				skeleton, which has the correct rotation and scale, as you won't
+				be able to rotate or scale your citizen on import.
+			</p>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="formats"
+			>
+				Formats
+			</h3>
 			<ul class="mt-4 list-disc list-inside">
 				<li class="mt-4">FBX (2015 or older) (most commonly used)</li>
 				<li class="mt-4">DAE</li>
 			</ul>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="textures">Textures</h2>
-			<p class="mt-4">These determine the color and material properties of your citizen.</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="resolution">Resolution</h3>
-			<p class="mt-4">All imported main textures must be the same resolution.</p>
+			<h2
+				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				id="textures"
+			>
+				Textures
+			</h2>
 			<p class="mt-4">
-				Powers of 2 is a standard practice in 3D graphics, which means sizes such as 512x512, 512x256, 256x256, 128x256 etc. It is recommended to stick to this
-				standard, but the most important thing is that your width and height must be divisible by 32, otherwise, your texture will be corrupted by compression.
+				These determine the color and material properties of your
+				citizen.
+			</p>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="resolution"
+			>
+				Resolution
+			</h3>
+			<p class="mt-4">
+				All imported main textures must be the same resolution.
+			</p>
+			<p class="mt-4">
+				Powers of 2 is a standard practice in 3D graphics, which means
+				sizes such as 512x512, 512x256, 256x256, 128x256 etc. It is
+				recommended to stick to this standard, but the most important
+				thing is that your width and height must be divisible by 32,
+				otherwise, your texture will be corrupted by compression.
 			</p>
 			<div class="flex gap-2 mt-6 items-start justify-start">
 				<svg
@@ -178,234 +289,372 @@ import { images } from '../../data/imageImports.js';
 				</svg>
 				<p class="italic">
 					<em>
-						Make sure texture quality is set to high in the game's graphics settings. otherwise, your imported textures will be downscaled to a lower
-						resolution.
+						Make sure texture quality is set to high in the game's
+						graphics settings. otherwise, your imported textures
+						will be downscaled to a lower resolution.
 					</em>
 				</p>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="lod-textures">LOD Textures</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="lod-textures"
+			>
+				LOD Textures
+			</h3>
 			<p class="mt-4">
-				If you don't provide LOD textures, the game will try to bake them using the UV mapping your LOD mesh has, and that may cause visual issues, so it's
-				recommended that you create your own LOD textures using baking.
+				If you don't provide LOD textures, the game will try to bake
+				them using the UV mapping your LOD mesh has, and that may cause
+				visual issues, so it's recommended that you create your own LOD
+				textures using baking.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="diffuse">Diffuse</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="diffuse"
+			>
+				Diffuse
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
-					<p>The main color and texture of your asset.</p><p class="mt-4">
-						It will look very bright, contrasty, and saturated in the game, so make sure to reduce the saturation and limit the brightest parts to a
-						medium/light gray below 140 RGB.
-					</p><p class="mt-4">If you don't import a diffuse map, it will default to white.</p>
+					<p>The main color and texture of your asset.</p><p
+						class="mt-4"
+					>
+						It will look very bright, contrasty, and saturated in
+						the game, so make sure to reduce the saturation and
+						limit the brightest parts to a medium/light gray below
+						140 RGB.
+					</p><p class="mt-4">
+						If you don't import a diffuse map, it will default to
+						white.
+					</p>
 				</div><div class="lg:w-1/3">
-					<a href="/images/asset/citizen/cittextures.jpg" target="_blank"
-						><ResponsiveImage
+					<a
+						href="/images/asset/citizen/cittextures.jpg"
+						target="_blank"
+						><Picture
+							width={images.cittextures.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.cittextures}
-							naturalHeight={256}
-							naturalWidth={256}
-							srcWidths={[200, 250]}
 							alt="Example diffuse textures for some vanilla citizens"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-							class="h-auto w-full aspect-square object-cover"
-							loading="eager"
+							class="h-auto w-full"
 						/></a
-					><p class="explanation">Example diffuse textures for some vanilla citizens.</p>
+					><p class="explanation">
+						Example diffuse textures for some vanilla citizens.
+					</p>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="alpha">Alpha</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="alpha"
+			>
+				Alpha
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
 					<p>
-						Transparency, white means opaque or visible, black means transparent or invisible. Gray values may affect how it looks from a distance or at an
-						angle.
-					</p><p class="mt-4">If you don't import an alpha map, it will default to fully opaque or fully visible.</p>
+						Transparency, white means opaque or visible, black means
+						transparent or invisible. Gray values may affect how it
+						looks from a distance or at an angle.
+					</p><p class="mt-4">
+						If you don't import an alpha map, it will default to
+						fully opaque or fully visible.
+					</p>
 				</div><div class="lg:w-1/3">
 					<div class="">
-						<a href="/images/asset/building/textures_alpha.jpg" target="_blank"
-							><ResponsiveImage
+						<a
+							href="/images/asset/building/textures_alpha.jpg"
+							target="_blank"
+							><Picture
+								width={images.textures_alpha.width / 2}
+								densities={[1.5, 2]}
+								formats={['avif', 'webp']}
 								src={images.textures_alpha}
-								naturalHeight={220}
-								naturalWidth={306}
-								srcWidths={[200, 300]}
 								alt="Example alpha texture for some railings and metal beams"
-								format="webp"
-								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-								class="h-auto w-full aspect-video object-cover"
-								loading="eager"
-							/></a
-						><p class="explanation">Example alpha texture for some railings and metal beams.</p>
-					</div><div class="mt-4">
-						<a href="/images/asset/building/textures_alpha_rail.jpg" target="_blank">
-							<ResponsiveImage
-								src={images.textures_alpha_rail}
-								naturalHeight={128}
-								naturalWidth={256}
-								srcWidths={[200, 250]}
-								alt="Example alpha texture for some railings and metal beams"
-								format="webp"
-								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-								class="h-auto w-full aspect-video"
-								loading="eager"
+								class="h-auto w-full"
 							/></a
 						><p class="explanation">
-							Using lighter values for the invisible parts will decrease the chance of small details like railings disappearing completely.
+							Example alpha texture for some railings and metal
+							beams.
+						</p>
+					</div><div class="mt-4">
+						<a
+							href="/images/asset/building/textures_alpha_rail.jpg"
+							target="_blank"
+						>
+							<Picture
+								width={images.textures_alpha_rail.width / 2}
+								densities={[1.5, 2]}
+								formats={['avif', 'webp']}
+								src={images.textures_alpha_rail}
+								alt="Example alpha texture for some railings and metal beams"
+								class="h-auto w-full"
+							/></a
+						><p class="explanation">
+							Using lighter values for the invisible parts will
+							decrease the chance of small details like railings
+							disappearing completely.
 						</p>
 					</div>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="color">Color</h3>
-			<p class="mt-4">Determines which parts will be affected by color variations. White means fully affected and black means not at all.</p>
-			<p class="mt-4">The diffuse will get multiplied by the color variation, that means the resulting color will look darker than the original diffuse.</p>
-			<p class="mt-4">If you don't import a color map, it will default to full color.</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="specular">Specular</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="color"
+			>
+				Color
+			</h3>
+			<p class="mt-4">
+				Determines which parts will be affected by color variations.
+				White means fully affected and black means not at all.
+			</p>
+			<p class="mt-4">
+				The diffuse will get multiplied by the color variation, that
+				means the resulting color will look darker than the original
+				diffuse.
+			</p>
+			<p class="mt-4">
+				If you don't import a color map, it will default to full color.
+			</p>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="specular"
+			>
+				Specular
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
-					<p>Reflectivity, black means no reflection and white means max reflection.</p><p class="mt-4">
-						The specular highlight from the sun is very big and bright, so you might want to use very low (0-10%) specularity for surfaces facing upwards.
-					</p><p class="mt-4">If you don't import a specular map, it will default to no specularity.</p>
+					<p>
+						Reflectivity, black means no reflection and white means
+						max reflection.
+					</p><p class="mt-4">
+						The specular highlight from the sun is very big and
+						bright, so you might want to use very low (0-10%)
+						specularity for surfaces facing upwards.
+					</p><p class="mt-4">
+						If you don't import a specular map, it will default to
+						no specularity.
+					</p>
 				</div><div class="lg:w-1/3">
 					<div class="">
-						<a href="/images/asset/citizen/citspec.jpeg" target="_blank">
-							<ResponsiveImage
+						<a
+							href="/images/asset/citizen/citspec.jpeg"
+							target="_blank"
+						>
+							<Picture
+								width={images.citspec.width / 2}
+								densities={[1.5, 2]}
+								formats={['avif', 'webp']}
 								src={images.citspec}
-								naturalHeight={512}
-								naturalWidth={512}
-								srcWidths={[200, 300, 400, 500]}
 								alt="Example specular map for a roof water tank"
-								format="webp"
-								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-								class="h-auto w-full aspect-square object-cover"
-								loading="eager"
-							/></a
-						><p class="explanation">Example specular map for a roof water tank.</p>
-					</div><div class="mt-4">
-						<a href="/images/asset/building/textures_specular_transition.jpg" target="_blank"
-							><ResponsiveImage
-								src={images.textures_specular_transition}
-								naturalHeight={293}
-								naturalWidth={511}
-								srcWidths={[300, 400, 500]}
-								alt="Transitions between different specular values produce artifacts on the normal map and vice versa"
-								format="webp"
-								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-								class="h-auto w-full aspect-video object-cover"
-								loading="eager"
+								class="h-auto w-full"
 							/></a
 						><p class="explanation">
-							Transitions between different specular values produce artifacts on the normal map and vice versa, even if a normal map is not imported.
+							Example specular map for a roof water tank.
+						</p>
+					</div><div class="mt-4">
+						<a
+							href="/images/asset/building/textures_specular_transition.jpg"
+							target="_blank"
+							><Picture
+								width={images.textures_specular_transition
+									.width / 2}
+								densities={[1.5, 2]}
+								formats={['avif', 'webp']}
+								src={images.textures_specular_transition}
+								alt="Transitions between different specular values produce artifacts on the normal map and vice versa"
+								class="h-auto w-full"
+							/></a
+						><p class="explanation">
+							Transitions between different specular values
+							produce artifacts on the normal map and vice versa,
+							even if a normal map is not imported.
 						</p>
 					</div>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="normal">Normal</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="normal"
+			>
+				Normal
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
-					<p>Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.</p><p class="mt-4">
-						This can be made from the diffuse or a height map (brighter colors will look extruded out more) using <Link
+					<p>
+						Also sometimes called a bump map, adds fake depth or
+						form by affecting how the lighting appears.
+					</p><p class="mt-4">
+						This can be made from the diffuse or a height map
+						(brighter colors will look extruded out more) using <Link
 							classes=""
 							href="http://cpetry.github.io/NormalMap-Online/"
 							text="a normal map generator online"
 							theme="externallink"
-						/>, a photoshop plugin like <Link classes="" href="http://www.xnormal.net/" text="xNormal" theme="externallink" />, or standalone software such as <Link
+						/>, a photoshop plugin like <Link
+							classes=""
+							href="http://www.xnormal.net/"
+							text="xNormal"
+							theme="externallink"
+						/>, or standalone software such as <Link
 							classes=""
 							href="https://www.crazybump.com/"
 							text="CrazyBump"
 							theme="externallink"
 						/>.
-					</p><p class="mt-4">The normal map generator should be set to +X +Y, which means no color channel inversions are required.</p><p class="mt-4">
-						High specularity and normal map don't work well together because of the compression, so you might want to paint over shiny parts with a solid color
-						before generating a normal map or paint over these parts 128,128,255 on the final normal map.
-					</p><p class="mt-4">Read more in the <Link classes="" href="/normal-maps/" text="normal map article" theme="internallink" />.</p><p class="mt-4">
-						If you don't import a normal map, it will default to a flat normal map - no bump.
+					</p><p class="mt-4">
+						The normal map generator should be set to +X +Y, which
+						means no color channel inversions are required.
+					</p><p class="mt-4">
+						High specularity and normal map don't work well together
+						because of the compression, so you might want to paint
+						over shiny parts with a solid color before generating a
+						normal map or paint over these parts 128,128,255 on the
+						final normal map.
+					</p><p class="mt-4">
+						Read more in the <Link
+							classes=""
+							href="/normal-maps/"
+							text="normal map article"
+							theme="internallink"
+						/>.
+					</p><p class="mt-4">
+						If you don't import a normal map, it will default to a
+						flat normal map - no bump.
 					</p>
 				</div><div class="lg:w-1/3">
 					<div class="">
-						<a href="/images/asset/citizen/citnormal.jpeg" target="_blank"
-							><ResponsiveImage
+						<a
+							href="/images/asset/citizen/citnormal.jpeg"
+							target="_blank"
+							><Picture
+								width={images.citnormal.width / 2}
+								densities={[1.5, 2]}
+								formats={['avif', 'webp']}
 								src={images.citnormal}
-								naturalHeight={512}
-								naturalWidth={512}
-								srcWidths={[300, 400, 500]}
 								alt="Example normal map for rocks"
-								format="webp"
-								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-								class="h-auto w-full aspect-square object-cover"
-								loading="eager"
-							/></a
-						><p class="explanation">Example normal map for rocks.</p>
-					</div><div class="mt-4">
-						<a href="/images/asset/citizen/citnormal2.jpeg" target="_blank"
-							><ResponsiveImage
-								src={images.citnormal2}
-								naturalHeight={241}
-								naturalWidth={780}
-								srcWidths={[300, 400, 500]}
-								alt="Image shows the same flat normal map on faces with different UV rotation/flip"
-								format="webp"
-								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-								class="h-auto w-full aspect-video object-cover"
-								loading="eager"
+								class="h-auto w-full"
 							/></a
 						><p class="explanation">
-							Problem: default normal map value is 0.5, which isn't possible by using 127(left) or 128(right). Image shows the same flat normal map on faces
-							with different UV rotation/flip.
+							Example normal map for rocks.
+						</p>
+					</div><div class="mt-4">
+						<a
+							href="/images/asset/citizen/citnormal2.jpeg"
+							target="_blank"
+							><Picture
+								width={images.citnormal2.width / 2}
+								densities={[1.5, 2]}
+								formats={['avif', 'webp']}
+								src={images.citnormal2}
+								alt="Image shows the same flat normal map on faces with different UV rotation/flip"
+								class="h-auto w-full"
+							/></a
+						><p class="explanation">
+							Problem: default normal map value is 0.5, which
+							isn't possible by using 127(left) or 128(right).
+							Image shows the same flat normal map on faces with
+							different UV rotation/flip.
 						</p>
 					</div>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="format">Format</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="format"
+			>
+				Format
+			</h3>
 			<p class="mt-4">Use a lossless format like .PNG.</p>
 			<p class="mt-4">
-				The game supports other formats as well, but there is no reason to use another one, it doesn't matter how much your texture is compressed or even if
-				it's completely solid or complicated, the game will convert it to a DXT format, so the final size won't be affected by anything other than resolution.
+				The game supports other formats as well, but there is no reason
+				to use another one, it doesn't matter how much your texture is
+				compressed or even if it's completely solid or complicated, the
+				game will convert it to a DXT format, so the final size won't be
+				affected by anything other than resolution.
 			</p>
 			<p class="mt-4">
-				Make sure the texture is 8 bits/channel because a 16 bits/channel image can't be imported. Do not use the "Smaller File (8-bit)" feature in the
-				Photoshop Export As window, as that creates an indexed color image, not an 8 bits/channel one.
+				Make sure the texture is 8 bits/channel because a 16
+				bits/channel image can't be imported. Do not use the "Smaller
+				File (8-bit)" feature in the Photoshop Export As window, as that
+				creates an indexed color image, not an 8 bits/channel one.
 			</p>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="import">Import</h2>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="naming">Naming</h3>
+			<h2
+				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				id="import"
+			>
+				Import
+			</h2>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="naming"
+			>
+				Naming
+			</h3>
 			<p class="mt-4">
-				The mesh can have any name, but it's not recommended to use spaces or underscores, as the name for the lod mesh name will be meshname_lod.
+				The mesh can have any name, but it's not recommended to use
+				spaces or underscores, as the name for the lod mesh name will be
+				meshname_lod.
 			</p>
 			<p class="mt-4">
-				The textures must have the same name as the mesh, but with the texture type identifier after it, so the result will be names like meshname_d.png and
-				meshname_lod_d.png
+				The textures must have the same name as the mesh, but with the
+				texture type identifier after it, so the result will be names
+				like meshname_d.png and meshname_lod_d.png
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="import-folder">Import Folder</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="import-folder"
+			>
+				Import Folder
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
-					<p>You should place the mesh and texture files in the import folder located here:</p><p class="mt-4">
-						<span class="path">%LocalAppData%\Colossal Order\Cities_Skylines\Addons\Import</span>
+					<p>
+						You should place the mesh and texture files in the
+						import folder located here:
 					</p><p class="mt-4">
-						The AppData folder is hidden by default, you can access it by copying and pasting the path into the file explorer, or pressing <span class="key"
+						<span class="path"
+							>%LocalAppData%\Colossal
+							Order\Cities_Skylines\Addons\Import</span
+						>
+					</p><p class="mt-4">
+						The AppData folder is hidden by default, you can access
+						it by copying and pasting the path into the file
+						explorer, or pressing <span class="key"
 							>Windows + R</span
 						> and typing in appdata.
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/building/import.jpg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.importIMG.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.importIMG}
-							naturalHeight={426}
-							naturalWidth={1245}
-							srcWidths={[300, 400, 800, 1200]}
 							alt="Files ready for import"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-							class="h-auto w-full aspect-video object-cover"
-							loading="eager"
+							class="h-auto w-full"
 						/>
 					</a><p class="explanation">Files ready for import.</p>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="template">Template</h3>
-			<p class="mt-4">The template you choose will determine some things about your citizen:</p>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="template"
+			>
+				Template
+			</h3>
+			<p class="mt-4">
+				The template you choose will determine some things about your
+				citizen:
+			</p>
 			<ul class="mt-4 list-disc list-inside">
 				<li class="mt-4">AI</li>
 				<li class="mt-4">gender</li>
 				<li class="mt-4">age phase</li>
 				<li class="mt-4">animation</li>
 				<li class="mt-4">walk speed</li>
-				<li class="mt-4">shader, material properties (color variations)</li>
+				<li class="mt-4">
+					shader, material properties (color variations)
+				</li>
 			</ul>
 			<div class="flex gap-2 mt-6 items-start justify-start">
 				<svg
@@ -416,11 +665,15 @@ import { images } from '../../data/imageImports.js';
 					viewBox="0 0 24 24"
 					xmlns="http://www.w3.org/2000/svg"
 				>
-					<path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round"></path>
+					<path
+						d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+						stroke-linecap="round"
+						stroke-linejoin="round"></path>
 				</svg>
 				<p class="italic">
 					<em>
-						Some of those things can be changed later in the editor itself or using <Link
+						Some of those things can be changed later in the editor
+						itself or using <Link
 							classes=""
 							href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484"
 							text="ModTools"
@@ -429,24 +682,35 @@ import { images } from '../../data/imageImports.js';
 					</em>
 				</p>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="import-1">Import</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="import-1"
+			>
+				Import
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
-					<p>For citizens, you can't rotate or scale the mesh on import, so you have to make sure it's correct in your 3d software or when exporting.</p>
+					<p>
+						For citizens, you can't rotate or scale the mesh on
+						import, so you have to make sure it's correct in your 3d
+						software or when exporting.
+					</p>
 				</div><div class="lg:w-1/3">
-					<a href="/images/asset/citizen/citimport.jpg" target="_blank">
-						<ResponsiveImage
+					<a
+						href="/images/asset/citizen/citimport.jpg"
+						target="_blank"
+					>
+						<Picture
+							width={images.citimport.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.citimport}
-							naturalHeight={534}
-							naturalWidth={876}
-							srcWidths={[300, 400, 500, 600, 800]}
 							alt="Importing a mesh in asset importer"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-							class="h-auto w-full aspect-video object-cover"
-							loading="eager"
+							class="h-auto w-full"
 						/>
-					</a><p class="explanation">Importing a mesh in asset importer.</p>
+					</a><p class="explanation">
+						Importing a mesh in asset importer.
+					</p>
 				</div>
 			</div>
 			<div class="flex gap-2 mt-6 items-start justify-start">
@@ -465,8 +729,10 @@ import { images } from '../../data/imageImports.js';
 				</svg>
 				<p class="italic">
 					<em>
-						If you get an unsupported color error, one of your textures might be a 16 bits/channel file, you need to change it to 8 bits/channel, in Photoshop:
-						Image &gt; Mode &gt; 8 Bits/Channel.
+						If you get an unsupported color error, one of your
+						textures might be a 16 bits/channel file, you need to
+						change it to 8 bits/channel, in Photoshop: Image &gt;
+						Mode &gt; 8 Bits/Channel.
 					</em>
 				</p>
 			</div>
@@ -486,20 +752,43 @@ import { images } from '../../data/imageImports.js';
 				</svg>
 				<p class="italic">
 					<em>
-						If the mesh preview doesn't display or you can't continue, you may have a problem with it such as a missing skeleton, multiple mesh objects, other
-						entities like dummies, cameras, lights, or layers in the exported file.
+						If the mesh preview doesn't display or you can't
+						continue, you may have a problem with it such as a
+						missing skeleton, multiple mesh objects, other entities
+						like dummies, cameras, lights, or layers in the exported
+						file.
 					</em>
 				</p>
 			</div>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="editor">Editor</h2>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="general-properties">General Properties</h3>
+			<h2
+				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				id="editor"
+			>
+				Editor
+			</h2>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="general-properties"
+			>
+				General Properties
+			</h3>
 			<ul class="mt-4 list-disc list-inside">
 				<li class="mt-4">gender</li>
 				<li class="mt-4">age phase</li>
 			</ul>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="material-properties">Material properties</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="material-properties"
+			>
+				Material properties
+			</h3>
 			<p class="mt-4">You can change the 4 color variations.</p>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="editor-advanced">Editor Advanced</h2>
+			<h2
+				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				id="editor-advanced"
+			>
+				Editor Advanced
+			</h2>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
 					<p>
@@ -508,178 +797,285 @@ import { images } from '../../data/imageImports.js';
 							href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484"
 							text="ModTools"
 							theme="externallink"
-						/> scene explorer <span class="key">Ctrl+E</span> or running scripts in the console <span class="key">F7</span>, or other mods:
+						/> scene explorer <span class="key">Ctrl+E</span> or
+						running scripts in the console <span class="key"
+							>F7</span
+						>, or other mods:
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="/images/asset/building/modtools.jpg" target="_blank">
-						<ResponsiveImage
+					<a
+						href="/images/asset/building/modtools.jpg"
+						target="_blank"
+					>
+						<Picture
+							width={images.modtools.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.modtools}
-							naturalHeight={786}
-							naturalWidth={1503}
-							srcWidths={[300, 400, 800, 1000, 1200, 1500]}
 							alt="ModTools scene explorer and console"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-							class="h-auto w-full aspect-video object-cover"
-							loading="eager"
+							class="h-auto w-full"
 						/>
-					</a><p class="explanation">ModTools scene explorer and console.</p>
+					</a><p class="explanation">
+						ModTools scene explorer and console.
+					</p>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="ai">AI</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="ai"
+			>
+				AI
+			</h3>
 			<p class="mt-4">
-				AI defines what kind of citizen it is and how it behaves. It can be changed using <Link
+				AI defines what kind of citizen it is and how it behaves. It can
+				be changed using <Link
 					classes=""
 					href="https://steamcommunity.com/sharedfiles/filedetails/?id=421616513"
 					text="Asset AI Changer by Snow_Cat & cerebellum"
 					theme="externallink"
 				/>.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="item-class">Item Class</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="item-class"
+			>
+				Item Class
+			</h3>
 			<p class="mt-4">
-				Contains information about what type of citizen it is. It can be changed using <Link
+				Contains information about what type of citizen it is. It can be
+				changed using <Link
 					classes=""
 					href="https://steamcommunity.com/sharedfiles/filedetails/?id=455068042"
 					text="Asset ItemClass Changer by Snow_Cat"
 					theme="externallink"
 				/>.
 			</p>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="save">Save</h2>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="filename">Filename</h3>
+			<h2
+				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				id="save"
+			>
+				Save
+			</h2>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="filename"
+			>
+				Filename
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
 					<p>
-						The filename input is on the bottom left, this is what the actual file will be called. It's not recommended to use spaces, dots, or special symbols.
+						The filename input is on the bottom left, this is what
+						the actual file will be called. It's not recommended to
+						use spaces, dots, or special symbols.
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/citizen/citsave.jpg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.citsave.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.citsave}
-							naturalHeight={672}
-							naturalWidth={781}
-							srcWidths={[300, 400, 500, 600, 700]}
 							alt="Save asset window"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-							class="h-auto w-full aspect-video object-cover"
-							loading="eager"
+							class="h-auto w-full"
 						/>
 					</a><p class="explanation">Save asset window.</p>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="asset-name">Asset Name</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="asset-name"
+			>
+				Asset Name
+			</h3>
 			<p class="mt-4">The asset name visible ingame.</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="images">Images</h3>
-			<p class="mt-4">There are 2 different folders you can open by clicking the folder icons:</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="snapshot">Snapshot</h4>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="images"
+			>
+				Images
+			</h3>
 			<p class="mt-4">
-				On the snapshot image, bottom right corner. Use this one to replace the snapshot, you can replace it with a 1x1 px image to save on the asset file size.
-				This image will only be visible in the content manager. It will also default as the Steam preview image, but you can change that separately when
-				publishing.
+				There are 2 different folders you can open by clicking the
+				folder icons:
 			</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="thumbnail-tooltip">Thumbnail &amp; Tooltip</h4>
+			<h4
+				class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+				id="snapshot"
+			>
+				Snapshot
+			</h4>
 			<p class="mt-4">
-				Below thumbnail, on the right side. Use this one to change the thumbnail (109x100) and tooltip (492x147) of your asset.<br /> Once you change the main
-				thumbnail, the hover/active states will update automatically.
+				On the snapshot image, bottom right corner. Use this one to
+				replace the snapshot, you can replace it with a 1x1 px image to
+				save on the asset file size. This image will only be visible in
+				the content manager. It will also default as the Steam preview
+				image, but you can change that separately when publishing.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="local-assets-folder">Local Assets Folder</h3>
+			<h4
+				class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+				id="thumbnail-tooltip"
+			>
+				Thumbnail &amp; Tooltip
+			</h4>
+			<p class="mt-4">
+				Below thumbnail, on the right side. Use this one to change the
+				thumbnail (109x100) and tooltip (492x147) of your asset.<br />
+				 Once you change the main thumbnail, the hover/active states
+				will update automatically.
+			</p>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="local-assets-folder"
+			>
+				Local Assets Folder
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
-					<p>Once the asset is saved, the .crp file will appear in the local assets folder:</p><p class="mt-4">
-						<span class="path">%LocalAppData%\Colossal Order\Cities_Skylines\Addons\Assets</span>
+					<p>
+						Once the asset is saved, the .crp file will appear in
+						the local assets folder:
 					</p><p class="mt-4">
-						The AppData folder is hidden by default, you can access it by copying and pasting the path into the file explorer, or pressing <span class="key"
-							>Windows+R</span
-						> and typing in appdata.
+						<span class="path"
+							>%LocalAppData%\Colossal
+							Order\Cities_Skylines\Addons\Assets</span
+						>
+					</p><p class="mt-4">
+						The AppData folder is hidden by default, you can access
+						it by copying and pasting the path into the file
+						explorer, or pressing <span class="key">Windows+R</span>
+						 and typing in appdata.
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/building/local.jpg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.local.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.local}
-							naturalHeight={226}
-							naturalWidth={595}
-							srcWidths={[300, 400, 500]}
 							alt="CRP files in the local assets folder"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-							class="h-auto w-full aspect-video"
-							loading="eager"
+							class="h-auto w-full"
 						/>
-					</a><p class="explanation">CRP files in the local assets folder.</p>
+					</a><p class="explanation">
+						CRP files in the local assets folder.
+					</p>
 				</div>
 			</div>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="publish">Publish</h2>
+			<h2
+				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				id="publish"
+			>
+				Publish
+			</h2>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
-					<p>Once you have saved the asset and reloaded the game, you can publish the asset.</p><p class="mt-4">
-						Go to the content manager &gt; assets and find your asset, then click share.
+					<p>
+						Once you have saved the asset and reloaded the game, you
+						can publish the asset.
+					</p><p class="mt-4">
+						Go to the content manager &gt; assets and find your
+						asset, then click share.
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/building/share.jpg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.share.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.share}
-							naturalHeight={194}
-							naturalWidth={684}
-							srcWidths={[300, 400, 500, 600]}
 							alt="Share button in content manager"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-							class="h-auto w-full aspect-video object-cover"
-							loading="eager"
+							class="h-auto w-full"
 						/>
-					</a><p class="explanation">Share button in content manager.</p>
+					</a><p class="explanation">
+						Share button in content manager.
+					</p>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="title-and-description">Title and Description</h3>
-			<p class="mt-4">You can change these on the Steam Workshop later.</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="steam-preview-image-and-content-folder">
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="title-and-description"
+			>
+				Title and Description
+			</h3>
+			<p class="mt-4">
+				You can change these on the Steam Workshop later.
+			</p>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="steam-preview-image-and-content-folder"
+			>
 				Steam Preview Image and Content Folder
 			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
 					<p>
-						There is a folder icon again on the snapshot image, bottom right corner. Here you can change the Steam preview image, which is the thumbnail visible
-						on steam. The largest size the image will be visible is 437x437 (on the front page) but it will get upscaled to 512x512 by Steam so that's the size
-						you should use.
+						There is a folder icon again on the snapshot image,
+						bottom right corner. Here you can change the Steam
+						preview image, which is the thumbnail visible on steam.
+						The largest size the image will be visible is 437x437
+						(on the front page) but it will get upscaled to 512x512
+						by Steam so that's the size you should use.
 					</p><p class="mt-4">
-						There is also the content folder, which is where the actual asset file is. You can paste multiple .crp files here if you would like to upload a pack
-						of assets.
+						There is also the content folder, which is where the
+						actual asset file is. You can paste multiple .crp files
+						here if you would like to upload a pack of assets.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="/images/asset/building/publish.jpg" target="_blank">
-						<ResponsiveImage
+					<a
+						href="/images/asset/building/publish.jpg"
+						target="_blank"
+					>
+						<Picture
+							width={images.publish.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.publish}
-							naturalHeight={591}
-							naturalWidth={721}
-							srcWidths={[300, 400, 500, 700]}
 							alt="Publish window and content folder"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-							class="h-auto w-full aspect-video object-cover"
-							loading="eager"
+							class="h-auto w-full"
 						/>
-					</a><p class="explanation">Publish window and content folder.</p>
+					</a><p class="explanation">
+						Publish window and content folder.
+					</p>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="steam-workshop">Steam Workshop</h3>
-			<p class="mt-4">On the Steam Workshop page for your asset, you can:</p>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="steam-workshop"
+			>
+				Steam Workshop
+			</h3>
+			<p class="mt-4">
+				On the Steam Workshop page for your asset, you can:
+			</p>
 			<ul class="mt-4 list-disc list-inside">
 				<li class="mt-4">add it to a collection<br /></li>
 				<li class="mt-4">add images and videos<br /></li>
 				<li class="mt-4">add contributors and links<br /></li>
 				<li class="mt-4">add required items and DLC<br /></li>
-				<li class="mt-4">change visibility to friends only or private</li>
+				<li class="mt-4">
+					change visibility to friends only or private
+				</li>
 			</ul>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="update">Update</h2>
+			<h2
+				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				id="update"
+			>
+				Update
+			</h2>
 			<p class="mt-4">
-				To update your own item, you must subscribe to it first, then it will show up in the content manager. It won't be the same as a local asset, as it will
-				show an "update" button.
+				To update your own item, you must subscribe to it first, then it
+				will show up in the content manager. It won't be the same as a
+				local asset, as it will show an "update" button.
 			</p>
 			<p class="mt-4">
-				When you click update, click the folder icon, and now you can change the Steam preview image and put your new asset in the content folder. If updating a
-				pack, remember to put all the assets inside the content folder.
+				When you click update, click the folder icon, and now you can
+				change the Steam preview image and put your new asset in the
+				content folder. If updating a pack, remember to put all the
+				assets inside the content folder.
 			</p>
-			<p class="mt-4">You can also add more assets to make it a bigger pack.</p>
+			<p class="mt-4">
+				You can also add more assets to make it a bigger pack.
+			</p>
 			<div class="flex gap-2 mt-6 items-start justify-start">
 				<svg
 					class="w-8 h-8 text-orange flex-shrink-0"
@@ -696,33 +1092,46 @@ import { images } from '../../data/imageImports.js';
 				</svg>
 				<p class="italic">
 					<em>
-						Make sure your updated assets are saved with exactly the same name as before, otherwise, it will disappear from your subscribers' saves, as the game
-						uses the internal prefab name to refer to it. In the case of networks (roads, tracks etc.) it may completely break a save.
+						Make sure your updated assets are saved with exactly the
+						same name as before, otherwise, it will disappear from
+						your subscribers' saves, as the game uses the internal
+						prefab name to refer to it. In the case of networks
+						(roads, tracks etc.) it may completely break a save.
 					</em>
 				</p>
 			</div>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="prefab-name">Prefab Name</h2>
+			<h2
+				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				id="prefab-name"
+			>
+				Prefab Name
+			</h2>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
-					<p>This is not something you can change.</p><p class="mt-4">It's the hidden internal name used to refer to your asset in savefiles.</p><p
-						class="mt-4"
-					>
-						It's the reason why a local asset is not the same as a workshop published asset.
-					</p><p class="mt-4">For local assets: filename.Asset Name_Data<br />For published workshop assets: SteamID.Asset Name_Data</p>
+					<p>This is not something you can change.</p><p class="mt-4">
+						It's the hidden internal name used to refer to your
+						asset in savefiles.
+					</p><p class="mt-4">
+						It's the reason why a local asset is not the same as a
+						workshop published asset.
+					</p><p class="mt-4">
+						For local assets: filename.Asset Name_Data<br />For
+						published workshop assets: SteamID.Asset Name_Data
+					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/building/prefab.jpg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.prefab.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.prefab}
-							naturalHeight={118}
-							naturalWidth={528}
-							srcWidths={[300, 400, 500]}
 							alt="Publish window and content folder"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-							class="h-auto w-full aspect-video object-cover"
-							loading="eager"
+							class="h-auto w-full"
 						/>
-					</a><p class="explanation">Comparison between local (top) and workshop published (bottom) prefab names shown in ModTools.</p>
+					</a><p class="explanation">
+						Comparison between local (top) and workshop published
+						(bottom) prefab names shown in ModTools.
+					</p>
 				</div>
 			</div>
 		</div>

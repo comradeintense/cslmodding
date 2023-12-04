@@ -11,21 +11,50 @@ import { images } from '../../data/imageImports.js';
 	<TableOfContents />
 	<section class="py-12 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
 		<div class="content">
-			<h1 id="overview" class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400">Prop Asset Creation</h1>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="mesh">Mesh</h2>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="main-mesh">Main Mesh</h3>
+			<h1
+				id="overview"
+				class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400"
+			>
+				Prop Asset Creation
+			</h1>
+			<h2
+				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				id="mesh"
+			>
+				Mesh
+			</h2>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="main-mesh"
+			>
+				Main Mesh
+			</h3>
 			<p class="mt-4">
-				This is a 3D model of the prop, which will be visible when the camera is close to it. The actual mesh file contains vertices (their coordinates, UV
-				mapping, normals, and colors) and triangles.
+				This is a 3D model of the prop, which will be visible when the
+				camera is close to it. The actual mesh file contains vertices
+				(their coordinates, UV mapping, normals, and colors) and
+				triangles.
 			</p>
-			<p class="mt-4">It's created using 3D modeling software such as Blender, 3ds Max, Maya or SketchUp.</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="model-complexity">Model Complexity</h4>
+			<p class="mt-4">
+				It's created using 3D modeling software such as Blender, 3ds
+				Max, Maya or SketchUp.
+			</p>
+			<h4
+				class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+				id="model-complexity"
+			>
+				Model Complexity
+			</h4>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
 					<p>
-						It's recommended to stay within reasonable triangle counts based on the size and detail of your model. You may look at examples of vanilla props or
-						assets by other creators for reference.
-					</p><p class="mt-4">The absolute limit for a mesh is 65536 vertices.</p>
+						It's recommended to stay within reasonable triangle
+						counts based on the size and detail of your model. You
+						may look at examples of vanilla props or assets by other
+						creators for reference.
+					</p><p class="mt-4">
+						The absolute limit for a mesh is 65536 vertices.
+					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/prop/prtris.jpg" target="_blank">
 						<Picture
@@ -37,7 +66,9 @@ import { images } from '../../data/imageImports.js';
 							class="h-auto w-full"
 							loading="eager"
 						/>
-					</a><p class="explanation">Triangle counts of some vanilla props.</p>
+					</a><p class="explanation">
+						Triangle counts of some vanilla props.
+					</p>
 				</div>
 			</div>
 			<div class="flex gap-2 mt-6 items-start justify-start">
@@ -49,7 +80,10 @@ import { images } from '../../data/imageImports.js';
 					viewBox="0 0 24 24"
 					xmlns="http://www.w3.org/2000/svg"
 				>
-					<path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round"></path>
+					<path
+						d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+						stroke-linecap="round"
+						stroke-linejoin="round"></path>
 				</svg>
 				<p class="italic">
 					<em>
@@ -62,15 +96,24 @@ import { images } from '../../data/imageImports.js';
 					</em>
 				</p>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="lod-mesh">LOD Mesh</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="lod-mesh"
+			>
+				LOD Mesh
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
 					<p>
-						LOD stands for level of detail. This is the mesh visible from a distance. It must be as simple as possible. Props are usually very small so a model
-						with 1-6 triangles could be enough.
+						LOD stands for level of detail. This is the mesh visible
+						from a distance. It must be as simple as possible. Props
+						are usually very small so a model with 1-6 triangles
+						could be enough.
 					</p><p class="mt-4">
-						If you don't provide an LOD mesh, the game will try to generate one automatically, which may have visual issues, so it's highly recommended to make
-						a custom LOD mesh.
+						If you don't provide an LOD mesh, the game will try to
+						generate one automatically, which may have visual
+						issues, so it's highly recommended to make a custom LOD
+						mesh.
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/prop/prlodmesh.jpg" target="_blank">
@@ -83,14 +126,24 @@ import { images } from '../../data/imageImports.js';
 							class="h-auto w-full"
 							loading="eager"
 						/></a
-					><p class="explanation">Comparison between main and LOD meshes for the vanilla grill kiosk.</p>
+					><p class="explanation">
+						Comparison between main and LOD meshes for the vanilla
+						grill kiosk.
+					</p>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="uv-mapping">UV Mapping</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="uv-mapping"
+			>
+				UV Mapping
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
 					<p>
-						For the main mesh, you are allowed to UV map outside the 0-1 area (main tile), so you can tile the entire texture multiple times on a single face.
+						For the main mesh, you are allowed to UV map outside the
+						0-1 area (main tile), so you can tile the entire texture
+						multiple times on a single face.
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/building/uv_main.jpg" target="_blank"
@@ -102,16 +155,27 @@ import { images } from '../../data/imageImports.js';
 							alt="Example UV mapping using visible horizontal tiling on the bottom"
 							class="h-auto w-full"
 						/></a
-					><p class="explanation">Example UV mapping using visible horizontal tiling on the bottom.</p>
+					><p class="explanation">
+						Example UV mapping using visible horizontal tiling on
+						the bottom.
+					</p>
 				</div>
 			</div>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="uv-mapping-lod">LOD</h4>
+			<h4
+				class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+				id="uv-mapping-lod"
+			>
+				LOD
+			</h4>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
 					<p>
-						For the LOD mesh, the UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed. This is because ingame all the LOD
-						textures are combined into a single texture called an atlas, so having incorrect uv mapping will end up putting the texture of some other random
-						prop on your LOD.
+						For the LOD mesh, the UV mapping must be within the 0-1
+						area (main tile) of the UV map, no tiling is allowed.
+						This is because ingame all the LOD textures are combined
+						into a single texture called an atlas, so having
+						incorrect uv mapping will end up putting the texture of
+						some other random prop on your LOD.
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/building/uv_lod.jpg" target="_blank"
@@ -124,18 +188,32 @@ import { images } from '../../data/imageImports.js';
 							class="h-auto w-full"
 						/></a
 					><p class="explanation">
-						UV mapping for LOD mesh using automatic mapping in 3ds Max. No overlap and contained within the main tile - good for baking.
+						UV mapping for LOD mesh using automatic mapping in 3ds
+						Max. No overlap and contained within the main tile -
+						good for baking.
 					</p>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="pivot-origin">Pivot / Origin</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="pivot-origin"
+			>
+				Pivot / Origin
+			</h3>
 			<p class="mt-4">
-				The pivot point or origin represents the center point on the ground, where the prop will be plopped. It's usually represented using a red/green/blue
-				axis gizmo.
+				The pivot point or origin represents the center point on the
+				ground, where the prop will be plopped. It's usually represented
+				using a red/green/blue axis gizmo.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="transform">Transform</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="transform"
+			>
+				Transform
+			</h3>
 			<p class="mt-4">
-				Make sure you are exporting a single object, which doesn't have any rotation or scale.<br />This can be done using <Link
+				Make sure you are exporting a single object, which doesn't have
+				any rotation or scale.<br />This can be done using <Link
 					classes=""
 					href="https://wiki.blender.org/index.php/User:Fade/Doc:2.6/Manual/3D_interaction/Transform_Control/Reset_Object_Transformations#Apply_Object_transformations"
 					text='"apply rotation & scale" in Blender'
@@ -147,15 +225,34 @@ import { images } from '../../data/imageImports.js';
 					theme="externallink"
 				/>, and exporting only the selected object.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="vertex-paint">Vertex Paint</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="vertex-paint"
+			>
+				Vertex Paint
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
-					<p>The vertex color blue channel determines snow behavior on winter maps - 0 means no snow will be visible.</p><p class="mt-4">
-						Vertex colors are also used for specific shaders like <Link classes="" href="/shader/animuv/" text="AnimUV" theme="internallink" /> for scrolling or
-						multi-frame animations, or <Link classes="" href="/mod/proprotating-params/" text="PropRotating" theme="internallink" /> for rotating animations.
+					<p>
+						The vertex color blue channel determines snow behavior
+						on winter maps - 0 means no snow will be visible.
+					</p><p class="mt-4">
+						Vertex colors are also used for specific shaders like <Link
+							classes=""
+							href="/shader/animuv/"
+							text="AnimUV"
+							theme="internallink"
+						/> for scrolling or multi-frame animations, or <Link
+							classes=""
+							href="/mod/proprotating-params/"
+							text="PropRotating"
+							theme="internallink"
+						/> for rotating animations.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="/images/asset/building/vertexpaint.jpg" target="_blank"
+					<a
+						href="/images/asset/building/vertexpaint.jpg"
+						target="_blank"
 						><Picture
 							width={images.vertexpaint.width / 2}
 							densities={[1.5, 2]}
@@ -167,12 +264,23 @@ import { images } from '../../data/imageImports.js';
 					><p class="explanation">Vertex painting in 3ds Max.</p>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="culling">Culling</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="culling"
+			>
+				Culling
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
-					<p>Prop culling is when a prop disappears when you look away from the center of it.</p><p class="mt-4">
-						If your prop has a low height or is wide/long, it's recommended to add an invisible triangle which is bigger than your actual mesh to make the game
-						think the prop is larger than it actually is, which will reduce the chance of it disappearing.
+					<p>
+						Prop culling is when a prop disappears when you look
+						away from the center of it.
+					</p><p class="mt-4">
+						If your prop has a low height or is wide/long, it's
+						recommended to add an invisible triangle which is bigger
+						than your actual mesh to make the game think the prop is
+						larger than it actually is, which will reduce the chance
+						of it disappearing.
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/prop/prculling.jpg" target="_blank"
@@ -184,24 +292,50 @@ import { images } from '../../data/imageImports.js';
 							alt="Infinitely thin triangles made by putting 2 of the 3 vertices in the same place"
 							class="h-auto w-full"
 						/></a
-					><p class="explanation">Infinitely thin triangles made by putting 2 of the 3 vertices in the same place.</p>
+					><p class="explanation">
+						Infinitely thin triangles made by putting 2 of the 3
+						vertices in the same place.
+					</p>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="formats">Formats</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="formats"
+			>
+				Formats
+			</h3>
 			<ul class="mt-4 list-disc list-inside">
 				<li class="mt-4">FBX (2015 or older) (most commonly used)</li>
 				<li class="mt-4">OBJ (doesn't support vertex colors)</li>
 				<li class="mt-4">DAE</li>
 			</ul>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="textures">Textures</h2>
-			<p class="mt-4">These determine the color and material properties of your prop.</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="resolution">Resolution</h3>
+			<h2
+				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				id="textures"
+			>
+				Textures
+			</h2>
+			<p class="mt-4">
+				These determine the color and material properties of your prop.
+			</p>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="resolution"
+			>
+				Resolution
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
-					<p>All imported main textures must be the same resolution.</p><p class="mt-4">
-						Powers of 2 is a standard practice in 3D graphics, which means resolutions such as 1024x1024, 1024x512, 256x512, 2048x128 etc. It is recommended to
-						stick to this standard, otherwise, your texture may be corrupted by compression, which may be more visible at longer distances or grazing angles.
-						The smallest allowed resolution is 32x32.
+					<p>
+						All imported main textures must be the same resolution.
+					</p><p class="mt-4">
+						Powers of 2 is a standard practice in 3D graphics, which
+						means resolutions such as 1024x1024, 1024x512, 256x512,
+						2048x128 etc. It is recommended to stick to this
+						standard, otherwise, your texture may be corrupted by
+						compression, which may be more visible at longer
+						distances or grazing angles. The smallest allowed
+						resolution is 32x32.
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/prop/prtextsize.jpg" target="_blank"
@@ -213,7 +347,11 @@ import { images } from '../../data/imageImports.js';
 							alt="Texture sizes of various vanilla assets"
 							class="h-auto w-full"
 						/></a
-					><p class="explanation">Texture sizes of various vanilla assets. See the resolution in the top right corner of the preview window.</p>
+					><p class="explanation">
+						Texture sizes of various vanilla assets. See the
+						resolution in the top right corner of the preview
+						window.
+					</p>
 				</div>
 			</div>
 			<div class="flex gap-2 mt-6 items-start justify-start">
@@ -232,24 +370,46 @@ import { images } from '../../data/imageImports.js';
 				</svg>
 				<p class="italic">
 					<em>
-						Make sure texture quality is set to high in the game's graphics settings, otherwise, your imported textures will be downscaled to a lower
-						resolution.
+						Make sure texture quality is set to high in the game's
+						graphics settings, otherwise, your imported textures
+						will be downscaled to a lower resolution.
 					</em>
 				</p>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="lod-textures">LOD Textures</h3>
-			<p class="mt-4">All imported LOD textures must be the same resolution.</p>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="lod-textures"
+			>
+				LOD Textures
+			</h3>
 			<p class="mt-4">
-				If you don't provide LOD textures, the game will try to bake them using the UV mapping your LOD mesh has, and that may cause visual issues, so it's
-				recommended that you create your own LOD textures using baking.
+				All imported LOD textures must be the same resolution.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="diffuse">Diffuse</h3>
+			<p class="mt-4">
+				If you don't provide LOD textures, the game will try to bake
+				them using the UV mapping your LOD mesh has, and that may cause
+				visual issues, so it's recommended that you create your own LOD
+				textures using baking.
+			</p>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="diffuse"
+			>
+				Diffuse
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
-					<p>The main color and texture of your asset.</p><p class="mt-4">
-						It will look very bright, contrasty, and saturated in the game, so make sure to reduce the saturation and limit the brightest parts to a
-						medium/light gray below 140 RGB.
-					</p><p class="mt-4">If you don't import a diffuse map, it will default to white.</p>
+					<p>The main color and texture of your asset.</p><p
+						class="mt-4"
+					>
+						It will look very bright, contrasty, and saturated in
+						the game, so make sure to reduce the saturation and
+						limit the brightest parts to a medium/light gray below
+						140 RGB.
+					</p><p class="mt-4">
+						If you don't import a diffuse map, it will default to
+						white.
+					</p>
 				</div><div class="lg:w-1/3">
 					<div class="">
 						<a href="/images/asset/prop/prdiff.jpg" target="_blank"
@@ -261,10 +421,14 @@ import { images } from '../../data/imageImports.js';
 								alt="Example diffuse texture for a conveyor prop"
 								class="h-auto w-full"
 							/></a
-						><p class="explanation">Example diffuse texture for a conveyor prop.</p>
+						><p class="explanation">
+							Example diffuse texture for a conveyor prop.
+						</p>
 					</div>
 					<div class="mt-4">
-						<a href="/images/asset/building/color_guidelines.png" target="_blank"
+						<a
+							href="/images/asset/building/color_guidelines.png"
+							target="_blank"
 							><Picture
 								width={images.color_guidelines.width / 2}
 								densities={[1.5, 2]}
@@ -277,12 +441,18 @@ import { images } from '../../data/imageImports.js';
 					</div>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="alpha">Alpha</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="alpha"
+			>
+				Alpha
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
 					<p>
-						Transparency, white means opaque or visible, black means transparent or invisible. Gray values may affect how it looks from a distance or at an
-						angle.
+						Transparency, white means opaque or visible, black means
+						transparent or invisible. Gray values may affect how it
+						looks from a distance or at an angle.
 					</p><p class="mt-4">
 						Semi-transparency is not supported, you need to use the <Link
 							classes=""
@@ -290,10 +460,15 @@ import { images } from '../../data/imageImports.js';
 							text="rotors shader"
 							theme="externallink"
 						/> for that.
-					</p><p class="mt-4">If you don't import an alpha map, it will default to fully opaque or fully visible.</p>
+					</p><p class="mt-4">
+						If you don't import an alpha map, it will default to
+						fully opaque or fully visible.
+					</p>
 				</div><div class="lg:w-1/3">
 					<div class="">
-						<a href="/images/asset/building/textures_alpha.jpg" target="_blank"
+						<a
+							href="/images/asset/building/textures_alpha.jpg"
+							target="_blank"
 							><Picture
 								width={images.textures_alpha.width / 2}
 								densities={[1.5, 2]}
@@ -302,9 +477,15 @@ import { images } from '../../data/imageImports.js';
 								alt="Example alpha texture for some railings and metal beams"
 								class="h-auto w-full"
 							/></a
-						><p class="explanation">Example alpha texture for some railings and metal beams.</p>
+						><p class="explanation">
+							Example alpha texture for some railings and metal
+							beams.
+						</p>
 					</div><div class="mt-4">
-						<a href="/images/asset/building/textures_alpha_rail.jpg" target="_blank">
+						<a
+							href="/images/asset/building/textures_alpha_rail.jpg"
+							target="_blank"
+						>
 							<Picture
 								width={images.textures_alpha_rail.width / 2}
 								densities={[1.5, 2]}
@@ -314,28 +495,56 @@ import { images } from '../../data/imageImports.js';
 								class="h-auto w-full"
 							/></a
 						><p class="explanation">
-							Using lighter values for the invisible parts will decrease the chance of small details like railings disappearing completely.
+							Using lighter values for the invisible parts will
+							decrease the chance of small details like railings
+							disappearing completely.
 						</p>
 					</div>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="color">Color</h3>
-			<p class="mt-4">Determines which parts will be affected by color variations. White means fully affected and black means not at all.</p>
-			<p class="mt-4">The diffuse will get multiplied by the color variation, that means the resulting color will look darker than the original diffuse.</p>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="color"
+			>
+				Color
+			</h3>
 			<p class="mt-4">
-				If you don't import a color map, it will default to full color, but the "use color variations" setting must be enabled for the colors to appear.
+				Determines which parts will be affected by color variations.
+				White means fully affected and black means not at all.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="illumination">Illumination</h3>
+			<p class="mt-4">
+				The diffuse will get multiplied by the color variation, that
+				means the resulting color will look darker than the original
+				diffuse.
+			</p>
+			<p class="mt-4">
+				If you don't import a color map, it will default to full color,
+				but the "use color variations" setting must be enabled for the
+				colors to appear.
+			</p>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="illumination"
+			>
+				Illumination
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
-					<p>Allows for diffuse contribution illumination. Black means no illumination and white means the brightest possible illumination.</p><p class="mt-4">
+					<p>
+						Allows for diffuse contribution illumination. Black
+						means no illumination and white means the brightest
+						possible illumination.
+					</p><p class="mt-4">
 						<Link
 							classes=""
 							href="/asset/prop/#m_illuminationblinktype"
 							text="There are parameters for blinking illumination or disabling illumination during the day."
 							theme="internallink"
 						/>
-					</p><p class="mt-4">If you don't import an illumination map, it will default to no illumination.</p>
+					</p><p class="mt-4">
+						If you don't import an illumination map, it will default
+						to no illumination.
+					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/prop/prillum.jpg" target="_blank">
 						<Picture
@@ -346,15 +555,30 @@ import { images } from '../../data/imageImports.js';
 							alt="Example illumination map for a torch"
 							class="max-h-[16rem] max-w-full"
 						/></a
-					><p class="explanation">Example illumination map for a torch.</p>
+					><p class="explanation">
+						Example illumination map for a torch.
+					</p>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="specular">Specular</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="specular"
+			>
+				Specular
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
-					<p>Reflectivity, black means no reflection and white means max reflection.</p><p class="mt-4">
-						The specular highlight from the sun is very big and bright, so you might want to use very low (0-10%) specularity for surfaces facing upwards.
-					</p><p class="mt-4">If you don't import a specular map, it will default to no specularity.</p>
+					<p>
+						Reflectivity, black means no reflection and white means
+						max reflection.
+					</p><p class="mt-4">
+						The specular highlight from the sun is very big and
+						bright, so you might want to use very low (0-10%)
+						specularity for surfaces facing upwards.
+					</p><p class="mt-4">
+						If you don't import a specular map, it will default to
+						no specularity.
+					</p>
 				</div><div class="lg:w-1/3">
 					<div class="">
 						<a href="/images/asset/prop/prspec.jpg" target="_blank">
@@ -366,11 +590,16 @@ import { images } from '../../data/imageImports.js';
 								alt="Example specular map for a roof water tank"
 								class="h-auto w-full"
 							/></a
-						><p class="explanation">Example specular map for a roof water tank.</p>
+						><p class="explanation">
+							Example specular map for a roof water tank.
+						</p>
 					</div><div class="mt-4">
-						<a href="/images/asset/building/textures_specular_transition.jpg" target="_blank"
+						<a
+							href="/images/asset/building/textures_specular_transition.jpg"
+							target="_blank"
 							><Picture
-								width={images.textures_specular_transition.width / 2}
+								width={images.textures_specular_transition
+									.width / 2}
 								densities={[1.5, 2]}
 								formats={['avif', 'webp']}
 								src={images.textures_specular_transition}
@@ -378,40 +607,66 @@ import { images } from '../../data/imageImports.js';
 								class="h-auto w-full"
 							/></a
 						><p class="explanation">
-							Transitions between different specular values produce artifacts on the normal map and vice versa, even if a normal map is not imported.
+							Transitions between different specular values
+							produce artifacts on the normal map and vice versa,
+							even if a normal map is not imported.
 						</p>
 					</div>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="normal">Normal</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="normal"
+			>
+				Normal
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
-					<p>Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.</p><p class="mt-4">
-						This can be made from the diffuse or a height map (brighter colors will look extruded out more) using <Link
+					<p>
+						Also sometimes called a bump map, adds fake depth or
+						form by affecting how the lighting appears.
+					</p><p class="mt-4">
+						This can be made from the diffuse or a height map
+						(brighter colors will look extruded out more) using <Link
 							classes=""
 							href="http://cpetry.github.io/NormalMap-Online/"
 							text="a normal map generator online"
 							theme="externallink"
-						/>, a photoshop plugin like <Link classes="" href="http://www.xnormal.net/" text="xNormal" theme="externallink" />, or standalone software such as <Link
+						/>, a photoshop plugin like <Link
+							classes=""
+							href="http://www.xnormal.net/"
+							text="xNormal"
+							theme="externallink"
+						/>, or standalone software such as <Link
 							classes=""
 							href="https://www.crazybump.com/"
 							text="CrazyBump"
 							theme="externallink"
 						/>.
 					</p><p class="mt-4">
-						The normal map generator should be set to +X +Y, which means no color channel inversions are required. Read more in the <Link
+						The normal map generator should be set to +X +Y, which
+						means no color channel inversions are required. Read
+						more in the <Link
 							classes=""
 							href="/normal-maps/"
 							text="normal map article"
 							theme="internallink"
 						/>.
 					</p><p class="mt-4">
-						High specularity and normal map don't work well together because of the compression, so you might want to paint over shiny parts with a solid color
-						before generating a normal map or paint over these parts 128,128,255 on the final normal map.
-					</p><p class="mt-4">If you don't import a normal map, it will default to a flat normal map - no bump.</p>
+						High specularity and normal map don't work well together
+						because of the compression, so you might want to paint
+						over shiny parts with a solid color before generating a
+						normal map or paint over these parts 128,128,255 on the
+						final normal map.
+					</p><p class="mt-4">
+						If you don't import a normal map, it will default to a
+						flat normal map - no bump.
+					</p>
 				</div><div class="lg:w-1/3">
 					<div class="">
-						<a href="/images/asset/citizen/citnormal.jpeg" target="_blank"
+						<a
+							href="/images/asset/citizen/citnormal.jpeg"
+							target="_blank"
 							><Picture
 								width={images.citnormal.width / 2}
 								densities={[1.5, 2]}
@@ -420,9 +675,13 @@ import { images } from '../../data/imageImports.js';
 								alt="Example normal map for rocks"
 								class="h-auto w-full"
 							/></a
-						><p class="explanation">Example normal map for rocks.</p>
+						><p class="explanation">
+							Example normal map for rocks.
+						</p>
 					</div><div class="mt-4">
-						<a href="/images/asset/building/textures_normal_problem.jpg" target="_blank"
+						<a
+							href="/images/asset/building/textures_normal_problem.jpg"
+							target="_blank"
 							><Picture
 								width={images.textures_normal_problem.width / 2}
 								densities={[1.5, 2]}
@@ -431,12 +690,19 @@ import { images } from '../../data/imageImports.js';
 								alt="Example normal map problem"
 								class="h-auto w-full"
 							/></a
-						><p class="explanation">Problem: normal maps appear incorrectly if the asset importer mesh rotation feature is used.</p>
+						><p class="explanation">
+							Problem: normal maps appear incorrectly if the asset
+							importer mesh rotation feature is used.
+						</p>
 					</div>
 					<div class="mt-4">
-						<a href="/images/asset/building/textures_normal_problem2.jpg" target="_blank">
+						<a
+							href="/images/asset/building/textures_normal_problem2.jpg"
+							target="_blank"
+						>
 							<Picture
-								width={images.textures_normal_problem2.width / 2}
+								width={images.textures_normal_problem2.width /
+									2}
 								densities={[1.5, 2]}
 								formats={['avif', 'webp']}
 								src={images.textures_normal_problem2}
@@ -444,44 +710,94 @@ import { images } from '../../data/imageImports.js';
 								class="h-auto w-full"
 							/>
 						</a><p class="explanation">
-							Problem: default normal map value is 0.5, which isn't possible by using 127(left) or 128(right). Image shows the same flat normal map on faces
-							with different UV rotation/flip.
+							Problem: default normal map value is 0.5, which
+							isn't possible by using 127(left) or 128(right).
+							Image shows the same flat normal map on faces with
+							different UV rotation/flip.
 						</p>
 					</div>
 				</div>
 			</div>
 
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="format">Format</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="format"
+			>
+				Format
+			</h3>
 			<p class="mt-4">Use a lossless format like .PNG.</p>
 			<p class="mt-4">
-				The game supports other formats as well, but there is no reason to use another one, it doesn't matter how much your texture is compressed or even if
-				it's completely solid or complicated, the game will convert it to a DXT format, so the final size won't be affected by anything other than resolution.
+				The game supports other formats as well, but there is no reason
+				to use another one, it doesn't matter how much your texture is
+				compressed or even if it's completely solid or complicated, the
+				game will convert it to a DXT format, so the final size won't be
+				affected by anything other than resolution.
 			</p>
 			<p class="mt-4">
-				Make sure the texture is 8 bits/channel because a 16 bits/channel image can't be imported. Do not use the "Smaller File (8-bit)" feature in the
-				Photoshop Export As window, as that creates an indexed color image, not an 8 bits/channel one.
+				Make sure the texture is 8 bits/channel because a 16
+				bits/channel image can't be imported. Do not use the "Smaller
+				File (8-bit)" feature in the Photoshop Export As window, as that
+				creates an indexed color image, not an 8 bits/channel one.
 			</p>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="import">Import</h2>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="example-asset">Example Asset</h3>
-			<p class="mt-4">Source files of an example prop ready for import.</p>
+			<h2
+				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				id="import"
+			>
+				Import
+			</h2>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="example-asset"
+			>
+				Example Asset
+			</h3>
+			<p class="mt-4">
+				Source files of an example prop ready for import.
+			</p>
 			<div class="content-download mt-4">
-				<Link classes="" href="https://drive.google.com/open?id=1x0cz4Wm_XJ5lM_GYznow1wMZAfEwv73w" text="Download" theme="downloadbutton" />
+				<Link
+					classes=""
+					href="https://drive.google.com/open?id=1x0cz4Wm_XJ5lM_GYznow1wMZAfEwv73w"
+					text="Download"
+					theme="downloadbutton"
+				/>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="naming">Naming</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="naming"
+			>
+				Naming
+			</h3>
 			<p class="mt-4">
-				The mesh can have any name, but it's not recommended to use spaces or underscores, as the name for the lod mesh name will be meshname_lod.
+				The mesh can have any name, but it's not recommended to use
+				spaces or underscores, as the name for the lod mesh name will be
+				meshname_lod.
 			</p>
 			<p class="mt-4">
-				The textures must have the same name as the mesh, but with the texture type identifier after it, so the result will be names like meshname_d.png and
-				meshname_lod_d.png
+				The textures must have the same name as the mesh, but with the
+				texture type identifier after it, so the result will be names
+				like meshname_d.png and meshname_lod_d.png
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="import-folder">Import Folder</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="import-folder"
+			>
+				Import Folder
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
-					<p>You should place the mesh and texture files in the import folder located here:</p><p class="mt-4">
-						<span class="path">%LocalAppData%\Colossal Order\Cities_Skylines\Addons\Import</span>
+					<p>
+						You should place the mesh and texture files in the
+						import folder located here:
 					</p><p class="mt-4">
-						The AppData folder is hidden by default, you can access it by copying and pasting the path into the file explorer, or pressing <span class="key"
+						<span class="path"
+							>%LocalAppData%\Colossal
+							Order\Cities_Skylines\Addons\Import</span
+						>
+					</p><p class="mt-4">
+						The AppData folder is hidden by default, you can access
+						it by copying and pasting the path into the file
+						explorer, or pressing <span class="key"
 							>Windows + R</span
 						> and typing in appdata.
 					</p>
@@ -498,13 +814,26 @@ import { images } from '../../data/imageImports.js';
 					</a><p class="explanation">Files ready for import.</p>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="template">Template</h3>
-			<p class="mt-4">The template you choose will determine some things about your prop:</p>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="template"
+			>
+				Template
+			</h3>
+			<p class="mt-4">
+				The template you choose will determine some things about your
+				prop:
+			</p>
 			<ul class="mt-4 list-disc list-inside">
 				<li class="mt-4">UI category<br /></li>
 				<li class="mt-4">item class (UI sub-category)<br /></li>
-				<li class="mt-4">general settings (create ruining, scale, use color variations)<br /></li>
-				<li class="mt-4">shader, material properties (color variations)</li>
+				<li class="mt-4">
+					general settings (create ruining, scale, use color
+					variations)<br />
+				</li>
+				<li class="mt-4">
+					shader, material properties (color variations)
+				</li>
 			</ul>
 			<div class="flex gap-2 mt-6 items-start justify-start">
 				<svg
@@ -515,11 +844,15 @@ import { images } from '../../data/imageImports.js';
 					viewBox="0 0 24 24"
 					xmlns="http://www.w3.org/2000/svg"
 				>
-					<path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round"></path>
+					<path
+						d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+						stroke-linecap="round"
+						stroke-linejoin="round"></path>
 				</svg>
 				<p class="italic">
 					<em>
-						All of those things can be changed later in the editor itself or using <Link
+						All of those things can be changed later in the editor
+						itself or using <Link
 							classes=""
 							href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484"
 							text="ModTools"
@@ -528,15 +861,25 @@ import { images } from '../../data/imageImports.js';
 					</em>
 				</p>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="import-1">Import</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="import-1"
+			>
+				Import
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
 					<p>
-						After you choose your mesh, depending on how it was exported, you might need to set the correct scale and rotation, scale 100 and rotating 3 times
-						around X-axis are common necessities.
+						After you choose your mesh, depending on how it was
+						exported, you might need to set the correct scale and
+						rotation, scale 100 and rotating 3 times around X-axis
+						are common necessities.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="/images/asset/prop/primportmesh.jpg" target="_blank">
+					<a
+						href="/images/asset/prop/primportmesh.jpg"
+						target="_blank"
+					>
 						<Picture
 							width={images.primportmesh.width / 2}
 							densities={[1.5, 2]}
@@ -545,7 +888,9 @@ import { images } from '../../data/imageImports.js';
 							alt="Importing a mesh in asset importer"
 							class="h-auto w-full"
 						/>
-					</a><p class="explanation">Importing a mesh in asset importer.</p>
+					</a><p class="explanation">
+						Importing a mesh in asset importer.
+					</p>
 				</div>
 			</div>
 			<div class="flex gap-2 mt-6 items-start justify-start">
@@ -564,9 +909,12 @@ import { images } from '../../data/imageImports.js';
 				</svg>
 				<p class="italic">
 					<em>
-						Using the mesh rotation feature will result in broken mesh tangents - that means the normal maps will appear incorrectly or not at all on some
-						parts. To fix this, don't use the rotation feature and make sure the mesh is rotated properly before import. If you need to use the mesh rotation
-						feature - use the <Link
+						Using the mesh rotation feature will result in broken
+						mesh tangents - that means the normal maps will appear
+						incorrectly or not at all on some parts. To fix this,
+						don't use the rotation feature and make sure the mesh is
+						rotated properly before import. If you need to use the
+						mesh rotation feature - use the <Link
 							classes=""
 							href="https://steamcommunity.com/sharedfiles/filedetails/?id=1518485094"
 							text="Mesh Import Rotation Tangents Fix mod"
@@ -591,8 +939,10 @@ import { images } from '../../data/imageImports.js';
 				</svg>
 				<p class="italic">
 					<em>
-						If you get an unsupported color error, one of your textures might be a 16 bits/channel file, you need to change it to 8 bits/channel, in Photoshop:
-						Image &gt; Mode &gt; 8 Bits/Channel.
+						If you get an unsupported color error, one of your
+						textures might be a 16 bits/channel file, you need to
+						change it to 8 bits/channel, in Photoshop: Image &gt;
+						Mode &gt; 8 Bits/Channel.
 					</em>
 				</p>
 			</div>
@@ -612,28 +962,68 @@ import { images } from '../../data/imageImports.js';
 				</svg>
 				<p class="italic">
 					<em>
-						If the mesh preview doesn't display or you can't continue, you may have a problem with it such as multiple mesh objects, other entities like
-						dummies, cameras, lights, or layers in the exported file.
+						If the mesh preview doesn't display or you can't
+						continue, you may have a problem with it such as
+						multiple mesh objects, other entities like dummies,
+						cameras, lights, or layers in the exported file.
 					</em>
 				</p>
 			</div>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="editor">Editor</h2>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="effects">Effects</h3>
-			<p class="mt-4">You can add effects such as lights and particles, and change their position and direction.</p>
+			<h2
+				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				id="editor"
+			>
+				Editor
+			</h2>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="effects"
+			>
+				Effects
+			</h3>
 			<p class="mt-4">
-				The "always active" toggle has no known effect, it's only enabled for the vanilla red/orange roof warning lights, but they still turn off if the
-				building has no electricity or is turned off.
+				You can add effects such as lights and particles, and change
+				their position and direction.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="general-properties">General Properties</h3>
+			<p class="mt-4">
+				The "always active" toggle has no known effect, it's only
+				enabled for the vanilla red/orange roof warning lights, but they
+				still turn off if the building has no electricity or is turned
+				off.
+			</p>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="general-properties"
+			>
+				General Properties
+			</h3>
 			<ul class="mt-4 list-disc list-inside">
 				<li class="mt-4">availability (ingame, map editor etc.)</li>
-				<li class="mt-4">create ruining (shows map theme ruined texture on the ground)</li>
-				<li class="mt-4">max/min scale (random scale variation for each plopped prop)</li>
-				<li class="mt-4">use color variations (may require to save/load for the toggle to take effect)</li>
+				<li class="mt-4">
+					create ruining (shows map theme ruined texture on the
+					ground)
+				</li>
+				<li class="mt-4">
+					max/min scale (random scale variation for each plopped prop)
+				</li>
+				<li class="mt-4">
+					use color variations (may require to save/load for the
+					toggle to take effect)
+				</li>
 			</ul>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="material-properties">Material properties</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="material-properties"
+			>
+				Material properties
+			</h3>
 			<p class="mt-4">You can change the 4 color variations.</p>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="editor-advanced">Editor Advanced</h2>
+			<h2
+				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				id="editor-advanced"
+			>
+				Editor Advanced
+			</h2>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
 					<p>
@@ -642,10 +1032,16 @@ import { images } from '../../data/imageImports.js';
 							href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484"
 							text="ModTools"
 							theme="externallink"
-						/> scene explorer <span class="key">Ctrl+E</span> or running scripts in the console <span class="key">F7</span>, or specific mods.
+						/> scene explorer <span class="key">Ctrl+E</span> or
+						running scripts in the console <span class="key"
+							>F7</span
+						>, or specific mods.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="/images/asset/building/modtools.jpg" target="_blank">
+					<a
+						href="/images/asset/building/modtools.jpg"
+						target="_blank"
+					>
 						<Picture
 							width={images.modtools.width / 2}
 							densities={[1.5, 2]}
@@ -654,50 +1050,100 @@ import { images } from '../../data/imageImports.js';
 							alt="ModTools scene explorer and console"
 							class="h-max w-full"
 						/>
-					</a><p class="explanation">ModTools scene explorer and console.</p>
+					</a><p class="explanation">
+						ModTools scene explorer and console.
+					</p>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="item-class">Item Class</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="item-class"
+			>
+				Item Class
+			</h3>
 			<p class="mt-4">
-				Contains information about what type of prop it is. It can be changed using <Link
+				Contains information about what type of prop it is. It can be
+				changed using <Link
 					classes=""
 					href="https://steamcommunity.com/sharedfiles/filedetails/?id=455068042"
 					text="Asset ItemClass Changer by Snow_Cat"
 					theme="externallink"
 				/>.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="ui-category">UI Category</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="ui-category"
+			>
+				UI Category
+			</h3>
 			<p class="mt-4">
-				UI category determines in which menu your asset will appear. It can be changed using <Link
+				UI category determines in which menu your asset will appear. It
+				can be changed using <Link
 					classes=""
 					href="https://steamcommunity.com/sharedfiles/filedetails/?id=458396767"
 					text="Asset UI Category Changer by Snow_Cat"
 					theme="externallink"
 				/>
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="ui-priority">UI Priority</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="ui-priority"
+			>
+				UI Priority
+			</h3>
 			<p class="mt-4">
 				UIPriority determines item order in the menu. It can be changed <Link
 					classes=""
 					href="https://steamcommunity.com/sharedfiles/filedetails/?id=466485089"
 					text="Asset UI Priority Changer by Snow_Cat"
 					theme="externallink"
-				/> or <Link classes="" href="https://gist.github.com/ronyx69/60e9297695ff983b655b05b21f0407e5" text="a script" theme="externallink" />.
+				/> or <Link
+					classes=""
+					href="https://gist.github.com/ronyx69/60e9297695ff983b655b05b21f0407e5"
+					text="a script"
+					theme="externallink"
+				/>.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="shaders">Shaders</h3>
-			<p class="mt-4"></p><div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="shaders"
+			>
+				Shaders
+			</h3>
+			<p class="mt-4"></p><div
+				class="flex flex-col lg:flex-row gap-6 mt-4"
+			>
 				<div class="lg:w-2/3">
 					<p>Scripts for commonly used prop shaders:</p>
 					<ul class="mt-4 list-disc list-inside">
 						<li class="mt-4">
-							<Link classes="" href="https://gist.github.com/ronyx69/bd84159b66ca9cb70763247ddc69fbac" text="Default" theme="externallink" />
+							<Link
+								classes=""
+								href="https://gist.github.com/ronyx69/bd84159b66ca9cb70763247ddc69fbac"
+								text="Default"
+								theme="externallink"
+							/>
 						</li>
 						<li class="mt-4">
-							<Link classes="" href="https://gist.github.com/ronyx69/911f8a9deff79412d085f709e555e03f" text="Fence" theme="externallink" /> conforms to the
-							ground. If you use the "high/low vegetation" props as the template when importing, the resulting props will have fence shader, but will also be
-							height-adjustable using Move It!, which is unusual for props using the fence shader.
+							<Link
+								classes=""
+								href="https://gist.github.com/ronyx69/911f8a9deff79412d085f709e555e03f"
+								text="Fence"
+								theme="externallink"
+							/> conforms to the ground. If you use the "high/low
+							vegetation" props as the template when importing,
+							the resulting props will have fence shader, but will
+							also be height-adjustable using Move It!, which is
+							unusual for props using the fence shader.
 						</li>
-						<li class="mt-4"><Link classes="" href="/shader/decal/" text="Decal" theme="internallink" /> projects the texture onto the ground.</li>
+						<li class="mt-4">
+							<Link
+								classes=""
+								href="/shader/decal/"
+								text="Decal"
+								theme="internallink"
+							/> projects the texture onto the ground.
+						</li>
 					</ul>
 				</div>
 				<div class="lg:w-1/3">
@@ -711,36 +1157,69 @@ import { images } from '../../data/imageImports.js';
 							class="h-auto w-full"
 						/>
 					</a>
-					<p class="explanation">Comparison between Default (left), Fence (middle) and Decal (right) prop shaders.</p>
+					<p class="explanation">
+						Comparison between Default (left), Fence (middle) and
+						Decal (right) prop shaders.
+					</p>
 				</div>
 			</div>
 
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="shader-properties">Shader Properties</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="shader-properties"
+			>
+				Shader Properties
+			</h3>
 			<p class="mt-4">
 				Some shaders have specific hidden properties, such as the <Link
 					classes=""
 					href="/shader/proprotating/"
 					text="PropRotating shader"
 					theme="internallink"
-				/> and <Link classes="" href="/shader/animuv/" text="AnimUV prop shader" theme="internallink" />.
+				/> and <Link
+					classes=""
+					href="/shader/animuv/"
+					text="AnimUV prop shader"
+					theme="internallink"
+				/>.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="variations">Variations</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="variations"
+			>
+				Variations
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
 					<p>
-						You can add multiple prop assets to your prop as variations using a probability value. The probability is a percentage out of 100, but the main prop
-						has no probability so it gets whatever is left over, so if you have two variations with a 25% probability each, the main prop will get a 50%
-						probability. The variations will be embedded into the main prop, but also show up as separate props in the menu.
+						You can add multiple prop assets to your prop as
+						variations using a probability value. The probability is
+						a percentage out of 100, but the main prop has no
+						probability so it gets whatever is left over, so if you
+						have two variations with a 25% probability each, the
+						main prop will get a 50% probability. The variations
+						will be embedded into the main prop, but also show up as
+						separate props in the menu.
 					</p><p class="mt-4">
-						Run <Link classes="" href="https://gist.github.com/ronyx69/8071d41a135cdb5d1f1f0627b5806b6d" text="this script" theme="externallink" /> using the <Link
+						Run <Link
+							classes=""
+							href="https://gist.github.com/ronyx69/8071d41a135cdb5d1f1f0627b5806b6d"
+							text="this script"
+							theme="externallink"
+						/> using the <Link
 							classes=""
 							href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484"
 							text="ModTools"
 							theme="externallink"
-						/> console <span class="key">F7</span> to set the variation amount, and also calculate equal probability automatically.
+						/> console <span class="key">F7</span> to set the
+						variation amount, and also calculate equal probability
+						automatically.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="/images/asset/prop/prvariations.jpg" target="_blank">
+					<a
+						href="/images/asset/prop/prvariations.jpg"
+						target="_blank"
+					>
 						<Picture
 							width={images.prvariations.width / 2}
 							densities={[1.5, 2]}
@@ -749,31 +1228,60 @@ import { images } from '../../data/imageImports.js';
 							alt="Prop variations menu in the asset editor"
 							class="h-auto w-full"
 						/>
-					</a><p class="explanation">Prop variations menu in the asset editor.</p>
+					</a><p class="explanation">
+						Prop variations menu in the asset editor.
+					</p>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="prefab-info-fields">Prefab Info Fields</h3>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="prefab-info-fields"
+			>
+				Prefab Info Fields
+			</h3>
 			<p class="mt-4">
-				To change variables of the asset, open the scene explorer <span class="key">Ctrl+E</span> and go to <span class="path"
+				To change variables of the asset, open the scene explorer <span
+					class="key">Ctrl+E</span
+				> and go to <span class="path"
 					>Tool Controller &gt; ToolController &gt; m_editPrefabInfo</span
-				>. This is where you can find all the fields of the prop, note that some things can only be changed using scripts, and also not all changed fields will
-				save.
+				>. This is where you can find all the fields of the prop, note
+				that some things can only be changed using scripts, and also not
+				all changed fields will save.
 			</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="m_illuminationblinktype">
+			<h4
+				class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+				id="m_illuminationblinktype"
+			>
 				m_illuminationBlinkType
 			</h4>
-			<p class="mt-4">Determines the animation of the prop illumination.</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="m_illuminationoffrange">m_illuminationOffRange</h4>
 			<p class="mt-4">
-				Determines the upper and lower limit for how long the illumination is disabled during the daytime. For lights, this usually matches the off range of the
-				light effect which can be found in <span class="path">m_effects &gt; m_effects.[id] &gt; m_effect &gt; m_offRange</span>. You can also use <Link
+				Determines the animation of the prop illumination.
+			</p>
+			<h4
+				class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+				id="m_illuminationoffrange"
+			>
+				m_illuminationOffRange
+			</h4>
+			<p class="mt-4">
+				Determines the upper and lower limit for how long the
+				illumination is disabled during the daytime. For lights, this
+				usually matches the off range of the light effect which can be
+				found in <span class="path"
+					>m_effects &gt; m_effects.[id] &gt; m_effect &gt; m_offRange</span
+				>. You can also use <Link
 					classes=""
 					href="https://gist.github.com/ronyx69/bfa8940c8d68f99b8826c88af51a39b7"
 					text="this script"
 					theme="externallink"
 				/> to change it using an hour value.
 			</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="m_specialplaces">m_specialPlaces</h4>
+			<h4
+				class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+				id="m_specialplaces"
+			>
+				m_specialPlaces
+			</h4>
 			<p class="mt-4">
 				Allows adding sitting places for citizens using <Link
 					classes=""
@@ -782,7 +1290,12 @@ import { images } from '../../data/imageImports.js';
 					theme="externallink"
 				/>.
 			</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="m_parkingspaces">m_parkingSpaces</h4>
+			<h4
+				class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+				id="m_parkingspaces"
+			>
+				m_parkingSpaces
+			</h4>
 			<p class="mt-4">
 				Allows adding parking places for cars using <Link
 					classes=""
@@ -791,12 +1304,24 @@ import { images } from '../../data/imageImports.js';
 					theme="externallink"
 				/>.
 			</p>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="save">Save</h2>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="filename">Filename</h3>
+			<h2
+				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				id="save"
+			>
+				Save
+			</h2>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="filename"
+			>
+				Filename
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
 					<p>
-						The filename input is on the bottom left, this is what the actual file will be called. It's not recommended to use spaces, dots, or special symbols.
+						The filename input is on the bottom left, this is what
+						the actual file will be called. It's not recommended to
+						use spaces, dots, or special symbols.
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/prop/prsave.jpg" target="_blank">
@@ -811,30 +1336,72 @@ import { images } from '../../data/imageImports.js';
 					</a><p class="explanation">Save asset window.</p>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="asset-name">Asset Name</h3>
-			<p class="mt-4">The asset name visible ingame, the name people should search for.</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="images">Images</h3>
-			<p class="mt-4">There are 2 different folders you can open by clicking the folder icons:</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="snapshot">Snapshot</h4>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="asset-name"
+			>
+				Asset Name
+			</h3>
 			<p class="mt-4">
-				On the snapshot image, bottom right corner. Use this one to replace the snapshot, you can replace it with a 1x1 px image to save on the asset file size.
-				This image will only be visible in the content manager. It will also default as the Steam preview image, but you can change that separately when
-				publishing.
+				The asset name visible ingame, the name people should search
+				for.
 			</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="thumbnail-tooltip">Thumbnail &amp; Tooltip</h4>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="images"
+			>
+				Images
+			</h3>
 			<p class="mt-4">
-				Below thumbnail, on the right side. Use this one to change the thumbnail (109x100) and tooltip (492x147) of your asset.<br /> Once you change the main
-				thumbnail, the hover/active states will update automatically.
+				There are 2 different folders you can open by clicking the
+				folder icons:
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="local-assets-folder">Local Assets Folder</h3>
+			<h4
+				class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+				id="snapshot"
+			>
+				Snapshot
+			</h4>
+			<p class="mt-4">
+				On the snapshot image, bottom right corner. Use this one to
+				replace the snapshot, you can replace it with a 1x1 px image to
+				save on the asset file size. This image will only be visible in
+				the content manager. It will also default as the Steam preview
+				image, but you can change that separately when publishing.
+			</p>
+			<h4
+				class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+				id="thumbnail-tooltip"
+			>
+				Thumbnail &amp; Tooltip
+			</h4>
+			<p class="mt-4">
+				Below thumbnail, on the right side. Use this one to change the
+				thumbnail (109x100) and tooltip (492x147) of your asset.<br />
+				Once you change the main thumbnail, the hover/active states will
+				update automatically.
+			</p>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="local-assets-folder"
+			>
+				Local Assets Folder
+			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
-					<p>Once the asset is saved, the .crp file will appear in the local assets folder:</p><p class="mt-4">
-						<span class="path">%LocalAppData%\Colossal Order\Cities_Skylines\Addons\Assets</span>
+					<p>
+						Once the asset is saved, the .crp file will appear in
+						the local assets folder:
 					</p><p class="mt-4">
-						The AppData folder is hidden by default, you can access it by copying and pasting the path into the file explorer, or pressing <span class="key"
-							>Windows+R</span
-						> and typing in appdata.
+						<span class="path"
+							>%LocalAppData%\Colossal
+							Order\Cities_Skylines\Addons\Assets</span
+						>
+					</p><p class="mt-4">
+						The AppData folder is hidden by default, you can access
+						it by copying and pasting the path into the file
+						explorer, or pressing <span class="key">Windows+R</span>
+						and typing in appdata.
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/building/local.jpg" target="_blank">
@@ -846,14 +1413,25 @@ import { images } from '../../data/imageImports.js';
 							alt="CRP files in the local assets folder"
 							class="h-auto w-full"
 						/>
-					</a><p class="explanation">CRP files in the local assets folder.</p>
+					</a><p class="explanation">
+						CRP files in the local assets folder.
+					</p>
 				</div>
 			</div>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="publish">Publish</h2>
+			<h2
+				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				id="publish"
+			>
+				Publish
+			</h2>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
-					<p>Once you have saved the asset and reloaded the game, you can publish the asset.</p><p class="mt-4">
-						Go to the content manager &gt; assets and find your asset, then click share.
+					<p>
+						Once you have saved the asset and reloaded the game, you
+						can publish the asset.
+					</p><p class="mt-4">
+						Go to the content manager &gt; assets and find your
+						asset, then click share.
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/building/share.jpg" target="_blank">
@@ -865,26 +1443,45 @@ import { images } from '../../data/imageImports.js';
 							alt="Share button in content manager"
 							class="h-auto w-full"
 						/>
-					</a><p class="explanation">Share button in content manager.</p>
+					</a><p class="explanation">
+						Share button in content manager.
+					</p>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="title-and-description">Title and Description</h3>
-			<p class="mt-4">You can change these on the Steam Workshop later.</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="steam-preview-image-and-content-folder">
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="title-and-description"
+			>
+				Title and Description
+			</h3>
+			<p class="mt-4">
+				You can change these on the Steam Workshop later.
+			</p>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="steam-preview-image-and-content-folder"
+			>
 				Steam Preview Image and Content Folder
 			</h3>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
 					<p>
-						There is a folder icon again on the snapshot image, bottom right corner. Here you can change the Steam preview image, which is the thumbnail visible
-						on steam. The largest size the image will be visible is 437x437 (on the front page) but it will get upscaled to 512x512 by Steam so that's the size
-						you should use.
+						There is a folder icon again on the snapshot image,
+						bottom right corner. Here you can change the Steam
+						preview image, which is the thumbnail visible on steam.
+						The largest size the image will be visible is 437x437
+						(on the front page) but it will get upscaled to 512x512
+						by Steam so that's the size you should use.
 					</p><p class="mt-4">
-						There is also the content folder, which is where the actual asset file is. You can paste multiple .crp files here if you would like to upload a pack
-						of assets.
+						There is also the content folder, which is where the
+						actual asset file is. You can paste multiple .crp files
+						here if you would like to upload a pack of assets.
 					</p>
 				</div><div class="lg:w-1/3">
-					<a href="/images/asset/building/publish.jpg" target="_blank">
+					<a
+						href="/images/asset/building/publish.jpg"
+						target="_blank"
+					>
 						<Picture
 							width={images.publish.width / 2}
 							densities={[1.5, 2]}
@@ -893,28 +1490,49 @@ import { images } from '../../data/imageImports.js';
 							alt="Publish window and content folder"
 							class="h-auto w-full"
 						/>
-					</a><p class="explanation">Publish window and content folder.</p>
+					</a><p class="explanation">
+						Publish window and content folder.
+					</p>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="steam-workshop">Steam Workshop</h3>
-			<p class="mt-4">On the Steam Workshop page for your asset, you can:</p>
+			<h3
+				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				id="steam-workshop"
+			>
+				Steam Workshop
+			</h3>
+			<p class="mt-4">
+				On the Steam Workshop page for your asset, you can:
+			</p>
 			<ul class="mt-4 list-disc list-inside">
 				<li class="mt-4">add it to a collection<br /></li>
 				<li class="mt-4">add images and videos<br /></li>
 				<li class="mt-4">add contributors and links<br /></li>
 				<li class="mt-4">add required items and DLC<br /></li>
-				<li class="mt-4">change visibility to friends only or private</li>
+				<li class="mt-4">
+					change visibility to friends only or private
+				</li>
 			</ul>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="update">Update</h2>
+			<h2
+				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				id="update"
+			>
+				Update
+			</h2>
 			<p class="mt-4">
-				To update your own item, you must subscribe to it first, then it will show up in the content manager. It won't be the same as a local asset, as it will
-				show an "update" button.
+				To update your own item, you must subscribe to it first, then it
+				will show up in the content manager. It won't be the same as a
+				local asset, as it will show an "update" button.
 			</p>
 			<p class="mt-4">
-				When you click update, click the folder icon, and now you can change the Steam preview image and put your new asset in the content folder. If updating a
-				pack, remember to put all the assets inside the content folder.
+				When you click update, click the folder icon, and now you can
+				change the Steam preview image and put your new asset in the
+				content folder. If updating a pack, remember to put all the
+				assets inside the content folder.
 			</p>
-			<p class="mt-4">You can also add more assets to make it a bigger pack.</p>
+			<p class="mt-4">
+				You can also add more assets to make it a bigger pack.
+			</p>
 			<div class="flex gap-2 mt-6 items-start justify-start">
 				<svg
 					class="w-8 h-8 text-orange flex-shrink-0"
@@ -931,19 +1549,32 @@ import { images } from '../../data/imageImports.js';
 				</svg>
 				<p class="italic">
 					<em>
-						Make sure your updated assets are saved with exactly the same name as before, otherwise, it will disappear from your subscribers' saves, as the game
-						uses the internal prefab name to refer to it. In the case of networks (roads, tracks etc.) it may completely break a save.
+						Make sure your updated assets are saved with exactly the
+						same name as before, otherwise, it will disappear from
+						your subscribers' saves, as the game uses the internal
+						prefab name to refer to it. In the case of networks
+						(roads, tracks etc.) it may completely break a save.
 					</em>
 				</p>
 			</div>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="prefab-name">Prefab Name</h2>
+			<h2
+				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				id="prefab-name"
+			>
+				Prefab Name
+			</h2>
 			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
-					<p>This is not something you can change.</p><p class="mt-4">It's the hidden internal name used to refer to your asset in savefiles.</p><p
-						class="mt-4"
-					>
-						It's the reason why a local asset is not the same as a workshop published asset.
-					</p><p class="mt-4">For local assets: filename.Asset Name_Data<br />For published workshop assets: SteamID.Asset Name_Data</p>
+					<p>This is not something you can change.</p><p class="mt-4">
+						It's the hidden internal name used to refer to your
+						asset in savefiles.
+					</p><p class="mt-4">
+						It's the reason why a local asset is not the same as a
+						workshop published asset.
+					</p><p class="mt-4">
+						For local assets: filename.Asset Name_Data<br />For
+						published workshop assets: SteamID.Asset Name_Data
+					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/building/prefab.jpg" target="_blank">
 						<Picture
@@ -954,7 +1585,10 @@ import { images } from '../../data/imageImports.js';
 							alt="Publish window and content folder"
 							class="h-auto w-full"
 						/>
-					</a><p class="explanation">Comparison between local (top) and workshop published (bottom) prefab names shown in ModTools.</p>
+					</a><p class="explanation">
+						Comparison between local (top) and workshop published
+						(bottom) prefab names shown in ModTools.
+					</p>
 				</div>
 			</div>
 		</div>
