@@ -3,7 +3,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Link from '../../components/Link.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 const title = 'Prop Asset Creation - Cities Skylines Modding';
-import ResponsiveImage from '../../components/ResponsiveImage.astro';
+import { Picture } from 'astro:assets';
 import { images } from '../../data/imageImports.js';
 ---
 
@@ -28,18 +28,16 @@ import { images } from '../../data/imageImports.js';
 					</p><p class="mt-4">The absolute limit for a mesh is 65536 vertices.</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/prop/prtris.jpg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.prtris.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.prtris}
-							naturalHeight={874}
-							naturalWidth={2232}
-							srcWidths={[300, 400, 800, 1000, 1400, 1600, 1800, 2000]}
 							alt="Triangle counts of some vanilla props"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-auto w-full"
 							loading="eager"
-						/></a
-					><p class="explanation">Triangle counts of some vanilla props.</p>
+						/>
+					</a><p class="explanation">Triangle counts of some vanilla props.</p>
 				</div>
 			</div>
 			<div class="flex gap-2 mt-6 items-start justify-start">
@@ -76,14 +74,12 @@ import { images } from '../../data/imageImports.js';
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/prop/prlodmesh.jpg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.prlodmesh.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.prlodmesh}
-							naturalHeight={437}
-							naturalWidth={1488}
-							srcWidths={[300, 400, 800, 1000, 1200, 1400]}
 							alt="Comparison between main and LOD meshes for the vanilla grill kiosk"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-auto w-full"
 							loading="eager"
 						/></a
@@ -98,16 +94,13 @@ import { images } from '../../data/imageImports.js';
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/building/uv_main.jpg" target="_blank"
-						><ResponsiveImage
+						><Picture
+							width={images.uv_main.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.uv_main}
-							naturalHeight={437}
-							naturalWidth={560}
-							srcWidths={[300, 400, 500]}
 							alt="Example UV mapping using visible horizontal tiling on the bottom"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-auto w-full"
-							loading="eager"
 						/></a
 					><p class="explanation">Example UV mapping using visible horizontal tiling on the bottom.</p>
 				</div>
@@ -122,16 +115,13 @@ import { images } from '../../data/imageImports.js';
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/building/uv_lod.jpg" target="_blank"
-						><ResponsiveImage
+						><Picture
+							width={images.uv_lod.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.uv_lod}
-							naturalHeight={475}
-							naturalWidth={605}
-							srcWidths={[300, 400, 500, 600]}
 							alt="UV mapping for LOD mesh using automatic mapping in 3ds Max"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-auto w-full"
-							loading="eager"
 						/></a
 					><p class="explanation">
 						UV mapping for LOD mesh using automatic mapping in 3ds Max. No overlap and contained within the main tile - good for baking.
@@ -166,16 +156,13 @@ import { images } from '../../data/imageImports.js';
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/building/vertexpaint.jpg" target="_blank"
-						><ResponsiveImage
+						><Picture
+							width={images.vertexpaint.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.vertexpaint}
-							naturalHeight={442}
-							naturalWidth={930}
-							srcWidths={[300, 400, 800, 900]}
 							alt="Vertex painting in 3ds Max"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-auto w-full"
-							loading="eager"
 						/></a
 					><p class="explanation">Vertex painting in 3ds Max.</p>
 				</div>
@@ -189,16 +176,13 @@ import { images } from '../../data/imageImports.js';
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/prop/prculling.jpg" target="_blank"
-						><ResponsiveImage
+						><Picture
+							width={images.prculling.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.prculling}
-							naturalHeight={886}
-							naturalWidth={1500}
-							srcWidths={[300, 400, 800, 900, 1200, 1500]}
 							alt="Infinitely thin triangles made by putting 2 of the 3 vertices in the same place"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-auto w-full"
-							loading="eager"
 						/></a
 					><p class="explanation">Infinitely thin triangles made by putting 2 of the 3 vertices in the same place.</p>
 				</div>
@@ -221,16 +205,13 @@ import { images } from '../../data/imageImports.js';
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/prop/prtextsize.jpg" target="_blank"
-						><ResponsiveImage
+						><Picture
+							width={images.prtextsize.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.prtextsize}
-							naturalHeight={1000}
-							naturalWidth={1608}
-							srcWidths={[300, 400, 800, 900, 1200, 1500, 1600]}
 							alt="Texture sizes of various vanilla assets"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-auto w-full"
-							loading="eager"
 						/></a
 					><p class="explanation">Texture sizes of various vanilla assets. See the resolution in the top right corner of the preview window.</p>
 				</div>
@@ -272,31 +253,25 @@ import { images } from '../../data/imageImports.js';
 				</div><div class="lg:w-1/3">
 					<div class="">
 						<a href="/images/asset/prop/prdiff.jpg" target="_blank"
-							><ResponsiveImage
+							><Picture
+								width={images.prdiff.width / 2}
+								densities={[1.5, 2]}
+								formats={['avif', 'webp']}
 								src={images.prdiff}
-								naturalHeight={512}
-								naturalWidth={512}
-								srcWidths={[300, 400, 800, 900, 1200, 1500]}
 								alt="Example diffuse texture for a conveyor prop"
-								format="webp"
-								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 								class="h-auto w-full"
-								loading="eager"
 							/></a
 						><p class="explanation">Example diffuse texture for a conveyor prop.</p>
 					</div>
 					<div class="mt-4">
 						<a href="/images/asset/building/color_guidelines.png" target="_blank"
-							><ResponsiveImage
+							><Picture
+								width={images.color_guidelines.width / 2}
+								densities={[1.5, 2]}
+								formats={['avif', 'webp']}
 								src={images.color_guidelines}
-								naturalHeight={1024}
-								naturalWidth={1024}
-								srcWidths={[300, 400, 800, 1000]}
 								alt="Color guidelines"
-								format="webp"
-								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 								class="h-auto w-full"
-								loading="eager"
 							/></a
 						><p class="explanation">Color guidelines.</p>
 					</div>
@@ -319,30 +294,24 @@ import { images } from '../../data/imageImports.js';
 				</div><div class="lg:w-1/3">
 					<div class="">
 						<a href="/images/asset/building/textures_alpha.jpg" target="_blank"
-							><ResponsiveImage
+							><Picture
+								width={images.textures_alpha.width / 2}
+								densities={[1.5, 2]}
+								formats={['avif', 'webp']}
 								src={images.textures_alpha}
-								naturalHeight={220}
-								naturalWidth={306}
-								srcWidths={[200, 300]}
 								alt="Example alpha texture for some railings and metal beams"
-								format="webp"
-								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 								class="h-auto w-full"
-								loading="eager"
 							/></a
 						><p class="explanation">Example alpha texture for some railings and metal beams.</p>
 					</div><div class="mt-4">
 						<a href="/images/asset/building/textures_alpha_rail.jpg" target="_blank">
-							<ResponsiveImage
+							<Picture
+								width={images.textures_alpha_rail.width / 2}
+								densities={[1.5, 2]}
+								formats={['avif', 'webp']}
 								src={images.textures_alpha_rail}
-								naturalHeight={128}
-								naturalWidth={256}
-								srcWidths={[200, 250]}
 								alt="Example alpha texture for some railings and metal beams"
-								format="webp"
-								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 								class="h-auto w-full"
-								loading="eager"
 							/></a
 						><p class="explanation">
 							Using lighter values for the invisible parts will decrease the chance of small details like railings disappearing completely.
@@ -369,16 +338,13 @@ import { images } from '../../data/imageImports.js';
 					</p><p class="mt-4">If you don't import an illumination map, it will default to no illumination.</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/prop/prillum.jpg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.prillum.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.prillum}
-							naturalHeight={256}
-							naturalWidth={64}
-							srcWidths={[64]}
 							alt="Example illumination map for a torch"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="max-h-[16rem] max-w-full"
-							loading="eager"
 						/></a
 					><p class="explanation">Example illumination map for a torch.</p>
 				</div>
@@ -392,30 +358,24 @@ import { images } from '../../data/imageImports.js';
 				</div><div class="lg:w-1/3">
 					<div class="">
 						<a href="/images/asset/prop/prspec.jpg" target="_blank">
-							<ResponsiveImage
+							<Picture
+								width={images.prspec.width / 2}
+								densities={[1.5, 2]}
+								formats={['avif', 'webp']}
 								src={images.prspec}
-								naturalHeight={512}
-								naturalWidth={512}
-								srcWidths={[300, 400, 500]}
 								alt="Example specular map for a roof water tank"
-								format="webp"
-								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 								class="h-auto w-full"
-								loading="eager"
 							/></a
 						><p class="explanation">Example specular map for a roof water tank.</p>
 					</div><div class="mt-4">
 						<a href="/images/asset/building/textures_specular_transition.jpg" target="_blank"
-							><ResponsiveImage
+							><Picture
+								width={images.textures_specular_transition.width / 2}
+								densities={[1.5, 2]}
+								formats={['avif', 'webp']}
 								src={images.textures_specular_transition}
-								naturalHeight={293}
-								naturalWidth={511}
-								srcWidths={[300, 400, 500]}
 								alt="Transitions between different specular values produce artifacts on the normal map and vice versa"
-								format="webp"
-								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 								class="h-auto w-full"
-								loading="eager"
 							/></a
 						><p class="explanation">
 							Transitions between different specular values produce artifacts on the normal map and vice versa, even if a normal map is not imported.
@@ -452,45 +412,36 @@ import { images } from '../../data/imageImports.js';
 				</div><div class="lg:w-1/3">
 					<div class="">
 						<a href="/images/asset/citizen/citnormal.jpeg" target="_blank"
-							><ResponsiveImage
+							><Picture
+								width={images.citnormal.width / 2}
+								densities={[1.5, 2]}
+								formats={['avif', 'webp']}
 								src={images.citnormal}
-								naturalHeight={512}
-								naturalWidth={512}
-								srcWidths={[300, 400, 500]}
 								alt="Example normal map for rocks"
-								format="webp"
-								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 								class="h-auto w-full"
-								loading="eager"
 							/></a
 						><p class="explanation">Example normal map for rocks.</p>
 					</div><div class="mt-4">
 						<a href="/images/asset/building/textures_normal_problem.jpg" target="_blank"
-							><ResponsiveImage
+							><Picture
+								width={images.textures_normal_problem.width / 2}
+								densities={[1.5, 2]}
+								formats={['avif', 'webp']}
 								src={images.textures_normal_problem}
-								naturalHeight={633}
-								naturalWidth={981}
-								srcWidths={[300, 400, 500, 600, 700, 800, 900]}
 								alt="Example normal map problem"
-								format="webp"
-								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 								class="h-auto w-full"
-								loading="eager"
 							/></a
 						><p class="explanation">Problem: normal maps appear incorrectly if the asset importer mesh rotation feature is used.</p>
 					</div>
 					<div class="mt-4">
 						<a href="/images/asset/building/textures_normal_problem2.jpg" target="_blank">
-							<ResponsiveImage
+							<Picture
+								width={images.textures_normal_problem2.width / 2}
+								densities={[1.5, 2]}
+								formats={['avif', 'webp']}
 								src={images.textures_normal_problem2}
-								naturalHeight={241}
-								naturalWidth={780}
-								srcWidths={[300, 400, 500, 600, 700]}
 								alt="Image shows the same flat normal map on faces with different UV rotation/flip"
-								format="webp"
-								sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 								class="h-auto w-full"
-								loading="eager"
 							/>
 						</a><p class="explanation">
 							Problem: default normal map value is 0.5, which isn't possible by using 127(left) or 128(right). Image shows the same flat normal map on faces
@@ -536,16 +487,13 @@ import { images } from '../../data/imageImports.js';
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/prop/primport.jpg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.primport.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.primport}
-							naturalHeight={184}
-							naturalWidth={878}
-							srcWidths={[300, 400, 500, 600, 700, 800]}
 							alt="Files ready for import"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-auto w-full"
-							loading="eager"
 						/>
 					</a><p class="explanation">Files ready for import.</p>
 				</div>
@@ -589,16 +537,13 @@ import { images } from '../../data/imageImports.js';
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/prop/primportmesh.jpg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.primportmesh.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.primportmesh}
-							naturalHeight={530}
-							naturalWidth={870}
-							srcWidths={[300, 400, 500, 600, 700, 800]}
 							alt="Importing a mesh in asset importer"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-auto w-full"
-							loading="eager"
 						/>
 					</a><p class="explanation">Importing a mesh in asset importer.</p>
 				</div>
@@ -701,16 +646,13 @@ import { images } from '../../data/imageImports.js';
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/building/modtools.jpg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.modtools.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.modtools}
-							naturalHeight={786}
-							naturalWidth={1503}
-							srcWidths={[300, 400, 800, 1000, 1200, 1500]}
 							alt="ModTools scene explorer and console"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-max w-full"
-							loading="eager"
 						/>
 					</a><p class="explanation">ModTools scene explorer and console.</p>
 				</div>
@@ -760,16 +702,13 @@ import { images } from '../../data/imageImports.js';
 				</div>
 				<div class="lg:w-1/3">
 					<a href="/images/asset/prop/prshaders.jpg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.prshaders.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.prshaders}
-							naturalHeight={720}
-							naturalWidth={1280}
-							srcWidths={[300, 400, 500, 600, 700, 800, 1000, 1200]}
 							alt="Comparison between Default (left), Fence (middle) and Decal (right) prop shaders."
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-auto w-full"
-							loading="eager"
 						/>
 					</a>
 					<p class="explanation">Comparison between Default (left), Fence (middle) and Decal (right) prop shaders.</p>
@@ -802,16 +741,13 @@ import { images } from '../../data/imageImports.js';
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/prop/prvariations.jpg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.prvariations.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.prvariations}
-							naturalHeight={112}
-							naturalWidth={322}
-							srcWidths={[300]}
 							alt="Prop variations menu in the asset editor"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-auto w-full"
-							loading="eager"
 						/>
 					</a><p class="explanation">Prop variations menu in the asset editor.</p>
 				</div>
@@ -864,16 +800,13 @@ import { images } from '../../data/imageImports.js';
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/prop/prsave.jpg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.prsave.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.prsave}
-							naturalHeight={664}
-							naturalWidth={779}
-							srcWidths={[300]}
 							alt="Save asset window"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-auto w-full"
-							loading="eager"
 						/>
 					</a><p class="explanation">Save asset window.</p>
 				</div>
@@ -905,16 +838,13 @@ import { images } from '../../data/imageImports.js';
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/building/local.jpg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.local.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.local}
-							naturalHeight={226}
-							naturalWidth={595}
-							srcWidths={[300, 400, 500]}
 							alt="CRP files in the local assets folder"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-auto w-full"
-							loading="eager"
 						/>
 					</a><p class="explanation">CRP files in the local assets folder.</p>
 				</div>
@@ -927,16 +857,13 @@ import { images } from '../../data/imageImports.js';
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/building/share.jpg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.share.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.share}
-							naturalHeight={194}
-							naturalWidth={684}
-							srcWidths={[300, 400, 500, 600]}
 							alt="Share button in content manager"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-auto w-full"
-							loading="eager"
 						/>
 					</a><p class="explanation">Share button in content manager.</p>
 				</div>
@@ -958,16 +885,13 @@ import { images } from '../../data/imageImports.js';
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/building/publish.jpg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.publish.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.publish}
-							naturalHeight={591}
-							naturalWidth={721}
-							srcWidths={[300, 400, 500, 700]}
 							alt="Publish window and content folder"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-auto w-full"
-							loading="eager"
 						/>
 					</a><p class="explanation">Publish window and content folder.</p>
 				</div>
@@ -1022,16 +946,13 @@ import { images } from '../../data/imageImports.js';
 					</p><p class="mt-4">For local assets: filename.Asset Name_Data<br />For published workshop assets: SteamID.Asset Name_Data</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/asset/building/prefab.jpg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.prefab.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.prefab}
-							naturalHeight={118}
-							naturalWidth={528}
-							srcWidths={[300, 400, 500]}
 							alt="Publish window and content folder"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
 							class="h-auto w-full"
-							loading="eager"
 						/>
 					</a><p class="explanation">Comparison between local (top) and workshop published (bottom) prefab names shown in ModTools.</p>
 				</div>
