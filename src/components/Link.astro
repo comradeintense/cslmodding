@@ -4,7 +4,14 @@ import { Icon } from 'astro-icon';
 interface Props {
 	text: string;
 	href: string;
-	theme: 'primarybutton' | 'defaultlink' | 'externallink' | 'internallink' | 'externalparagraph' | 'downloadbutton';
+	theme:
+		| 'primarybutton'
+		| 'defaultlink'
+		| 'externallink'
+		| 'internallink'
+		| 'youtube'
+		| 'externalparagraph'
+		| 'downloadbutton';
 	icon?: {
 		name: string;
 		side: 'left' | 'right';
@@ -15,7 +22,10 @@ interface Props {
 
 const defaultIconForTheme = {
 	externallink: { name: 'mdi:arrow-top-right', side: 'right' },
+	youtube: { name: 'mdi:youtube', side: 'right' },
 };
+
+const iconClass = 'flex-shrink-0 w-6 h-6';
 
 const { text, href, theme, icon = defaultIconForTheme[theme], classes, ...rest } = Astro.props as Props;
 
@@ -23,10 +33,16 @@ const { text, href, theme, icon = defaultIconForTheme[theme], classes, ...rest }
 const themeClasses = {
 	primarybutton: 'inline-block bg-accent border-4 border-black py-4 px-6 hover:bg-black hover:text-white textbutton',
 	defaultlink: 'inline-block hover:text-linkhover paragraph underline decoration-2 mt-2 hover:underline-offset-4',
-	externallink: 'inline-flex items-center text-urllink hover:text-hoverlink paragraph underline decoration-2 hover:underline-offset-4 ',
-	internallink: 'inline-flex items-center text-urllink hover:text-hoverlink paragraph underline decoration-2 hover:underline-offset-4 ',
-	externalparagraph: 'inline-flex items-center hover:text-linkhover text-lg font-bold underline decoration-2 hover:underline-offset-4 ',
-	downloadbutton: 'text-urllink py-[.375rem] px-3 border rounded-md border-[#34383d] bg-[#282b2f] uppercase hover:bg-[#2b3033] hover:text-hoverlink',
+	externallink:
+		'inline-flex items-center text-urllink hover:text-hoverlink paragraph underline decoration-2 hover:underline-offset-4 ',
+	youtube:
+		'inline-flex items-center justify-start text-urllink hover:text-hoverlink paragraph underline decoration-2 hover:underline-offset-4 gap-2',
+	internallink:
+		'inline-flex items-center text-urllink hover:text-hoverlink paragraph underline decoration-2 hover:underline-offset-4 ',
+	externalparagraph:
+		'inline-flex items-center hover:text-linkhover text-lg font-bold underline decoration-2 hover:underline-offset-4 ',
+	downloadbutton:
+		'text-urllink py-[.375rem] px-3 border rounded-md border-[#34383d] bg-[#282b2f] uppercase hover:bg-[#2b3033] hover:text-hoverlink',
 };
 
 const computedThemeClass = themeClasses[theme];
@@ -36,11 +52,16 @@ function shouldAddTargetBlank(theme: string) {
 }
 ---
 
-<a href={href} class={`${classes || ''} ${computedThemeClass}`} {...shouldAddTargetBlank(theme) ? { target: '_blank' } : {}} {...rest}>
-	{icon && icon.side === 'left' && <Icon name={icon.name} height="24" width="24" />}
+<a
+	href={href}
+	class={`${classes || ''} ${computedThemeClass}`}
+	{...shouldAddTargetBlank(theme) ? { target: '_blank' } : {}}
+	{...rest}
+>
+	{icon && icon.side === 'left' && <Icon class={iconClass} name={icon.name} height="24" width="24" />}
 
 	<slot />
 	{text}
 
-	{icon && icon.side === 'right' && <Icon name={icon.name} height="24" width="24" />}
+	{icon && icon.side === 'right' && <Icon class={iconClass} name={icon.name} height="24" width="24" />}
 </a>

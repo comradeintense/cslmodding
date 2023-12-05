@@ -11,7 +11,7 @@ import acisplit from '../../public/images/dump/acisplit.jpg';
 
 <MainLayout title={title}>
 	<TableOfContents />
-	<section class="py-12 text-lg sm:ml-64 xl:mr-64 text-hit-gray-500">
+	<section class="pt-12 pb-48 text-lg sm:ml-64 xl:mr-64 text-hit-gray-500">
 		<h1 id="overview" class="pb-8 text-4xl font-bold border-b-4 border-hit-gray-600 text-hit-gray-400">
 			Dump & Extract Assets
 		</h1>
@@ -202,13 +202,42 @@ import acisplit from '../../public/images/dump/acisplit.jpg';
 				>ACI map gamma corrected, split, some channels inverted.
 			</div>
 		</div>
+		<div class="mt-4 content-download">
+			<Link
+				classes=""
+				href="https://drive.google.com/open?id=1SjSEB_6Q_wT4uv_HNZDVUc6qn4zzsK_v"
+				text="Download"
+				theme="downloadbutton"
+			/>
+		</div>
+		<!-- ?Video Section -->
+		<h2
+			id="relevant-videos"
+			class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+		>
+			Relevant Videos
+		</h2>
+		<ul class="text-lg mt-4 text-hit-gray-500 list-inside">
+			<li>
+				<h3 class="mt-4" id="dump-extract-meshes-textures">
+					<Link
+						href="https://youtube.com/watch?v=nzJK77BU2Lg"
+						theme="youtube"
+						text="Dump/Extract Meshes and Textures"
+						classes=""
+					/>
+				</h3>
+			</li>
+			<li>
+				<h3 class="mt-4" id="dump-road-meshes-modtools">
+					<Link
+						href="https://youtube.com/watch?v=hEidZ_LsTkA"
+						theme="youtube"
+						text="Dump Road Meshes with ModTools"
+						classes=""
+					/>
+				</h3>
+			</li>
+		</ul>
 	</section>
-	<div class="mt-4 content-download">
-		<Link
-			classes=""
-			href="https://drive.google.com/open?id=1SjSEB_6Q_wT4uv_HNZDVUc6qn4zzsK_v"
-			text="Download"
-			theme="downloadbutton"
-		/>
-	</div>
 </MainLayout>

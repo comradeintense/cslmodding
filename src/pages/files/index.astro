@@ -7,26 +7,36 @@ const title = 'Source Files - Cities Skylines Modding';
 
 <MainLayout title={title}>
 	<TableOfContents />
-	<section class="py-12 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
-		<h1 id="overview" class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400">Source Files</h1>
+	<section class="pt-12 pb-48 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
+		<h1 id="overview" class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400">
+			Source Files
+		</h1>
 		<div class="content">
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="about">About</h2>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="about">
+				About
+			</h2>
 			<p class="mt-4">This page lists source files for almost all releases by Ronyx69.</p>
 			<p class="mt-4">
-				The files are provided as they are - some of them might contain 3ds Max or Maya scene files, Photoshop documents, references, notes, scripts, various
-				intermediary files such as bump maps used for creating normal maps, or scale guidelines. Some might not contain the final files used for importing into
-				the game, and the importing process might not be straight forward, as it may require mods or scripts.
+				The files are provided as they are - some of them might contain 3ds Max or Maya scene files, Photoshop
+				documents, references, notes, scripts, various intermediary files such as bump maps used for creating
+				normal maps, or scale guidelines. Some might not contain the final files used for importing into the
+				game, and the importing process might not be straight forward, as it may require mods or scripts.
 			</p>
 			<div class="flex gap-2 mt-6 items-start justify-start">
 				<svg
+					xmlns="http://www.w3.org/2000/svg"
 					class="w-8 h-8 text-hoverlink flex-shrink-0"
 					fill="none"
-					stroke="currentColor"
-					stroke-width="1.5"
 					viewBox="0 0 24 24"
-					xmlns="http://www.w3.org/2000/svg"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="w-6 h-6"
 				>
-					<path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round"></path>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+					></path>
 				</svg>
 				<p class="italic">
 					<em>
@@ -34,27 +44,48 @@ const title = 'Source Files - Cities Skylines Modding';
 					</em>
 				</p>
 			</div>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="files">Files</h2>
+			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="files">
+				Files
+			</h2>
 			<p class="mt-4">
-				Each item is displayed with the steam workshop item id and title, and links to a file on google drive. Some items, usually packs, are grouped together
-				and link to a single file.
+				Each item is displayed with the steam workshop item id and title, and links to a file on google drive.
+				Some items, usually packs, are grouped together and link to a single file.
 			</p><p class="mt-4">Press <span class="key">Ctrl+F</span> to search by title or id.</p>
 			<p class="mt-4">
-				<Link classes="" href="https://drive.google.com/file/d/1yd8j1oDLTqDq3ZbUn7QzdGA0iNCVoxKz/view?usp=sharing" text="" theme="externallink">
-					<span>Toll Booth Elevated 24m Japan ETC [759309517]<br />Toll Booth Elevated 12m Japan ETC [759357460]</span>
+				<Link
+					classes=""
+					href="https://drive.google.com/file/d/1yd8j1oDLTqDq3ZbUn7QzdGA0iNCVoxKz/view?usp=sharing"
+					text=""
+					theme="externallink"
+				>
+					<span
+						>Toll Booth Elevated 24m Japan ETC [759309517]<br />Toll Booth Elevated 12m Japan ETC
+						[759357460]</span
+					>
 				</Link>
 			</p>
 			<p class="mt-4">
-				<Link classes="" href="https://drive.google.com/file/d/1VupNeVaEGhB-5RIN4RbN0o6zsf54qi3d/view?usp=sharing" theme="externallink" text="">
+				<Link
+					classes=""
+					href="https://drive.google.com/file/d/1VupNeVaEGhB-5RIN4RbN0o6zsf54qi3d/view?usp=sharing"
+					theme="externallink"
+					text=""
+				>
 					<span>
-						R69 Pillar Set 1-26<br />[760289402, 760276148, 760276468, 760276955,<br />760277420, 760277786, 760278086, 760278365,<br />760278664, 760279026,
-						760279354, 760279660,<br />760280044, 760280374, 760281222, 760281536,<br />760281837, 760282108, 760282436, 760282796,<br />760283047, 760283661,
-						760283994, 760284270,<br />760284565, 760284847]<br />
+						R69 Pillar Set 1-26<br />[760289402, 760276148, 760276468, 760276955,<br />760277420, 760277786,
+						760278086, 760278365,<br />760278664, 760279026, 760279354, 760279660,<br />760280044,
+						760280374, 760281222, 760281536,<br />760281837, 760282108, 760282436, 760282796,<br
+						/>760283047, 760283661, 760283994, 760284270,<br />760284565, 760284847]<br />
 					</span>
 				</Link>
 			</p>
 			<p class="mt-4">
-				<Link classes="" href="https://drive.google.com/file/d/1OZnCjHiaklaufH6-mHlJkNgaYHkctJwL/view?usp=sharing" text="" theme="externallink">
+				<Link
+					classes=""
+					href="https://drive.google.com/file/d/1OZnCjHiaklaufH6-mHlJkNgaYHkctJwL/view?usp=sharing"
+					text=""
+					theme="externallink"
+				>
 					<span>
 						Big Decal Beach [767694466]<br />
 						 Big Decal Cracks [767694557]<br />
@@ -79,7 +110,12 @@ const title = 'Source Files - Cities Skylines Modding';
 				/>
 			</p>
 			<p class="mt-4">
-				<Link classes="" href="https://drive.google.com/file/d/1wZjE8GFyOMAUfusW_TTaNpFPbrNe-4vV/view?usp=sharing" text="" theme="externallink">
+				<Link
+					classes=""
+					href="https://drive.google.com/file/d/1wZjE8GFyOMAUfusW_TTaNpFPbrNe-4vV/view?usp=sharing"
+					text=""
+					theme="externallink"
+				>
 					<span>
 						Road Mirror 1 [784230981]<br />
 						 Road Mirror 2 [784231177]<br />
@@ -100,7 +136,12 @@ const title = 'Source Files - Cities Skylines Modding';
 				/>
 			</p>
 			<p class="mt-4">
-				<Link classes="" href="https://drive.google.com/file/d/1wiN9VmqXHnQ4m549tEkFJUPG37Px3oda/view?usp=sharing" text="" theme="externallink">
+				<Link
+					classes=""
+					href="https://drive.google.com/file/d/1wiN9VmqXHnQ4m549tEkFJUPG37Px3oda/view?usp=sharing"
+					text=""
+					theme="externallink"
+				>
 					<span>
 						Snow Sparse [815208718]<br />
 						 Snow Medium [815209017]<br />
@@ -119,7 +160,12 @@ const title = 'Source Files - Cities Skylines Modding';
 				/>
 			</p>
 			<p class="mt-4">
-				<Link classes="" href="https://drive.google.com/file/d/1o4n9iwr9RNzRj2s6j8D0jTENVHtOiL85/view?usp=sharing" text="" theme="externallink">
+				<Link
+					classes=""
+					href="https://drive.google.com/file/d/1o4n9iwr9RNzRj2s6j8D0jTENVHtOiL85/view?usp=sharing"
+					text=""
+					theme="externallink"
+				>
 					<span>
 						Breakwaters [823478922]<br />
 						 Tetrapods [823479973]
@@ -128,7 +174,12 @@ const title = 'Source Files - Cities Skylines Modding';
 			</p>
 
 			<p class="mt-4">
-				<Link classes="" href="https://drive.google.com/file/d/11VygG5KgFvzrMTk1KfcEC-MKZA740Kzf/view?usp=sharing" text="" theme="externallink">
+				<Link
+					classes=""
+					href="https://drive.google.com/file/d/11VygG5KgFvzrMTk1KfcEC-MKZA740Kzf/view?usp=sharing"
+					text=""
+					theme="externallink"
+				>
 					<span>
 						Japanese Warehouse 1A [838825022]<br />
 						 Japanese Warehouse 1B [838825701]
@@ -283,10 +334,20 @@ const title = 'Source Files - Cities Skylines Modding';
 				/>
 			</p>
 			<p class="mt-4">
-				<Link classes="" href="https://drive.google.com/file/d/0B6Ccf1N5h5f7ME5xbUpTR2NFNUU/view?usp=sharing" text="Pools [945224748]" theme="externallink" />
+				<Link
+					classes=""
+					href="https://drive.google.com/file/d/0B6Ccf1N5h5f7ME5xbUpTR2NFNUU/view?usp=sharing"
+					text="Pools [945224748]"
+					theme="externallink"
+				/>
 			</p>
 			<p class="mt-4">
-				<Link classes="" href="https://drive.google.com/file/d/1p7elmUg4nSucKGQe0YBRi5x_z6VoRVlX/view?usp=sharing" text="" theme="externallink">
+				<Link
+					classes=""
+					href="https://drive.google.com/file/d/1p7elmUg4nSucKGQe0YBRi5x_z6VoRVlX/view?usp=sharing"
+					text=""
+					theme="externallink"
+				>
 					<span>
 						Japanese Post Office [949880432]<br />
 						 Japan Post Signs [948088230]<br />
@@ -304,7 +365,12 @@ const title = 'Source Files - Cities Skylines Modding';
 				/>
 			</p>
 			<p class="mt-4">
-				<Link classes="" href="https://drive.google.com/file/d/1ALq-HZ0vVvKZvwOPWgBMiCbQRFI2zYKk/view?usp=sharing" text="" theme="externallink">
+				<Link
+					classes=""
+					href="https://drive.google.com/file/d/1ALq-HZ0vVvKZvwOPWgBMiCbQRFI2zYKk/view?usp=sharing"
+					text=""
+					theme="externallink"
+				>
 					<span>
 						Logistics Warehouse [1080114922]<br />
 						 Logistics Warehouse Solar Panels [1079777985]
@@ -321,7 +387,12 @@ const title = 'Source Files - Cities Skylines Modding';
 				/>
 			</p>
 			<p class="mt-4">
-				<Link classes="" href="https://drive.google.com/file/d/1j17cHREKdvH-UMfq2_wLW_38E9-N6X3y/view?usp=sharing" text="" theme="externallink">
+				<Link
+					classes=""
+					href="https://drive.google.com/file/d/1j17cHREKdvH-UMfq2_wLW_38E9-N6X3y/view?usp=sharing"
+					text=""
+					theme="externallink"
+				>
 					<span>
 						Tamurakoma Office [1101165044]<br />
 						 Tamurakoma Office Signs [1098938808]
@@ -344,7 +415,12 @@ const title = 'Source Files - Cities Skylines Modding';
 			/>
 		</p>
 		<p class="mt-4">
-			<Link classes="" href="https://drive.google.com/file/d/0B6Ccf1N5h5f7b3FIYUZvUHRJbjg/view?usp=sharing" text="" theme="externallink">
+			<Link
+				classes=""
+				href="https://drive.google.com/file/d/0B6Ccf1N5h5f7b3FIYUZvUHRJbjg/view?usp=sharing"
+				text=""
+				theme="externallink"
+			>
 				<span>
 					Bauhaus Dessau [1123662739]<br />
 					 Bauhaus Signs [1123639445]
@@ -425,7 +501,12 @@ const title = 'Source Files - Cities Skylines Modding';
 			/>
 		</p>
 		<p class="mt-4">
-			<Link classes="" href="https://drive.google.com/file/d/0B6Ccf1N5h5f7d3RONnkyQzRkRUk/view?usp=sharing" text="" theme="externallink">
+			<Link
+				classes=""
+				href="https://drive.google.com/file/d/0B6Ccf1N5h5f7d3RONnkyQzRkRUk/view?usp=sharing"
+				text=""
+				theme="externallink"
+			>
 				<span>
 					Daihatsu Hijet (Prop) [1177501101]<br />
 					 Daihatsu Hijet (Vehicle) [1177502798]<br />
@@ -452,7 +533,12 @@ const title = 'Source Files - Cities Skylines Modding';
 			/>
 		</p>
 		<p class="mt-4">
-			<Link classes="" href="https://drive.google.com/file/d/1uxDNZxAQjpt2h5bbFWJK-7PeLBLYYxDx/view?usp=sharing" text="" theme="externallink">
+			<Link
+				classes=""
+				href="https://drive.google.com/file/d/1uxDNZxAQjpt2h5bbFWJK-7PeLBLYYxDx/view?usp=sharing"
+				text=""
+				theme="externallink"
+			>
 				<span>
 					Suspended Monorail [1195854338]<br />
 					 Suspended Monorail Station [1195984363]<br />
@@ -471,7 +557,12 @@ const title = 'Source Files - Cities Skylines Modding';
 			/>
 		</p>
 		<p class="mt-4">
-			<Link classes="" href="https://drive.google.com/file/d/1aZOnFPITzpWPYt2bOqclqndMW15PM9kl/view?usp=sharing" text="" theme="externallink">
+			<Link
+				classes=""
+				href="https://drive.google.com/file/d/1aZOnFPITzpWPYt2bOqclqndMW15PM9kl/view?usp=sharing"
+				text=""
+				theme="externallink"
+			>
 				<span>
 					Green Ivy [1201698172]<br />
 					 Red Ivy [1201698663]
@@ -488,7 +579,12 @@ const title = 'Source Files - Cities Skylines Modding';
 			/>
 		</p>
 		<p class="mt-4">
-			<Link classes="" href="https://drive.google.com/file/d/1rC9IYHtffxGqYZPym2qwdzga9CrUsSsL/view?usp=sharing" text="" theme="externallink">
+			<Link
+				classes=""
+				href="https://drive.google.com/file/d/1rC9IYHtffxGqYZPym2qwdzga9CrUsSsL/view?usp=sharing"
+				text=""
+				theme="externallink"
+			>
 				<span>
 					Expressway Light [1228724586]<br />
 					 Expressway Lane Props [1228725309]<br />
@@ -510,7 +606,12 @@ const title = 'Source Files - Cities Skylines Modding';
 			/>
 		</p>
 		<p class="mt-4">
-			<Link classes="" href="https://drive.google.com/file/d/1e6FkqL0XjqMBw0ucoPdGS_5M5D7i9USx/view?usp=sharing" text="" theme="externallink">
+			<Link
+				classes=""
+				href="https://drive.google.com/file/d/1e6FkqL0XjqMBw0ucoPdGS_5M5D7i9USx/view?usp=sharing"
+				text=""
+				theme="externallink"
+			>
 				<span>
 					Ploppable Asphalt [1258123334]<br />
 					 Ploppable Pavement [1258124059]<br />
@@ -522,7 +623,12 @@ const title = 'Source Files - Cities Skylines Modding';
 		</p>
 
 		<p class="mt-4">
-			<Link classes="" href="https://drive.google.com/file/d/1g6IBxcS1PaADXo9dbmd8QAmpDeQgPSgC/view?usp=sharing" text="" theme="externallink">
+			<Link
+				classes=""
+				href="https://drive.google.com/file/d/1g6IBxcS1PaADXo9dbmd8QAmpDeQgPSgC/view?usp=sharing"
+				text=""
+				theme="externallink"
+			>
 				<span>
 					Japanese Fire Station [1266433381]<br />
 					 Antennas [1266404701]
@@ -547,7 +653,12 @@ const title = 'Source Files - Cities Skylines Modding';
 			/>
 		</p>
 		<p class="mt-4">
-			<Link classes="" href="https://drive.google.com/file/d/1b1VqcURicAlfjM6zRcWazyi6p7j34xcD/view?usp=sharing" text="" theme="externallink">
+			<Link
+				classes=""
+				href="https://drive.google.com/file/d/1b1VqcURicAlfjM6zRcWazyi6p7j34xcD/view?usp=sharing"
+				text=""
+				theme="externallink"
+			>
 				<span>
 					Modern Japanese Houses [1383657987]<br />
 					 Japanese Residential Props [1383583656]
@@ -596,7 +707,12 @@ const title = 'Source Files - Cities Skylines Modding';
 			/>
 		</p>
 		<p class="mt-4">
-			<Link classes="" href="https://drive.google.com/file/d/1KFtRIuy9zVpViShMTbzsP62F7cPN6bIc/view?usp=sharing" text="" theme="externallink">
+			<Link
+				classes=""
+				href="https://drive.google.com/file/d/1KFtRIuy9zVpViShMTbzsP62F7cPN6bIc/view?usp=sharing"
+				text=""
+				theme="externallink"
+			>
 				<span>
 					Racetrack [1498212506]<br />
 					 Racetrack Pits [1498254886]
@@ -613,7 +729,12 @@ const title = 'Source Files - Cities Skylines Modding';
 			/>
 		</p>
 		<p class="mt-4">
-			<Link classes="" href="https://drive.google.com/file/d/1Or47RON6hY7e42PNSGUxe0bs9ffY5PtJ/view?usp=sharing" text="" theme="externallink">
+			<Link
+				classes=""
+				href="https://drive.google.com/file/d/1Or47RON6hY7e42PNSGUxe0bs9ffY5PtJ/view?usp=sharing"
+				text=""
+				theme="externallink"
+			>
 				<span>
 					Boxwood [1505668870]<br />
 					 Hedges [1505669672]<br />
@@ -647,7 +768,12 @@ const title = 'Source Files - Cities Skylines Modding';
 			/>
 		</p>
 		<p class="mt-4">
-			<Link classes="" href="https://drive.google.com/file/d/1cfLl14AXfa5viQuEM1S8G4o1VXu5O_7k/view?usp=sharing" text="" theme="externallink">
+			<Link
+				classes=""
+				href="https://drive.google.com/file/d/1cfLl14AXfa5viQuEM1S8G4o1VXu5O_7k/view?usp=sharing"
+				text=""
+				theme="externallink"
+			>
 				<span>
 					Railway Lights (Swiss) [1574847586]<br />
 					 Railway Catenaries (Swiss) [1574848835]<br />
@@ -682,7 +808,12 @@ const title = 'Source Files - Cities Skylines Modding';
 			/>
 		</p>
 		<p class="mt-4">
-			<Link classes="" href="https://drive.google.com/file/d/1XxlsnUdsAe-DAskvXHcG0oUNZ12hgYHV/view?usp=sharing" text="" theme="externallink">
+			<Link
+				classes=""
+				href="https://drive.google.com/file/d/1XxlsnUdsAe-DAskvXHcG0oUNZ12hgYHV/view?usp=sharing"
+				text=""
+				theme="externallink"
+			>
 				<span>
 					Coastal Rocks [1594404748]<br />
 					 Coastal Decals [1594402774]
@@ -691,7 +822,12 @@ const title = 'Source Files - Cities Skylines Modding';
 		</p>
 
 		<p class="mt-4">
-			<Link classes="" href="https://drive.google.com/file/d/1Sz8hbGoO4Cm0lk2Js9lbDEzfAxn-28eN/view?usp=sharing" text="" theme="externallink">
+			<Link
+				classes=""
+				href="https://drive.google.com/file/d/1Sz8hbGoO4Cm0lk2Js9lbDEzfAxn-28eN/view?usp=sharing"
+				text=""
+				theme="externallink"
+			>
 				<span>
 					Tel Aviv Apartments [1711954398]<br />
 					 Tel Aviv Apartments Props [1711879930]
@@ -708,7 +844,12 @@ const title = 'Source Files - Cities Skylines Modding';
 			/>
 		</p>
 		<p class="mt-4">
-			<Link classes="" href="https://drive.google.com/file/d/1Dq4QmfPkE-hEi-hkqNXvklVwh_A3g6jR/view?usp=sharing" text="" theme="externallink">
+			<Link
+				classes=""
+				href="https://drive.google.com/file/d/1Dq4QmfPkE-hEi-hkqNXvklVwh_A3g6jR/view?usp=sharing"
+				text=""
+				theme="externallink"
+			>
 				<span>
 					Piers [1744890326]<br />
 					 Piers (Ferry Stop & Depot) [1745159452]
@@ -717,7 +858,12 @@ const title = 'Source Files - Cities Skylines Modding';
 		</p>
 
 		<p class="mt-4">
-			<Link classes="" href="https://drive.google.com/file/d/1RahbPc_3p4MGvj66GWN5O-09Z9gkRlKU/view?usp=sharing" text="" theme="externallink">
+			<Link
+				classes=""
+				href="https://drive.google.com/file/d/1RahbPc_3p4MGvj66GWN5O-09Z9gkRlKU/view?usp=sharing"
+				text=""
+				theme="externallink"
+			>
 				<span>
 					Jet Ski Ferry [1752270747]<br />
 					 Jet Ski Props [1752271518]
@@ -734,7 +880,12 @@ const title = 'Source Files - Cities Skylines Modding';
 			/>
 		</p>
 		<p class="mt-4">
-			<Link classes="" href="https://drive.google.com/file/d/1a05Rml0bBg1p-raSp5OuL4ui_gSThncv/view?usp=sharing" text="" theme="externallink">
+			<Link
+				classes=""
+				href="https://drive.google.com/file/d/1a05Rml0bBg1p-raSp5OuL4ui_gSThncv/view?usp=sharing"
+				text=""
+				theme="externallink"
+			>
 				<span>
 					Himeyama Clock [1778738195]<br />
 					 Himeyama JP Signs [1778738761]<br />
@@ -744,7 +895,12 @@ const title = 'Source Files - Cities Skylines Modding';
 		</p>
 
 		<p class="mt-4">
-			<Link classes="" href="https://drive.google.com/file/d/1byD__wo6F-7csT_l7yoj--3CSDwVopJY/view?usp=sharing" text="" theme="externallink">
+			<Link
+				classes=""
+				href="https://drive.google.com/file/d/1byD__wo6F-7csT_l7yoj--3CSDwVopJY/view?usp=sharing"
+				text=""
+				theme="externallink"
+			>
 				<span>
 					Railway Shinkansen Ballastless Wired [1779366826]<br />
 					 Railway Shinkansen Ballastless Wireless [1779367680]<br />
@@ -796,7 +952,12 @@ const title = 'Source Files - Cities Skylines Modding';
 			/>
 		</p>
 		<p class="mt-4">
-			<Link classes="" href="https://drive.google.com/file/d/1OOw7C_xcMq-tryd-Qp5F3R1uHMq9lvAD/view?usp=sharing" text="" theme="externallink">
+			<Link
+				classes=""
+				href="https://drive.google.com/file/d/1OOw7C_xcMq-tryd-Qp5F3R1uHMq9lvAD/view?usp=sharing"
+				text=""
+				theme="externallink"
+			>
 				<span>
 					Dirt Rural Road [2115044678]<br />
 					 Sand Rural Road [2120197894]<br />
@@ -848,7 +1009,12 @@ const title = 'Source Files - Cities Skylines Modding';
 			/>
 		</p>
 		<p class="mt-4">
-			<Link classes="" href="https://drive.google.com/file/d/1Ih6Q8RDbV_D_jATG8gL7Y2pBZobOMdYx/view?usp=sharing" text="" theme="externallink">
+			<Link
+				classes=""
+				href="https://drive.google.com/file/d/1Ih6Q8RDbV_D_jATG8gL7Y2pBZobOMdYx/view?usp=sharing"
+				text=""
+				theme="externallink"
+			>
 				<span>
 					Marché frais Géant [2362789824]<br />
 					 Marché frais Géant Ad Screens [2362780892]<br />

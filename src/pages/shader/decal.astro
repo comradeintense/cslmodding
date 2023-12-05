@@ -9,7 +9,7 @@ import { images } from '../../data/imageImports.js';
 
 <MainLayout title={title}>
 	<TableOfContents />
-	<section class="py-12 text-lg sm:ml-64 xl:mr-64 text-hit-gray-500">
+	<section class="pt-12 pb-48 text-lg sm:ml-64 xl:mr-64 text-hit-gray-500">
 		<h1 id="overview" class="pb-8 text-4xl font-bold border-b-4 border-hit-gray-600 text-hit-gray-400">
 			Decal Shader
 		</h1>
@@ -19,24 +19,27 @@ import { images } from '../../data/imageImports.js';
 			</h2>
 			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
-					<p>
+					<p class="mt-4">
 						The decal shader can be used to create decal props of any size, and it's also possible to tile
 						the decal texture.
 					</p>
-				</div><div class="lg:w-1/3">
-					<a href="/images/shader/decal/decalmud.jpeg" target="_blank">
-						<Picture
-							width={images.decalmud.width / 2}
-							densities={[1.5, 2]}
-							formats={['avif', 'webp']}
-							src={images.decalmud}
-							alt="Example mud decals"
-							class="w-full h-auto"
-							loading="eager"
-						/></a
-					><p class="explanation">Example mud decals.</p>
+				</div>
+				<div class="lg:w-1/3">
+					<div class="">
+						<a href="/images/shader/decal/decaldiff.jpeg" target="_blank">
+							<Picture
+								width={images.decalmud.width / 2}
+								densities={[1.5, 2]}
+								formats={['avif', 'webp']}
+								src={images.decalmud}
+								alt="Example mud decal"
+								class="w-full h-auto"
+							/></a
+						><p class="explanation">Example mud decal.</p>
+					</div>
 				</div>
 			</div>
+
 			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="mesh">
 				Mesh
 			</h2>
@@ -696,5 +699,44 @@ import { images } from '../../data/imageImports.js';
 				</div>
 			</div>
 		</div>
+		<!-- ?Video Section -->
+		<h2
+			id="relevant-videos"
+			class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+		>
+			Relevant Videos
+		</h2>
+		<ul class="text-lg mt-4 text-hit-gray-500 list-inside">
+			<li>
+				<h3 class="mt-4" id="decal-prop-fix">
+					<Link
+						href="https://youtube.com/watch?v=OxUymsbljyg"
+						theme="youtube"
+						text="Decals (Decal Prop Fix)"
+						classes=""
+					/>
+				</h3>
+			</li>
+			<li>
+				<h3 class="mt-4" id="publish-multiple-assets-single-ws-item">
+					<Link
+						href="https://youtube.com/watch?v=iSe-AmFP1KM"
+						theme="youtube"
+						text="Publish Multiple Assets as a Single Workshop Item"
+						classes=""
+					/>
+				</h3>
+			</li>
+			<li>
+				<h3 class="mt-4" id="prop-variations">
+					<Link
+						href="https://youtube.com/watch?v=3ZGYVKFL30M"
+						theme="youtube"
+						text="Prop Variations"
+						classes=""
+					/>
+				</h3>
+			</li>
+		</ul>
 	</section>
 </MainLayout>

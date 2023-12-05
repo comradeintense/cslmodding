@@ -9,7 +9,7 @@ import { images } from '../../data/imageImports.js';
 
 <MainLayout title={title}>
 	<TableOfContents />
-	<section class="py-12 text-lg sm:ml-64 xl:mr-64 text-hit-gray-500">
+	<section class="pt-12 pb-48 text-lg sm:ml-64 xl:mr-64 text-hit-gray-500">
 		<h1 id="overview" class="pb-8 text-4xl font-bold border-b-4 border-hit-gray-600 text-hit-gray-400">
 			Ploppable Asphalt+
 		</h1>
@@ -70,17 +70,19 @@ import { images } from '../../data/imageImports.js';
 			</ul>
 			<div class="flex items-start justify-start gap-2 mt-6">
 				<svg
-					class="flex-shrink-0 w-8 h-8 text-hoverlink"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="1.5"
-					viewBox="0 0 24 24"
 					xmlns="http://www.w3.org/2000/svg"
+					class="w-8 h-8 text-hoverlink flex-shrink-0"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="w-6 h-6"
 				>
 					<path
-						d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
 						stroke-linecap="round"
-						stroke-linejoin="round"></path>
+						stroke-linejoin="round"
+						d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+					></path>
 				</svg>
 				<p class="italic">
 					<em>
@@ -165,5 +167,24 @@ import { images } from '../../data/imageImports.js';
 			</h3>
 			<p class="mt-4">Works just like any specular map.</p>
 		</div>
+		<!-- ?Video Section -->
+		<h2
+			id="relevant-videos"
+			class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+		>
+			Relevant Videos
+		</h2>
+		<ul class="text-lg mt-4 text-hit-gray-500 list-inside">
+			<li>
+				<h3 class="mt-4" id="pa-props-explanation">
+					<Link
+						href="https://www.youtube.com/watch?v=HTNiAlk9Phk"
+						theme="youtube"
+						text="PA+ Props Explanation"
+						classes=""
+					/>
+				</h3>
+			</li>
+		</ul>
 	</section>
 </MainLayout>

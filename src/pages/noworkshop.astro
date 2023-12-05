@@ -4,11 +4,12 @@ import TableOfContents from '../components/TableOfContents.astro';
 const title = 'No Workshop & Local Mods - Cities Skylines Modding';
 import { Picture } from 'astro:assets';
 import { images } from '../data/imageImports.js';
+import Link from '../components/Link.astro';
 ---
 
 <MainLayout title={title}>
 	<TableOfContents />
-	<section class="py-12 text-lg sm:ml-64 xl:mr-64 text-hit-gray-500">
+	<section class="pt-12 pb-48 text-lg sm:ml-64 xl:mr-64 text-hit-gray-500">
 		<h1 id="overview" class="pb-8 text-4xl font-bold border-b-4 border-hit-gray-600 text-hit-gray-400">
 			No Workshop & Local Mods
 		</h1>
@@ -70,5 +71,24 @@ import { images } from '../data/imageImports.js';
 				explorer, or pressing <span class="key">Windows + R</span> and typing in appdata.
 			</p>
 		</div>
+		<!-- ?Video Section -->
+		<h2
+			id="relevant-videos"
+			class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+		>
+			Relevant Videos
+		</h2>
+		<ul class="text-lg mt-4 text-hit-gray-500 list-inside">
+			<li>
+				<h3 class="mt-4" id="no-workshop-mode-local-mods">
+					<Link
+						href="https://youtube.com/watch?v=oRidpGxLmQ8&t=36s"
+						theme="youtube"
+						text="No Workshop Mode & Local Mods"
+						classes=""
+					/>
+				</h3>
+			</li>
+		</ul>
 	</section>
 </MainLayout>

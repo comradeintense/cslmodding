@@ -10,26 +10,37 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 
 <MainLayout title={title}>
 	<TableOfContents />
-	<section class="py-12 sm:ml-64 xl:mr-64">
-		<h1 id="overview" class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400">Building Asset Creation</h1>
+	<section class="pt-12 pb-48 sm:ml-64 xl:mr-64">
+		<h1 id="overview" class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400">
+			Building Asset Creation
+		</h1>
 
-		<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">Mesh</h2>
+		<h2 id="mesh" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">Mesh</h2>
 		<!-- !SECTION -->
-		<h3 id="main-mesh" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4">Main Mesh</h3>
+		<h3 id="main-mesh" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4">
+			Main Mesh
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			This is a 3D model of the building, which will be visible when the camera is close to it. The actual mesh file contains vertices (their coordinates, UV
-			mapping, normals, and colors) and triangles.
+			This is a 3D model of the building, which will be visible when the camera is close to it. The actual mesh
+			file contains vertices (their coordinates, UV mapping, normals, and colors) and triangles.
 		</p>
-		<p class="text-lg mt-4 text-hit-gray-500">It's created using 3D modeling software such as Blender, 3ds Max, Maya or SketchUp.</p>
+		<p class="text-lg mt-4 text-hit-gray-500">
+			It's created using 3D modeling software such as Blender, 3ds Max, Maya or SketchUp.
+		</p>
 
 		<!-- ?MINI-SECTION -->
-		<h4 id="model-complexity" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Model Complexity</h4>
+		<h4
+			id="model-complexity"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Model Complexity
+		</h4>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<!-- ?left -->
 			<div class="lg:w-2/3">
 				<p class="text-lg text-hit-gray-500">
-					It's recommended to stay within reasonable triangle counts based on the size and detail of your model. You may look at examples of vanilla buildings
-					or assets by other creators for reference.
+					It's recommended to stay within reasonable triangle counts based on the size and detail of your
+					model. You may look at examples of vanilla buildings or assets by other creators for reference.
 				</p>
 				<p class="text-lg mt-4 text-hit-gray-500">The absolute limit for a mesh is 65536 vertices.</p>
 			</div>
@@ -54,13 +65,18 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		<div class="flex gap-2 mt-6 items-start justify-start">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
+				class="w-8 h-8 text-hoverlink flex-shrink-0"
 				fill="none"
 				viewBox="0 0 24 24"
 				stroke-width="1.5"
 				stroke="currentColor"
-				class="w-8 h-8 text-hoverlink flex-shrink-0"
+				class="w-6 h-6"
 			>
-				<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"></path>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+				></path>
 			</svg>
 
 			<p class="text-lg text-hit-gray-500 italic">
@@ -74,16 +90,19 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</div>
 
 		<!-- !SECTION -->
-		<h3 id="lod-mesh" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4">LOD Mesh</h3>
+		<h3 id="lod-mesh" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4">
+			LOD Mesh
+		</h3>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<!-- ?left -->
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">
-					LOD stands for level of detail. This is the mesh visible from a distance. It must be as simple as possible.
+					LOD stands for level of detail. This is the mesh visible from a distance. It must be as simple as
+					possible.
 				</p>
 				<p class="text-lg mt-4 text-hit-gray-500">
-					If you don't provide an LOD mesh, the game will try to generate one automatically, which may have visual issues, so it's highly recommended to make a
-					custom LOD using baking.
+					If you don't provide an LOD mesh, the game will try to generate one automatically, which may have
+					visual issues, so it's highly recommended to make a custom LOD using baking.
 				</p>
 			</div>
 			<!-- ?right -->
@@ -103,10 +122,13 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</div>
 
 		<!-- !SECTION -->
-		<h3 id="uv-mapping" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">UV Mapping</h3>
+		<h3 id="uv-mapping" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			UV Mapping
+		</h3>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<p class="text-lg mt-4 text-hit-gray-500 lg:w-2/3">
-				For the main mesh, you are allowed to UV map outside the 0-1 area (main tile), so you can tile the entire texture multiple times on a single face.
+				For the main mesh, you are allowed to UV map outside the 0-1 area (main tile), so you can tile the
+				entire texture multiple times on a single face.
 			</p>
 			<div class="flex flex-col gap-1 lg:w-1/3">
 				<a href="/images/asset/building/uv_main.jpg" target="_blank"
@@ -124,12 +146,18 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</div>
 
 		<!-- ?MINI-SECTION -->
-		<h4 id="uv-mapping-lod" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">LOD</h4>
+		<h4
+			id="uv-mapping-lod"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			LOD
+		</h4>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<p class="text-lg mt-4 text-hit-gray-500 lg:w-2/3">
-				For the LOD mesh, the UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed. This is because ingame all the LOD
-				textures are combined into a single texture called an atlas, so having incorrect uv mapping will end up putting the texture of some other random
-				building on your LOD.
+				For the LOD mesh, the UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is
+				allowed. This is because ingame all the LOD textures are combined into a single texture called an atlas,
+				so having incorrect uv mapping will end up putting the texture of some other random building on your
+				LOD.
 			</p>
 			<div class="lg:w-1/3">
 				<a href="/images/asset/building/uv_lod.jpg" target="_blank"
@@ -142,20 +170,29 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 						class="h-auto w-full"
 					/></a
 				>
-				<p class="explanation">UV mapping for LOD mesh using automatic mapping in 3ds Max. No overlap and contained within the main tile - good for baking.</p>
+				<p class="explanation">
+					UV mapping for LOD mesh using automatic mapping in 3ds Max. No overlap and contained within the main
+					tile - good for baking.
+				</p>
 			</div>
 		</div>
 
 		<!-- !SECTION -->
-		<h3 id="pivot-origin" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Pivot / Origin</h3>
+		<h3 id="pivot-origin" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Pivot / Origin
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			The pivot point or origin represents the center point on the ground of the lot. It's usually represented using a red/green/blue axis gizmo.
+			The pivot point or origin represents the center point on the ground of the lot. It's usually represented
+			using a red/green/blue axis gizmo.
 		</p>
 
 		<!-- !SECTION -->
-		<h3 id="transform" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Transform</h3>
+		<h3 id="transform" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Transform
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			Make sure you are exporting a single object, which doesn't have any rotation or scale.<br />This can be done using
+			Make sure you are exporting a single object, which doesn't have any rotation or scale.<br />This can be done
+			using
 			<Link
 				href="https://wiki.blender.org/index.php/User:Fade/Doc:2.6/Manual/3D_interaction/Transform_Control/Reset_Object_Transformations#Apply_Object_transformations"
 				theme="externallink"
@@ -171,10 +208,14 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</p>
 
 		<!-- !SECTION -->
-		<h3 id="vertex-paint" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Vertex Paint</h3>
+		<h3 id="vertex-paint" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Vertex Paint
+		</h3>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
-				<p class="text-lg mt-4 text-hit-gray-500">The vertex color blue channel determines snow behavior on winter maps:</p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					The vertex color blue channel determines snow behavior on winter maps:
+				</p>
 				<ul class="text-lg mt-4 text-hit-gray-500 list-disc list-inside">
 					<li class="mt-4">128 means 3D snow will not be generated<br /></li>
 					<li class="mt-4">0 means no snow will be visible at all</li>
@@ -196,7 +237,9 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</div>
 
 		<!-- !SECTION -->
-		<h3 id="formats" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Formats</h3>
+		<h3 id="formats" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Formats
+		</h3>
 		<ul class="text-lg mt-4 text-hit-gray-500 list-disc list-inside">
 			<li class="mt-4">FBX (2015 or older) (most commonly used)</li>
 			<li class="mt-4">OBJ (doesn't support vertex colors)</li>
@@ -204,18 +247,25 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</ul>
 
 		<!-- !SECTION -->
-		<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">Textures</h2>
-		<p class="text-lg mt-4 text-hit-gray-500">These determine the color and material properties of your building.</p>
+		<h2 id="textures" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">
+			Textures
+		</h2>
+		<p class="text-lg mt-4 text-hit-gray-500">
+			These determine the color and material properties of your building.
+		</p>
 
 		<!-- !SECTION -->
-		<h3 id="resolution" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Resolution</h3>
+		<h3 id="resolution" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Resolution
+		</h3>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">All imported main textures must be the same resolution.</p>
 				<p class="text-lg mt-4 text-hit-gray-500">
-					Powers of 2 is a standard practice in 3D graphics, which means resolutions such as 1024x1024, 1024x512, 256x512, 2048x128 etc. It is recommended to
-					stick to this standard, otherwise, your texture may be corrupted by compression, which may be more visible at longer distances or grazing angles. The
-					smallest allowed resolution is 32x32.
+					Powers of 2 is a standard practice in 3D graphics, which means resolutions such as 1024x1024,
+					1024x512, 256x512, 2048x128 etc. It is recommended to stick to this standard, otherwise, your
+					texture may be corrupted by compression, which may be more visible at longer distances or grazing
+					angles. The smallest allowed resolution is 32x32.
 				</p>
 			</div>
 			<div class="lg:w-1/3">
@@ -229,7 +279,10 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 						class="h-auto w-full"
 					/></a
 				>
-				<p class="explanation">Texture sizes of various vanilla buildings. (Not to scale) See resolution in the top right corner of the preview window.</p>
+				<p class="explanation">
+					Texture sizes of various vanilla buildings. (Not to scale) See resolution in the top right corner of
+					the preview window.
+				</p>
 			</div>
 		</div>
 		<!-- TODO: div warning -->
@@ -249,29 +302,36 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 				></path>
 			</svg>
 			<p class="text-lg text-hit-gray-500 italic">
-				Make sure texture quality is set to high in the game's graphics settings, otherwise, your imported textures will be downscaled to a lower resolution.
+				Make sure texture quality is set to high in the game's graphics settings, otherwise, your imported
+				textures will be downscaled to a lower resolution.
 			</p>
 		</div>
 
 		<!-- !SECTION -->
-		<h3 id="lod-textures" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">LOD Textures</h3>
+		<h3 id="lod-textures" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			LOD Textures
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">All imported LOD textures must be the same resolution.</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			If you don't provide LOD textures, the game will try to bake them using the UV mapping your LOD mesh has, and that may cause visual issues, so it's
-			recommended that you create your own LOD textures using baking.
+			If you don't provide LOD textures, the game will try to bake them using the UV mapping your LOD mesh has,
+			and that may cause visual issues, so it's recommended that you create your own LOD textures using baking.
 		</p>
 
 		<!-- !SECTION -->
-		<h3 id="diffuse" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Diffuse</h3>
+		<h3 id="diffuse" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Diffuse
+		</h3>
 
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">The main color and texture of your asset.</p>
 				<p class="text-lg mt-4 text-hit-gray-500">
-					It will look very bright, contrasty, and saturated in the game, so make sure to reduce the saturation and limit the brightest parts to a medium/light
-					gray below 140 RGB.
+					It will look very bright, contrasty, and saturated in the game, so make sure to reduce the
+					saturation and limit the brightest parts to a medium/light gray below 140 RGB.
 				</p>
-				<p class="text-lg mt-4 text-hit-gray-500">If you don't import a diffuse map, it will default to white.</p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					If you don't import a diffuse map, it will default to white.
+				</p>
 			</div>
 			<div class="lg:w-1/3">
 				<div>
@@ -304,17 +364,27 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</div>
 
 		<!-- !SECTION -->
-		<h3 id="alpha" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Alpha</h3>
+		<h3 id="alpha" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Alpha
+		</h3>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">
-					Transparency, white means opaque or visible, black means transparent or invisible. Gray values may affect how it looks from a distance or at an angle.
+					Transparency, white means opaque or visible, black means transparent or invisible. Gray values may
+					affect how it looks from a distance or at an angle.
 				</p>
 				<p class="text-lg mt-4 text-hit-gray-500">
 					Semi-transparency is not supported, you need to use the
-					<Link href="https://cslmodding.info/shader/rotors/" theme="externallink" text="rotors shader" classes="" /> for that.
+					<Link
+						href="https://cslmodding.info/shader/rotors/"
+						theme="externallink"
+						text="rotors shader"
+						classes=""
+					/> for that.
 				</p>
-				<p class="text-lg mt-4 text-hit-gray-500">If you don't import an alpha map, it will default to fully opaque or fully visible.</p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					If you don't import an alpha map, it will default to fully opaque or fully visible.
+				</p>
 			</div>
 			<div class="lg:w-1/3">
 				<div>
@@ -342,34 +412,50 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 						/></a
 					>
 					<p class="explanation">
-						Using lighter values for the invisible parts will decrease the chance of small details like railings disappearing completely.
+						Using lighter values for the invisible parts will decrease the chance of small details like
+						railings disappearing completely.
 					</p>
 				</div>
 			</div>
 		</div>
 
 		<!-- !SECTION -->
-		<h3 id="color" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Color</h3>
+		<h3 id="color" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Color
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			Determines which parts will be affected by color variations. White means fully affected and black means not at all.
+			Determines which parts will be affected by color variations. White means fully affected and black means not
+			at all.
 		</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			The diffuse will get multiplied by the color variation, that means the resulting color will look darker than the original diffuse.
+			The diffuse will get multiplied by the color variation, that means the resulting color will look darker than
+			the original diffuse.
 		</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			If you don't import a color map, it will default to full color, but the "use color variations" setting must be enabled for the colors to appear.
+			If you don't import a color map, it will default to full color, but the "use color variations" setting must
+			be enabled for the colors to appear.
 		</p>
 
 		<!-- !SECTION -->
-		<h3 id="illumination" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Illumination</h3>
+		<h3 id="illumination" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Illumination
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			Buildings can have two different types of illumination - diffuse contribution illumination in the 0-120 range, which is almost never used, and random
-			night window illumination in the 128-255 range, which is what most buildings use.
+			Buildings can have two different types of illumination - diffuse contribution illumination in the 0-120
+			range, which is almost never used, and random night window illumination in the 128-255 range, which is what
+			most buildings use.
 		</p>
-		<p class="text-lg mt-4 text-hit-gray-500">If you don't import an illumination map, it will default to no illumination.</p>
+		<p class="text-lg mt-4 text-hit-gray-500">
+			If you don't import an illumination map, it will default to no illumination.
+		</p>
 
 		<!-- !SECTION -->
-		<h4 id="random-night-windows" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Random Night Windows</h4>
+		<h4
+			id="random-night-windows"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Random Night Windows
+		</h4>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">Colors for randomly illuminated night windows:</p>
@@ -379,8 +465,9 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 					<li class="mt-4">192-255 (Second Set of Windows)</li>
 				</ul>
 				<p class="text-lg mt-4 text-hit-gray-500">
-					You can create a black and white illumination texture and use a levels adjustment to set the output colors so that black becomes 192 and white becomes
-					128 for one set of windows, and black becomes 192 and white becomes 255 for the other set.
+					You can create a black and white illumination texture and use a levels adjustment to set the output
+					colors so that black becomes 192 and white becomes 128 for one set of windows, and black becomes 192
+					and white becomes 255 for the other set.
 				</p>
 			</div>
 			<div class="lg:w-1/3">
@@ -402,24 +489,34 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</div>
 
 		<!-- !SECTION -->
-		<h4 id="diffuse-contribution" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Diffuse Contribution</h4>
+		<h4
+			id="diffuse-contribution"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Diffuse Contribution
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			0-120 is always turned on illumination based on the diffuse. It's not recommended to mix the two different types of illumination on one texture as it can
-			create aliasing problems.
+			0-120 is always turned on illumination based on the diffuse. It's not recommended to mix the two different
+			types of illumination on one texture as it can create aliasing problems.
 		</p>
 
 		<!-- !SECTION -->
-		<h3 id="specular" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Specular</h3>
+		<h3 id="specular" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Specular
+		</h3>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">
-					Reflectivity, bright values(above 80% or 205 RGB) will become "windows" where the fake interior floor will be visible.
+					Reflectivity, bright values(above 80% or 205 RGB) will become "windows" where the fake interior
+					floor will be visible.
 				</p>
 				<p class="text-lg mt-4 text-hit-gray-500">
-					The specular highlight from the sun is very big and bright, so you might want to use very low (0-10%) specularity for surfaces facing upwards, like
-					roofs.
+					The specular highlight from the sun is very big and bright, so you might want to use very low
+					(0-10%) specularity for surfaces facing upwards, like roofs.
 				</p>
-				<p class="text-lg mt-4 text-hit-gray-500">If you don't import a specular map, it will default to no specularity.</p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					If you don't import a specular map, it will default to no specularity.
+				</p>
 			</div>
 			<div class="lg:w-1/3">
 				<div>
@@ -433,7 +530,9 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 							class="h-auto w-full"
 						/></a
 					>
-					<p class="explanation">Example specular map showing high values for windows and very low values for the rest.</p>
+					<p class="explanation">
+						Example specular map showing high values for windows and very low values for the rest.
+					</p>
 				</div>
 				<div class="mt-4">
 					<a href="/images/asset/building/textures_specular_transition.jpg" target="_blank"
@@ -447,7 +546,8 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 						/></a
 					>
 					<p class="explanation">
-						Transitions between different specular values produce artifacts on the normal map and vice versa, even if a normal map is not imported.
+						Transitions between different specular values produce artifacts on the normal map and vice
+						versa, even if a normal map is not imported.
 					</p>
 				</div>
 			</div>
@@ -459,23 +559,40 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</h3>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
-				<p class="text-lg mt-4 text-hit-gray-500">Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.</p>
 				<p class="text-lg mt-4 text-hit-gray-500">
-					This can be made from the diffuse or a height map (brighter colors will look extruded out more) using
-					<Link href="http://cpetry.github.io/NormalMap-Online/" theme="externallink" text="a normal map generator online" classes="" /> , a photoshop plugin
-					like
-					<Link href="http://www.xnormal.net/" theme="externallink" text="xNormal" classes="" /> , or standalone software such as
+					Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.
+				</p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					This can be made from the diffuse or a height map (brighter colors will look extruded out more)
+					using
+					<Link
+						href="http://cpetry.github.io/NormalMap-Online/"
+						theme="externallink"
+						text="a normal map generator online"
+						classes=""
+					/> , a photoshop plugin like
+					<Link href="http://www.xnormal.net/" theme="externallink" text="xNormal" classes="" /> , or
+					standalone software such as
 					<Link href="https://www.crazybump.com/" theme="externallink" text="CrazyBump" classes="" />.
 				</p>
 				<p class="text-lg mt-4 text-hit-gray-500">
-					The normal map generator should be set to +X +Y, which means no color channel inversions are required. Read more in the
-					<Link href="https://cslmodding.info/normal-maps/" theme="externallink" text="normal map article" classes="" />.
+					The normal map generator should be set to +X +Y, which means no color channel inversions are
+					required. Read more in the
+					<Link
+						href="https://cslmodding.info/normal-maps/"
+						theme="externallink"
+						text="normal map article"
+						classes=""
+					/>.
 				</p>
 				<p class="text-lg mt-4 text-hit-gray-500">
-					High specularity and normal map don't work well together because of the compression, so you might want to paint over your windows and other shiny
-					parts with a solid color before generating a normal map or paint over these parts 128,128,255 on the final normal map.
+					High specularity and normal map don't work well together because of the compression, so you might
+					want to paint over your windows and other shiny parts with a solid color before generating a normal
+					map or paint over these parts 128,128,255 on the final normal map.
 				</p>
-				<p class="text-lg mt-4 text-hit-gray-500">If you don't import a normal map, it will default to a flat normal map - no bump.</p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					If you don't import a normal map, it will default to a flat normal map - no bump.
+				</p>
 			</div>
 			<div class="lg:w-1/3">
 				<div>
@@ -502,7 +619,9 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 							class="h-auto w-full"
 						/></a
 					>
-					<p class="explanation">Problem: normal maps appear incorrectly if the asset importer mesh rotation feature is used.</p>
+					<p class="explanation">
+						Problem: normal maps appear incorrectly if the asset importer mesh rotation feature is used.
+					</p>
 				</div>
 				<div class="mt-4">
 					<a href="/images/asset/building/textures_normal_problem2.jpg" target="_blank">
@@ -516,8 +635,8 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 						/>
 					</a>
 					<p class="explanation">
-						Problem: default normal map value is 0.5, which isn't possible by using 127(left) or 128(right). Image shows the same flat normal map on faces with
-						different UV rotation/flip.
+						Problem: default normal map value is 0.5, which isn't possible by using 127(left) or 128(right).
+						Image shows the same flat normal map on faces with different UV rotation/flip.
 					</p>
 				</div>
 			</div>
@@ -525,19 +644,25 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 
 		<!-- !SECTION -->
 
-		<h3 id="format" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Format</h3>
+		<h3 id="format" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Format
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">Use a lossless format like .PNG.</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			The game supports other formats as well, but there is no reason to use another one, it doesn't matter how much your texture is compressed or even if it's
-			completely solid or complicated, the game will convert it to a DXT format, so the final size won't be affected by anything other than resolution.
+			The game supports other formats as well, but there is no reason to use another one, it doesn't matter how
+			much your texture is compressed or even if it's completely solid or complicated, the game will convert it to
+			a DXT format, so the final size won't be affected by anything other than resolution.
 		</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			Make sure the texture is 8 bits/channel because a 16 bits/channel image can't be imported. Do not use the "Smaller File (8-bit)" feature in the Photoshop
-			Export As window, as that creates an indexed color image, not an 8 bits/channel one.
+			Make sure the texture is 8 bits/channel because a 16 bits/channel image can't be imported. Do not use the
+			"Smaller File (8-bit)" feature in the Photoshop Export As window, as that creates an indexed color image,
+			not an 8 bits/channel one.
 		</p>
 
 		<!-- !SECTION -->
-		<h2 id="import" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">Import</h2>
+		<h2 id="import" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">
+			Import
+		</h2>
 
 		<!-- !SECTION -->
 		<h3 id="example-asset" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
@@ -545,7 +670,12 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">Source files of an example building ready for import.</p>
 		<div class="content-download mt-4">
-			<Link href="https://drive.google.com/open?id=1ff3geFWoI3b-wnFfg7869JC4rLCzNmqX" theme="downloadbutton" text="Download" classes="" />
+			<Link
+				href="https://drive.google.com/open?id=1ff3geFWoI3b-wnFfg7869JC4rLCzNmqX"
+				theme="downloadbutton"
+				text="Download"
+				classes=""
+			/>
 		</div>
 
 		<!-- !SECTION -->
@@ -553,11 +683,12 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			<a href="https://cslmodding.info/asset/building/#naming">Naming</a>
 		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			The mesh can have any name, but it's not recommended to use spaces or underscores, as the name for the lod mesh name will be meshname_lod.
+			The mesh can have any name, but it's not recommended to use spaces or underscores, as the name for the lod
+			mesh name will be meshname_lod.
 		</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			The textures must have the same name as the mesh, but with the texture type identifier after it, so the result will be names like meshname_d.png and
-			meshname_lod_d.png
+			The textures must have the same name as the mesh, but with the texture type identifier after it, so the
+			result will be names like meshname_d.png and meshname_lod_d.png
 		</p>
 
 		<!-- !SECTION -->
@@ -566,12 +697,15 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</h3>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
-				<p class="text-lg mt-4 text-hit-gray-500">You should place the mesh and texture files in the import folder located here:</p>
-				<p class="text-lg mt-4 text-hit-gray-500"><span class="path">%LocalAppData%\Colossal Order\Cities_Skylines\Addons\Import</span></p>
 				<p class="text-lg mt-4 text-hit-gray-500">
-					The AppData folder is hidden by default, you can access it by copying and pasting the path into the file explorer, or pressing <span class="key"
-						>Windows + R</span
-					> and typing in appdata.
+					You should place the mesh and texture files in the import folder located here:
+				</p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					<span class="path">%LocalAppData%\Colossal Order\Cities_Skylines\Addons\Import</span>
+				</p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					The AppData folder is hidden by default, you can access it by copying and pasting the path into the
+					file explorer, or pressing <span class="key">Windows + R</span> and typing in appdata.
 				</p>
 			</div>
 			<div class="lg:w-1/3">
@@ -590,14 +724,21 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</div>
 
 		<!-- !SECTION -->
-		<h3 id="template" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Template</h3>
+		<h3 id="template" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Template
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			There is a "load existing props and decorations" toggle on the bottom left, this will load props and networks like roads/tracks/paths from your chosen
-			template as well, useful when you need to reimport an already imported asset but don't want to place those things again.
+			There is a "load existing props and decorations" toggle on the bottom left, this will load props and
+			networks like roads/tracks/paths from your chosen template as well, useful when you need to reimport an
+			already imported asset but don't want to place those things again.
 		</p>
-		<p class="text-lg mt-4 text-hit-gray-500">The template you choose will determine many things about your building:</p>
+		<p class="text-lg mt-4 text-hit-gray-500">
+			The template you choose will determine many things about your building:
+		</p>
 		<ul class="text-lg mt-4 text-hit-gray-500 list-disc list-inside">
-			<li class="mt-4">AI and corresponding stats (a school with students, a fire station with fire trucks etc.)<br /></li>
+			<li class="mt-4">
+				AI and corresponding stats (a school with students, a fire station with fire trucks etc.)<br />
+			</li>
 			<li class="mt-4">milestone at which it is unlocked<br /></li>
 			<li class="mt-4">UI category<br /></li>
 			<li class="mt-4">item class (UI sub-category)<br /></li>
@@ -608,46 +749,64 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		<div class="flex gap-2 mt-6 items-start justify-start">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
+				class="w-8 h-8 text-hoverlink flex-shrink-0"
 				fill="none"
 				viewBox="0 0 24 24"
 				stroke-width="1.5"
 				stroke="currentColor"
-				class="w-8 h-8 text-hoverlink flex-shrink-0"
+				class="w-6 h-6"
 			>
-				<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"></path>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+				></path>
 			</svg>
 
 			<p class="text-lg text-hit-gray-500 italic">
 				All of those things can be changed later in the editor itself or using
-				<Link href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484" theme="externallink" text="ModTools" classes="" /> or other mods.
+				<Link
+					href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484"
+					theme="externallink"
+					text="ModTools"
+					classes=""
+				/> or other mods.
 			</p>
 		</div>
 
 		<div class="flex gap-2 mt-6 items-start justify-start">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
+				class="w-8 h-8 text-hoverlink flex-shrink-0"
 				fill="none"
 				viewBox="0 0 24 24"
 				stroke-width="1.5"
 				stroke="currentColor"
-				class="w-8 h-8 text-hoverlink flex-shrink-0"
+				class="w-6 h-6"
 			>
-				<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"></path>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+				></path>
 			</svg>
 
 			<p class="text-lg text-hit-gray-500 italic">
 				Some types of buildings don't have a template,
-				<Link href="#specific-cases" theme="internallink" text="see specific cases" classes="" /> for downloadable premade templates and instructions.
+				<Link href="#specific-cases" theme="internallink" text="see specific cases" classes="" /> for
+				downloadable premade templates and instructions.
 			</p>
 		</div>
 
 		<!-- !SECTION -->
-		<h3 id="import-1" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Import</h3>
+		<h3 id="import-1" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Import
+		</h3>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">
-					After you choose your mesh, depending on how it was exported, you might need to set the correct scale and rotation, scale 100 and rotating 3 times
-					around X-axis are common necessities.
+					After you choose your mesh, depending on how it was exported, you might need to set the correct
+					scale and rotation, scale 100 and rotating 3 times around X-axis are common necessities.
 				</p>
 			</div>
 			<div class="lg:w-1/3">
@@ -682,9 +841,9 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 				></path>
 			</svg>
 			<p class="text-lg text-hit-gray-500 italic">
-				Using the mesh rotation feature will result in broken mesh tangents - that means the normal maps will appear incorrectly or not at all on some parts. To
-				fix this, don't use the rotation feature and make sure the mesh is rotated properly before import. If you need to use the mesh rotation feature - use
-				the
+				Using the mesh rotation feature will result in broken mesh tangents - that means the normal maps will
+				appear incorrectly or not at all on some parts. To fix this, don't use the rotation feature and make
+				sure the mesh is rotated properly before import. If you need to use the mesh rotation feature - use the
 				<Link
 					href="https://steamcommunity.com/sharedfiles/filedetails/?id=1518485094"
 					theme="externallink"
@@ -711,8 +870,8 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 				></path>
 			</svg>
 			<p class="text-lg text-hit-gray-500 italic">
-				If you get an unsupported color error, one of your textures might be a 16 bits/channel file, you need to change it to 8 bits/channel, in Photoshop:
-				Image &gt; Mode &gt; 8 Bits/Channel.
+				If you get an unsupported color error, one of your textures might be a 16 bits/channel file, you need to
+				change it to 8 bits/channel, in Photoshop: Image &gt; Mode &gt; 8 Bits/Channel.
 			</p>
 		</div>
 
@@ -733,20 +892,26 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 				></path>
 			</svg>
 			<p class="text-lg text-hit-gray-500 italic">
-				If the mesh preview doesn't display or you can't continue, you may have a problem with it such as multiple mesh objects, other entities like dummies,
-				cameras, lights, or layers in the exported file.
+				If the mesh preview doesn't display or you can't continue, you may have a problem with it such as
+				multiple mesh objects, other entities like dummies, cameras, lights, or layers in the exported file.
 			</p>
 		</div>
 
-		<h2 id="editor" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">Editor</h2>
+		<h2 id="editor" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">
+			Editor
+		</h2>
 
 		<!-- !SECTION -->
-		<h3 id="lot-size" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Lot Size</h3>
+		<h3 id="lot-size" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Lot Size
+		</h3>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">Size of the building area in cells, each cell is 8x8m.</p>
 				<p class="text-lg mt-4 text-hit-gray-500">For growables, the size is limited to 4x4.</p>
-				<p class="text-lg mt-4 text-hit-gray-500">For other buildings, max sizes are 16x8, 15x9, 14x11, 13x12, 12x13, 11x14, 9x15 and 8x16.</p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					For other buildings, max sizes are 16x8, 15x9, 14x11, 13x12, 12x13, 11x14, 9x15 and 8x16.
+				</p>
 			</div>
 			<div class="lg:w-1/3">
 				<a href="/images/asset/building/import_lot.jpg" target="_blank">
@@ -779,12 +944,18 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 				></path>
 			</svg>
 			<p class="text-lg text-hit-gray-500 italic">
-				Make sure your building doesn't overhang the lot too much, as the overhanging parts will disappear when the building inside the lot isn't visible.
+				Make sure your building doesn't overhang the lot too much, as the overhanging parts will disappear when
+				the building inside the lot isn't visible.
 			</p>
 		</div>
 
 		<!-- !SECTION -->
-		<h3 id="general-properties" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">General Properties</h3>
+		<h3
+			id="general-properties"
+			class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4"
+		>
+			General Properties
+		</h3>
 		<ul class="text-lg mt-4 text-hit-gray-500 list-disc list-inside">
 			<li class="mt-4">use color variations (may require to save/load for the toggle to take effect)<br /></li>
 			<li class="mt-4">availability (ingame, map editor etc.)<br /></li>
@@ -795,24 +966,40 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</ul>
 
 		<!-- !SECTION -->
-		<h3 id="stats" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Stats</h3>
+		<h3 id="stats" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Stats
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			Based on which AI the building has, it can have different stats like electricity consumption, worker amount, police car count for a police station etc.
+			Based on which AI the building has, it can have different stats like electricity consumption, worker amount,
+			police car count for a police station etc.
 		</p>
 
 		<!-- !SECTION -->
-		<h3 id="material-properties" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Material properties</h3>
+		<h3
+			id="material-properties"
+			class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4"
+		>
+			Material properties
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			You can change the 4 color variations, and also floor parameters which are used for the fake interior for 100% specular windows.
+			You can change the 4 color variations, and also floor parameters which are used for the fake interior for
+			100% specular windows.
 		</p>
 
 		<!-- !SECTION -->
-		<h3 id="networks" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Networks</h3>
+		<h3 id="networks" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Networks
+		</h3>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">
 					You can place networks such as roads, train/tram tracks, and pedestrian paths.
-					<Link href="#specific-cases" theme="internallink" text="Read more about network usage in specific cases such as train stations" classes="" />
+					<Link
+						href="#specific-cases"
+						theme="internallink"
+						text="Read more about network usage in specific cases such as train stations"
+						classes=""
+					/>
 				</p>
 			</div>
 			<div class="lg:w-1/3">
@@ -826,20 +1013,27 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 						class="h-auto w-full"
 					/>
 				</a>
-				<p class="explanation">Vanilla train station pedestrian paths (magenta) connecting the roadside to the platform.</p>
+				<p class="explanation">
+					Vanilla train station pedestrian paths (magenta) connecting the roadside to the platform.
+				</p>
 			</div>
 		</div>
 		<!-- TODO: div info -->
 		<div class="flex gap-2 mt-6 items-start justify-start">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
+				class="w-8 h-8 text-hoverlink flex-shrink-0"
 				fill="none"
 				viewBox="0 0 24 24"
 				stroke-width="1.5"
 				stroke="currentColor"
-				class="w-8 h-8 text-hoverlink flex-shrink-0"
+				class="w-6 h-6"
 			>
-				<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"></path>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+				></path>
 			</svg>
 
 			<p class="text-lg text-hit-gray-500 italic">
@@ -854,11 +1048,14 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</div>
 
 		<!-- !SECTION -->
-		<h3 id="props-trees" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Props &amp; Trees</h3>
+		<h3 id="props-trees" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Props &amp; Trees
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">You can place props such as benches, lights, and antennas.</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			If you place a prop on the ground, it will follow the terrain if the building is placed on uneven terrain. But if you place it on the building, it becomes
-			fixed height, so it will always be at that height relative to the building.
+			If you place a prop on the ground, it will follow the terrain if the building is placed on uneven terrain.
+			But if you place it on the building, it becomes fixed height, so it will always be at that height relative
+			to the building.
 		</p>
 		<!-- TODO: div warning -->
 		<div class="flex gap-2 mt-6 items-start justify-start">
@@ -877,32 +1074,44 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 				></path>
 			</svg>
 			<p class="text-lg text-hit-gray-500 italic">
-				You must use either vanilla or custom workshop published props and networks, not local custom ones, otherwise, they won't show up for the subscribers of
-				your asset.
+				You must use either vanilla or custom workshop published props and networks, not local custom ones,
+				otherwise, they won't show up for the subscribers of your asset.
 			</p>
 		</div>
 		<!-- TODO: div info -->
 		<div class="flex gap-2 mt-6 items-start justify-start">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
+				class="w-8 h-8 text-hoverlink flex-shrink-0"
 				fill="none"
 				viewBox="0 0 24 24"
 				stroke-width="1.5"
 				stroke="currentColor"
-				class="w-8 h-8 text-hoverlink flex-shrink-0"
+				class="w-6 h-6"
 			>
-				<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"></path>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+				></path>
 			</svg>
 
 			<p class="text-lg text-hit-gray-500 italic">
 				You can use
-				<Link href="https://steamcommunity.com/sharedfiles/filedetails/?id=1361644472" theme="externallink" text="Precise Prop Positioning by TPB" classes="" />
+				<Link
+					href="https://steamcommunity.com/sharedfiles/filedetails/?id=1361644472"
+					theme="externallink"
+					text="Precise Prop Positioning by TPB"
+					classes=""
+				/>
 				 to set the exact coordinates and rotation angle of props.
 			</p>
 		</div>
 
 		<!-- !SECTION -->
-		<h3 id="surface" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Surface</h3>
+		<h3 id="surface" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Surface
+		</h3>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">Each cell can have its own surface:</p>
@@ -930,25 +1139,36 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</div>
 
 		<!-- !SECTION -->
-		<h3 id="markers" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Markers</h3>
+		<h3 id="markers" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Markers
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			These are invisible props which have functionality such as building entry points, parking spaces or smoke particle effects.
+			These are invisible props which have functionality such as building entry points, parking spaces or smoke
+			particle effects.
 		</p>
 
 		<!-- !SECTION -->
-		<h3 id="sub-buildings" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Sub-buildings</h3>
+		<h3 id="sub-buildings" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Sub-buildings
+		</h3>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">
-					You can add other buildings as sub-buildings to your main building. Unlike props, they are not references to another asset, they actually get embedded
-					and saved into the main building asset.
+					You can add other buildings as sub-buildings to your main building. Unlike props, they are not
+					references to another asset, they actually get embedded and saved into the main building asset.
 				</p>
-				<p class="text-lg mt-4 text-hit-gray-500">This is useful for multi-function buildings or adding a part using a different shader.</p>
-				<p class="text-lg mt-4 text-hit-gray-500">The fixed height option makes sure the sub-building stays the same height even on uneven terrain.</p>
-				<p class="text-lg mt-4 text-hit-gray-500">Sub-buildings don't grow on growables, they are only visible if the growable is plopped manually.</p>
 				<p class="text-lg mt-4 text-hit-gray-500">
-					If you just imported a building for it to be used as a sub-building, you need to reload the game for it to be properly loaded and available as a
-					sub-building.
+					This is useful for multi-function buildings or adding a part using a different shader.
+				</p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					The fixed height option makes sure the sub-building stays the same height even on uneven terrain.
+				</p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					Sub-buildings don't grow on growables, they are only visible if the growable is plopped manually.
+				</p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					If you just imported a building for it to be used as a sub-building, you need to reload the game for
+					it to be properly loaded and available as a sub-building.
 				</p>
 			</div>
 			<div class="lg:w-1/3">
@@ -967,185 +1187,387 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</div>
 
 		<!-- !SECTION -->
-		<h3 id="sub-meshes" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Sub-meshes</h3>
+		<h3 id="sub-meshes" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Sub-meshes
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			You can add additional meshes as sub-meshes, which appear only when specific conditions are met, for example - the vanilla landfill uses multiple
-			sub-meshes to display how filled up it is.
+			You can add additional meshes as sub-meshes, which appear only when specific conditions are met, for example
+			- the vanilla landfill uses multiple sub-meshes to display how filled up it is.
 		</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flags" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Flags</h4>
-		<p class="text-lg mt-4 text-hit-gray-500">Flags are required and forbidden conditions, which determine when the sub-mesh shows up.</p>
+		<h4
+			id="sub-mesh-flags"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Flags
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			There are many flags and their use is not always obvious so their descriptions might be incomplete or not relevant in all cases.
+			Flags are required and forbidden conditions, which determine when the sub-mesh shows up.
+		</p>
+		<p class="text-lg mt-4 text-hit-gray-500">
+			There are many flags and their use is not always obvious so their descriptions might be incomplete or not
+			relevant in all cases.
 		</p>
 		<!-- TODO: div info -->
 		<div class="flex gap-2 mt-6 items-start justify-start">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
+				class="w-8 h-8 text-hoverlink flex-shrink-0"
 				fill="none"
 				viewBox="0 0 24 24"
 				stroke-width="1.5"
 				stroke="currentColor"
-				class="w-8 h-8 text-hoverlink flex-shrink-0"
+				class="w-6 h-6"
 			>
-				<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"></path>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+				></path>
 			</svg>
 
 			<p class="text-lg text-hit-gray-500 italic">
 				By default, not all sub-mesh flags (conditions) are visible, use
-				<Link href="https://steamcommunity.com/sharedfiles/filedetails/?id=1393831156" theme="externallink" text="the sub-mesh Flags mod by TPB" classes="" />
+				<Link
+					href="https://steamcommunity.com/sharedfiles/filedetails/?id=1393831156"
+					theme="externallink"
+					text="the sub-mesh Flags mod by TPB"
+					classes=""
+				/>
 				 to show all flags in the asset editor UI.
 			</p>
 		</div>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-created" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Created</h4>
+		<h4
+			id="sub-mesh-flag-created"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Created
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Active for all created buildings.</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-deleted" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Deleted</h4>
+		<h4
+			id="sub-mesh-flag-deleted"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Deleted
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Unknown.</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-original" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Original</h4>
-		<p class="text-lg mt-4 text-hit-gray-500">Likely active for buildings which were on the map originally, not created by the user.</p>
-
-		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-customname" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">CustomName</h4>
-		<p class="text-lg mt-4 text-hit-gray-500">Active for buildings which the user has renamed.</p>
-
-		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-untouchable" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Untouchable</h4>
-		<p class="text-lg mt-4 text-hit-gray-500">Likely active for buildings which cannot be clicked by the user.</p>
-
-		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-fixedheight" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">FixedHeight</h4>
-		<p class="text-lg mt-4 text-hit-gray-500">Likely active for buildings which will not change their height based on water level changes.</p>
-
-		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-incoming" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Incoming</h4>
-		<p class="text-lg mt-4 text-hit-gray-500">Likely related to vehicles arriving at the building.</p>
-
-		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-outgoing" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Outgoing</h4>
-		<p class="text-lg mt-4 text-hit-gray-500">Likely related to vehicles leaving the building.</p>
-
-		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-capacitystep1" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">
-			CapacityStep1 (First Half Filled)
+		<h4
+			id="sub-mesh-flag-original"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Original
 		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			Active for buildings which have their capacity at 50%, such as cemetaries, landfills, snow dumps, warehouses, or processing facilities.
+			Likely active for buildings which were on the map originally, not created by the user.
 		</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-capacitystep2" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">
+		<h4
+			id="sub-mesh-flag-customname"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			CustomName
+		</h4>
+		<p class="text-lg mt-4 text-hit-gray-500">Active for buildings which the user has renamed.</p>
+
+		<!-- !SECTION -->
+		<h4
+			id="sub-mesh-flag-untouchable"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Untouchable
+		</h4>
+		<p class="text-lg mt-4 text-hit-gray-500">Likely active for buildings which cannot be clicked by the user.</p>
+
+		<!-- !SECTION -->
+		<h4
+			id="sub-mesh-flag-fixedheight"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			FixedHeight
+		</h4>
+		<p class="text-lg mt-4 text-hit-gray-500">
+			Likely active for buildings which will not change their height based on water level changes.
+		</p>
+
+		<!-- !SECTION -->
+		<h4
+			id="sub-mesh-flag-incoming"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Incoming
+		</h4>
+		<p class="text-lg mt-4 text-hit-gray-500">Likely related to vehicles arriving at the building.</p>
+
+		<!-- !SECTION -->
+		<h4
+			id="sub-mesh-flag-outgoing"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Outgoing
+		</h4>
+		<p class="text-lg mt-4 text-hit-gray-500">Likely related to vehicles leaving the building.</p>
+
+		<!-- !SECTION -->
+		<h4
+			id="sub-mesh-flag-capacitystep1"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			CapacityStep1 (First Half Filled)
+		</h4>
+		<p class="text-lg mt-4 text-hit-gray-500">
+			Active for buildings which have their capacity at 50%, such as cemetaries, landfills, snow dumps,
+			warehouses, or processing facilities.
+		</p>
+
+		<!-- !SECTION -->
+		<h4
+			id="sub-mesh-flag-capacitystep2"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
 			CapacityStep2 (Second Half Filled)
 		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Same as CapacityStep1 but 100%.</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-ratereduced" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">RateReduced</h4>
+		<h4
+			id="sub-mesh-flag-ratereduced"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			RateReduced
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Likely active for buildings which are operating at a reduced rate.</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-highdensity" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">HighDensity</h4>
-		<p class="text-lg mt-4 text-hit-gray-500">Likely active for high density residential and commercial buildings.</p>
+		<h4
+			id="sub-mesh-flag-highdensity"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			HighDensity
+		</h4>
+		<p class="text-lg mt-4 text-hit-gray-500">
+			Likely active for high density residential and commercial buildings.
+		</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-levelupeducation" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">LevelUpEducation</h4>
+		<h4
+			id="sub-mesh-flag-levelupeducation"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			LevelUpEducation
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Unknown.</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-leveluplandvalue" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">LevelUpLandValue</h4>
+		<h4
+			id="sub-mesh-flag-leveluplandvalue"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			LevelUpLandValue
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Unknown.</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-roadaccessfailed" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">RoadAccessFailed</h4>
+		<h4
+			id="sub-mesh-flag-roadaccessfailed"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			RoadAccessFailed
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Likely related to pathfinding failure.</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-evacuating" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Evacuating</h4>
+		<h4
+			id="sub-mesh-flag-evacuating"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Evacuating
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Likely active for buildings during disaster evacuation.</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-completed" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Completed</h4>
+		<h4
+			id="sub-mesh-flag-completed"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Completed
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Active for buildings which have completed being constructed.</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-active" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Active</h4>
+		<h4
+			id="sub-mesh-flag-active"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Active
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Active for operating buildings.</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-abandoned" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Abandoned</h4>
+		<h4
+			id="sub-mesh-flag-abandoned"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Abandoned
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Active for abandoned buildings.</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-demolishing" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Demolishing</h4>
+		<h4
+			id="sub-mesh-flag-demolishing"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Demolishing
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Unknown.</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-zonesupdated" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">ZonesUpdated</h4>
+		<h4
+			id="sub-mesh-flag-zonesupdated"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			ZonesUpdated
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Related to zoning being updated.</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-downgrading" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Downgrading</h4>
+		<h4
+			id="sub-mesh-flag-downgrading"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Downgrading
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Unknown, likely related to buildings with capacity being emptied.</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-collapsed" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Collapsed</h4>
+		<h4
+			id="sub-mesh-flag-collapsed"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Collapsed
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Likely active for collapsed buildings.</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-burneddown" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">BurnedDown</h4>
-		<p class="text-lg mt-4 text-hit-gray-500">Same as Collapsed. Likely active for buildings which have burned down.</p>
+		<h4
+			id="sub-mesh-flag-burneddown"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			BurnedDown
+		</h4>
+		<p class="text-lg mt-4 text-hit-gray-500">
+			Same as Collapsed. Likely active for buildings which have burned down.
+		</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-upgrading" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Upgrading</h4>
+		<h4
+			id="sub-mesh-flag-upgrading"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Upgrading
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Likely active for buildings which are leveling up.</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-loading1" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Loading1</h4>
+		<h4
+			id="sub-mesh-flag-loading1"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Loading1
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Related to animation playback on cargo station buildings.</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-loading2" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Loading2</h4>
+		<h4
+			id="sub-mesh-flag-loading2"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Loading2
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Related to animation playback on cargo station buildings.</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-secondaryloading" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">SecondaryLoading</h4>
+		<h4
+			id="sub-mesh-flag-secondaryloading"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			SecondaryLoading
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Related to animation playback on cargo station buildings.</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-hidden" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Hidden</h4>
+		<h4
+			id="sub-mesh-flag-hidden"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Hidden
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Unknown.</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-eventactive" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">EventActive</h4>
+		<h4
+			id="sub-mesh-flag-eventactive"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			EventActive
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Unknown.</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-flooded" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Flooded</h4>
+		<h4
+			id="sub-mesh-flag-flooded"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Flooded
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Likely active for buildings which are flooded.</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-filling" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Filling</h4>
+		<h4
+			id="sub-mesh-flag-filling"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Filling
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">Unknown.</p>
 
 		<!-- !SECTION -->
-		<h4 id="sub-mesh-flag-historical" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Historical</h4>
-		<p class="text-lg mt-4 text-hit-gray-500">Likely used for buildings which have been marked as historical by the player.</p>
+		<h4
+			id="sub-mesh-flag-historical"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Historical
+		</h4>
+		<p class="text-lg mt-4 text-hit-gray-500">
+			Likely used for buildings which have been marked as historical by the player.
+		</p>
 
 		<!-- !SECTION -->
-		<h2 id="editor-advanced" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">Editor Advanced</h2>
+		<h2
+			id="editor-advanced"
+			class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+		>
+			Editor Advanced
+		</h2>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">
 					Various things can be changed with the use of
-					<Link href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484" theme="externallink" text="ModTools" classes="" /> scene explorer <span
-						class="key">Ctrl+E</span
-					> or running scripts in the console <span class="key">F7</span>, or specific mods.
+					<Link
+						href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484"
+						theme="externallink"
+						text="ModTools"
+						classes=""
+					/> scene explorer <span class="key">Ctrl+E</span> or running scripts in the console <span
+						class="key">F7</span
+					>, or specific mods.
 				</p>
 			</div>
 			<div class="lg:w-1/3">
@@ -1174,14 +1596,18 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 				classes=""
 			/>.
 		</p>
-		<p class="text-lg mt-4 text-hit-gray-500">If you want a functionless decorative building, DecorationBuildingAI is a good choice.</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			But if you want your building to be sinkable into the ground without lowering terrain - use BuildingAI, however, a side effect is it won't get wet in the
-			rain, or snowy on winter maps.
+			If you want a functionless decorative building, DecorationBuildingAI is a good choice.
+		</p>
+		<p class="text-lg mt-4 text-hit-gray-500">
+			But if you want your building to be sinkable into the ground without lowering terrain - use BuildingAI,
+			however, a side effect is it won't get wet in the rain, or snowy on winter maps.
 		</p>
 
 		<!-- !SECTION -->
-		<h3 id="item-class" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Item Class</h3>
+		<h3 id="item-class" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Item Class
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			Contains information about what type and level of building it is. It can be changed using
 			<Link
@@ -1193,7 +1619,9 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</p>
 
 		<!-- !SECTION -->
-		<h3 id="ui-category" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">UI Category</h3>
+		<h3 id="ui-category" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			UI Category
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			UI category determines in which menu your asset will appear. It can be changed using
 			<Link
@@ -1205,7 +1633,9 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</p>
 
 		<!-- !SECTION -->
-		<h3 id="ui-priority" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">UI Priority</h3>
+		<h3 id="ui-priority" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			UI Priority
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			UIPriority determines item order in the menu. It can be changed
 			<Link
@@ -1214,18 +1644,34 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 				text="Asset UI Priority Changer by Snow_Cat"
 				classes=""
 			/> or
-			<Link href="https://gist.github.com/ronyx69/60e9297695ff983b655b05b21f0407e5" theme="externallink" text="a script" classes="" />.
+			<Link
+				href="https://gist.github.com/ronyx69/60e9297695ff983b655b05b21f0407e5"
+				theme="externallink"
+				text="a script"
+				classes=""
+			/>.
 		</p>
 
-		<h3 id="shaders" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Shaders</h3>
+		<h3 id="shaders" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Shaders
+		</h3>
 
 		<!-- !SECTION -->
-		<h4 id="shader-default" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Default</h4>
+		<h4
+			id="shader-default"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Default
+		</h4>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">
-					<Link href="https://gist.github.com/ronyx69/a5029e0369e45117285b113ffe1a6d48" theme="externallink" text="Default" classes="" /> extends the base mesh
-					into the ground and applies the map theme building base texture to it.
+					<Link
+						href="https://gist.github.com/ronyx69/a5029e0369e45117285b113ffe1a6d48"
+						theme="externallink"
+						text="Default"
+						classes=""
+					/> extends the base mesh into the ground and applies the map theme building base texture to it.
 				</p>
 			</div>
 			<div class="lg:w-1/3">
@@ -1239,27 +1685,46 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 						class="h-auto w-full"
 					/>
 				</a>
-				<p class="explanation">Comparison between Default (left), NoBase (middle) and Fence (right) building shaders.</p>
+				<p class="explanation">
+					Comparison between Default (left), NoBase (middle) and Fence (right) building shaders.
+				</p>
 			</div>
 		</div>
 
 		<!-- !SECTION -->
-		<h4 id="shader-nobase" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">NoBase</h4>
+		<h4
+			id="shader-nobase"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			NoBase
+		</h4>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">
-					When using the default building shader, parts that are under 0 (ground) will get the map theme building base texture.
+					When using the default building shader, parts that are under 0 (ground) will get the map theme
+					building base texture.
 				</p>
 				<p class="text-lg mt-4 text-hit-gray-500">
-					<Link href="https://gist.github.com/ronyx69/24a430d610fe5bb2070c1a9cbb793e0d" theme="externallink" text="NoBase" classes="" /> doesn't replace the
-					underground texture with the building base texture.
+					<Link
+						href="https://gist.github.com/ronyx69/24a430d610fe5bb2070c1a9cbb793e0d"
+						theme="externallink"
+						text="NoBase"
+						classes=""
+					/> doesn't replace the underground texture with the building base texture.
 				</p>
 				<p class="text-lg mt-4 text-hit-gray-500">
-					The base mesh may still be visible, as it's generated on import for edges closer than 5cm to 0 (ground). It is possible to delete the base mesh
-					completely using
-					<Link href="https://gist.github.com/ronyx69/a5fd0eb2627131de12cd21878fa320be" theme="externallink" text="this script" classes="" />.
+					The base mesh may still be visible, as it's generated on import for edges closer than 5cm to 0
+					(ground). It is possible to delete the base mesh completely using
+					<Link
+						href="https://gist.github.com/ronyx69/a5fd0eb2627131de12cd21878fa320be"
+						theme="externallink"
+						text="this script"
+						classes=""
+					/>.
 				</p>
-				<p class="text-lg mt-4 text-hit-gray-500">This shader also has a side-effect of increased reflectivity for high specularity areas.</p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					This shader also has a side-effect of increased reflectivity for high specularity areas.
+				</p>
 			</div>
 			<div class="lg:w-1/3">
 				<a href="/images/asset/building/nobasesnow.jpg" target="_blank">
@@ -1277,29 +1742,62 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</div>
 
 		<!-- !SECTION -->
-		<h4 id="shader-fence" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Fence</h4>
+		<h4
+			id="shader-fence"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Fence
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			<Link href="https://gist.github.com/ronyx69/7a720c7c7f767d8441b824da4e0ea5f2" theme="externallink" text="Fence" classes="" /> conforms to the terrain.
-			(used for the vanilla cemetery and Japanese garden)
+			<Link
+				href="https://gist.github.com/ronyx69/7a720c7c7f767d8441b824da4e0ea5f2"
+				theme="externallink"
+				text="Fence"
+				classes=""
+			/> conforms to the terrain. (used for the vanilla cemetery and Japanese garden)
 		</p>
 
 		<!-- !SECTION -->
-		<h4 id="shader-floating" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Floating</h4>
+		<h4
+			id="shader-floating"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Floating
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			<Link href="https://gist.github.com/ronyx69/ce0ec6b39ab7a5c379dea8e10a4686f5" theme="externallink" text="Floating" classes="" /> waves in water. (used for
-			Mass Transit DLC boat museum steamboat)
+			<Link
+				href="https://gist.github.com/ronyx69/ce0ec6b39ab7a5c379dea8e10a4686f5"
+				theme="externallink"
+				text="Floating"
+				classes=""
+			/> waves in water. (used for Mass Transit DLC boat museum steamboat)
 		</p>
 
 		<!-- !SECTION -->
-		<h3 id="shader-properties" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Shader Properties</h3>
+		<h3
+			id="shader-properties"
+			class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4"
+		>
+			Shader Properties
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			Some shaders have specific hidden properties, such as the
-			<Link href="https://gist.github.com/ronyx69/18486e905c4ddf50ce14cafbd9c55ba0" theme="externallink" text="WindTurbine shader" classes="" /> and
+			<Link
+				href="https://gist.github.com/ronyx69/18486e905c4ddf50ce14cafbd9c55ba0"
+				theme="externallink"
+				text="WindTurbine shader"
+				classes=""
+			/> and
 			<Link href="/shader/animuv/" theme="internallink" text="AnimUV building shader" classes="" />.
 		</p>
 
 		<!-- !SECTION -->
-		<h3 id="placement-mode" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Placement Mode</h3>
+		<h3
+			id="placement-mode"
+			class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4"
+		>
+			Placement Mode
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">This determines how your asset must be placed:</p>
 		<ul class="text-lg mt-4 text-hit-gray-500 list-disc list-inside">
 			<li class="mt-4">Roadside<br /></li>
@@ -1313,13 +1811,20 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</ul>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			It can be changed with
-			<Link href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484" theme="externallink" text="ModTools" classes="" /> scene explorer <span
-				class="key">Ctrl+E</span
-			> by going to <span class="path">Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_placementMode</span>.
+			<Link
+				href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484"
+				theme="externallink"
+				text="ModTools"
+				classes=""
+			/> scene explorer <span class="key">Ctrl+E</span> by going to <span class="path"
+				>Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_placementMode</span
+			>.
 		</p>
 
 		<!-- !SECTION -->
-		<h3 id="zoning-mode" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Zoning Mode</h3>
+		<h3 id="zoning-mode" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Zoning Mode
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">This is used only for growables to make them grow only on corners:</p>
 		<ul class="text-lg mt-4 text-hit-gray-500 list-disc list-inside">
 			<li class="mt-4">Straight (default)<br /></li>
@@ -1328,16 +1833,28 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</ul>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			It can be changed with
-			<Link href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484" theme="externallink" text="ModTools" classes="" /> scene explorer <span
-				class="key">Ctrl+E</span
-			> and going to <span class="path">Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_zoningMode</span>.
+			<Link
+				href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484"
+				theme="externallink"
+				text="ModTools"
+				classes=""
+			/> scene explorer <span class="key">Ctrl+E</span> and going to <span class="path"
+				>Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_zoningMode</span
+			>.
 		</p>
 
 		<!-- !SECTION -->
-		<h2 id="specific-cases" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">Specific Cases</h2>
+		<h2
+			id="specific-cases"
+			class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+		>
+			Specific Cases
+		</h2>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			This section covers some specific types of buildings which do not have a template or require special instructions. It will also make references to
-			<Link href="/modtools/" theme="internallink" text="using ModTools" classes="" />, and other mods mentioned in the
+			This section covers some specific types of buildings which do not have a template or require special
+			instructions. It will also make references to
+			<Link href="/modtools/" theme="internallink" text="using ModTools" classes="" />, and other mods mentioned
+			in the
 			<Link href="#editor-advanced" theme="internallink" text="editor advanced section" classes="" /> .
 		</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
@@ -1347,89 +1864,151 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 				theme="externallink"
 				text="Advanced Buildings Editor by BloodyPenguin"
 				classes=""
-			/> is recommended for making all segments editable and auto-placing spawn points which are used to spawn trains, ships, or planes.
+			/> is recommended for making all segments editable and auto-placing spawn points which are used to spawn
+			trains, ships, or planes.
 		</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			Various station tracks and invisible connection paths can be accessed in the asset editor road and decoration menu by using
+			Various station tracks and invisible connection paths can be accessed in the asset editor road and
+			decoration menu by using
 			<Link
 				href="https://steamcommunity.com/sharedfiles/filedetails/?id=512314255"
 				theme="externallink"
 				text="More Network Stuff by BloodyPenguin"
 				classes=""
 			/> and they can be moved using
-			<Link href="https://steamcommunity.com/sharedfiles/filedetails/?id=1619685021&searchtext=move+it" theme="externallink" text="Move It!" classes="" />.
+			<Link
+				href="https://steamcommunity.com/sharedfiles/filedetails/?id=1619685021&searchtext=move+it"
+				theme="externallink"
+				text="Move It!"
+				classes=""
+			/>.
 		</p>
 
 		<!-- !SECTION -->
-		<h3 id="train-station" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Train Station</h3>
+		<h3 id="train-station" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Train Station
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">The train station has a template.</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			Train stations require a train station track, which contains pedestrian stop paths 1 meter above the track where citizens wait for the train. The stations
-			also have invisible pedestrian connection paths leading to the station track.
+			Train stations require a train station track, which contains pedestrian stop paths 1 meter above the track
+			where citizens wait for the train. The stations also have invisible pedestrian connection paths leading to
+			the station track.
 		</p>
 
 		<!-- !SECTION -->
-		<h3 id="cargo-train-station" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Cargo Train Station</h3>
+		<h3
+			id="cargo-train-station"
+			class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4"
+		>
+			Cargo Train Station
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			Cargo train station doesn't have a template. You can
-			<Link href="https://steamcommunity.com/sharedfiles/filedetails/?id=527544869" theme="externallink" text="download a premade template here" classes="" />
-			 or you can use the regular train station template, but change the AI to CargoStationAI and the item class to Train Cargo Facility.
+			<Link
+				href="https://steamcommunity.com/sharedfiles/filedetails/?id=527544869"
+				theme="externallink"
+				text="download a premade template here"
+				classes=""
+			/>
+			 or you can use the regular train station template, but change the AI to CargoStationAI and the item class
+			to Train Cargo Facility.
 		</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			Cargo train stations work with any train station track, but a special cargo station track which doesn't have pedestrian stop paths exists. They also have
-			invisible cargo connection paths which are used by the cargo vehicles to enter and exit the station.
+			Cargo train stations work with any train station track, but a special cargo station track which doesn't have
+			pedestrian stop paths exists. They also have invisible cargo connection paths which are used by the cargo
+			vehicles to enter and exit the station.
 		</p>
 
 		<!-- !SECTION -->
-		<h3 id="harbor" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Harbor</h3>
+		<h3 id="harbor" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Harbor
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">The harbor has a template.</p>
-		<p class="text-lg mt-4 text-hit-gray-500">Harbors require a ship dock path and ship dockway paths, and also a pedestrian connection path.</p>
+		<p class="text-lg mt-4 text-hit-gray-500">
+			Harbors require a ship dock path and ship dockway paths, and also a pedestrian connection path.
+		</p>
 
 		<!-- !SECTION -->
-		<h3 id="cargo-harbor" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Cargo Harbor</h3>
+		<h3 id="cargo-harbor" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Cargo Harbor
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			Cargo harbor doesn't have a template. You can
-			<Link href="https://steamcommunity.com/sharedfiles/filedetails/?id=707939755" theme="externallink" text="download a premade template here" classes="" />
-			 or you can use the regular harbor template, but change the AI to CargoHarborAI and the item class to Ship Cargo Facility.
+			<Link
+				href="https://steamcommunity.com/sharedfiles/filedetails/?id=707939755"
+				theme="externallink"
+				text="download a premade template here"
+				classes=""
+			/>
+			 or you can use the regular harbor template, but change the AI to CargoHarborAI and the item class to Ship
+			Cargo Facility.
 		</p>
-		<p class="text-lg mt-4 text-hit-gray-500">Cargo harbors require a ship dock path and ship dockway paths, and also a pedestrian connection path.</p>
+		<p class="text-lg mt-4 text-hit-gray-500">
+			Cargo harbors require a ship dock path and ship dockway paths, and also a pedestrian connection path.
+		</p>
 
 		<!-- !SECTION -->
-		<h3 id="airport" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Airport</h3>
+		<h3 id="airport" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Airport
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">Airports have templates.</p>
-		<p class="text-lg mt-4 text-hit-gray-500">Airports use runways and taxiways as expected. For the terminals they use airplane stop paths.</p>
+		<p class="text-lg mt-4 text-hit-gray-500">
+			Airports use runways and taxiways as expected. For the terminals they use airplane stop paths.
+		</p>
 
 		<!-- !SECTION -->
-		<h3 id="monorail-station" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Monorail Station</h3>
+		<h3
+			id="monorail-station"
+			class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4"
+		>
+			Monorail Station
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">Monorail stations have templates.</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			The monorail station track and road can be accessed by using the
-			<Link href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484" theme="externallink" text="ModTools" classes="" /> scene explorer <span
-				class="key">Ctrl+E</span
-			> and going to <span class="path"
-				>Expansion 4 &gt; NetCollection &gt; m_prefabs &gt; Monorail Station Track / Medium Road Monorail Elevated &gt; Plop</span
+			<Link
+				href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484"
+				theme="externallink"
+				text="ModTools"
+				classes=""
+			/> scene explorer <span class="key">Ctrl+E</span> and going to <span class="path"
+				>Expansion 4 &gt; NetCollection &gt; m_prefabs &gt; Monorail Station Track / Medium Road Monorail
+				Elevated &gt; Plop</span
 			>.
 		</p>
 
 		<!-- !SECTION -->
-		<h3 id="cable-car-stop" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Cable Car Stop</h3>
+		<h3
+			id="cable-car-stop"
+			class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4"
+		>
+			Cable Car Stop
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">Cable car stops have templates.</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
 			The cable car stop networks can be accessed by using the
-			<Link href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484" theme="externallink" text="ModTools" classes="" /> scene explorer <span
-				class="key">Ctrl+E</span
-			> and going to <span class="path">Expansion 4 &gt; NetCollection &gt; m_prefabs &gt; CableCar Stop &gt; Plop</span>.
+			<Link
+				href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484"
+				theme="externallink"
+				text="ModTools"
+				classes=""
+			/> scene explorer <span class="key">Ctrl+E</span> and going to <span class="path"
+				>Expansion 4 &gt; NetCollection &gt; m_prefabs &gt; CableCar Stop &gt; Plop</span
+			>.
 		</p>
 
 		<!-- !SECTION -->
 		<h2 id="save" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">Save</h2>
 
 		<!-- !SECTION -->
-		<h3 id="filename" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Filename</h3>
+		<h3 id="filename" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Filename
+		</h3>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">
-					The filename input is on the bottom left, this is what the actual file will be called. It's not recommended to use spaces, dots, or special symbols.
+					The filename input is on the bottom left, this is what the actual file will be called. It's not
+					recommended to use spaces, dots, or special symbols.
 				</p>
 			</div>
 			<div class="lg:w-1/3">
@@ -1448,38 +2027,59 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</div>
 
 		<!-- !SECTION -->
-		<h3 id="asset-name" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Asset Name</h3>
+		<h3 id="asset-name" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Asset Name
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">The asset name visible ingame, the name people should search for.</p>
 
 		<!-- !SECTION -->
-		<h3 id="images" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Images</h3>
-		<p class="text-lg mt-4 text-hit-gray-500">There are 2 different folders you can open by clicking the folder icons:</p>
-
-		<!-- !SECTION -->
-		<h4 id="snapshot" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Snapshot</h4>
+		<h3 id="images" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+			Images
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			On the snapshot image, bottom right corner. Use this one to replace the snapshot, you can replace it with a 1x1 px image to save on the asset file size.
-			This image will only be visible in the content manager. It will also default as the Steam preview image, but you can change that separately when
-			publishing.
+			There are 2 different folders you can open by clicking the folder icons:
 		</p>
 
 		<!-- !SECTION -->
-		<h4 id="thumbnail-tooltip" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">Thumbnail &amp; Tooltip</h4>
+		<h4 id="snapshot" class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12">
+			Snapshot
+		</h4>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			Below thumbnail, on the right side. Use this one to change the thumbnail (109x100) and tooltip (492x147) of your asset.<br /> Once you change the main
-			thumbnail, the hover/active states will update automatically.
+			On the snapshot image, bottom right corner. Use this one to replace the snapshot, you can replace it with a
+			1x1 px image to save on the asset file size. This image will only be visible in the content manager. It will
+			also default as the Steam preview image, but you can change that separately when publishing.
 		</p>
 
 		<!-- !SECTION -->
-		<h3 id="local-assets-folder" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Local Assets Folder</h3>
+		<h4
+			id="thumbnail-tooltip"
+			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+		>
+			Thumbnail &amp; Tooltip
+		</h4>
+		<p class="text-lg mt-4 text-hit-gray-500">
+			Below thumbnail, on the right side. Use this one to change the thumbnail (109x100) and tooltip (492x147) of
+			your asset.<br /> Once you change the main thumbnail, the hover/active states will update automatically.
+		</p>
+
+		<!-- !SECTION -->
+		<h3
+			id="local-assets-folder"
+			class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4"
+		>
+			Local Assets Folder
+		</h3>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
-				<p class="text-lg mt-4 text-hit-gray-500">Once the asset is saved, the .crp file will appear in the local assets folder:</p>
-				<p class="text-lg mt-4 text-hit-gray-500"><span class="path">%LocalAppData%\Colossal Order\Cities_Skylines\Addons\Assets</span></p>
 				<p class="text-lg mt-4 text-hit-gray-500">
-					The AppData folder is hidden by default, you can access it by copying and pasting the path into the file explorer, or pressing <span class="key"
-						>Windows+R</span
-					> and typing in appdata.
+					Once the asset is saved, the .crp file will appear in the local assets folder:
+				</p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					<span class="path">%LocalAppData%\Colossal Order\Cities_Skylines\Addons\Assets</span>
+				</p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					The AppData folder is hidden by default, you can access it by copying and pasting the path into the
+					file explorer, or pressing <span class="key">Windows+R</span> and typing in appdata.
 				</p>
 			</div>
 			<div class="lg:w-1/3">
@@ -1503,8 +2103,12 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</h2>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
-				<p class="text-lg mt-4 text-hit-gray-500">Once you have saved the asset and reloaded the game, you can publish the asset.</p>
-				<p class="text-lg mt-4 text-hit-gray-500">Go to the content manager &gt; assets and find your asset, then click share.</p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					Once you have saved the asset and reloaded the game, you can publish the asset.
+				</p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					Go to the content manager &gt; assets and find your asset, then click share.
+				</p>
 			</div>
 			<div class="lg:w-1/3">
 				<a href="/images/asset/building/share.jpg" target="_blank">
@@ -1522,23 +2126,32 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</div>
 
 		<!-- !SECTION -->
-		<h3 id="title-and-description" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Title and Description</h3>
+		<h3
+			id="title-and-description"
+			class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4"
+		>
+			Title and Description
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">You can change these on the Steam Workshop later.</p>
 
 		<!-- !SECTION -->
-		<h3 id="steam-preview-image-and-content-folder" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">
+		<h3
+			id="steam-preview-image-and-content-folder"
+			class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4"
+		>
 			Steam Preview Image and Content Folder
 		</h3>
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">
-					There is a folder icon again on the snapshot image, bottom right corner. Here you can change the Steam preview image, which is the thumbnail visible
-					on steam. The largest size the image will be visible is 437x437 (on the front page) but it will get upscaled to 512x512 by Steam so that's the size
-					you should use.
+					There is a folder icon again on the snapshot image, bottom right corner. Here you can change the
+					Steam preview image, which is the thumbnail visible on steam. The largest size the image will be
+					visible is 437x437 (on the front page) but it will get upscaled to 512x512 by Steam so that's the
+					size you should use.
 				</p>
 				<p class="text-lg mt-4 text-hit-gray-500">
-					There is also the content folder, which is where the actual asset file is. You can paste multiple .crp files here if you would like to upload a pack
-					of assets.
+					There is also the content folder, which is where the actual asset file is. You can paste multiple
+					.crp files here if you would like to upload a pack of assets.
 				</p>
 			</div>
 			<div class="lg:w-1/3">
@@ -1557,7 +2170,12 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 		</div>
 
 		<!-- !SECTION -->
-		<h3 id="steam-workshop" class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4">Steam Workshop</h3>
+		<h3
+			id="steam-workshop"
+			class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-900 pb-4"
+		>
+			Steam Workshop
+		</h3>
 		<p class="text-lg mt-4 text-hit-gray-500">On the Steam Workshop page for your asset, you can:</p>
 		<ul class="text-lg mt-4 text-hit-gray-500 list-disc list-inside">
 			<li class="mt-4">add it to a collection<br /></li>
@@ -1572,12 +2190,13 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 			<a href="https://cslmodding.info/asset/building/#update">Update</a>
 		</h2>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			To update your own item, you must subscribe to it first, then it will show up in the content manager. It won't be the same as a local asset, as it will
-			show an "update" button.
+			To update your own item, you must subscribe to it first, then it will show up in the content manager. It
+			won't be the same as a local asset, as it will show an "update" button.
 		</p>
 		<p class="text-lg mt-4 text-hit-gray-500">
-			When you click update, click the folder icon, and now you can change the Steam preview image and put your new asset in the content folder. If updating a
-			pack, remember to put all the assets inside the content folder.
+			When you click update, click the folder icon, and now you can change the Steam preview image and put your
+			new asset in the content folder. If updating a pack, remember to put all the assets inside the content
+			folder.
 		</p>
 		<p class="text-lg mt-4 text-hit-gray-500">You can also add more assets to make it a bigger pack.</p>
 
@@ -1598,21 +2217,29 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 				></path>
 			</svg>
 			<p class="text-lg text-hit-gray-500 italic">
-				Make sure your updated assets are saved with exactly the same name as before, otherwise, it will disappear from your subscribers' saves, as the game
-				uses the internal prefab name to refer to it. In the case of networks (roads, tracks etc.) it may completely break a save.
+				Make sure your updated assets are saved with exactly the same name as before, otherwise, it will
+				disappear from your subscribers' saves, as the game uses the internal prefab name to refer to it. In the
+				case of networks (roads, tracks etc.) it may completely break a save.
 			</p>
 		</div>
 
 		<!-- !SECTION -->
-		<h2 id="prefab-name" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">Prefab Name</h2>
+		<h2 id="prefab-name" class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400">
+			Prefab Name
+		</h2>
 
 		<div class="flex flex-col lg:flex-row gap-6 mt-4">
 			<div class="lg:w-2/3">
 				<p class="text-lg mt-4 text-hit-gray-500">This is not something you can change.</p>
-				<p class="text-lg mt-4 text-hit-gray-500">It's the hidden internal name used to refer to your asset in savefiles.</p>
-				<p class="text-lg mt-4 text-hit-gray-500">It's the reason why a local asset is not the same as a workshop published asset.</p>
 				<p class="text-lg mt-4 text-hit-gray-500">
-					For local assets: filename.Asset Name_Data<br />For published workshop assets: SteamID.Asset Name_Data
+					It's the hidden internal name used to refer to your asset in savefiles.
+				</p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					It's the reason why a local asset is not the same as a workshop published asset.
+				</p>
+				<p class="text-lg mt-4 text-hit-gray-500">
+					For local assets: filename.Asset Name_Data<br />For published workshop assets: SteamID.Asset
+					Name_Data
 				</p>
 			</div>
 			<div class="lg:w-1/3">
@@ -1626,8 +2253,75 @@ const title = 'Building Asset Creation - Cities Skylines Modding';
 						class="h-auto w-full"
 					/>
 				</a>
-				<p class="explanation">Comparison between local (top) and workshop published (bottom) prefab names shown in ModTools.</p>
+				<p class="explanation">
+					Comparison between local (top) and workshop published (bottom) prefab names shown in ModTools.
+				</p>
 			</div>
 		</div>
+
+		<!-- ?Video Section -->
+		<h2
+			id="relevant-videos"
+			class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+		>
+			Relevant Videos
+		</h2>
+		<ul class="text-lg mt-4 text-hit-gray-500 list-inside">
+			<li>
+				<h3 class="mt-4" id="illumination-map">
+					<Link
+						href="https://youtube.com/watch?v=48C__Aj4itk"
+						theme="youtube"
+						text="Illumination Map"
+						classes=""
+						target="_blank"
+					/>
+				</h3>
+			</li>
+			<li>
+				<h3 class="mt-4" id="change-shader-placement-mode">
+					<Link
+						href="https://youtube.com/watch?v=jbFvYGO-AFE"
+						theme="youtube"
+						text="Change Shader & Placement Mode"
+						classes=""
+						target="_blank"
+					/>
+				</h3>
+			</li>
+			<li>
+				<h3 class="mt-4" id="publish-with-included-prop">
+					<Link
+						href="https://youtube.com/watch?v=iSe-AmFP1KM"
+						theme="youtube"
+						text="Publish with Included Prop"
+						classes=""
+						target="_blank"
+					/>
+				</h3>
+			</li>
+			<li>
+				<h3 class="mt-4" id="publish-multiple-assets-single-ws-item">
+					<Link
+						href="https://youtube.com/watch?v=iSe-AmFP1KM"
+						theme="youtube"
+						text="Publish Multiple Assets as a Single Workshop Item"
+						classes=""
+						target="_blank"
+					/>
+				</h3>
+			</li>
+			<li>
+				<h3 class="mt-4" id="decide-color-variation-ingame">
+					<Link
+						href="https://youtube.com/watch?v=K3wnhJjyvkw"
+						theme="youtube"
+						text="Decide Color Variations Ingame"
+						classes=""
+						target="_blank"
+					/>
+				</h3>
+			</li>
+		</ul>
 	</section>
 </MainLayout>

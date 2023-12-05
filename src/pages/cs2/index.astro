@@ -55,16 +55,25 @@ const itemlinks = [
 ---
 
 <MainLayoutCS2>
-	<section class="py-12 sm:ml-64">
+	<section class="pt-12 pb-48 sm:ml-64">
 		<h1 class="text-2xl font-bold text-title mb-6">Cities: Skylines II</h1>
 
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 border-2 border-hit-gray-950 rounded-lg">
+		<div
+			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 border-2 border-hit-gray-950 rounded-lg"
+		>
 			{
 				itemlinks.map((item) => (
-					<a href={item.href} class="inline-flex flex-col group p-8 items-center justify-start text-center mb-4">
+					<a
+						href={item.href}
+						class="inline-flex flex-col group p-8 items-center justify-start text-center mb-4"
+					>
 						<Icon class="w-24 h-24 mb-4 fill-hit-gray-300 group-hover:fill-hoverlink" name={item.svgname} />
-						<span class="text-[1.25rem] leading-[1.75rem] text-hit-gray-200 group-hover:text-hoverlink">{item.title}</span>
-						<p class="mt-4 text-[1rem] leading-[1.25rem] text-hit-gray-400 group-hover:text-hoverlink">{item.description}</p>
+						<span class="text-[1.25rem] leading-[1.75rem] text-hit-gray-200 group-hover:text-hoverlink">
+							{item.title}
+						</span>
+						<p class="mt-4 text-[1rem] leading-[1.25rem] text-hit-gray-400 group-hover:text-hoverlink">
+							{item.description}
+						</p>
 					</a>
 				))
 			}

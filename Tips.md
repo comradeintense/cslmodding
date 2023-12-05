@@ -50,31 +50,7 @@ asset/network: done
 /search: ???
 /about: have to rewrite some stuff
 
-Terms of condition doesn't change URL but links (Fixed, but need to look in the buildings page for proper id's)
-SVG icon should be an "i" not an "!"
-Hover image full size ?
+Terms of condition doesn't change URL but links (Fixed)
+
 no duplication, sepparate articles for stuff (like building/prop)
-
-Images:
-
-/dump: done
-/asset/building: done
-/noworkshop: done
-/mod/detail: done
-/mod/custom-animation-loader: done
-/mod/additive-shader: done
-/mod/ploppable-asphalt: done
-/shader/vehicle-wheels: done
-/shader/flag: done
-/shader/animuv: done
-/shader/rotors-vehicle: done
-/shader/rotors: done
-/shader/decal: done
-/scripting: done
-/normal-maps: done
-/lut: done
-/theme: done
-/asset/network: done
-/asset/citizen: done
-/asset/vehicle: done
-/asset/tree: done
+add more padding bottom on each page

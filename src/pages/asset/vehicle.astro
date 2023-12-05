@@ -9,7 +9,7 @@ import { images } from '../../data/imageImports.js';
 
 <MainLayout title={title}>
 	<TableOfContents />
-	<section class="py-12 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
+	<section class="pt-12 pb-48 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
 		<h1 id="overview" class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400">
 			Vehicle Asset Creation
 		</h1>
@@ -57,17 +57,19 @@ import { images } from '../../data/imageImports.js';
 			</div>
 			<div class="flex gap-2 mt-6 items-start justify-start">
 				<svg
+					xmlns="http://www.w3.org/2000/svg"
 					class="w-8 h-8 text-hoverlink flex-shrink-0"
 					fill="none"
-					stroke="currentColor"
-					stroke-width="1.5"
 					viewBox="0 0 24 24"
-					xmlns="http://www.w3.org/2000/svg"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="w-6 h-6"
 				>
 					<path
-						d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
 						stroke-linecap="round"
-						stroke-linejoin="round"></path>
+						stroke-linejoin="round"
+						d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+					></path>
 				</svg>
 				<p class="italic">
 					<em>
@@ -649,17 +651,19 @@ import { images } from '../../data/imageImports.js';
 		</ul>
 		<div class="flex gap-2 mt-6 items-start justify-start">
 			<svg
+				xmlns="http://www.w3.org/2000/svg"
 				class="w-8 h-8 text-hoverlink flex-shrink-0"
 				fill="none"
-				stroke="currentColor"
-				stroke-width="1.5"
 				viewBox="0 0 24 24"
-				xmlns="http://www.w3.org/2000/svg"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="w-6 h-6"
 			>
 				<path
-					d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
 					stroke-linecap="round"
-					stroke-linejoin="round"></path>
+					stroke-linejoin="round"
+					d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+				></path>
 			</svg>
 			<p class="italic">
 				<em>
@@ -826,17 +830,19 @@ import { images } from '../../data/imageImports.js';
 		</p>
 		<div class="flex gap-2 mt-6 items-start justify-start">
 			<svg
+				xmlns="http://www.w3.org/2000/svg"
 				class="w-8 h-8 text-hoverlink flex-shrink-0"
 				fill="none"
-				stroke="currentColor"
-				stroke-width="1.5"
 				viewBox="0 0 24 24"
-				xmlns="http://www.w3.org/2000/svg"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="w-6 h-6"
 			>
 				<path
-					d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
 					stroke-linecap="round"
-					stroke-linejoin="round"></path>
+					stroke-linejoin="round"
+					d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+				></path>
 			</svg>
 			<p class="italic">
 				<em>
@@ -1201,8 +1207,8 @@ import { images } from '../../data/imageImports.js';
 		<p class="mt-4">
 			When loading a trailer template, the sub-mesh UI doesn't show up. To fix this, open the scene explorer, go
 			to <span class="path">Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_placementStyle</span>
-			and set it to automatic, save and load the asset, the sub-mesh UI should show up. Once you add the sub-mesh,
-			change <span class="path">m_placementStyle</span> back to procedural and save your asset.
+			 and set it to automatic, save and load the asset, the sub-mesh UI should show up. Once you add the
+			sub-mesh, change <span class="path">m_placementStyle</span> back to procedural and save your asset.
 		</p>
 		<h4
 			class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
@@ -1431,5 +1437,30 @@ import { images } from '../../data/imageImports.js';
 				</p>
 			</div>
 		</div>
+		<!-- ?Video Section -->
+		<h2
+			id="relevant-videos"
+			class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+		>
+			Relevant Videos
+		</h2>
+		<ul class="text-lg mt-4 text-hit-gray-500 list-inside">
+			<li>
+				<h3 class="mt-4" id="sub-meshes">
+					<Link href="https://youtube.com/watch?v=K0bsYvreks4" theme="youtube" text="Sub-meshes" classes="" />
+				</h3>
+			</li>
+
+			<li>
+				<h3 class="mt-4" id="decide-color-variations-ingame">
+					<Link
+						href="https://youtube.com/watch?v=K3wnhJjyvkw"
+						theme="youtube"
+						text="Decide Color Variations Ingame"
+						classes=""
+					/>
+				</h3>
+			</li>
+		</ul>
 	</section>
 </MainLayout>

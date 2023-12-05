@@ -4,22 +4,36 @@ const title = 'Output Log Decrufter - Cities Skylines Modding';
 ---
 
 <MainLayout title={title}>
-	<section class="py-12 sm:ml-64 text-lg text-hit-gray-500">
+	<section class="pt-12 pb-48 sm:ml-64 text-lg text-hit-gray-500">
 		<div class="content">
-			<h2 class="border-b-2 border-hit-gray-600 xl:mt-12 pb-8 text-4xl font-medium text-hit-gray-400" id="decruft">Output Log Decrufter</h2>
-			<p class="mt-4">A tool made by aubergine18 which attempts to extract the relevant parts of an output log.</p><p class="mt-4">
-				The output log can be found here:<br /><span class="path">C:\Program Files (x86)\Steam\steamapps\common\Cities_Skylines\Cities_Data\output_log.txt</span
+			<h2
+				class="border-b-2 border-hit-gray-600 xl:mt-12 pb-8 text-4xl font-medium text-hit-gray-400"
+				id="decruft"
+			>
+				Output Log Decrufter
+			</h2>
+			<p class="mt-4">
+				A tool made by aubergine18 which attempts to extract the relevant parts of an output log.
+			</p><p class="mt-4">
+				The output log can be found here:<br /><span class="path"
+					>C:\Program Files (x86)\Steam\steamapps\common\Cities_Skylines\Cities_Data\output_log.txt</span
 				>
 			</p>
 			<p class="mt-4">Paste the raw output log in the first field, then click decruft.</p>
 			<form>
-				<textarea id="doc" class="bg-[#282b2f] h-64 px-4 py-2 w-full focus:ring focus:outline-none focus:ring-hit-gray-800 mt-4"></textarea><br />
+				<textarea
+					id="doc"
+					class="bg-[#282b2f] h-64 px-4 py-2 w-full focus:ring focus:outline-none focus:ring-hit-gray-800 mt-4"
+				></textarea><br />
 				<button
 					class="bg-[#282b2f] mt-2 py-2 px-4 rounded-md border border-[#34383d] uppercase hover:bg-[#2b3033]"
 					onclick="decruft(document.getElementById('doc'),document.getElementById('errs'))"
 					type="button">Decruft</button
 				><br />
-				<textarea id="errs" class="bg-[#282b2f] px-4 py-2 h-[90vh] focus:ring focus:outline-none focus:ring-hit-gray-800 w-full mt-4"></textarea>
+				<textarea
+					id="errs"
+					class="bg-[#282b2f] px-4 py-2 h-[90vh] focus:ring focus:outline-none focus:ring-hit-gray-800 w-full mt-4"
+				></textarea>
 			</form>
 		</div>
 	</section>
