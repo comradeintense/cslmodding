@@ -3,76 +3,120 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Link from '../../components/Link.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 const title = 'AnimUV Shader - Cities Skylines Modding';
-import ResponsiveImage from '../../components/ResponsiveImage.astro';
+import { Picture } from 'astro:assets';
 import { images } from '../../data/imageImports.js';
 ---
 
 <MainLayout title={title}>
 	<TableOfContents />
-	<section class="py-12 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
-		<h1 id="overview" class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400">AnimUV Shader</h1>
+	<section class="py-12 text-lg sm:ml-64 xl:mr-64 text-hit-gray-500">
+		<h1 id="overview" class="pb-8 text-4xl font-bold border-b-4 border-hit-gray-600 text-hit-gray-400">
+			AnimUV Shader
+		</h1>
 		<div class="content">
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="about">About</h2><div
-				class="flex flex-col lg:flex-row gap-6 mt-4"
-			>
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="about">
+				About
+			</h2><div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
-						The AnimUV shader can be used to create scrolling or multi-frame animations. There are 2 AnimUV shaders - one for props and one for buildings and
-						building sub-meshes.
+						The AnimUV shader can be used to create scrolling or multi-frame animations. There are 2 AnimUV
+						shaders - one for props and one for buildings and building sub-meshes.
 					</p><p class="mt-4">The building AnimUV shader doesn't require a mod.</p><p class="mt-4">
 						While vehicle sub-meshes and previously created props still require <Link
 							classes=""
 							href="https://steamcommunity.com/sharedfiles/filedetails/?id=940299505"
 							text="the AnimUV Params mod"
 							theme="externallink"
-						/>, a new method for saving shader parameters by boformer has removed the requirement for a mod. Vehicle sub-meshes still require the mod.
+						/>, a new method for saving shader parameters by boformer has removed the requirement for a mod.
+						Vehicle sub-meshes still require the mod.
 					</p><p class="mt-4">This article assumes you are familiar with regular prop asset creation.</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/shader/animuv.jpeg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.animuv.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.animuv}
-							naturalHeight={1080}
-							naturalWidth={1920}
-							srcWidths={[300, 400, 500, 600, 800]}
 							alt="Example of a scrolling LED sign"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-							class="h-auto w-full aspect-video object-cover"
+							class="w-full h-auto"
 							loading="eager"
 						/></a
 					><p class="explanation">
-						Example of a <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=940299860">scrolling LED sign</a> AnimUV prop.
+						Example of a <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=940299860"
+							>scrolling LED sign</a
+						> AnimUV prop.
 					</p>
 				</div>
 			</div>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="textures">Textures</h2>
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="textures">
+				Textures
+			</h2>
 			<p class="mt-4">The textures work just like they would for any normal prop.</p>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="mesh">Mesh</h2>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="uv-mapping">UV Mapping</h4>
-			<p class="mt-4">The UV mapping is as usual, but in the case of a multi-frame animation, the first frame should be UV mapped.</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="format">Format</h4>
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="mesh">
+				Mesh
+			</h2>
+			<h4
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
+				id="uv-mapping"
+			>
+				UV Mapping
+			</h4>
+			<p class="mt-4">
+				The UV mapping is as usual, but in the case of a multi-frame animation, the first frame should be UV
+				mapped.
+			</p>
+			<h4
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
+				id="format"
+			>
+				Format
+			</h4>
 			<p class="mt-4">Use a format which supports vertex colors, such as FBX (2015 or older) or DAE.</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="vertex-paint">Vertex Paint</h4>
+			<h4
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
+				id="vertex-paint"
+			>
+				Vertex Paint
+			</h4>
 			<p class="mt-4">The vertex colors define which parts will have UV animation.</p>
 			<p class="mt-4">Black vertex paint will be animated and everything else should be white.</p>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="scripts">Scripts</h2>
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="scripts">
+				Scripts
+			</h2>
 			<p class="mt-4">
-				There are 2 types of scripts for each type of asset - one creates a simple scrolling animation, and the other can be used to create multi-frame
-				animations.
+				There are 2 types of scripts for each type of asset - one creates a simple scrolling animation, and the
+				other can be used to create multi-frame animations.
 			</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="transform-amount">Transform Amount</h4>
+			<h4
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
+				id="transform-amount"
+			>
+				Transform Amount
+			</h4>
 			<p class="mt-4">
-				For the advanced multi-frame animation scripts, the transform amount is (how many pixels you want the UV mapping to move each frame) divided by (the
-				width or height of the texture).
+				For the advanced multi-frame animation scripts, the transform amount is (how many pixels you want the UV
+				mapping to move each frame) divided by (the width or height of the texture).
 			</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="frames">Frames</h4>
+			<h4
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
+				id="frames"
+			>
+				Frames
+			</h4>
 			<p class="mt-4">The frames variable describes how many frames each animation has.</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="cycles">Cycles</h4>
+			<h4
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
+				id="cycles"
+			>
+				Cycles
+			</h4>
 			<p class="mt-4">
-				The cycles variable describes how many times per minute the animation runs. If 60 doesn't divide by this number evenly, the animation will "reset" every
-				minute.
+				The cycles variable describes how many times per minute the animation runs. If 60 doesn't divide by this
+				number evenly, the animation will "reset" every minute.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="buildings">Buildings</h3>
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="buildings">
+				Buildings
+			</h3>
 			<p class="mt-4">
 				<Link
 					classes=""
@@ -81,12 +125,24 @@ import { images } from '../../data/imageImports.js';
 					theme="externallink"
 				/> work without any mods. And they can also be applied to building sub-meshes.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="props">Props</h3>
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="props">
+				Props
+			</h3>
 			<p class="mt-4">
-				<Link classes="" href="https://gist.github.com/ronyx69/558a2adbe7557da62ea7a7153b86e74c" text="The prop AnimUV shader scripts" theme="externallink" />
+				<Link
+					classes=""
+					href="https://gist.github.com/ronyx69/558a2adbe7557da62ea7a7153b86e74c"
+					text="The prop AnimUV shader scripts"
+					theme="externallink"
+				/>
 				 don't require a mod anymore.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="vehicle-sub-meshes">Vehicle sub-meshes</h3>
+			<h3
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
+				id="vehicle-sub-meshes"
+			>
+				Vehicle sub-meshes
+			</h3>
 			<p class="mt-4">
 				The prop AnimUV shader can also be applied to vehicle sub-meshes using <Link
 					classes=""
@@ -98,8 +154,8 @@ import { images } from '../../data/imageImports.js';
 					href="https://steamcommunity.com/sharedfiles/filedetails/?id=940299505"
 					text="the AnimUV Params mod"
 					theme="externallink"
-				/>. The mesh must be imported as a prop first, then the game must be reloaded and then the vertex paint can be copied from the prop to the vehicle
-				sub-mesh. This is similar to <Link
+				/>. The mesh must be imported as a prop first, then the game must be reloaded and then the vertex paint
+				can be copied from the prop to the vehicle sub-mesh. This is similar to <Link
 					classes=""
 					href="/shader/rotors-propellers/#prop"
 					text="the process of creating rotors shader propellers for blimps"

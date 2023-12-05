@@ -3,83 +3,139 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Link from '../../components/Link.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 const title = 'Vehicle Wheels - Cities Skylines Modding';
-import ResponsiveImage from '../../components/ResponsiveImage.astro';
+import { Picture } from 'astro:assets';
 import { images } from '../../data/imageImports.js';
 ---
 
 <MainLayout title={title}>
 	<TableOfContents />
-	<section class="py-12 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
-		<h1 id="overview" class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400">Vehicle Wheels</h1>
+	<section class="py-12 text-lg sm:ml-64 xl:mr-64 text-hit-gray-500">
+		<h1 id="overview" class="pb-8 text-4xl font-bold border-b-4 border-hit-gray-600 text-hit-gray-400">
+			Vehicle Wheels
+		</h1>
 		<div class="content">
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="about">About</h2>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="about">
+				About
+			</h2>
+			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
-						When importing a vehicle, the game analyzes the mesh for continuously connected parts of the mesh (called elements) which are closer than 5cm to 0
-						(ground). Each of these parts receives a unique vertex color and a set of parameters which describe the position and diameter of each wheel.
+						When importing a vehicle, the game analyzes the mesh for continuously connected parts of the
+						mesh (called elements) which are closer than 5cm to 0 (ground). Each of these parts receives a
+						unique vertex color and a set of parameters which describe the position and diameter of each
+						wheel.
 					</p><p class="mt-4">
-						This article explains how to take full control of the vertex paint and tire parameters to manually create custom wheels. This allows for wheels
-						which are made of multiple separate parts, or even wheels which don't touch the ground.
+						This article explains how to take full control of the vertex paint and tire parameters to
+						manually create custom wheels. This allows for wheels which are made of multiple separate parts,
+						or even wheels which don't touch the ground.
 					</p><p class="mt-4">This article assumes you are familiar with regular vehicle asset creation.</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/shader/vehicle-wheels/bike1.png" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.bike1.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.bike1}
-							naturalHeight={837}
-							naturalWidth={839}
-							srcWidths={[300, 400, 500, 600, 800]}
 							alt="Bicycle vertex painted for custom multi-part wheels"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-							class="h-auto w-full aspect-square object-cover"
+							class="w-full h-auto"
 							loading="eager"
 						/></a
 					><p class="explanation">
-						Bicycle vertex painted for custom multi-part wheels. Yellow gizmos show where the wheels will be. The pedals will also become a "wheel" for extra
-						animation.
+						Bicycle vertex painted for custom multi-part wheels. Yellow gizmos show where the wheels will
+						be. The pedals will also become a "wheel" for extra animation.
 					</p>
 				</div>
 			</div>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="mesh-vertex-paint">Mesh Vertex Paint</h2>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="non-rotating-parts">Non-rotating Parts</h3>
+			<h2
+				class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400"
+				id="mesh-vertex-paint"
+			>
+				Mesh Vertex Paint
+			</h2>
+			<h3
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
+				id="non-rotating-parts"
+			>
+				Non-rotating Parts
+			</h3>
 			<p class="mt-4">The parts which don't rotate should be blue(RGB 0,0,255).</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="wheels">Wheels</h3>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="red">Red</h4>
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="wheels">
+				Wheels
+			</h3>
+			<h4 class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12" id="red">
+				Red
+			</h4>
 			<p class="mt-4">The red channel defines what is a wheel and what isn't, therefore it should be 255.</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="green">Green</h4>
+			<h4
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
+				id="green"
+			>
+				Green
+			</h4>
 			<p class="mt-4">
-				The green channel determines which of the tire parameters (as they will be defined in the script) the wheel will use. 0 means it will use tire parameter
-				0, 8 means it will use tire parameter 1, 16 means it will use tire parameter 2 and so on.
+				The green channel determines which of the tire parameters (as they will be defined in the script) the
+				wheel will use. 0 means it will use tire parameter 0, 8 means it will use tire parameter 1, 16 means it
+				will use tire parameter 2 and so on.
 			</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="blue">Blue</h4>
+			<h4 class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12" id="blue">
+				Blue
+			</h4>
 			<p class="mt-4">The blue channel has no known effect, so it can stay at 255.</p>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="import">Import</h2>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="prop">Prop</h3>
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="import">
+				Import
+			</h2>
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="prop">
+				Prop
+			</h3>
 			<p class="mt-4">
-				Because the game recalculates vertex colors when importing vehicle meshes, it's necessary to import your vehicle mesh as a prop first. To make it
-				easier, save it using a simple name, use the same name for the file name and the asset name. Once it's saved, reload the game.
+				Because the game recalculates vertex colors when importing vehicle meshes, it's necessary to import your
+				vehicle mesh as a prop first. To make it easier, save it using a simple name, use the same name for the
+				file name and the asset name. Once it's saved, reload the game.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="vehicle">Vehicle</h3>
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="vehicle">
+				Vehicle
+			</h3>
 			<p class="mt-4">Once the game is reloaded, import your vehicle as usual.</p>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="script">Script</h2>
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="script">
+				Script
+			</h2>
 			<p class="mt-4">
-				The script can be found <Link classes="" href="https://gist.github.com/ronyx69/b2a53cce3a02b22ab4f425b95bf0825a" text="here" theme="externallink" />. It
-				will copy the vertex paint from the prop to the vehicle, and set tire parameters.
+				The script can be found <Link
+					classes=""
+					href="https://gist.github.com/ronyx69/b2a53cce3a02b22ab4f425b95bf0825a"
+					text="here"
+					theme="externallink"
+				/>. It will copy the vertex paint from the prop to the vehicle, and set tire parameters.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="prop-name">Prop Name</h3>
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="prop-name">
+				Prop Name
+			</h3>
 			<p class="mt-4">The name of the prop you imported before. Formatted as "filename.Asset Name_Data".</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="tire-parameter-vectors">Tire Parameter Vectors</h3>
-			<p class="mt-4">Each vector describes the pivot coordinates of the wheel, the point around which that wheel will spin.</p>
-			<p class="mt-4">You can add more or fewer tire parameters, the limit is 32 wheels because of the vertex paint green channel.</p>
+			<h3
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
+				id="tire-parameter-vectors"
+			>
+				Tire Parameter Vectors
+			</h3>
 			<p class="mt-4">
-				The game might not allow adding more tire parameter vectors than the number of parts touching the ground the game detected on import. If you run into
-				this problem, simply add some small/invisible triangles at 0 (ground) to your vehicle mesh.
+				Each vector describes the pivot coordinates of the wheel, the point around which that wheel will spin.
 			</p>
-			<p class="mt-4">Which of the tire parameter vectors a wheel uses depends on the vertex paint of it, as described in the green vertex paint section.</p>
-			<div class="flex gap-2 mt-6 items-start justify-start">
+			<p class="mt-4">
+				You can add more or fewer tire parameters, the limit is 32 wheels because of the vertex paint green
+				channel.
+			</p>
+			<p class="mt-4">
+				The game might not allow adding more tire parameter vectors than the number of parts touching the ground
+				the game detected on import. If you run into this problem, simply add some small/invisible triangles at
+				0 (ground) to your vehicle mesh.
+			</p>
+			<p class="mt-4">
+				Which of the tire parameter vectors a wheel uses depends on the vertex paint of it, as described in the
+				green vertex paint section.
+			</p>
+			<div class="flex items-start justify-start gap-2 mt-6">
 				<svg
-					class="w-8 h-8 text-orange flex-shrink-0"
+					class="flex-shrink-0 w-8 h-8 text-orange"
 					fill="none"
 					stroke="currentColor"
 					stroke-width="1.5"
@@ -93,8 +149,9 @@ import { images } from '../../data/imageImports.js';
 				</svg>
 				<p class="italic">
 					<em>
-						Keep in mind that ingame the Y-axis represents height, so the Y and Z-axis are swapped compared to what 3D software usually uses. It's likely that
-						you will need to invert positive values to negative and vice versa for X and Z coordinates, depending on what 3D software you use.
+						Keep in mind that ingame the Y-axis represents height, so the Y and Z-axis are swapped compared
+						to what 3D software usually uses. It's likely that you will need to invert positive values to
+						negative and vice versa for X and Z coordinates, depending on what 3D software you use.
 					</em>
 				</p>
 			</div>

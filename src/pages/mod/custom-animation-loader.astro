@@ -3,224 +3,338 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Link from '../../components/Link.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 const title = 'Custom Animation Loader - Cities Skylines Modding';
-import ResponsiveImage from '../../components/ResponsiveImage.astro';
+import { Picture } from 'astro:assets';
 import { images } from '../../data/imageImports.js';
 ---
 
 <MainLayout title={title}>
 	<TableOfContents />
-	<section class="py-12 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
-		<h1 id="overview" class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400">Custom Animation Loader</h1>
+	<section class="py-12 text-lg sm:ml-64 xl:mr-64 text-hit-gray-500">
+		<h1 id="overview" class="pb-8 text-4xl font-bold border-b-4 border-hit-gray-600 text-hit-gray-400">
+			Custom Animation Loader
+		</h1>
 		<div class="content">
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="about">About</h2>
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="about">
+				About
+			</h2>
 			<p class="mt-4">
 				<Link
 					classes=""
 					href="https://steamcommunity.com/sharedfiles/filedetails/?id=1664509314"
 					text="The Custom Animation Loader (CAL) mod by boformer"
 					theme="externallink"
-				/> can be used to import custom animations for buildings. Animations have an inactive and active state so it's possible to stop the animation when the
-				building is not operating.
+				/> can be used to import custom animations for buildings. Animations have an inactive and active state
+				so it's possible to stop the animation when the building is not operating.
 			</p>
 			<p class="mt-4">This article assumes you are familiar with building asset creation.</p>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="requirements">Requirements</h2>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="d-software">3D Software</h3>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<h2
+				class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400"
+				id="requirements"
+			>
+				Requirements
+			</h2>
+			<h3
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
+				id="d-software"
+			>
+				3D Software
+			</h3>
+			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
-						The animation must be created using bones and keyframes. The mesh with the bones should be exported to FBX (2015 or older) as Y-up for importing in
-						Unity. Also, the mesh without the bones should be exported for importing into the game as usual.
+						The animation must be created using bones and keyframes. The mesh with the bones should be
+						exported to FBX (2015 or older) as Y-up for importing in Unity. Also, the mesh without the bones
+						should be exported for importing into the game as usual.
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/mod/cal/blender.jpg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.blender.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.blender}
-							naturalHeight={540}
-							naturalWidth={960}
-							srcWidths={[300, 400, 500, 600, 800, 900]}
 							alt="Mesh with bones and keyframes in blender"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-							class="h-auto w-full aspect-video object-cover"
+							class="w-full h-auto"
 							loading="eager"
 						/></a
 					><p class="explanation">Mesh with bones and keyframes in blender.</p>
 				</div>
 			</div>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="inactive-animation">Inactive Animation</h4>
+			<h4
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
+				id="inactive-animation"
+			>
+				Inactive Animation
+			</h4>
 			<p class="mt-4">
-				If your software supports multiple animations (Blender does but 3ds Max doesn't) you can add another animation, which has only 2 keyframes which have no
-				movement, so this can be used for the inactive state.
+				If your software supports multiple animations (Blender does but 3ds Max doesn't) you can add another
+				animation, which has only 2 keyframes which have no movement, so this can be used for the inactive
+				state.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="unity-editor">Unity Editor</h3>
+			<h3
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
+				id="unity-editor"
+			>
+				Unity Editor
+			</h3>
 			<p class="mt-4">
-				<Link classes="" href="https://unity3d.com/get-unity/download/archive" text="You need Unity Editor 5.6.6" theme="externallink" /> to set up the animator
-				and create an asset bundle which the mod will read.
+				<Link
+					classes=""
+					href="https://unity3d.com/get-unity/download/archive"
+					text="You need Unity Editor 5.6.6"
+					theme="externallink"
+				/> to set up the animator and create an asset bundle which the mod will read.
 			</p>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="unity-editor-1">Unity Editor</h2>
-			<p class="mt-4">Launch the Unity Editor and create a new project in a folder you will be able to find later.</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="prefab">Prefab</h3>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<h2
+				class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400"
+				id="unity-editor-1"
+			>
+				Unity Editor
+			</h2>
+			<p class="mt-4">
+				Launch the Unity Editor and create a new project in a folder you will be able to find later.
+			</p>
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="prefab">
+				Prefab
+			</h3>
+			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
-						In the hierarchy window, create an empty GameObject by clicking "Create Empty". Now in the inspector window rename the GameObject to the exact asset
-						name you will use ingame (not the filename). You may also move the object to 0 by changing all Transform XYZ positions to 0.
+						In the hierarchy window, create an empty GameObject by clicking "Create Empty". Now in the
+						inspector window rename the GameObject to the exact asset name you will use ingame (not the
+						filename). You may also move the object to 0 by changing all Transform XYZ positions to 0.
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/mod/cal/unity1.jpg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.unity1.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.unity1}
-							naturalHeight={540}
-							naturalWidth={960}
-							srcWidths={[300, 400, 500, 600, 800, 900]}
 							alt="Game objects in Unity Editor"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-							class="h-auto w-full aspect-video object-cover"
-							loading="eager"
+							class="w-full h-auto"
 						/></a
 					><p class="explanation">Game objects in Unity Editor.</p>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="animator">Animator</h3>
-			<p class="mt-4">In the inspector window click the "Add Component" button and add a component called "Animator".</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="skinned-mesh-renderer">Skinned Mesh Renderer</h3>
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="animator">
+				Animator
+			</h3>
 			<p class="mt-4">
-				Now in the hierarchy window right-click the GameObject you just created and click "Create Empty" to create a new GameObject inside it. Add a component
-				called "Skinned Mesh Renderer" to it.
+				In the inspector window click the "Add Component" button and add a component called "Animator".
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="mesh">Mesh</h3>
+			<h3
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
+				id="skinned-mesh-renderer"
+			>
+				Skinned Mesh Renderer
+			</h3>
 			<p class="mt-4">
-				Drag &amp; drop the mesh file into the Unity Editor projects window. Now click the mesh and in the inspector window click the animations tab. Here you
-				can see animation clips in the mesh and also play the animation in the preview window on the bottom. You should rename the main animation clip to
-				"active". If you have the inactive animation in your mesh, rename that to "inactive". Also, you should enable the "Loop Time" checkbox for the active
-				animation.
+				Now in the hierarchy window right-click the GameObject you just created and click "Create Empty" to
+				create a new GameObject inside it. Add a component called "Skinned Mesh Renderer" to it.
 			</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="inactive-animation-1">Inactive Animation</h4>
-			<p class="mt-4">If you didn't include the inactive animation in your mesh, you can create one in Unity Editor.</p>
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="mesh">
+				Mesh
+			</h3>
 			<p class="mt-4">
-				In the project window, click "Create" and choose "Animation" and call it "inactive". Now click the right arrow on the mesh you imported before, and
-				click the active animation. Then go to Window &gt; Animation, press Ctrl+A to select all keyframes and Ctrl+C to copy them.
+				Drag &amp; drop the mesh file into the Unity Editor projects window. Now click the mesh and in the
+				inspector window click the animations tab. Here you can see animation clips in the mesh and also play
+				the animation in the preview window on the bottom. You should rename the main animation clip to
+				"active". If you have the inactive animation in your mesh, rename that to "inactive". Also, you should
+				enable the "Loop Time" checkbox for the active animation.
+			</p>
+			<h4
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
+				id="inactive-animation-1"
+			>
+				Inactive Animation
+			</h4>
+			<p class="mt-4">
+				If you didn't include the inactive animation in your mesh, you can create one in Unity Editor.
 			</p>
 			<p class="mt-4">
-				Select the inactive animation you just created and Ctrl+V to paste the keyframes. Zoom out by holding Alt and scrolling down. Select all keyframes
-				except the starting ones on the left side and delete them. This creates a single frame static animation.
+				In the project window, click "Create" and choose "Animation" and call it "inactive". Now click the right
+				arrow on the mesh you imported before, and click the active animation. Then go to Window &gt; Animation,
+				press Ctrl+A to select all keyframes and Ctrl+C to copy them.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="animation-controller">Animation Controller</h3>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<p class="mt-4">
+				Select the inactive animation you just created and Ctrl+V to paste the keyframes. Zoom out by holding
+				Alt and scrolling down. Select all keyframes except the starting ones on the left side and delete them.
+				This creates a single frame static animation.
+			</p>
+			<h3
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
+				id="animation-controller"
+			>
+				Animation Controller
+			</h3>
+			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
-						In the project window, create an "Animation Controller" and double click it to open the Animator window. Drag the inactive and active animation
-						clips into this window. If your animation clips were named something other than "active" and "inactive", make sure to rename the nodes to these
+						In the project window, create an "Animation Controller" and double click it to open the Animator
+						window. Drag the inactive and active animation clips into this window. If your animation clips
+						were named something other than "active" and "inactive", make sure to rename the nodes to these
 						names.
-					</p><p class="mt-4">Right-click the inactive node and click "Set as Layer Default State".</p><p class="mt-4">
-						In the animator window on the left side click the "Parameters" tab, click the + button and add Float called "Speed" and Int called "State".
+					</p><p class="mt-4">Right-click the inactive node and click "Set as Layer Default State".</p><p
+						class="mt-4"
+					>
+						In the animator window on the left side click the "Parameters" tab, click the + button and add
+						Float called "Speed" and Int called "State".
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/mod/cal/unity2.jpg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.unity2.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.unity2}
-							naturalHeight={540}
-							naturalWidth={960}
-							srcWidths={[300, 400, 500, 600, 800, 900]}
 							alt="Animator window and transition"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-							class="h-auto w-full aspect-video object-cover"
-							loading="eager"
+							class="w-full h-auto"
 						/></a
 					><p class="explanation">Animator window and transition.</p>
 				</div>
 			</div>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="transitions">Transitions</h4>
+			<h4
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
+				id="transitions"
+			>
+				Transitions
+			</h4>
 			<p class="mt-4">
-				Right-click the inactive node, click "Make Transition" and click the active node. Now click the white transition arrow. In the inspector window open the
-				settings and change the transition duration. In the conditions section, add a new condition by pressing the + button, set this condition to "Speed"
+				Right-click the inactive node, click "Make Transition" and click the active node. Now click the white
+				transition arrow. In the inspector window open the settings and change the transition duration. In the
+				conditions section, add a new condition by pressing the + button, set this condition to "Speed"
 				"Greater" "0.01".
 			</p>
 			<p class="mt-4">
-				Right-click the active node, click "Make Transition" and click the inactive node. Now click the new white transition arrow. In the conditions section,
-				add a new condition button and set it to "Speed" "Less" "0.01".
+				Right-click the active node, click "Make Transition" and click the inactive node. Now click the new
+				white transition arrow. In the conditions section, add a new condition button and set it to "Speed"
+				"Less" "0.01".
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="assignment">Assignment</h3>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="animator-controller-avatar">
+			<h3
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
+				id="assignment"
+			>
+				Assignment
+			</h3>
+			<h4
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
+				id="animator-controller-avatar"
+			>
 				Animator Controller &amp; Avatar
 			</h4>
 			<p class="mt-4">
-				Now you can close the animator window and view the scene window again. In the hierarchy window select the main GameObject you created and renamed in the
-				beginning. In the inspector window animator section, click the circle next to "Controller" and choose the animator controller you created before. Right
-				below this add the Avatar which was included in the imported mesh.
+				Now you can close the animator window and view the scene window again. In the hierarchy window select
+				the main GameObject you created and renamed in the beginning. In the inspector window animator section,
+				click the circle next to "Controller" and choose the animator controller you created before. Right below
+				this add the Avatar which was included in the imported mesh.
 			</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="skinned-mesh-renderer-1">Skinned Mesh Renderer</h4>
+			<h4
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
+				id="skinned-mesh-renderer-1"
+			>
+				Skinned Mesh Renderer
+			</h4>
 			<p class="mt-4">
-				Select the GameObject you created inside the main one, the one which has the Skinned Mesh Renderer component. In the inspector window skinned mesh
-				renderer section click the circle next to "Mesh" and select your imported mesh. The magenta mesh should be visible in the scene window.
+				Select the GameObject you created inside the main one, the one which has the Skinned Mesh Renderer
+				component. In the inspector window skinned mesh renderer section click the circle next to "Mesh" and
+				select your imported mesh. The magenta mesh should be visible in the scene window.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="optimize-transform-hierarchy">
+			<h3
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
+				id="optimize-transform-hierarchy"
+			>
 				Optimize Transform Hierarchy
 			</h3>
 			<p class="mt-4">
-				In the hierarchy window select the main GameObject you created and renamed in the beginning. In the inspector window animator section, click the gear
-				icon in the top right and click "Optimize Transform Hierarchy". This may visually break your mesh, but once the animation plays it should appear
-				correctly.
+				In the hierarchy window select the main GameObject you created and renamed in the beginning. In the
+				inspector window animator section, click the gear icon in the top right and click "Optimize Transform
+				Hierarchy". This may visually break your mesh, but once the animation plays it should appear correctly.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="material">Material</h3>
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="material">
+				Material
+			</h3>
 			<p class="mt-4">
-				In the projects window, drag and drop your diffuse texture into the assets folder. Now select the materials folder and select the default material or
-				create a new one. In the inspector window click the circle next to "Albedo" and pick your texture. Now you can drag &amp; drop this material onto your
-				mesh. The texture can be deleted later so it doesn't take up space in the prefab asset bundle.
+				In the projects window, drag and drop your diffuse texture into the assets folder. Now select the
+				materials folder and select the default material or create a new one. In the inspector window click the
+				circle next to "Albedo" and pick your texture. Now you can drag &amp; drop this material onto your mesh.
+				The texture can be deleted later so it doesn't take up space in the prefab asset bundle.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="play">Play</h3>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="play">
+				Play
+			</h3>
+			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
-						Now you can click the play button on the top toolbar. Open the animator window and set the speed parameter to 1.0 and look at the scene window, now
-						the animation should be playing.
+						Now you can click the play button on the top toolbar. Open the animator window and set the speed
+						parameter to 1.0 and look at the scene window, now the animation should be playing.
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/mod/cal/unity3.jpg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.unity3.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.unity3}
-							naturalHeight={540}
-							naturalWidth={960}
-							srcWidths={[300, 400, 500, 600, 800, 900]}
 							alt="Still of animation being played in Unity Editor"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-							class="h-auto w-full aspect-video object-cover"
-							loading="eager"
+							class="w-full h-auto"
 						/></a
 					><p class="explanation">Still of animation being played in Unity Editor.</p>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="prefab-asset-bundle">Prefab &amp; Asset Bundle</h3>
+			<h3
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
+				id="prefab-asset-bundle"
+			>
+				Prefab &amp; Asset Bundle
+			</h3>
 			<p class="mt-4">
-				In the hierarchy window select the main GameObject you created and renamed in the beginning, drag it into the project window assets folder and click it.
-				In the bottom of the inspector window click the AssetBundle dropdown and click "New" and give it a unique name, it can't be the same as any other asset
+				In the hierarchy window select the main GameObject you created and renamed in the beginning, drag it
+				into the project window assets folder and click it. In the bottom of the inspector window click the
+				AssetBundle dropdown and click "New" and give it a unique name, it can't be the same as any other asset
 				bundle of any other asset.
 			</p>
-			<p class="mt-4">In the project window assets folder create two new folders - one called "AssetBundles" and the other called "Editor".</p>
+			<p class="mt-4">
+				In the project window assets folder create two new folders - one called "AssetBundles" and the other
+				called "Editor".
+			</p>
 			<p class="mt-4">
 				<Link
 					classes=""
 					href="https://drive.google.com/open?id=1piP7A5ftUjCmJlQeWSCLrCAamWaegOT7"
 					text="Download the CreateAssetBundles script"
 					theme="externallink"
-				/> and drag &amp; drop it into projects window "Editor" folder you just created. Then in the top menu click Assets &gt; Build AssetBundles
+				/> and drag &amp; drop it into projects window "Editor" folder you just created. Then in the top menu
+				click Assets &gt; Build AssetBundles
 			</p>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="import-test">Import &amp; Test</h2>
+			<h2
+				class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400"
+				id="import-test"
+			>
+				Import &amp; Test
+			</h2>
 			<p class="mt-4">You can now import the building into the game using the asset editor as usual.</p>
-			<p class="mt-4">Remember that your asset name should be exactly the same as the name you chose for the main GameObject in Unity Editor.</p>
 			<p class="mt-4">
-				Once you have imported and saved your asset, quit the game. Go to the folder where your unity project is &gt; Assets &gt; AssetBundles and copy the
-				asset bundle (but not the manifest or meta files) you named in Unity Editor before. Now go to your local assets folder, create a new folder, put the
-				.crp of the asset you just saved and also the asset bundle in this folder. Rename the asset bundle file to "animations.unity3d".
+				Remember that your asset name should be exactly the same as the name you chose for the main GameObject
+				in Unity Editor.
 			</p>
-			<p class="mt-4">Open the game and test your asset, the asset may need power and some time to start animating.</p>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="publish">Publish</h2>
 			<p class="mt-4">
-				You can publish the asset as usual, but you must include the asset bundle in the content folder. Make sure the mod is enabled while you publish the
-				asset, this will add a custom tag which can be used to find all custom animation loader assets in the steam workshop.
+				Once you have imported and saved your asset, quit the game. Go to the folder where your unity project is
+				&gt; Assets &gt; AssetBundles and copy the asset bundle (but not the manifest or meta files) you named
+				in Unity Editor before. Now go to your local assets folder, create a new folder, put the .crp of the
+				asset you just saved and also the asset bundle in this folder. Rename the asset bundle file to
+				"animations.unity3d".
+			</p>
+			<p class="mt-4">
+				Open the game and test your asset, the asset may need power and some time to start animating.
+			</p>
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="publish">
+				Publish
+			</h2>
+			<p class="mt-4">
+				You can publish the asset as usual, but you must include the asset bundle in the content folder. Make
+				sure the mod is enabled while you publish the asset, this will add a custom tag which can be used to
+				find all custom animation loader assets in the steam workshop.
 			</p>
 		</div>
 	</section>

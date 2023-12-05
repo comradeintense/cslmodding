@@ -3,102 +3,168 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Link from '../../components/Link.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 const title = 'Rotors Shader - Cities Skylines Modding';
-import ResponsiveImage from '../../components/ResponsiveImage.astro';
+import { Picture } from 'astro:assets';
 import { images } from '../../data/imageImports.js';
 ---
 
 <MainLayout title={title}>
 	<TableOfContents />
-	<section class="py-12 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
-		<h1 id="overview" class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400">Rotors Shader (Props & Buildings)</h1>
+	<section class="py-12 text-lg sm:ml-64 xl:mr-64 text-hit-gray-500">
+		<h1 id="overview" class="pb-8 text-4xl font-bold border-b-4 border-hit-gray-600 text-hit-gray-400">
+			Rotors Shader (Props & Buildings)
+		</h1>
 		<div class="content">
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="about">About</h2>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="about">
+				About
+			</h2>
+			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
-						Unlike regular shaders, the rotors shader supports semi-transparency, therefore it can be used for transparent glass, fake water, or anything else
-						that requires semi-transparency.
+						Unlike regular shaders, the rotors shader supports semi-transparency, therefore it can be used
+						for transparent glass, fake water, or anything else that requires semi-transparency.
 					</p><p class="mt-4">
-						It's usually used for props, buildings, and building sub-meshes which are a part of a bigger asset, such as a glass windows sub-building for a
-						normal building.
-					</p><p class="mt-4">This article assumes you are familiar with regular prop and building asset creation.</p>
+						It's usually used for props, buildings, and building sub-meshes which are a part of a bigger
+						asset, such as a glass windows sub-building for a normal building.
+					</p><p class="mt-4">
+						This article assumes you are familiar with regular prop and building asset creation.
+					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/shader/rotors-transparent.jpeg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.rotortransparent.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.rotortransparent}
-							naturalHeight={420}
-							naturalWidth={760}
-							srcWidths={[300, 400, 500, 600, 700]}
 							alt="Rotors shader used for glass and fake water"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-							class="h-auto w-full aspect-video object-cover"
+							class="w-full h-auto"
 							loading="eager"
 						/></a
 					><p class="explanation">Rotors shader used for glass and fake water.</p>
 				</div>
 			</div>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="limitations">Limitations</h2>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="lighting">Lighting</h3>
+			<h2
+				class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400"
+				id="limitations"
+			>
+				Limitations
+			</h2>
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="lighting">
+				Lighting
+			</h3>
 			<p class="mt-4">
-				Rotors shader doesn't receive shadows from other objects, meaning it will look unnaturally bright when in the shadow. Also, it only receives
-				illumination from the sun, therefore it will be black when facing away from the sun, which is why it's recommended to use a dark diffuse texture.
+				Rotors shader doesn't receive shadows from other objects, meaning it will look unnaturally bright when
+				in the shadow. Also, it only receives illumination from the sun, therefore it will be black when facing
+				away from the sun, which is why it's recommended to use a dark diffuse texture.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="shadows">Shadows</h3>
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="shadows">
+				Shadows
+			</h3>
 			<p class="mt-4">
-				The shadows for semi-transparent parts will not be semi-visible, they will only be fully visible when the opacity is above 50% (128 on alpha map) and
-				invisible below that.
+				The shadows for semi-transparent parts will not be semi-visible, they will only be fully visible when
+				the opacity is above 50% (128 on alpha map) and invisible below that.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="reversed-render-order">Reversed Render Order</h3>
+			<h3
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
+				id="reversed-render-order"
+			>
+				Reversed Render Order
+			</h3>
 			<p class="mt-4">
-				This means if you have multiple faces on top of each other, the furthest one will render on top of the closest one. This is not very obvious if the
-				object is highly transparent. If the object is split into multiple props, buildings, or sub-meshes which are far enough apart then it won't have this
-				problem.
+				This means if you have multiple faces on top of each other, the furthest one will render on top of the
+				closest one. This is not very obvious if the object is highly transparent. If the object is split into
+				multiple props, buildings, or sub-meshes which are far enough apart then it won't have this problem.
 			</p>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="script">Script</h2>
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="script">
+				Script
+			</h2>
 			<p class="mt-4">
 				To change the shader of your prop, building, or sub-mesh to rotors, you need to run <Link
 					classes=""
 					href="https://gist.github.com/ronyx69/20070de77a0dc02fb669be0ff5365eb4"
 					text="one of these scripts"
 					theme="externallink"
-				/> using the <Link classes="" href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484" text="ModTools" theme="externallink" /> console <span
-					class="key">F7</span
-				>.
+				/> using the <Link
+					classes=""
+					href="https://steamcommunity.com/sharedfiles/filedetails/?id=450877484"
+					text="ModTools"
+					theme="externallink"
+				/> console <span class="key">F7</span>.
 			</p>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="mesh">Mesh</h2>
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="mesh">
+				Mesh
+			</h2>
 			<p class="mt-4">
-				There's nothing different about the mesh compared to regular assets, but it's possible to use the vertex color red channel to control the opacity,
-				although for almost all cases using the alpha texture makes more sense.
+				There's nothing different about the mesh compared to regular assets, but it's possible to use the vertex
+				color red channel to control the opacity, although for almost all cases using the alpha texture makes
+				more sense.
 			</p>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="textures">Textures</h2>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="diffuse">Diffuse</h4>
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="textures">
+				Textures
+			</h2>
+			<h4
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
+				id="diffuse"
+			>
+				Diffuse
+			</h4>
 			<p class="mt-4">Works like any diffuse texture.</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="alpha">Alpha</h4>
-			<p class="mt-4">Controls transparency, white is fully opaque, black is invisible, shades of gray are semi-transparent.</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="color">Color</h4>
-			<p class="mt-4">Rotors shader only uses the first color variation, so it's not very useful.</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="illumination">Illumination</h4>
+			<h4
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
+				id="alpha"
+			>
+				Alpha
+			</h4>
 			<p class="mt-4">
-				The illumination is unusual and looks different based on time of day. For buildings, remember to import a black illumination map, as it will default to
-				a light gray (192).
+				Controls transparency, white is fully opaque, black is invisible, shades of gray are semi-transparent.
 			</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="normal">Normal</h4>
+			<h4
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
+				id="color"
+			>
+				Color
+			</h4>
+			<p class="mt-4">Rotors shader only uses the first color variation, so it's not very useful.</p>
+			<h4
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
+				id="illumination"
+			>
+				Illumination
+			</h4>
+			<p class="mt-4">
+				The illumination is unusual and looks different based on time of day. For buildings, remember to import
+				a black illumination map, as it will default to a light gray (192).
+			</p>
+			<h4
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
+				id="normal"
+			>
+				Normal
+			</h4>
 			<p class="mt-4">Works like any normal map.</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="specular">Specular</h4>
+			<h4
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
+				id="specular"
+			>
+				Specular
+			</h4>
 			<p class="mt-4">Works like any specular map.</p>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="lod">LOD</h2>
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="lod">
+				LOD
+			</h2>
 			<p class="mt-4">The rotors shader doesn't work for LOD models.</p>
-			<div class="flex gap-2 mt-6 items-start justify-start">
+			<div class="flex items-start justify-start gap-2 mt-6">
 				<svg
-					class="w-8 h-8 text-hoverlink flex-shrink-0"
+					class="flex-shrink-0 w-8 h-8 text-hoverlink"
 					fill="none"
 					stroke="currentColor"
 					stroke-width="1.5"
 					viewBox="0 0 24 24"
 					xmlns="http://www.w3.org/2000/svg"
 				>
-					<path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round"></path>
+					<path
+						d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+						stroke-linecap="round"
+						stroke-linejoin="round"></path>
 				</svg>
 				<p class="italic">
 					<em>
@@ -111,9 +177,14 @@ import { images } from '../../data/imageImports.js';
 					</em>
 				</p>
 			</div>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="examples">Examples</h2>
-			<p class="mt-4">You can download the source files of some example assets, which use rotors shader for some parts of the asset.</p>
-			<div class="content-download mt-4">
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="examples">
+				Examples
+			</h2>
+			<p class="mt-4">
+				You can download the source files of some example assets, which use rotors shader for some parts of the
+				asset.
+			</p>
+			<div class="mt-4 content-download">
 				<Link
 					classes=""
 					href="https://drive.google.com/drive/folders/0B6Ccf1N5h5f7cmwzd09MdE9nQkk?resourcekey=0-0aM4mUa7xZyYB6KZqqAsvg&usp=sharing"
@@ -121,11 +192,21 @@ import { images } from '../../data/imageImports.js';
 					theme="downloadbutton"
 				/>
 			</div>
-			<div class="content-download mt-4">
-				<Link classes="" href="https://drive.google.com/file/d/0B6Ccf1N5h5f7ME5xbUpTR2NFNUU/view" text="Pools" theme="downloadbutton" />
+			<div class="mt-4 content-download">
+				<Link
+					classes=""
+					href="https://drive.google.com/file/d/0B6Ccf1N5h5f7ME5xbUpTR2NFNUU/view"
+					text="Pools"
+					theme="downloadbutton"
+				/>
 			</div>
-			<div class="content-download mt-4">
-				<Link classes="" href="https://drive.google.com/file/d/0B6Ccf1N5h5f7b3FIYUZvUHRJbjg/view" text="Bauhaus Dessau" theme="downloadbutton" />
+			<div class="mt-4 content-download">
+				<Link
+					classes=""
+					href="https://drive.google.com/file/d/0B6Ccf1N5h5f7b3FIYUZvUHRJbjg/view"
+					text="Bauhaus Dessau"
+					theme="downloadbutton"
+				/>
 			</div>
 		</div>
 	</section>

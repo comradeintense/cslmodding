@@ -3,129 +3,198 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Link from '../../components/Link.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 const title = 'Flag Shader - Cities Skylines Modding';
-import ResponsiveImage from '../../components/ResponsiveImage.astro';
+import { Picture } from 'astro:assets';
 import { images } from '../../data/imageImports.js';
 ---
 
 <MainLayout title={title}>
 	<TableOfContents />
-	<section class="py-12 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
-		<h1 id="overview" class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400">Flag Shader</h1>
+	<section class="py-12 text-lg sm:ml-64 xl:mr-64 text-hit-gray-500">
+		<h1 id="overview" class="pb-8 text-4xl font-bold border-b-4 border-hit-gray-600 text-hit-gray-400">
+			Flag Shader
+		</h1>
 		<div class="content">
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="about">About</h2><div
-				class="flex flex-col lg:flex-row gap-6 mt-4"
-			>
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="about">
+				About
+			</h2><div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
-					<p>The flag shader can be used to create props which contain something moving in the wind, such as flags or some kind of cloth.</p><p class="mt-4">
-						It's also possible to have multiple textures inside the same flag prop, which change based on the position of the prop, just like the vanilla flags
-						do.
+					<p>
+						The flag shader can be used to create props which contain something moving in the wind, such as
+						flags or some kind of cloth.
+					</p><p class="mt-4">
+						It's also possible to have multiple textures inside the same flag prop, which change based on
+						the position of the prop, just like the vanilla flags do.
 					</p><p class="mt-4">This article assumes you are familiar with regular prop asset creation.</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/shader/flag/flag1.jpeg" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.flag1.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.flag1}
-							naturalHeight={1080}
-							naturalWidth={1920}
-							srcWidths={[300, 400, 500, 600, 800, 1000, 1200, 1500, 1900]}
 							alt="Various example props using the flag shader"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-							class="h-auto w-full aspect-video object-cover"
+							class="w-full h-auto"
 							loading="eager"
 						/></a
 					><p class="explanation">Various example props using the flag shader.</p>
 				</div>
 			</div>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="textures">Textures</h2>
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="textures">
+				Textures
+			</h2>
 			<p class="mt-4">The textures work just like they would for any normal prop.</p>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="mesh">Mesh</h2>
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="mesh">
+				Mesh
+			</h2>
 			<p class="mt-4">The mesh is modeled as usual.</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="format">Format</h3>
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="format">
+				Format
+			</h3>
 			<p class="mt-4">Use a format which supports vertex colors, such as FBX (2015 or older) or DAE.</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="multiple-flag-textures">Multiple Flag Textures</h3>
-			<p class="mt-4">If you have multiple flag textures on your texture, the flag should be UV mapped to the bottom right flag.</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="vertex-paint">Vertex Paint</h3><div
-				class="flex flex-col lg:flex-row gap-6 mt-4"
+			<h3
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
+				id="multiple-flag-textures"
 			>
+				Multiple Flag Textures
+			</h3>
+			<p class="mt-4">
+				If you have multiple flag textures on your texture, the flag should be UV mapped to the bottom right
+				flag.
+			</p>
+			<h3
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
+				id="vertex-paint"
+			>
+				Vertex Paint
+			</h3><div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
-					<p>The vertex colors define which parts use the wind movement and multiple flag texture UV mapping.</p><p class="mt-4">
-						If you're not planning to use multiple flag textures inside the same prop, like vanilla flags, then you can use the full range from white to black
-						to define how much movement each vertex will have.
+					<p>
+						The vertex colors define which parts use the wind movement and multiple flag texture UV mapping.
+					</p><p class="mt-4">
+						If you're not planning to use multiple flag textures inside the same prop, like vanilla flags,
+						then you can use the full range from white to black to define how much movement each vertex will
+						have.
 					</p><p class="mt-4">White means no movement and black means maximum movement.</p><p class="mt-4">
-						If you will use multiple flag textures inside the same prop, then you can't use any shade of gray, as it will break the UV mapping when the flag
-						tries to change textures. In that case, the flag must be completely black, and you can't control the strength of the wind effect.
+						If you will use multiple flag textures inside the same prop, then you can't use any shade of
+						gray, as it will break the UV mapping when the flag tries to change textures. In that case, the
+						flag must be completely black, and you can't control the strength of the wind effect.
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/shader/flag/flag2.png" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.flag2.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.flag2}
-							naturalHeight={793}
-							naturalWidth={1024}
-							srcWidths={[300, 400, 500, 600, 800, 1000]}
 							alt="Vertex paint of example props"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-							class="h-auto w-full aspect-video object-cover"
-							loading="eager"
+							class="w-full h-auto"
 						/></a
-					><p class="explanation">Vertex paint of example props. Only the flag on the left uses multiple flag textures in the same prop.</p>
+					><p class="explanation">
+						Vertex paint of example props. Only the flag on the left uses multiple flag textures in the same
+						prop.
+					</p>
 				</div>
 			</div>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="lod">LOD</h3>
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="lod">
+				LOD
+			</h3>
 			<p class="mt-4">
-				The LOD also moves in the wind, so it should also be treated as described above. The LOD texture should match the main texture, but it can be scaled
-				down to a lower resolution.
+				The LOD also moves in the wind, so it should also be treated as described above. The LOD texture should
+				match the main texture, but it can be scaled down to a lower resolution.
 			</p>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="script">Script</h2>
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="script">
+				Script
+			</h2>
 			<p class="mt-4">
-				You can find the script <Link classes="" href="https://gist.github.com/ronyx69/529244047b2a28f29b5aebe89184cfb0" text="here" theme="externallink" />.
+				You can find the script <Link
+					classes=""
+					href="https://gist.github.com/ronyx69/529244047b2a28f29b5aebe89184cfb0"
+					text="here"
+					theme="externallink"
+				/>.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="flag-grid">Flag Grid</h3><div
-				class="flex flex-col lg:flex-row gap-6 mt-4"
-			>
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="flag-grid">
+				Flag Grid
+			</h3><div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
-						If you're using multiple flag textures for the same prop and want them to change based on position, just like the vanilla flags, you must have the
-						flag textures in a consistent grid. If you're not using multiple flag textures for the same prop, then you can leave the flag grid parameters at
-						default values.
+						If you're using multiple flag textures for the same prop and want them to change based on
+						position, just like the vanilla flags, you must have the flag textures in a consistent grid. If
+						you're not using multiple flag textures for the same prop, then you can leave the flag grid
+						parameters at default values.
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/shader/flag/flag3.png" target="_blank">
-						<ResponsiveImage
+						<Picture
+							width={images.flag3.width / 2}
+							densities={[1.5, 2]}
+							formats={['avif', 'webp']}
 							src={images.flag3}
-							naturalHeight={512}
-							naturalWidth={1024}
-							srcWidths={[300, 400, 500, 600, 800, 1000]}
 							alt="A grid of flags for an example prop"
-							format="webp"
-							sizes="(min-width: 1440px) 248px, (min-width: 1200px) 183px, (min-width: 1000px) 205px, (min-width: 780px) 448px, (min-width: 580px) 276px, calc(100vw - 48px)"
-							class="h-auto w-full aspect-video object-cover"
-							loading="eager"
+							class="w-full h-auto"
 						/></a
-					><p class="explanation">A grid of flags for an example prop. 5 columns, 1 row, top left corner is (0,0), bottom right corner is (1024, 364).</p>
+					><p class="explanation">
+						A grid of flags for an example prop. 5 columns, 1 row, top left corner is (0,0), bottom right
+						corner is (1024, 364).
+					</p>
 				</div>
 			</div>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="columns-and-rows">Columns and Rows</h4>
+			<h4
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
+				id="columns-and-rows"
+			>
+				Columns and Rows
+			</h4>
 			<p class="mt-4">Defines how many columns and rows the grid of flags on the texture has.</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="top-left-and-bottom-right">
+			<h4
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
+				id="top-left-and-bottom-right"
+			>
 				Top Left and Bottom Right
 			</h4>
 			<p class="mt-4">
-				Defines the X and Y coordinates of the top left and bottom right corners of the entire flag grid on the texture, in pixels, as measured from the top
-				left corner of the texture which is 0,0.
+				Defines the X and Y coordinates of the top left and bottom right corners of the entire flag grid on the
+				texture, in pixels, as measured from the top left corner of the texture which is 0,0.
 			</p>
-			<h3 class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4" id="movement-parameters">Movement Parameters</h3>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="strength">Strength</h4>
+			<h3
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
+				id="movement-parameters"
+			>
+				Movement Parameters
+			</h3>
+			<h4
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
+				id="strength"
+			>
+				Strength
+			</h4>
 			<p class="mt-4">
-				This will recalculate the vertex paint to reduce the strength of the wind movement. If you're using multiple flag textures on one prop, you can't
-				control the strength, as it will break the UV mapping when the flag tries to change textures.
+				This will recalculate the vertex paint to reduce the strength of the wind movement. If you're using
+				multiple flag textures on one prop, you can't control the strength, as it will break the UV mapping when
+				the flag tries to change textures.
 			</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="axis">Axis</h4>
+			<h4 class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12" id="axis">
+				Axis
+			</h4>
 			<p class="mt-4">This defines the axis orientation in X Y Z, around which the wind movement happens.</p>
-			<p class="mt-4">The axis orientation is defined by a vector, so if you set both X and Y to the same value, the axis will be rotated 45°.</p>
-			<p class="mt-4">Keep in mind that ingame the Y-axis represents height, so the Y and Z-axis are swapped compared to what 3D software usually uses.</p>
-			<h4 class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12" id="pivot">Pivot</h4>
-			<p class="mt-4">This defines the pivot, where the axis is moved to, so you can move the axis, around which the movement happens.</p>
+			<p class="mt-4">
+				The axis orientation is defined by a vector, so if you set both X and Y to the same value, the axis will
+				be rotated 45°.
+			</p>
+			<p class="mt-4">
+				Keep in mind that ingame the Y-axis represents height, so the Y and Z-axis are swapped compared to what
+				3D software usually uses.
+			</p>
+			<h4
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
+				id="pivot"
+			>
+				Pivot
+			</h4>
+			<p class="mt-4">
+				This defines the pivot, where the axis is moved to, so you can move the axis, around which the movement
+				happens.
+			</p>
 		</div>
 	</section>
 </MainLayout>

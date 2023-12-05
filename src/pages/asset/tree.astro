@@ -9,22 +9,22 @@ import { images } from '../../data/imageImports.js';
 
 <MainLayout title={title}>
 	<TableOfContents />
-	<section class="py-12 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
+	<section class="py-12 text-lg sm:ml-64 xl:mr-64 text-hit-gray-500">
 		<div class="content">
 			<h1
 				id="overview"
-				class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400"
+				class="pb-8 text-4xl font-bold border-b-4 border-hit-gray-600 text-hit-gray-400"
 			>
 				Tree Asset Creation
 			</h1>
 			<h2
-				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400"
 				id="mesh"
 			>
 				Mesh
 			</h2>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="main-mesh"
 			>
 				Main Mesh
@@ -39,9 +39,9 @@ import { images } from '../../data/imageImports.js';
 				It's created using 3D modeling software such as Blender, 3ds
 				Max, Maya or SketchUp.
 			</p>
-			<div class="flex gap-2 mt-6 items-start justify-start">
+			<div class="flex items-start justify-start gap-2 mt-6">
 				<svg
-					class="w-8 h-8 text-hoverlink flex-shrink-0"
+					class="flex-shrink-0 w-8 h-8 text-hoverlink"
 					fill="none"
 					stroke="currentColor"
 					stroke-width="1.5"
@@ -61,12 +61,12 @@ import { images } from '../../data/imageImports.js';
 				</p>
 			</div>
 			<h4
-				class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
 				id="model-complexity"
 			>
 				Model Complexity
 			</h4>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
 						It's recommended to stay within reasonable triangle
@@ -84,16 +84,16 @@ import { images } from '../../data/imageImports.js';
 							formats={['avif', 'webp']}
 							src={images.treetris}
 							alt="Triangle counts for a couple of vanilla trees"
-							class="h-auto w-full"
+							class="w-full h-auto"
 						/></a
 					><p class="explanation">
 						Triangle counts for a couple of vanilla trees.
 					</p>
 				</div>
 			</div>
-			<div class="flex gap-2 mt-6 items-start justify-start">
+			<div class="flex items-start justify-start gap-2 mt-6">
 				<svg
-					class="w-8 h-8 text-hoverlink flex-shrink-0"
+					class="flex-shrink-0 w-8 h-8 text-hoverlink"
 					fill="none"
 					stroke="currentColor"
 					stroke-width="1.5"
@@ -117,12 +117,12 @@ import { images } from '../../data/imageImports.js';
 				</p>
 			</div>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="uv-mapping"
 			>
 				UV Mapping
 			</h3>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
 						You are allowed to UV map outside the 0-1 area (main
@@ -137,7 +137,7 @@ import { images } from '../../data/imageImports.js';
 							formats={['avif', 'webp']}
 							src={images.uv_main}
 							alt="Example UV mapping using visible horizontal tiling on the bottom"
-							class="h-auto w-full"
+							class="w-full h-auto"
 						/></a
 					><p class="explanation">
 						Example UV mapping using visible horizontal tiling on
@@ -146,7 +146,7 @@ import { images } from '../../data/imageImports.js';
 				</div>
 			</div>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="pivot-origin"
 			>
 				Pivot / Origin
@@ -157,7 +157,7 @@ import { images } from '../../data/imageImports.js';
 				using a red/green/blue axis gizmo.
 			</p>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="transform"
 			>
 				Transform
@@ -177,7 +177,7 @@ import { images } from '../../data/imageImports.js';
 				/>, and exporting only the selected object.
 			</p>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="vertex-paint"
 			>
 				Vertex Paint
@@ -199,7 +199,7 @@ import { images } from '../../data/imageImports.js';
 				<span class="key">F7</span> console.
 			</p>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="formats"
 			>
 				Formats
@@ -210,7 +210,7 @@ import { images } from '../../data/imageImports.js';
 				<li class="mt-4">DAE</li>
 			</ul>
 			<h2
-				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400"
 				id="textures"
 			>
 				Textures
@@ -219,7 +219,7 @@ import { images } from '../../data/imageImports.js';
 				These determine the color and material properties of your tree.
 			</p>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="resolution"
 			>
 				Resolution
@@ -236,12 +236,12 @@ import { images } from '../../data/imageImports.js';
 				allowed resolution is 32x32.
 			</p>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="diffuse"
 			>
 				Diffuse
 			</h3>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>The main color and texture of your asset.</p><p
 						class="mt-4"
@@ -266,7 +266,7 @@ import { images } from '../../data/imageImports.js';
 								formats={['avif', 'webp']}
 								src={images.treetextures}
 								alt="Textures for a couple of vanilla trees"
-								class="h-auto w-full"
+								class="w-full h-auto"
 							/></a
 						><p class="explanation">
 							Textures for a couple of vanilla trees.
@@ -282,19 +282,19 @@ import { images } from '../../data/imageImports.js';
 								formats={['avif', 'webp']}
 								src={images.color_guidelines}
 								alt="Color guidelines"
-								class="h-auto w-full"
+								class="w-full h-auto"
 							/></a
 						><p class="explanation">Color guidelines.</p>
 					</div>
 				</div>
 			</div>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="alpha"
 			>
 				Alpha
 			</h3>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
 						Transparency, white means opaque or visible, black means
@@ -315,7 +315,7 @@ import { images } from '../../data/imageImports.js';
 								formats={['avif', 'webp']}
 								src={images.textures_alpha}
 								alt="Example alpha texture for some railings and metal beams"
-								class="h-auto w-full"
+								class="w-full h-auto"
 							/></a
 						><p class="explanation">
 							Example alpha texture for some railings and metal
@@ -332,7 +332,7 @@ import { images } from '../../data/imageImports.js';
 								formats={['avif', 'webp']}
 								src={images.textures_alpha_rail}
 								alt="Example alpha texture for some railings and metal beams"
-								class="h-auto w-full "
+								class="w-full h-auto "
 							/></a
 						><p class="explanation">
 							Using lighter values for the invisible parts will
@@ -343,7 +343,7 @@ import { images } from '../../data/imageImports.js';
 				</div>
 			</div>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="color"
 			>
 				Color
@@ -364,12 +364,12 @@ import { images } from '../../data/imageImports.js';
 				any snow on winter maps.
 			</p>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="normal"
 			>
 				Normal
 			</h3>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
 						Also sometimes called a bump map, adds fake depth or
@@ -417,7 +417,7 @@ import { images } from '../../data/imageImports.js';
 								formats={['avif', 'webp']}
 								src={images.treenormal}
 								alt="Example normal map for a plant"
-								class="h-auto w-full"
+								class="w-full h-auto"
 							/></a
 						><p class="explanation">
 							Example normal map for a plant.
@@ -432,7 +432,7 @@ import { images } from '../../data/imageImports.js';
 								formats={['avif', 'webp']}
 								src={images.textures_normal_problem}
 								alt="Example normal map problem"
-								class="h-auto w-full "
+								class="w-full h-auto "
 							/></a
 						><p class="explanation">
 							Problem: normal maps appear incorrectly if the asset
@@ -442,7 +442,7 @@ import { images } from '../../data/imageImports.js';
 				</div>
 			</div>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="format"
 			>
 				Format
@@ -461,9 +461,9 @@ import { images } from '../../data/imageImports.js';
 				File (8-bit)" feature in the Photoshop Export As window, as that
 				creates an indexed color image, not an 8 bits/channel one.
 			</p>
-			<div class="flex gap-2 mt-6 items-start justify-start">
+			<div class="flex items-start justify-start gap-2 mt-6">
 				<svg
-					class="w-8 h-8 text-orange flex-shrink-0"
+					class="flex-shrink-0 w-8 h-8 text-orange"
 					fill="none"
 					stroke="currentColor"
 					stroke-width="1.5"
@@ -484,7 +484,7 @@ import { images } from '../../data/imageImports.js';
 				</p>
 			</div>
 			<h2
-				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400"
 				id="lod"
 			>
 				LOD
@@ -495,13 +495,13 @@ import { images } from '../../data/imageImports.js';
 				the camera is rotated.
 			</p>
 			<h2
-				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400"
 				id="import"
 			>
 				Import
 			</h2>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="naming"
 			>
 				Naming
@@ -516,12 +516,12 @@ import { images } from '../../data/imageImports.js';
 				like meshname_d.png.
 			</p>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="import-folder"
 			>
 				Import Folder
 			</h3>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
 						You should place the mesh and texture files in the
@@ -549,13 +549,13 @@ import { images } from '../../data/imageImports.js';
 							formats={['avif', 'webp']}
 							src={images.treeimportfolder}
 							alt="Files ready for import"
-							class="h-auto w-full"
+							class="w-full h-auto"
 						/></a
 					><p class="explanation">Files ready for import.</p>
 				</div>
 			</div>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="template"
 			>
 				Template
@@ -573,9 +573,9 @@ import { images } from '../../data/imageImports.js';
 				<li class="mt-4">max/min scale</li>
 				<li class="mt-4">disable snow toggle</li>
 			</ul>
-			<div class="flex gap-2 mt-6 items-start justify-start">
+			<div class="flex items-start justify-start gap-2 mt-6">
 				<svg
-					class="w-8 h-8 text-hoverlink flex-shrink-0"
+					class="flex-shrink-0 w-8 h-8 text-hoverlink"
 					fill="none"
 					stroke="currentColor"
 					stroke-width="1.5"
@@ -600,12 +600,12 @@ import { images } from '../../data/imageImports.js';
 				</p>
 			</div>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="import-1"
 			>
 				Import
 			</h3>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
 						After you choose your mesh, depending on how it was
@@ -624,16 +624,16 @@ import { images } from '../../data/imageImports.js';
 							formats={['avif', 'webp']}
 							src={images.treeimportmesh}
 							alt="Importing a mesh in asset importer"
-							class="h-auto w-full"
+							class="w-full h-auto"
 						/></a
 					><p class="explanation">
 						Importing a mesh in asset importer.
 					</p>
 				</div>
 			</div>
-			<div class="flex gap-2 mt-6 items-start justify-start">
+			<div class="flex items-start justify-start gap-2 mt-6">
 				<svg
-					class="w-8 h-8 text-orange flex-shrink-0"
+					class="flex-shrink-0 w-8 h-8 text-orange"
 					fill="none"
 					stroke="currentColor"
 					stroke-width="1.5"
@@ -661,9 +661,9 @@ import { images } from '../../data/imageImports.js';
 					</em>
 				</p>
 			</div>
-			<div class="flex gap-2 mt-6 items-start justify-start">
+			<div class="flex items-start justify-start gap-2 mt-6">
 				<svg
-					class="w-8 h-8 text-orange flex-shrink-0"
+					class="flex-shrink-0 w-8 h-8 text-orange"
 					fill="none"
 					stroke="currentColor"
 					stroke-width="1.5"
@@ -684,9 +684,9 @@ import { images } from '../../data/imageImports.js';
 					</em>
 				</p>
 			</div>
-			<div class="flex gap-2 mt-6 items-start justify-start">
+			<div class="flex items-start justify-start gap-2 mt-6">
 				<svg
-					class="w-8 h-8 text-orange flex-shrink-0"
+					class="flex-shrink-0 w-8 h-8 text-orange"
 					fill="none"
 					stroke="currentColor"
 					stroke-width="1.5"
@@ -708,13 +708,13 @@ import { images } from '../../data/imageImports.js';
 				</p>
 			</div>
 			<h2
-				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400"
 				id="editor"
 			>
 				Editor
 			</h2>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="general-properties"
 			>
 				General Properties
@@ -729,19 +729,19 @@ import { images } from '../../data/imageImports.js';
 				<li class="mt-4">disable snow toggle</li>
 			</ul>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="material-properties"
 			>
 				Material properties
 			</h3>
 			<p class="mt-4">You can toggle snow on winter maps.</p>
 			<h2
-				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400"
 				id="editor-advanced"
 			>
 				Editor Advanced
 			</h2>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
 						Various things can be changed with the use of <Link
@@ -765,7 +765,7 @@ import { images } from '../../data/imageImports.js';
 							formats={['avif', 'webp']}
 							src={images.modtools}
 							alt="ModTools scene explorer and console"
-							class="h-auto w-full"
+							class="w-full h-auto"
 						/>
 					</a><p class="explanation">
 						ModTools scene explorer and console.
@@ -773,7 +773,7 @@ import { images } from '../../data/imageImports.js';
 				</div>
 			</div>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="ui-priority"
 			>
 				UI Priority
@@ -792,7 +792,7 @@ import { images } from '../../data/imageImports.js';
 				/>.
 			</p>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="wind-sway"
 			>
 				Wind Sway
@@ -820,12 +820,12 @@ import { images } from '../../data/imageImports.js';
 				</li>
 			</ul>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="variations"
 			>
 				Variations
 			</h3>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
 						You can add multiple tree assets to your tree as
@@ -862,7 +862,7 @@ import { images } from '../../data/imageImports.js';
 							formats={['avif', 'webp']}
 							src={images.treevariations}
 							alt="Tree variations menu in the asset editor"
-							class="h-auto w-full"
+							class="w-full h-auto"
 						/>
 					</a><p class="explanation">
 						Tree variations menu in the asset editor.
@@ -870,18 +870,18 @@ import { images } from '../../data/imageImports.js';
 				</div>
 			</div>
 			<h2
-				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400"
 				id="save"
 			>
 				Save
 			</h2>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="filename"
 			>
 				Filename
 			</h3>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
 						The filename input is on the bottom left, this is what
@@ -896,13 +896,13 @@ import { images } from '../../data/imageImports.js';
 							formats={['avif', 'webp']}
 							src={images.treesave}
 							alt="Save asset window"
-							class="h-auto w-full"
+							class="w-full h-auto"
 						/>
 					</a><p class="explanation">Save asset window.</p>
 				</div>
 			</div>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="asset-name"
 			>
 				Asset Name
@@ -912,7 +912,7 @@ import { images } from '../../data/imageImports.js';
 				for.
 			</p>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="images"
 			>
 				Images
@@ -922,7 +922,7 @@ import { images } from '../../data/imageImports.js';
 				folder icons:
 			</p>
 			<h4
-				class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
 				id="snapshot"
 			>
 				Snapshot
@@ -935,7 +935,7 @@ import { images } from '../../data/imageImports.js';
 				image, but you can change that separately when publishing.
 			</p>
 			<h4
-				class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
 				id="thumbnail-tooltip"
 			>
 				Thumbnail &amp; Tooltip
@@ -947,12 +947,12 @@ import { images } from '../../data/imageImports.js';
 				will update automatically.
 			</p>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="local-assets-folder"
 			>
 				Local Assets Folder
 			</h3>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
 						Once the asset is saved, the .crp file will appear in
@@ -976,7 +976,7 @@ import { images } from '../../data/imageImports.js';
 							formats={['avif', 'webp']}
 							src={images.local}
 							alt="CRP files in the local assets folder"
-							class="h-auto w-full "
+							class="w-full h-auto "
 						/>
 					</a><p class="explanation">
 						CRP files in the local assets folder.
@@ -984,12 +984,12 @@ import { images } from '../../data/imageImports.js';
 				</div>
 			</div>
 			<h2
-				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400"
 				id="publish"
 			>
 				Publish
 			</h2>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
 						Once you have saved the asset and reloaded the game, you
@@ -1006,7 +1006,7 @@ import { images } from '../../data/imageImports.js';
 							formats={['avif', 'webp']}
 							src={images.share}
 							alt="Share button in content manager"
-							class="h-auto w-full"
+							class="w-full h-auto"
 						/>
 					</a><p class="explanation">
 						Share button in content manager.
@@ -1014,7 +1014,7 @@ import { images } from '../../data/imageImports.js';
 				</div>
 			</div>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="title-and-description"
 			>
 				Title and Description
@@ -1023,12 +1023,12 @@ import { images } from '../../data/imageImports.js';
 				You can change these on the Steam Workshop later.
 			</p>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="steam-preview-image-and-content-folder"
 			>
 				Steam Preview Image and Content Folder
 			</h3>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
 						There is a folder icon again on the snapshot image,
@@ -1053,7 +1053,7 @@ import { images } from '../../data/imageImports.js';
 							formats={['avif', 'webp']}
 							src={images.publish}
 							alt="Publish window and content folder"
-							class="h-auto w-full"
+							class="w-full h-auto"
 						/>
 					</a><p class="explanation">
 						Publish window and content folder.
@@ -1061,7 +1061,7 @@ import { images } from '../../data/imageImports.js';
 				</div>
 			</div>
 			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
+				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="steam-workshop"
 			>
 				Steam Workshop
@@ -1079,7 +1079,7 @@ import { images } from '../../data/imageImports.js';
 				</li>
 			</ul>
 			<h2
-				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400"
 				id="update"
 			>
 				Update
@@ -1098,9 +1098,9 @@ import { images } from '../../data/imageImports.js';
 			<p class="mt-4">
 				You can also add more assets to make it a bigger pack.
 			</p>
-			<div class="flex gap-2 mt-6 items-start justify-start">
+			<div class="flex items-start justify-start gap-2 mt-6">
 				<svg
-					class="w-8 h-8 text-orange flex-shrink-0"
+					class="flex-shrink-0 w-8 h-8 text-orange"
 					fill="none"
 					stroke="currentColor"
 					stroke-width="1.5"
@@ -1123,12 +1123,12 @@ import { images } from '../../data/imageImports.js';
 				</p>
 			</div>
 			<h2
-				class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
+				class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400"
 				id="prefab-name"
 			>
 				Prefab Name
 			</h2>
-			<div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>This is not something you can change.</p><p class="mt-4">
 						It's the hidden internal name used to refer to your
@@ -1148,7 +1148,7 @@ import { images } from '../../data/imageImports.js';
 							formats={['avif', 'webp']}
 							src={images.prefab}
 							alt="Publish window and content folder"
-							class="h-auto w-full"
+							class="w-full h-auto"
 						/>
 					</a><p class="explanation">
 						Comparison between local (top) and workshop published
