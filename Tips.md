@@ -54,3 +54,18 @@ Terms of condition doesn't change URL but links (Fixed)
 
 no duplication, sepparate articles for stuff (like building/prop)
 add more padding bottom on each page
+
+
+Fixed images on all pages
+Fixed TOC changing URL, giving #links
+Replaced SVG icons with "i" instead of "!"
+Changed "Original Design" to "Original design"
+No stretched images
+Added more margin at bottom of all articles
+All images are .avif, if retarded browser then .webp, if even more retarded then default jpg/png. Images are displayed for each DPR.
+
+Todo:
+ugly i
+thumbs have gap-1 remove it
+make text wrap around thumbnail image?
+headings clickable - idk about this

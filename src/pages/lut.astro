@@ -12,9 +12,15 @@ import { images } from '../data/imageImports.js';
 	<section class="pt-12 pb-48 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
 		<h1 id="overview" class="border-b-4 border-hit-gray-600 pb-8 text-4xl font-bold text-hit-gray-400">LUT</h1>
 		<div class="content">
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="about">
-				About
-			</h2><div class="flex flex-col lg:flex-row gap-6 mt-4">
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="about">
+				<a
+					href="#about"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>About
+				</a>
+			</h2>
+
+			<div class="flex flex-col lg:flex-row gap-6 mt-4">
 				<div class="lg:w-2/3">
 					<p>
 						LUT stands for look-up table. It's a map of colors which allows applying color correction and
@@ -39,10 +45,14 @@ import { images } from '../data/imageImports.js';
 				</div>
 			</div>
 			<h4
-				class="text-xl text-hit-gray-400 font-medium border-b border-hit-gray-950 pb-4 mt-8 lg:mt-12"
+				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
 				id="folder"
 			>
-				Folder
+				<a
+					href="#folder"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Folder</a
+				>
 			</h4>
 			<p class="mt-4">The folder where you should put the LUT png is located here:</p>
 			<p class="mt-4">
@@ -56,57 +66,67 @@ import { images } from '../data/imageImports.js';
 			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="creation">
 				Creation
 			</h2>
-			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
-				id="default-lut"
+		</div>
+		<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="default-lut">
+			<a
+				href="#default-lut"
+				title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+				>Default LUT</a
 			>
-				Default LUT
-			</h3>
-			<p class="mt-4">To create an LUT, you first need to download the default LUT which has no adjustments.</p>
-			<div class="content-download mt-4">
-				<Link classes="" href="https://i.imgur.com/cgjH2nC.png" text="Download" theme="downloadbutton" />
-			</div>
-			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
-				id="adjustments"
+		</h3>
+		<p class="mt-4">To create an LUT, you first need to download the default LUT which has no adjustments.</p>
+		<div class="content-download mt-4">
+			<Link classes="" href="https://i.imgur.com/cgjH2nC.png" text="Download" theme="downloadbutton" />
+		</div>
+		<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="adjustments">
+			<a
+				href="#adjustments"
+				title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+				>Adjustments</a
 			>
-				Adjustments
-			</h3>
-			<p class="mt-4">
-				You should only apply per-pixel color adjustments, that means you cannot apply effects such as blur,
-				sharpening, clarity, highlights/shadows, and many other effects which are more than just a simple color
-				adjustment.
-			</p>
-			<p class="mt-4">
-				You can apply color adjustments such as brightness, contrast, levels, curves, exposure, vibrance,
-				saturation, hue, color balance, black &amp; white, color lookups, gradient maps, and selective color.
-			</p>
-			<h3
-				class="mt-16 text-2xl text-hit-gray-400 font-semibold border-b border-hit-gray-500 pb-4"
-				id="16 bits/channel"
+		</h3>
+		<p class="mt-4">
+			You should only apply per-pixel color adjustments, that means you cannot apply effects such as blur,
+			sharpening, clarity, highlights/shadows, and many other effects which are more than just a simple color
+			adjustment.
+		</p>
+		<p class="mt-4">
+			You can apply color adjustments such as brightness, contrast, levels, curves, exposure, vibrance,
+			saturation, hue, color balance, black &amp; white, color lookups, gradient maps, and selective color.
+		</p>
+		<h3
+			class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
+			id="16 bits/channel"
+		>
+			<a
+				href="#16 bits/channel"
+				title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+				>16 bits/channel</a
 			>
-				16 bits/channel
-			</h3>
-			<p class="mt-4">
-				When many adjustments are applied, working with a 16 bits/channel image can have the benefits of less
-				noise and banding issues. But make sure the final image is exported as 8 bits/channel, otherwise, the
-				game won't recognize it.
-			</p>
-			<h2 class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400" id="example">
-				Example
-			</h2>
-			<p class="mt-4">
-				Download a Photoshop file of an example LUT with various adjustments. Must be exported as 8 bits/channel
-				png.
-			</p>
-			<div class="content-download mt-4">
-				<Link
-					classes=""
-					href="https://drive.google.com/open?id=1JuKMQ07VkDs_ZMVoFyvaRhowQ7N-vMrt"
-					text="Download"
-					theme="downloadbutton"
-				/>
-			</div>
+		</h3>
+		<p class="mt-4">
+			When many adjustments are applied, working with a 16 bits/channel image can have the benefits of less noise
+			and banding issues. But make sure the final image is exported as 8 bits/channel, otherwise, the game won't
+			recognize it.
+		</p>
+		<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="example">
+			<a
+				href="#example"
+				title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+				>Example</a
+			>
+		</h2>
+		<p class="mt-4">
+			Download a Photoshop file of an example LUT with various adjustments. Must be exported as 8 bits/channel
+			png.
+		</p>
+		<div class="content-download mt-4">
+			<Link
+				classes=""
+				href="https://drive.google.com/open?id=1JuKMQ07VkDs_ZMVoFyvaRhowQ7N-vMrt"
+				text="Download"
+				theme="downloadbutton"
+			/>
 		</div>
 	</section>
 </MainLayout>

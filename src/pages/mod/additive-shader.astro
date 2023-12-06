@@ -10,12 +10,12 @@ import { images } from '../../data/imageImports.js';
 <MainLayout title={title}>
 	<TableOfContents />
 	<section class="pt-12 pb-48 text-lg sm:ml-64 xl:mr-64 text-hit-gray-500">
-		<h1 id="overview" class="pb-8 text-4xl font-bold border-b-4 border-hit-gray-600 text-hit-gray-400">
-			Additive Shader
-		</h1>
+		<h1 id="overview" class="pb-8 text-4xl font-bold border-b-4 border-hit-gray-600 text-hit-gray-400">Additive Shader</h1>
 		<div class="content">
 			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="about">
-				About
+				<a href="#about" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>About</a
+				>
 			</h2>
 			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
@@ -25,14 +25,12 @@ import { images } from '../../data/imageImports.js';
 							href="https://steamcommunity.com/workshop/filedetails/?id=1410003347"
 							text="The Additive Shader mod"
 							theme="externallink"
-						/> can be used to create props or vehicle sub-meshes which use the additive shader and have
-						custom turn on/off times.
+						/> can be used to create props or vehicle sub-meshes which use the additive shader and have custom turn on/off
+						times.
 					</p><p class="mt-4">
-						As the name suggests, the shader is additive, so it can only add light, which looks similar to
-						the screen layer blending mode in Photoshop. It also produces bloom at high intensities.
-					</p><p class="mt-4">
-						This article assumes you are familiar with regular prop or vehicle asset creation.
-					</p>
+						As the name suggests, the shader is additive, so it can only add light, which looks similar to the screen layer
+						blending mode in Photoshop. It also produces bloom at high intensities.
+					</p><p class="mt-4">This article assumes you are familiar with regular prop or vehicle asset creation.</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/mod/additive-shader/ex1.jpg" target="_blank">
 						<Picture
@@ -43,40 +41,42 @@ import { images } from '../../data/imageImports.js';
 							alt="Additive shader vehicle sub-mesh used for LED displays on top of a train"
 							class="w-full h-auto"
 						/></a
-					><p class="explanation">
-						Additive shader vehicle sub-mesh used for LED displays on top of a train.
-					</p>
+					><p class="explanation">Additive shader vehicle sub-mesh used for LED displays on top of a train.</p>
 				</div>
 			</div>
-			<h2
-				class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400"
-				id="limitations"
-			>
-				Limitations
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="limitations">
+				<a
+					href="#limitations"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing.">Limitations</a
+				>
 			</h2>
-			<h3
-				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
-				id="buildings-sub-meshes"
-			>
-				Buildings and sub-meshes
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="buildings-sub-meshes">
+				<a
+					href="#buildings-sub-meshes"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Buildings and sub-meshes</a
+				>
 			</h3>
 			<p class="mt-4">
-				Buildings, sub-buildings, and building sub-meshes have significant issues with render distances or
-				unpredictable disappearance, therefore these use cases are not recommended, use props instead.
+				Buildings, sub-buildings, and building sub-meshes have significant issues with render distances or unpredictable
+				disappearance, therefore these use cases are not recommended, use props instead.
 			</p>
 			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="2-sided">
-				2 sided
+				<a href="#2-sided" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>2 sided</a
+				>
 			</h3>
 			<p class="mt-4">
-				Unlike almost all other shaders in the game, the additive shader is two-sided, meaning faces can be seen
-				from the back side as well.
+				Unlike almost all other shaders in the game, the additive shader is two-sided, meaning faces can be seen from the back side
+				as well.
 			</p>
 			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="script">
-				Script
+				<a href="#script" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Script</a
+				>
 			</h2>
 			<p class="mt-4">
-				To save the necessary data and change the shader of your prop or vehicle sub-mesh to additive, you need
-				to run <Link
+				To save the necessary data and change the shader of your prop or vehicle sub-mesh to additive, you need to run <Link
 					classes=""
 					href="https://gist.github.com/ronyx69/97a8efae47d6828f01d7d0ab8189fd73"
 					text="one of these scripts"
@@ -89,47 +89,54 @@ import { images } from '../../data/imageImports.js';
 				/> console <span class="key">F7</span>.
 			</p>
 			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="variables">
-				Variables
+				<a href="#variables" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Variables</a
+				>
 			</h3>
 			<p class="mt-4">At the top of the script, you can change some variables.</p>
-			<h4
-				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
-				id="time-on-off"
-			>
-				Time On/Off
+			<h4 class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12" id="time-on-off">
+				<a
+					href="#time-on-off"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing.">Time On/Off</a
+				>
 			</h4>
 			<p class="mt-4">
-				Controls the time of day (0-24 hours) at which the additive shader object will turn on or off. If both
-				times are the same, it will be always on.
+				Controls the time of day (0-24 hours) at which the additive shader object will turn on or off. If both times are the same,
+				it will be always on.
 			</p>
 			<h4 class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12" id="fade">
-				Fade
+				<a href="#fade" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Fade</a
+				>
 			</h4>
 			<p class="mt-4">
-				The additive shader decreases opacity as it gets closer to other objects. This value controls the
-				strength of that effect, higher values make the fading less noticeable.
+				The additive shader decreases opacity as it gets closer to other objects. This value controls the strength of that effect,
+				higher values make the fading less noticeable.
 			</p>
-			<h4
-				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
-				id="intensity"
-			>
-				Intensity
+			<h4 class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12" id="intensity">
+				<a href="#intensity" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Intensity</a
+				>
 			</h4>
 			<p class="mt-4">Light intensity multiplier, values above 1 may start to bloom.</p>
 			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="mesh">
-				Mesh
+				<a href="#mesh" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Mesh</a
+				>
 			</h2>
 			<p class="mt-4">There's nothing different about the mesh compared to regular assets.</p>
 			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="textures">
-				Textures
+				<a href="#textures" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Textures</a
+				>
 			</h2>
 			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="diffuse">
-				Diffuse
+				<a href="#diffuse" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Diffuse</a
+				>
 			</h3>
 			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
-				<div class="lg:w-2/3"><p>This is the only texture, it's used as the additive texture.</p></div><div
-					class="lg:w-1/3"
-				>
+				<div class="lg:w-2/3"><p>This is the only texture, it's used as the additive texture.</p></div><div class="lg:w-1/3">
 					<a href="/images/mod/additive-shader/diff.jpg" target="_blank">
 						<Picture
 							width={images.diff.width / 2}
@@ -143,29 +150,25 @@ import { images } from '../../data/imageImports.js';
 				</div>
 			</div>
 			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="lod">
-				LOD
+				<a href="#lod" title="Click to generate a direct link to this section in the browser's address bar for easy sharing.">LOD</a
+				>
 			</h2>
 			<p class="mt-4">
-				The additive shader doesn't work for LOD models, therefore the mod increases the render distance based
-				on the size of your asset.
+				The additive shader doesn't work for LOD models, therefore the mod increases the render distance based on the size of your
+				asset.
 			</p>
 		</div>
 		<!-- ?Video Section -->
-		<h2
-			id="relevant-videos"
-			class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
-		>
-			Relevant Videos
+		<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="relevant-videos">
+			<a
+				href="#relevant-videos"
+				title="Click to generate a direct link to this section in the browser's address bar for easy sharing.">Relevant Videos</a
+			>
 		</h2>
 		<ul class="text-lg mt-4 text-hit-gray-500 list-inside">
 			<li>
 				<h3 class="mt-4" id="additive-shader">
-					<Link
-						href="https://youtube.com/watch?v=1pVxf0OeELk"
-						theme="youtube"
-						text="Additive Shader"
-						classes=""
-					/>
+					<Link href="https://youtube.com/watch?v=1pVxf0OeELk" theme="youtube" text="Additive Shader" classes="" />
 				</h3>
 			</li>
 		</ul>

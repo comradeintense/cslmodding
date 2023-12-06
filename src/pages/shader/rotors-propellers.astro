@@ -10,20 +10,20 @@ import { images } from '../../data/imageImports.js';
 <MainLayout title={title}>
 	<TableOfContents />
 	<section class="pt-12 pb-48 text-lg sm:ml-64 xl:mr-64 text-hit-gray-500">
-		<h1 id="overview" class="pb-8 text-4xl font-bold border-b-4 border-hit-gray-600 text-hit-gray-400">
-			Rotors Shader (Propellers)
-		</h1>
+		<h1 id="overview" class="pb-8 text-4xl font-bold border-b-4 border-hit-gray-600 text-hit-gray-400">Rotors Shader (Propellers)</h1>
 		<div class="content">
 			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="about">
-				About
-			</h2><div class="flex flex-col gap-6 mt-4 lg:flex-row">
+				<a href="#about" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>About
+				</a>
+			</h2>
+
+			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
-					<p>
-						The rotors shader can be used for creating blimp, helicopter, and plane propeller vehicle
-						sub-meshes.
-					</p><p class="mt-4">
-						This article assumes you are familiar with rotors shader prop/building asset creation and
-						regular vehicle asset creation.
+					<p>The rotors shader can be used for creating blimp, helicopter, and plane propeller vehicle sub-meshes.</p><p
+						class="mt-4">
+						This article assumes you are familiar with rotors shader prop/building asset creation and regular vehicle asset
+						creation.
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/shader/rotors-propellers.jpeg" target="_blank">
@@ -36,190 +36,177 @@ import { images } from '../../data/imageImports.js';
 							class="w-full h-auto"
 						/></a
 					><p class="explanation">
-						<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1433248647"
-							>LZ-120 Bodensee by GiometryE</a
-						> using custom propellers.
+						<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1433248647">LZ-120 Bodensee by GiometryE</a> using
+						custom propellers.
 					</p>
 				</div>
 			</div>
-			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="textures">
-				Textures
-			</h2>
-			<p class="mt-4">
-				The textures work just like <Link
-					classes=""
-					href="/shader/rotors/#textures"
-					text="they would for any rotors shader prop"
-					theme="internallink"
-				/>.
-			</p>
-			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="mesh">
-				Mesh
-			</h2>
-			<p class="mt-4">The mesh is modeled and UV mapped as usual.</p>
-			<h4
-				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
-				id="format"
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="textures">Textures</h2>
+		</div>
+		<p class="mt-4">
+			The textures work just like <Link
+				classes=""
+				href="/shader/rotors/#textures"
+				text="they would for any rotors shader prop"
+				theme="internallink"
+			/>.
+		</p>
+		<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="mesh">
+			<a href="#mesh" title="Click to generate a direct link to this section in the browser's address bar for easy sharing.">Mesh</a>
+		</h2>
+		<p class="mt-4">The mesh is modeled and UV mapped as usual.</p>
+		<h4 class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12" id="format">
+			<a href="#format" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+				>Format</a
 			>
-				Format
-			</h4>
-			<p class="mt-4">Use a format which supports vertex colors, such as FBX (2015 or older) or DAE.</p>
-			<h3
-				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
-				id="vertex-paint"
+		</h4>
+		<p class="mt-4">Use a format which supports vertex colors, such as FBX (2015 or older) or DAE.</p>
+		<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="vertex-paint">
+			<a href="#vertex-paint" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+				>Vertex Paint</a
 			>
-				Vertex Paint
-			</h3>
-			<p class="mt-4">The vertex colors control various aspects of the rotors propellers.</p>
-			<h4 class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12" id="red">
-				Red
-			</h4>
-			<p class="mt-4">The red channel controls the visibility of the rotors.</p>
-			<p class="mt-4">
-				For blimps 0 means the rotors will be fully visible when spinning and 255 means the rotors will be fully
-				visible when stopped.
-			</p>
-			<p class="mt-4">Values between 0 and 255 can also be used to always have partial visibility.</p>
-			<h4
-				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
-				id="green"
+		</h3>
+		<p class="mt-4">The vertex colors control various aspects of the rotors propellers.</p>
+		<h4 class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12" id="red">
+			<a href="#red" title="Click to generate a direct link to this section in the browser's address bar for easy sharing.">Red</a>
+		</h4>
+		<p class="mt-4">The red channel controls the visibility of the rotors.</p>
+		<p class="mt-4">
+			For blimps 0 means the rotors will be fully visible when spinning and 255 means the rotors will be fully visible when stopped.
+		</p>
+		<p class="mt-4">Values between 0 and 255 can also be used to always have partial visibility.</p>
+		<h4 class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12" id="green">
+			<a href="#green" title="Click to generate a direct link to this section in the browser's address bar for easy sharing.">Green</a
 			>
-				Green
-			</h4>
-			<p class="mt-4">
-				The green channel determines which of the tire parameters (as they will be defined in the script) the
-				rotor will use. 0 means it will use tire parameter 0, 8 means it will use tire parameter 1, 16 means it
-				will use tire parameter 2 and so on.
-			</p>
-			<h4 class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12" id="blue">
-				Blue
-			</h4>
-			<p class="mt-4">The blue channel defines around which axis the rotor will spin.</p>
-			<p class="mt-4">0 means it will spin around the Y-axis, like a helicopter rotor.</p>
-			<p class="mt-4">
-				255 means it will spin around the X-axis, like a vehicle wheel, or the Z-axis, like a plane propeller.
-			</p>
-			<p class="mt-4">
-				To make the rotor spin around the Z-axis, the blue channel needs to be 255 and also the FlipXZ variable
-				in the script must be set to true, which means the final asset will require <Link
-					classes=""
-					href="https://steamcommunity.com/workshop/filedetails/?id=1433003062"
-					text="the Rotors FlipXZ mod"
-					theme="externallink"
-				/>.
-			</p>
-			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="lod">
-				LOD
-			</h3>
-			<p class="mt-4">The LOD is not animated, so it doesn't need to be vertex painted.</p>
-			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="import">
-				Import
-			</h2>
-			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="prop">
-				Prop
-			</h3>
-			<p class="mt-4">
-				Because the game recalculates vertex colors when importing vehicle meshes or sub-meshes, it's necessary
-				to import your rotors sub-mesh as a prop first. To make it easier, save it using a simple name, use the
-				same name for the file name and the asset name. Once it's saved, reload the game.
-			</p>
-			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="sub-mesh">
-				Sub-mesh
-			</h3>
-			<p class="mt-4">
-				Once the game is reloaded, import or load your vehicle, and import the rotors vehicle sub-mesh.
-			</p>
-			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="scripts">
-				Scripts
-			</h2>
-			<p class="mt-4">
-				<Link
-					classes=""
-					href="https://gist.github.com/ronyx69/63f32ddd64c87e65c5c3ccee92f6077e"
-					text="There are 2 scripts, which you will need to run"
-					theme="externallink"
-				/> - one to copy the vertex colors from the prop to the vehicle sub-mesh, and another to apply the
-				rotors shader and tyre parameters.
-			</p>
-			<h3
-				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
-				id="copy-vertex-paint"
+		</h4>
+		<p class="mt-4">
+			The green channel determines which of the tire parameters (as they will be defined in the script) the rotor will use. 0 means it
+			will use tire parameter 0, 8 means it will use tire parameter 1, 16 means it will use tire parameter 2 and so on.
+		</p>
+		<h4 class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12" id="blue">
+			<a href="#blue" title="Click to generate a direct link to this section in the browser's address bar for easy sharing.">Blue</a>
+		</h4>
+		<p class="mt-4">The blue channel defines around which axis the rotor will spin.</p>
+		<p class="mt-4">0 means it will spin around the Y-axis, like a helicopter rotor.</p>
+		<p class="mt-4">255 means it will spin around the X-axis, like a vehicle wheel, or the Z-axis, like a plane propeller.</p>
+		<p class="mt-4">
+			To make the rotor spin around the Z-axis, the blue channel needs to be 255 and also the FlipXZ variable in the script must be
+			set to true, which means the final asset will require <Link
+				classes=""
+				href="https://steamcommunity.com/workshop/filedetails/?id=1433003062"
+				text="the Rotors FlipXZ mod"
+				theme="externallink"
+			/>.
+		</p>
+		<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="lod">
+			<a href="#lod" title="Click to generate a direct link to this section in the browser's address bar for easy sharing.">LOD</a>
+		</h3>
+		<p class="mt-4">The LOD is not animated, so it doesn't need to be vertex painted.</p>
+		<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="import">
+			<a href="#import" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+				>Import</a
 			>
-				Copy Vertex Paint
-			</h3>
-			<h4
-				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
-				id="sub-mesh-id"
+		</h2>
+		<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="prop">
+			<a href="#prop" title="Click to generate a direct link to this section in the browser's address bar for easy sharing.">Prop</a>
+		</h3>
+		<p class="mt-4">
+			Because the game recalculates vertex colors when importing vehicle meshes or sub-meshes, it's necessary to import your rotors
+			sub-mesh as a prop first. To make it easier, save it using a simple name, use the same name for the file name and the asset
+			name. Once it's saved, reload the game.
+		</p>
+		<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="sub-mesh">
+			<a href="#sub-mesh" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+				>Sub-mesh</a
 			>
-				Sub-mesh ID
-			</h4>
-			<p class="mt-4">The ID of the sub-mesh you want to copy the vertex colors to.</p>
-			<h4
-				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
-				id="prop-name"
+		</h3>
+		<p class="mt-4">Once the game is reloaded, import or load your vehicle, and import the rotors vehicle sub-mesh.</p>
+		<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="scripts">
+			<a href="#scripts" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+				>Scripts</a
 			>
-				Prop Name
-			</h4>
-			<p class="mt-4">The name of the prop you imported before. Formatted as "filename.Asset Name_Data".</p>
-			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="rotors">
-				Rotors
-			</h3>
-			<h4
-				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
-				id="sub-mesh-id-1"
+		</h2>
+		<p class="mt-4">
+			<Link
+				classes=""
+				href="https://gist.github.com/ronyx69/63f32ddd64c87e65c5c3ccee92f6077e"
+				text="There are 2 scripts, which you will need to run"
+				theme="externallink"
+			/> - one to copy the vertex colors from the prop to the vehicle sub-mesh, and another to apply the rotors shader and tyre
+			parameters.
+		</p>
+		<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="copy-vertex-paint">
+			<a
+				href="#copy-vertex-paint"
+				title="Click to generate a direct link to this section in the browser's address bar for easy sharing.">Copy Vertex Paint</a
 			>
-				Sub-mesh ID
-			</h4>
-			<p class="mt-4">The ID of the sub-mesh you want to apply the rotors shader to.</p>
-			<h4
-				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
-				id="flipxz"
+		</h3>
+		<h4 class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12" id="sub-mesh-id">
+			<a href="#sub-mesh-id" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+				>Sub-mesh ID</a
 			>
-				FlipXZ
-			</h4>
-			<p class="mt-4">FlipXZ variable if necessary, as described in the blue vertex paint section.</p>
-			<h4
-				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
-				id="tires"
+		</h4>
+		<p class="mt-4">The ID of the sub-mesh you want to copy the vertex colors to.</p>
+		<h4 class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12" id="prop-name">
+			<a href="#prop-name" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+				>Prop Name</a
 			>
-				Tires
-			</h4>
-			<p class="mt-4">Set the amount of "tires" - how many different rotors there are.</p>
-			<h4
-				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
-				id="tire-parameter-vectors"
+		</h4>
+		<p class="mt-4">The name of the prop you imported before. Formatted as "filename.Asset Name_Data".</p>
+		<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="rotors">
+			<a href="#rotors" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+				>Rotors</a
 			>
-				Tire Parameter Vectors
-			</h4>
-			<p class="mt-4">
-				Each vector describes the pivot coordinates of the rotor, the point around which that rotor will spin.
+		</h3>
+		<h4 class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12" id="sub-mesh-id-1">
+			<a href="#sub-mesh-id-1" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+				>Sub-mesh ID</a
+			>
+		</h4>
+		<p class="mt-4">The ID of the sub-mesh you want to apply the rotors shader to.</p>
+		<h4 class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12" id="flipxz">
+			<a href="#flipxz" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+				>FlipXZ</a
+			>
+		</h4>
+		<p class="mt-4">FlipXZ variable if necessary, as described in the blue vertex paint section.</p>
+		<h4 class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12" id="tires">
+			<a href="#tires" title="Click to generate a direct link to this section in the browser's address bar for easy sharing.">Tires</a
+			>
+		</h4>
+		<p class="mt-4">Set the amount of "tires" - how many different rotors there are.</p>
+		<h4 class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12" id="tire-parameter-vectors">
+			<a
+				href="#tire-parameter-vectors"
+				title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+				>Tire Parameter Vectors</a
+			>
+		</h4>
+		<p class="mt-4">Each vector describes the pivot coordinates of the rotor, the point around which that rotor will spin.</p>
+		<p class="mt-4">
+			Which of the tire parameter vectors a rotor uses depends on the vertex paint of it, as described in the green vertex paint
+			section.
+		</p>
+		<div class="flex items-start justify-start gap-2 mt-6">
+			<svg
+				class="flex-shrink-0 w-8 h-8 text-orange"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="1.5"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg">
+				<path
+					d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+					stroke-linecap="round"
+					stroke-linejoin="round"></path>
+			</svg>
+			<p class="italic">
+				<em>
+					Keep in mind that ingame the Y-axis represents height, so the Y and Z-axis are swapped compared to what 3D software
+					usually uses. It's likely that you will need to invert positive values to negative and vice versa for X and Z
+					coordinates, depending on what 3D software you use.
+				</em>
 			</p>
-			<p class="mt-4">
-				Which of the tire parameter vectors a rotor uses depends on the vertex paint of it, as described in the
-				green vertex paint section.
-			</p>
-			<div class="flex items-start justify-start gap-2 mt-6">
-				<svg
-					class="flex-shrink-0 w-8 h-8 text-orange"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="1.5"
-					viewBox="0 0 24 24"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
-						stroke-linecap="round"
-						stroke-linejoin="round"></path>
-				</svg>
-				<p class="italic">
-					<em>
-						Keep in mind that ingame the Y-axis represents height, so the Y and Z-axis are swapped compared
-						to what 3D software usually uses. It's likely that you will need to invert positive values to
-						negative and vice versa for X and Z coordinates, depending on what 3D software you use.
-					</em>
-				</p>
-			</div>
 		</div>
 	</section>
 </MainLayout>

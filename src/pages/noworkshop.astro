@@ -10,32 +10,32 @@ import Link from '../components/Link.astro';
 <MainLayout title={title}>
 	<TableOfContents />
 	<section class="pt-12 pb-48 text-lg sm:ml-64 xl:mr-64 text-hit-gray-500">
-		<h1 id="overview" class="pb-8 text-4xl font-bold border-b-4 border-hit-gray-600 text-hit-gray-400">
-			No Workshop & Local Mods
-		</h1>
+		<h1 id="overview" class="pb-8 text-4xl font-bold border-b-4 border-hit-gray-600 text-hit-gray-400">No Workshop & Local Mods</h1>
 		<div class="content">
 			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="about">
-				About
+				<a href="#about" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>About</a
+				>
 			</h2>
 			<p class="mt-4">
-				When loading the asset editor, workshop assets can slow down the loading time and some mods may cause
-				problems as they are not meant for the asset editor. It's possible to load the game without workshop
-				content, and you can still use workshop assets and mods by adding them locally.
+				When loading the asset editor, workshop assets can slow down the loading time and some mods may cause problems as they are
+				not meant for the asset editor. It's possible to load the game without workshop content, and you can still use workshop
+				assets and mods by adding them locally.
 			</p>
 			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="shortcut">
-				Shortcut
+				<a href="#shortcut" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Shortcut</a
+				>
 			</h2>
 			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
-						It's possible to run no workshop mode by using a steam parameter, but adding or removing it
-						every time you want to enable or disable workshop takes time, so creating a separate shortcut
-						for no workshop mode is more efficient.
+						It's possible to run no workshop mode by using a steam parameter, but adding or removing it every time you want to
+						enable or disable workshop takes time, so creating a separate shortcut for no workshop mode is more efficient.
 					</p><p class="mt-4">
-						Right-click in any folder or the desktop and click on New &gt; Shortcut. Click browse and
-						navigate to the steam executable, which is usually located here: <span class="path"
-							>C:\Program Files (x86)\Steam\Steam.exe</span
-						> and at the end of the path add this: <span class="path">-applaunch 255710 --noWorkshop</span>
+						Right-click in any folder or the desktop and click on New &gt; Shortcut. Click browse and navigate to the steam
+						executable, which is usually located here: <span class="path">C:\Program Files (x86)\Steam\Steam.exe</span> and at
+						the end of the path add this: <span class="path">-applaunch 255710 --noWorkshop</span>
 					</p><p class="mt-4">This shortcut can now be used to launch the game in no workshop mode.</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/nows/shortc.jpg" target="_blank">
@@ -52,31 +52,32 @@ import Link from '../components/Link.astro';
 					<p class="explanation">Create shortcut window.</p>
 				</div>
 			</div>
-			<h2
-				class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400"
-				id="local-mods-assets"
-			>
-				Local Mods &amp; Assets
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="local-mods-assets">
+				<a
+					href="#local-mods-assets"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Local Mods &amp; Assets</a
+				>
 			</h2>
 			<p class="mt-4">
-				In no workshop mode, only local mods and assets are loaded. But it is still possible to use workshop
-				content by copying the files from the workshop folder to the local mods and assets folders.
+				In no workshop mode, only local mods and assets are loaded. But it is still possible to use workshop content by copying the
+				files from the workshop folder to the local mods and assets folders.
 			</p><p class="mt-4"></p><p class="mt-4">The workshop content is located here:</p>
 			<p class="mt-4"><span class="path">C:\Program Files (x86)\Steam\steamapps\workshop\content\255710</span></p>
 			<p class="mt-4">and the folder name matches the id seen in the workshop item URL.</p>
 			<p class="mt-4">You can copy mod and asset folders to the corresponding local folders located here:</p>
 			<p class="mt-4"><span class="path">%LocalAppData%\Colossal Order\Cities_Skylines\Addons</span></p>
 			<p class="mt-4">
-				The AppData folder is hidden by default, you can access it by copying and pasting the path into the file
-				explorer, or pressing <span class="key">Windows + R</span> and typing in appdata.
+				The AppData folder is hidden by default, you can access it by copying and pasting the path into the file explorer, or
+				pressing <span class="key">Windows + R</span> and typing in appdata.
 			</p>
 		</div>
 		<!-- ?Video Section -->
-		<h2
-			id="relevant-videos"
-			class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
-		>
-			Relevant Videos
+		<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="relevant-videos">
+			<a
+				href="#relevant-videos"
+				title="Click to generate a direct link to this section in the browser's address bar for easy sharing.">Relevant Videos</a
+			>
 		</h2>
 		<ul class="text-lg mt-4 text-hit-gray-500 list-inside">
 			<li>

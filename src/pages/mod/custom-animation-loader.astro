@@ -10,12 +10,12 @@ import { images } from '../../data/imageImports.js';
 <MainLayout title={title}>
 	<TableOfContents />
 	<section class="pt-12 pb-48 text-lg sm:ml-64 xl:mr-64 text-hit-gray-500">
-		<h1 id="overview" class="pb-8 text-4xl font-bold border-b-4 border-hit-gray-600 text-hit-gray-400">
-			Custom Animation Loader
-		</h1>
+		<h1 id="overview" class="pb-8 text-4xl font-bold border-b-4 border-hit-gray-600 text-hit-gray-400">Custom Animation Loader</h1>
 		<div class="content">
 			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="about">
-				About
+				<a href="#about" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>About</a
+				>
 			</h2>
 			<p class="mt-4">
 				<Link
@@ -23,28 +23,27 @@ import { images } from '../../data/imageImports.js';
 					href="https://steamcommunity.com/sharedfiles/filedetails/?id=1664509314"
 					text="The Custom Animation Loader (CAL) mod by boformer"
 					theme="externallink"
-				/> can be used to import custom animations for buildings. Animations have an inactive and active state
-				so it's possible to stop the animation when the building is not operating.
+				/> can be used to import custom animations for buildings. Animations have an inactive and active state so it's possible to
+				stop the animation when the building is not operating.
 			</p>
 			<p class="mt-4">This article assumes you are familiar with building asset creation.</p>
-			<h2
-				class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400"
-				id="requirements"
-			>
-				Requirements
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="requirements">
+				<a
+					href="#requirements"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing.">Requirements</a
+				>
 			</h2>
-			<h3
-				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
-				id="d-software"
-			>
-				3D Software
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="d-software">
+				<a href="#d-software" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>3D Software</a
+				>
 			</h3>
 			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
-						The animation must be created using bones and keyframes. The mesh with the bones should be
-						exported to FBX (2015 or older) as Y-up for importing in Unity. Also, the mesh without the bones
-						should be exported for importing into the game as usual.
+						The animation must be created using bones and keyframes. The mesh with the bones should be exported to FBX (2015 or
+						older) as Y-up for importing in Unity. Also, the mesh without the bones should be exported for importing into the
+						game as usual.
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/mod/cal/blender.jpg" target="_blank">
@@ -60,22 +59,22 @@ import { images } from '../../data/imageImports.js';
 					><p class="explanation">Mesh with bones and keyframes in blender.</p>
 				</div>
 			</div>
-			<h4
-				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
-				id="inactive-animation"
-			>
-				Inactive Animation
+			<h4 class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12" id="inactive-animation">
+				<a
+					href="#inactive-animation"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Inactive Animation</a
+				>
 			</h4>
 			<p class="mt-4">
-				If your software supports multiple animations (Blender does but 3ds Max doesn't) you can add another
-				animation, which has only 2 keyframes which have no movement, so this can be used for the inactive
-				state.
+				If your software supports multiple animations (Blender does but 3ds Max doesn't) you can add another animation, which has
+				only 2 keyframes which have no movement, so this can be used for the inactive state.
 			</p>
-			<h3
-				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
-				id="unity-editor"
-			>
-				Unity Editor
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="unity-editor">
+				<a
+					href="#unity-editor"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing.">Unity Editor</a
+				>
 			</h3>
 			<p class="mt-4">
 				<Link
@@ -85,24 +84,24 @@ import { images } from '../../data/imageImports.js';
 					theme="externallink"
 				/> to set up the animator and create an asset bundle which the mod will read.
 			</p>
-			<h2
-				class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400"
-				id="unity-editor-1"
-			>
-				Unity Editor
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="unity-editor-1">
+				<a
+					href="#unity-editor-1"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing.">Unity Editor</a
+				>
 			</h2>
-			<p class="mt-4">
-				Launch the Unity Editor and create a new project in a folder you will be able to find later.
-			</p>
+			<p class="mt-4">Launch the Unity Editor and create a new project in a folder you will be able to find later.</p>
 			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="prefab">
-				Prefab
+				<a href="#prefab" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Prefab</a
+				>
 			</h3>
 			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
-						In the hierarchy window, create an empty GameObject by clicking "Create Empty". Now in the
-						inspector window rename the GameObject to the exact asset name you will use ingame (not the
-						filename). You may also move the object to 0 by changing all Transform XYZ positions to 0.
+						In the hierarchy window, create an empty GameObject by clicking "Create Empty". Now in the inspector window rename
+						the GameObject to the exact asset name you will use ingame (not the filename). You may also move the object to 0 by
+						changing all Transform XYZ positions to 0.
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/mod/cal/unity1.jpg" target="_blank">
@@ -118,68 +117,67 @@ import { images } from '../../data/imageImports.js';
 				</div>
 			</div>
 			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="animator">
-				Animator
+				<a href="#animator" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Animator</a
+				>
+			</h3>
+			<p class="mt-4">In the inspector window click the "Add Component" button and add a component called "Animator".</p>
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="skinned-mesh-renderer">
+				<a
+					href="#skinned-mesh-renderer"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Skinned Mesh Renderer</a
+				>
 			</h3>
 			<p class="mt-4">
-				In the inspector window click the "Add Component" button and add a component called "Animator".
-			</p>
-			<h3
-				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
-				id="skinned-mesh-renderer"
-			>
-				Skinned Mesh Renderer
-			</h3>
-			<p class="mt-4">
-				Now in the hierarchy window right-click the GameObject you just created and click "Create Empty" to
-				create a new GameObject inside it. Add a component called "Skinned Mesh Renderer" to it.
+				Now in the hierarchy window right-click the GameObject you just created and click "Create Empty" to create a new GameObject
+				inside it. Add a component called "Skinned Mesh Renderer" to it.
 			</p>
 			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="mesh">
-				Mesh
+				<a href="#mesh" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Mesh</a
+				>
 			</h3>
 			<p class="mt-4">
-				Drag &amp; drop the mesh file into the Unity Editor projects window. Now click the mesh and in the
-				inspector window click the animations tab. Here you can see animation clips in the mesh and also play
-				the animation in the preview window on the bottom. You should rename the main animation clip to
-				"active". If you have the inactive animation in your mesh, rename that to "inactive". Also, you should
-				enable the "Loop Time" checkbox for the active animation.
+				Drag &amp; drop the mesh file into the Unity Editor projects window. Now click the mesh and in the inspector window click
+				the animations tab. Here you can see animation clips in the mesh and also play the animation in the preview window on the
+				bottom. You should rename the main animation clip to "active". If you have the inactive animation in your mesh, rename that
+				to "inactive". Also, you should enable the "Loop Time" checkbox for the active animation.
 			</p>
-			<h4
-				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
-				id="inactive-animation-1"
-			>
-				Inactive Animation
+			<h4 class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12" id="inactive-animation-1">
+				<a
+					href="#inactive-animation-1"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Inactive Animation</a
+				>
 			</h4>
+			<p class="mt-4">If you didn't include the inactive animation in your mesh, you can create one in Unity Editor.</p>
 			<p class="mt-4">
-				If you didn't include the inactive animation in your mesh, you can create one in Unity Editor.
+				In the project window, click "Create" and choose "Animation" and call it "inactive". Now click the right arrow on the mesh
+				you imported before, and click the active animation. Then go to Window &gt; Animation, press Ctrl+A to select all keyframes
+				and Ctrl+C to copy them.
 			</p>
 			<p class="mt-4">
-				In the project window, click "Create" and choose "Animation" and call it "inactive". Now click the right
-				arrow on the mesh you imported before, and click the active animation. Then go to Window &gt; Animation,
-				press Ctrl+A to select all keyframes and Ctrl+C to copy them.
+				Select the inactive animation you just created and Ctrl+V to paste the keyframes. Zoom out by holding Alt and scrolling
+				down. Select all keyframes except the starting ones on the left side and delete them. This creates a single frame static
+				animation.
 			</p>
-			<p class="mt-4">
-				Select the inactive animation you just created and Ctrl+V to paste the keyframes. Zoom out by holding
-				Alt and scrolling down. Select all keyframes except the starting ones on the left side and delete them.
-				This creates a single frame static animation.
-			</p>
-			<h3
-				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
-				id="animation-controller"
-			>
-				Animation Controller
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="animation-controller">
+				<a
+					href="#animation-controller"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Animation Controller</a
+				>
 			</h3>
 			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
-						In the project window, create an "Animation Controller" and double click it to open the Animator
-						window. Drag the inactive and active animation clips into this window. If your animation clips
-						were named something other than "active" and "inactive", make sure to rename the nodes to these
-						names.
-					</p><p class="mt-4">Right-click the inactive node and click "Set as Layer Default State".</p><p
-						class="mt-4"
-					>
-						In the animator window on the left side click the "Parameters" tab, click the + button and add
-						Float called "Speed" and Int called "State".
+						In the project window, create an "Animation Controller" and double click it to open the Animator window. Drag the
+						inactive and active animation clips into this window. If your animation clips were named something other than
+						"active" and "inactive", make sure to rename the nodes to these names.
+					</p><p class="mt-4">Right-click the inactive node and click "Set as Layer Default State".</p><p class="mt-4">
+						In the animator window on the left side click the "Parameters" tab, click the + button and add Float called "Speed"
+						and Int called "State".
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/mod/cal/unity2.jpg" target="_blank">
@@ -194,80 +192,86 @@ import { images } from '../../data/imageImports.js';
 					><p class="explanation">Animator window and transition.</p>
 				</div>
 			</div>
-			<h4
-				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
-				id="transitions"
-			>
-				Transitions
+			<h4 class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12" id="transitions">
+				<a
+					href="#transitions"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing.">Transitions</a
+				>
 			</h4>
 			<p class="mt-4">
-				Right-click the inactive node, click "Make Transition" and click the active node. Now click the white
-				transition arrow. In the inspector window open the settings and change the transition duration. In the
-				conditions section, add a new condition by pressing the + button, set this condition to "Speed"
-				"Greater" "0.01".
+				Right-click the inactive node, click "Make Transition" and click the active node. Now click the white transition arrow. In
+				the inspector window open the settings and change the transition duration. In the conditions section, add a new condition by
+				pressing the + button, set this condition to "Speed" "Greater" "0.01".
 			</p>
 			<p class="mt-4">
-				Right-click the active node, click "Make Transition" and click the inactive node. Now click the new
-				white transition arrow. In the conditions section, add a new condition button and set it to "Speed"
-				"Less" "0.01".
+				Right-click the active node, click "Make Transition" and click the inactive node. Now click the new white transition arrow.
+				In the conditions section, add a new condition button and set it to "Speed" "Less" "0.01".
 			</p>
-			<h3
-				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
-				id="assignment"
-			>
-				Assignment
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="assignment">
+				<a href="#assignment" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Assignment</a
+				>
 			</h3>
 			<h4
 				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
-				id="animator-controller-avatar"
-			>
-				Animator Controller &amp; Avatar
+				id="animator-controller-avatar">
+				<a
+					href="#animator-controller-avatar"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Animator Controller &amp; Avatar</a
+				>
 			</h4>
 			<p class="mt-4">
-				Now you can close the animator window and view the scene window again. In the hierarchy window select
-				the main GameObject you created and renamed in the beginning. In the inspector window animator section,
-				click the circle next to "Controller" and choose the animator controller you created before. Right below
-				this add the Avatar which was included in the imported mesh.
+				Now you can close the animator window and view the scene window again. In the hierarchy window select the main GameObject
+				you created and renamed in the beginning. In the inspector window animator section, click the circle next to "Controller"
+				and choose the animator controller you created before. Right below this add the Avatar which was included in the imported
+				mesh.
 			</p>
-			<h4
-				class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12"
-				id="skinned-mesh-renderer-1"
-			>
-				Skinned Mesh Renderer
+			<h4 class="pb-4 mt-8 text-xl font-medium border-b text-hit-gray-400 border-hit-gray-950 lg:mt-12" id="skinned-mesh-renderer-1">
+				<a
+					href="#skinned-mesh-renderer-1"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Skinned Mesh Renderer</a
+				>
 			</h4>
 			<p class="mt-4">
-				Select the GameObject you created inside the main one, the one which has the Skinned Mesh Renderer
-				component. In the inspector window skinned mesh renderer section click the circle next to "Mesh" and
-				select your imported mesh. The magenta mesh should be visible in the scene window.
+				Select the GameObject you created inside the main one, the one which has the Skinned Mesh Renderer component. In the
+				inspector window skinned mesh renderer section click the circle next to "Mesh" and select your imported mesh. The magenta
+				mesh should be visible in the scene window.
 			</p>
-			<h3
-				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
-				id="optimize-transform-hierarchy"
-			>
-				Optimize Transform Hierarchy
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="optimize-transform-hierarchy">
+				<a
+					href="#optimize-transform-hierarchy"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Optimize Transform Hierarchy</a
+				>
 			</h3>
 			<p class="mt-4">
-				In the hierarchy window select the main GameObject you created and renamed in the beginning. In the
-				inspector window animator section, click the gear icon in the top right and click "Optimize Transform
-				Hierarchy". This may visually break your mesh, but once the animation plays it should appear correctly.
+				In the hierarchy window select the main GameObject you created and renamed in the beginning. In the inspector window
+				animator section, click the gear icon in the top right and click "Optimize Transform Hierarchy". This may visually break
+				your mesh, but once the animation plays it should appear correctly.
 			</p>
 			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="material">
-				Material
+				<a href="#material" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Material</a
+				>
 			</h3>
 			<p class="mt-4">
-				In the projects window, drag and drop your diffuse texture into the assets folder. Now select the
-				materials folder and select the default material or create a new one. In the inspector window click the
-				circle next to "Albedo" and pick your texture. Now you can drag &amp; drop this material onto your mesh.
-				The texture can be deleted later so it doesn't take up space in the prefab asset bundle.
+				In the projects window, drag and drop your diffuse texture into the assets folder. Now select the materials folder and
+				select the default material or create a new one. In the inspector window click the circle next to "Albedo" and pick your
+				texture. Now you can drag &amp; drop this material onto your mesh. The texture can be deleted later so it doesn't take up
+				space in the prefab asset bundle.
 			</p>
 			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="play">
-				Play
+				<a href="#play" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Play</a
+				>
 			</h3>
 			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
 					<p>
-						Now you can click the play button on the top toolbar. Open the animator window and set the speed
-						parameter to 1.0 and look at the scene window, now the animation should be playing.
+						Now you can click the play button on the top toolbar. Open the animator window and set the speed parameter to 1.0
+						and look at the scene window, now the animation should be playing.
 					</p>
 				</div><div class="lg:w-1/3">
 					<a href="/images/mod/cal/unity3.jpg" target="_blank">
@@ -282,21 +286,20 @@ import { images } from '../../data/imageImports.js';
 					><p class="explanation">Still of animation being played in Unity Editor.</p>
 				</div>
 			</div>
-			<h3
-				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
-				id="prefab-asset-bundle"
-			>
-				Prefab &amp; Asset Bundle
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="prefab-asset-bundle">
+				<a
+					href="#prefab-asset-bundle"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Prefab &amp; Asset Bundle</a
+				>
 			</h3>
 			<p class="mt-4">
-				In the hierarchy window select the main GameObject you created and renamed in the beginning, drag it
-				into the project window assets folder and click it. In the bottom of the inspector window click the
-				AssetBundle dropdown and click "New" and give it a unique name, it can't be the same as any other asset
-				bundle of any other asset.
+				In the hierarchy window select the main GameObject you created and renamed in the beginning, drag it into the project window
+				assets folder and click it. In the bottom of the inspector window click the AssetBundle dropdown and click "New" and give it
+				a unique name, it can't be the same as any other asset bundle of any other asset.
 			</p>
 			<p class="mt-4">
-				In the project window assets folder create two new folders - one called "AssetBundles" and the other
-				called "Editor".
+				In the project window assets folder create two new folders - one called "AssetBundles" and the other called "Editor".
 			</p>
 			<p class="mt-4">
 				<Link
@@ -304,45 +307,44 @@ import { images } from '../../data/imageImports.js';
 					href="https://drive.google.com/open?id=1piP7A5ftUjCmJlQeWSCLrCAamWaegOT7"
 					text="Download the CreateAssetBundles script"
 					theme="externallink"
-				/> and drag &amp; drop it into projects window "Editor" folder you just created. Then in the top menu
-				click Assets &gt; Build AssetBundles
+				/> and drag &amp; drop it into projects window "Editor" folder you just created. Then in the top menu click Assets &gt;
+				Build AssetBundles
 			</p>
-			<h2
-				class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400"
-				id="import-test"
-			>
-				Import &amp; Test
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="import-test">
+				<a
+					href="#import-test"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Import &amp; Test</a
+				>
 			</h2>
 			<p class="mt-4">You can now import the building into the game using the asset editor as usual.</p>
 			<p class="mt-4">
-				Remember that your asset name should be exactly the same as the name you chose for the main GameObject
-				in Unity Editor.
+				Remember that your asset name should be exactly the same as the name you chose for the main GameObject in Unity Editor.
 			</p>
 			<p class="mt-4">
-				Once you have imported and saved your asset, quit the game. Go to the folder where your unity project is
-				&gt; Assets &gt; AssetBundles and copy the asset bundle (but not the manifest or meta files) you named
-				in Unity Editor before. Now go to your local assets folder, create a new folder, put the .crp of the
-				asset you just saved and also the asset bundle in this folder. Rename the asset bundle file to
-				"animations.unity3d".
+				Once you have imported and saved your asset, quit the game. Go to the folder where your unity project is &gt; Assets &gt;
+				AssetBundles and copy the asset bundle (but not the manifest or meta files) you named in Unity Editor before. Now go to your
+				local assets folder, create a new folder, put the .crp of the asset you just saved and also the asset bundle in this folder.
+				Rename the asset bundle file to "animations.unity3d".
 			</p>
-			<p class="mt-4">
-				Open the game and test your asset, the asset may need power and some time to start animating.
-			</p>
+			<p class="mt-4">Open the game and test your asset, the asset may need power and some time to start animating.</p>
 			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="publish">
-				Publish
+				<a href="#publish" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Publish</a
+				>
 			</h2>
 			<p class="mt-4">
-				You can publish the asset as usual, but you must include the asset bundle in the content folder. Make
-				sure the mod is enabled while you publish the asset, this will add a custom tag which can be used to
-				find all custom animation loader assets in the steam workshop.
+				You can publish the asset as usual, but you must include the asset bundle in the content folder. Make sure the mod is
+				enabled while you publish the asset, this will add a custom tag which can be used to find all custom animation loader assets
+				in the steam workshop.
 			</p>
 		</div>
 		<!-- ?Video Section -->
-		<h2
-			id="relevant-videos"
-			class="border-b-2 border-hit-gray-600 mt-24 pb-8 text-4xl font-medium text-hit-gray-400"
-		>
-			Relevant Videos
+		<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="relevant-videos">
+			<a
+				href="#relevant-videos"
+				title="Click to generate a direct link to this section in the browser's address bar for easy sharing.">Relevant Videos</a
+			>
 		</h2>
 		<ul class="text-lg mt-4 text-hit-gray-500 list-inside">
 			<li>

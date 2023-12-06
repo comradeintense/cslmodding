@@ -17,7 +17,11 @@ import { images } from '../data/imageImports.js';
 		</h1>
 		<div class="content">
 			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="about">
-				About
+				<a
+					href="#about"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>About</a
+				>
 			</h2>
 			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
@@ -57,13 +61,21 @@ import { images } from '../data/imageImports.js';
 				</div>
 			</div>
 			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="basics">
-				Basics
+				<a
+					href="#basics"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Basics</a
+				>
 			</h2>
 			<p class="mt-4">
 				Before getting into examples, this section describes some basic elements of code you will see a lot.
 			</p>
 			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="variables">
-				Variables
+				<a
+					href="#variables"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Variables</a
+				>
 			</h3>
 			<p class="mt-4">
 				Variables are things like numbers, text strings, booleans(true/false), arrays(multiple variables in
@@ -80,12 +92,20 @@ import { images } from '../data/imageImports.js';
 <span class="hljs-keyword">string</span> text = <span class="hljs-string">"Lorem ipsum dolor sit amet"</span>;
 <span class="hljs-keyword">bool</span> binary = <span class="hljs-literal">true</span>;</code></pre>
 			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="debug-log">
-				Debug Log
+				<a
+					href="#debug-log"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Debug Log</a
+				>
 			</h3>
 			<p class="mt-4">Debug log allows to print messages in the console:</p>
 			<pre><code class="csharp hljs">Debug.Log(<span class="hljs-string">"This will appear in the console when executed."</span>);</code></pre>
 			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="comments">
-				Comments
+				<a
+					href="#comments"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Comments</a
+				>
 			</h3>
 			<p class="mt-4">
 				Comments allow adding notes to your script, they will not affect the code in any way. Everything after a
@@ -103,7 +123,11 @@ comment*/</span>
 
 <span class="hljs-keyword">var</span> number = <span class="hljs-comment">/*comment in between code*/</span> <span class="hljs-number">69</span>;</code></pre>
 			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="examples">
-				Examples
+				<a
+					href="#examples"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Examples</a
+				>
 			</h2>
 			<p class="mt-4">
 				In general, each example will be more complicated than the previous one, and may not repeat explanations
@@ -113,7 +137,11 @@ comment*/</span>
 				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="ui-priority"
 			>
-				UI Priority
+				<a
+					href="#ui-priority"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>UI Priority</a
+				>
 			</h3>
 			<p class="mt-4">
 				The first example is for one of the simplest possible scripts - to change the <Link
@@ -152,7 +180,11 @@ asset.m_UIPriority = <span class="hljs-number">69</span>;</code></pre>
 				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="color-variations"
 			>
-				Color Variations
+				<a
+					href="#color-variations"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Color Variations</a
+				>
 			</h3>
 			<p class="mt-4">This script can be used to set color variations for a building in the asset editor.</p>
 			<pre><code class="csharp hljs"><span class="hljs-keyword">var</span> color1 = <span class="hljs-keyword">new</span> Color32(<span class="hljs-number">128</span>, <span class="hljs-number">128</span>, <span class="hljs-number">128</span>, <span class="hljs-number">255</span>);
@@ -197,7 +229,11 @@ asset.m_material.SetColor(<span class="hljs-string">"_ColorV3"</span>, color4);<
 				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="placement-mode"
 			>
-				Placement Mode
+				<a
+					href="#placement-mode"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Placement Mode</a
+				>
 			</h3>
 			<p class="mt-4">
 				This script can be used to change the <Link
@@ -240,14 +276,22 @@ asset.m_placementMode = BuildingInfo.PlacementMode.Roadside;</code></pre>
 				class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400"
 				id="editable-properties"
 			>
-				Editable Properties
+				<a
+					href="#editable-properties"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Editable Properties</a
+				>
 			</h2>
 			<p class="mt-4">Ways to find the names of fields which can be used in scripts.</p>
 			<h3
 				class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500"
 				id="scene-explorer"
 			>
-				Scene Explorer
+				<a
+					href="#scene-explorer"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Scene Explorer</a
+				>
 			</h3>
 			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
@@ -271,7 +315,11 @@ asset.m_placementMode = BuildingInfo.PlacementMode.Roadside;</code></pre>
 				</div>
 			</div>
 			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="ilspy">
-				ILSpy
+				<a
+					href="#ilspy"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>ILSpy</a
+				>
 			</h3>
 			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
@@ -299,7 +347,11 @@ asset.m_placementMode = BuildingInfo.PlacementMode.Roadside;</code></pre>
 				</div>
 			</div>
 			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="dnspy">
-				dnSpy
+				<a
+					href="#dnspy"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>dnSpy</a
+				>
 			</h3>
 			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
 				<div class="lg:w-2/3">
