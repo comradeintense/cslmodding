@@ -26,8 +26,25 @@ import { images } from '../data/imageImports.js';
 					>Generation</a
 				>
 			</h2>
-			<div>
-				<div class="float-none w-full lg:float-right lg:w-1/3 lg:ml-5 mb-5 mt-4 lg:mt-0">
+			<div class="flex flex-col gap-6 mt-4 lg:flex-row">
+				<div class="lg:w-2/3">
+					<p class="mt-4">
+						Before you decide if you need to invert one of the normal map channels, you need to make sure the normal map
+						generator you are using isn't inverting it by default. Some normal map generators have settings for inverting the
+						red(x) and green(y) channels, but some of them invert the red channel by default.
+					</p>
+					<p class="mt-4">
+						A regular normal map with no inversions looks as if it's lit from the top right - that means the red channel looks
+						as if it's lit from the right, but the green channel looks as if it's lit from the top. That means it appears to be
+						lit from the positive x and y directions which is <Link
+							classes=""
+							href="https://en.wikipedia.org/wiki/Normal_mapping#How_it_works"
+							text="the normal map standard"
+							theme="externallink"
+						/>.
+					</p>
+				</div>
+				<div class="lg:w-1/3">
 					<a href="/images/normalmaps/regularnm.png" target="_blank">
 						<Picture
 							width={images.regularnm.width / 2}
@@ -43,21 +60,6 @@ import { images } from '../data/imageImports.js';
 						supposed to look extruded in this example.
 					</p>
 				</div>
-				<p class="mt-4">
-					Before you decide if you need to invert one of the normal map channels, you need to make sure the normal map generator
-					you are using isn't inverting it by default. Some normal map generators have settings for inverting the red(x) and
-					green(y) channels, but some of them invert the red channel by default.
-				</p>
-				<p class="mt-4">
-					A regular normal map with no inversions looks as if it's lit from the top right - that means the red channel looks as if
-					it's lit from the right, but the green channel looks as if it's lit from the top. That means it appears to be lit from
-					the positive x and y directions which is <Link
-						classes=""
-						href="https://en.wikipedia.org/wiki/Normal_mapping#How_it_works"
-						text="the normal map standard"
-						theme="externallink"
-					/>.
-				</p>
 			</div>
 
 			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="mesh-import-rotation">
