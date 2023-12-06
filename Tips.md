@@ -65,7 +65,7 @@ Added more margin at bottom of all articles
 All images are .avif, if retarded browser then .webp, if even more retarded then default jpg/png. Images are displayed for each DPR.
 
 Todo:
-ugly i
+ugly i (fixed)
 thumbs have gap-1 remove it
 make text wrap around thumbnail image?
-headings clickable - idk about this
+headings clickable - (fixed)
