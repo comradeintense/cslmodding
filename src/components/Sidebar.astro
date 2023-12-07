@@ -72,8 +72,7 @@ const sidebarItems = [
 	data-drawer-toggle="separator-sidebar"
 	aria-controls="separator-sidebar"
 	type="button"
-	class="inline-flex items-center p-1 mt-4 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
->
+	class="inline-flex items-center p-1 mt-4 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
 	<span class="sr-only">Open sidebar</span>
 	<svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 		<path
@@ -84,7 +83,10 @@ const sidebarItems = [
 	</svg>
 </button>
 
-<aside id="separator-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+<aside
+	id="separator-sidebar"
+	class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+	aria-label="Sidebar">
 	<!-- !sidebar -->
 	<div class="h-full px-6 pb-4 pt-4 overflow-y-auto bg-lightbg">
 		<!-- !wrapper for the menu and button -->
@@ -94,9 +96,14 @@ const sidebarItems = [
 			<button
 				id="close-sidebar"
 				class="block p-1 text-hit-gray-100 hover:bg-gray-100 hover:text-hit-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-200 rounded-lg"
-				aria-label="Close sidebar"
-			>
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+				aria-label="Close sidebar">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="w-4 h-4">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
 				</svg>
 			</button>
@@ -105,8 +112,7 @@ const sidebarItems = [
 			<li>
 				<a
 					href="/"
-					class="inline-flex font-bold mt-2 p-2 w-full rounded-lg group text-hit-gray-300 bg-hit-gray-900 border-2 border-hit-gray-700 hover:text-hoverlink"
-				>
+					class="inline-flex font-bold mt-2 p-2 w-full rounded-lg group text-hit-gray-300 bg-hit-gray-900 border-2 border-hit-gray-700 hover:text-hoverlink">
 					<span>CS I Modding</span>
 				</a>
 			</li>
@@ -117,18 +123,20 @@ const sidebarItems = [
 			</li>
 			{
 				sidebarItems.map(({ category, items }) => (
-					<div class="mt-6">
+					<li class="mt-6">
 						<span class="text-hit-gray-500 text-[.875rem] leading-[1.75rem] mb-2">{category}</span>
 						<ul>
 							{items.map((item) => (
 								<li class="mt-1">
-									<a class="text-hit-gray-200 text-[1rem] leading-[1.25rem] inline-flex ps-2 rounded-md hover:text-hoverlink group" href={item.href}>
+									<a
+										class="text-hit-gray-200 text-[1rem] leading-[1.25rem] inline-flex ps-2 rounded-md hover:text-hoverlink group"
+										href={item.href}>
 										{item.name}
 									</a>
 								</li>
 							))}
 						</ul>
-					</div>
+					</li>
 				))
 			}
 		</ul>
