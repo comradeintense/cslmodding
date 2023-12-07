@@ -3,19 +3,21 @@ import MainLayout from '../layouts/MainLayout.astro';
 const title = 'Search - Cities Skylines Modding';
 ---
 
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+<script async src="/pagefind/pagefind-ui.js" is:inline></script>
+
 <MainLayout title={title}>
 	<section class="pt-12 pb-48 sm:ml-64 xl:mr-64 text-lg text-hit-gray-500">
 		<div class="content">
 			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="about">
-				<a
-					href="#about"
-					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+				<a href="#about" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
 					>Search</a
 				>
 			</h2>
 			<p class="mt-4">
-				This is a custom search for searching the entire website. If you would like to search within a specific
-				article, press <span class="key">Ctrl+F</span>
+				This is a custom search for searching the entire website. If you would like to search within a specific article, press <span
+					class="key">Ctrl+F</span
+				>
 				 to use the search in your browser.
 			</p>
 			<p class="mt-4"><br /></p>
