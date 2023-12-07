@@ -69,3 +69,4 @@ thumbs have gap-1 (fixed)
 headings clickable - (fixed)
 make text wrap around thumbnail (float?)
 
+Add posthog: https://posthog.com

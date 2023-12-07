@@ -1,0 +1,164 @@
+---
+import MainLayoutCS2 from '../../layouts/MainLayoutCS2.astro';
+import Link from '../../components/Link.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
+const title = 'Textures - Cities Skylines Modding';
+import { Picture } from 'astro:assets';
+import { images } from '../../data/imageImports.js';
+---
+
+<MainLayoutCS2 title={title}>
+	<TableOfContents />
+	<section class="pt-12 pb-48 text-lg sm:ml-64 xl:mr-64 text-hit-gray-500">
+		<h1 id="overview" class="pb-8 text-4xl font-bold border-b-4 border-hit-gray-600 text-hit-gray-400">Textures</h1>
+		<div class="content">
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="about">
+				<a href="#about" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>About</a
+				>
+			</h2>
+			<p class="mt-4">
+				Cities Skylines 2 uses a modified version of the standard Physically Based Rendering (PBR) workflow, utilizing the
+				metallic/glossiness approach, with a few additions to cover the game's needs.
+			</p>
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="texture-sets">
+				<a
+					href="#texture-sets"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing.">Texture sets</a
+				>
+			</h2>
+			<p class="mt-4">
+				For asset creation, the following set of textures are required for successful import into the game:
+				<ul class="mt-4 list-disc list-inside">
+					<li class="mt-4">BaseColor</li>
+					<li class="mt-4">ControlMask</li>
+					<li class="mt-4">MaskMap</li>
+					<li class="mt-4">Normal</li>
+					<li class="mt-4">Emissive</li>
+				</ul>
+			</p>
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="Naming">
+				<a href="#Naming" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Naming</a
+				>
+			</h2>
+			<p class="mt-4">
+				Textures must be named after their corresponding mesh, with the texture type as a suffix. For instance: <p class="mt-4">
+					For a mesh named <span class="font-bold">"MyBuilding.fbx"</span>, the textures must be named as follows:
+				</p>
+				<ul class="mt-4 list-disc list-inside">
+					<li class="mt-4">MyBuilding_BaseColor.png</li>
+					<li class="mt-4">MyBuilding_ControlMask.png</li>
+					<li class="mt-4">MyBuilding_MaskMap.png</li>
+					<li class="mt-4">MyBuilding_Normal.png</li>
+					<li class="mt-4">MyBuilding_Emissive.png</li>
+				</ul>
+				<p class="mt-4"><span class="font-bold">Important:</span> suffixes are case-sensitive</p>
+			</p>
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="channel-structure">
+				<a
+					href="#channel-structure"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Channel structure</a
+				>
+			</h2>
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="basecolor">
+				<a href="#basecolor" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>BaseColor</a
+				>
+			</h3>
+			<p class="mt-4"><span class="font-bold">RGB channel</span> (Diffuse Map) - the diffuse map for your mesh</p>
+			<p class="mt-4">
+				<span class="font-bold">Alpha channel</span> (Opacity) - Determines the transparency of the texture, with white being fully
+				opaque and black fully transparent. The alpha threshold is at 50% gray, rendering the texture either fully opaque or fully
+				transparent.
+			</p>
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="controlmask">
+				<a
+					href="#controlmask"
+					title="Click to generate a direct link to this section in the browser's address bar for easy sharing.">ControlMask</a
+				>
+			</h3>
+			<p class="mt-4"><span class="font-bold">R channel</span> (Color Mask 1)</p>
+			<p class="mt-4"><span class="font-bold">G channel</span> (Color Mask 2)</p>
+			<p class="mt-4"><span class="font-bold">B channel</span> (Color Mask 3)</p>
+			<p class="mt-4">
+				Color masks come in sets of 3 and are used together. Each color mask should be mapped mutually exclusive to other color
+				masks (don't overlap them on the texture). Black through to White applies the selected colors to the diffuse map using
+				multiply blending. Black is no color, and White is full color.
+			</p>
+			<p class="mt-4">This greatly increases the variations that you can add to your buildings.</p>
+
+			<p class="mt-4">
+				<span class="font-bold">Alpha channel</span> (Snow Remove) - Indicates areas on the mesh where snow won't appear. White is
+				no snow, Black is full snow.
+			</p>
+
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="mask-map">
+				<a href="#mask-map" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>MaskMap</a
+				>
+			</h3>
+			<p class="mt-4">
+				<span class="font-bold">R channel</span> (Metallic) - Defines how metallic the diffuse renders in the game. White is full
+				metallic, Black is not metallic at all.
+			</p>
+			<p class="mt-4">
+				<span class="font-bold">G channel</span> (Coat) - Adds a glossy layer on top of the standard glossiness, with white
+				indicating a full coat and black none.
+			</p>
+			<p class="mt-4">
+				<span class="font-bold">B channel</span> (Default Black) - This channel is not currently used and should remain Black.
+			</p>
+			<p class="mt-4">
+				<span class="font-bold">Alpha channel</span> (Glossiness) - Defines the glossiness of the diffuse. White is very glossy,
+				Black is not glossy at all. In the standard PBR workflow, glossiness is the inverse of roughness.
+			</p>
+
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="normal">
+				<a href="#normal" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Normal</a
+				>
+			</h3>
+			<p class="mt-4">
+				<span class="font-bold">RGB channel</span> (Normal Map) - Uses OpenGL format to add depth and detail to the diffuse
+				textures, simulating 3D characteristics on a flat surface
+			</p>
+
+			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="emissive">
+				<a href="#emissive" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Emissive</a
+				>
+			</h3>
+			<p class="mt-4">
+				<span class="font-bold">Greyscale channel</span> (Emissive Map) - Applies an emissive effect to diffuse, White is full
+				bright emissive and Black is no emissive.
+			</p>
+
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="resolution">
+				<a href="#resolution" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Resolution</a
+				>
+			</h2>
+			<p class="mt-4">All imported textures must be the same resolution.</p>
+			<p class="mt-4">
+				Textures must be 1:1 square ratio. Non-square textures such as 1024x512 2048x512 4096x1024, 256x1024 etc, will result in
+				problems in rendering.
+			</p>
+
+			<p class="mt-4">
+				The game uses virtual texturing which will automatically downsize texture resolution based on the user's settings. For <span
+					class="font-bold">buildings,</span
+				> the resolution should be 4096x4096 pixels. Smaller buildings like storefronts can have 2048x2048.
+			</p>
+
+			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="format">
+				<a href="#format" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
+					>Format</a
+				>
+			</h2>
+			<p class="mt-4">Use a lossless format like .PNG.</p>
+			<p class="mt-4">Make sure the texture is 8 bits/channel.</p>
+		</div>
+	</section>
+</MainLayoutCS2>
