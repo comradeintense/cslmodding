@@ -28,21 +28,6 @@ import { images } from '../../data/imageImports.js';
 				>
 			</h2>
 			<p class="mt-4">
-				For asset creation, the following set of textures are required for successful import into the game:
-				<ul class="mt-4 list-disc list-inside">
-					<li class="mt-4">BaseColor</li>
-					<li class="mt-4">ControlMask</li>
-					<li class="mt-4">MaskMap</li>
-					<li class="mt-4">Normal</li>
-					<li class="mt-4">Emissive</li>
-				</ul>
-			</p>
-			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="Naming">
-				<a href="#Naming" title="Click to generate a direct link to this section in the browser's address bar for easy sharing."
-					>Naming</a
-				>
-			</h2>
-			<p class="mt-4">
 				Textures must be named after their corresponding mesh, with the texture type as a suffix. For instance: <p class="mt-4">
 					For a mesh named <span class="font-bold">"MyBuilding.fbx"</span>, the textures must be named as follows:
 				</p>
@@ -55,6 +40,7 @@ import { images } from '../../data/imageImports.js';
 				</ul>
 				<p class="mt-4"><span class="font-bold">Important:</span> suffixes are case-sensitive</p>
 			</p>
+
 			<h2 class="pb-8 mt-24 text-4xl font-medium border-b-2 border-hit-gray-600 text-hit-gray-400" id="channel-structure">
 				<a
 					href="#channel-structure"
@@ -67,11 +53,10 @@ import { images } from '../../data/imageImports.js';
 					>BaseColor</a
 				>
 			</h3>
-			<p class="mt-4"><span class="font-bold">RGB channel</span> (Diffuse Map) - the diffuse map for your mesh</p>
+			<p class="mt-4"><span class="font-bold">RGB channels</span> (Diffuse Map) - the diffuse map for your mesh</p>
 			<p class="mt-4">
-				<span class="font-bold">Alpha channel</span> (Opacity) - Determines the transparency of the texture, with white being fully
-				opaque and black fully transparent. The alpha threshold is at 50% gray, rendering the texture either fully opaque or fully
-				transparent.
+				<span class="font-bold">Alpha channel</span> (Opacity) - Determines the transparency of the texture. Values above 50% gray
+				will be opaque and values below 50% will be transparent.
 			</p>
 			<h3 class="pb-4 mt-16 text-2xl font-semibold border-b text-hit-gray-400 border-hit-gray-500" id="controlmask">
 				<a
@@ -121,7 +106,7 @@ import { images } from '../../data/imageImports.js';
 				>
 			</h3>
 			<p class="mt-4">
-				<span class="font-bold">RGB channel</span> (Normal Map) - Uses OpenGL format to add depth and detail to the diffuse
+				<span class="font-bold">RGB channels</span> (Normal Map) - Uses OpenGL format to add depth and detail to the diffuse
 				textures, simulating 3D characteristics on a flat surface
 			</p>
 
@@ -142,7 +127,7 @@ import { images } from '../../data/imageImports.js';
 			</h2>
 			<p class="mt-4">All imported textures must be the same resolution.</p>
 			<p class="mt-4">
-				Textures must be 1:1 square ratio. Non-square textures such as 1024x512 2048x512 4096x1024, 256x1024 etc, will result in
+				Textures must be square - 1:1 ratio. Non-square textures such as 1024x512 2048x512 4096x1024, 256x1024 etc, will result in
 				problems in rendering.
 			</p>
 

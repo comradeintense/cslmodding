@@ -70,3 +70,4 @@ headings clickable - (fixed)
 make text wrap around thumbnail (float?)
 
 Add posthog: https://posthog.com
+Change about pages (github pages reword)
