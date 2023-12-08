@@ -1,6 +1,6 @@
 ---
 import '../styles/globals.css';
-import Posthog from '../components/posthog.astro';
+import PostHog from '../components/posthog.astro';
 import SidebarCS2 from '../components/SidebarCS2.astro';
 const { description = 'Cities Skylines Modding & Asset Creation', title = 'Cities Skylines Modding & Asset Creation' } = Astro.props;
 ---
@@ -20,6 +20,7 @@ const { description = 'Cities Skylines Modding & Asset Creation', title = 'Citie
 		<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
 		<script src="/pagefind/pagefind-ui.js" is:inline></script>
 		<title>{title}</title>
+		<PostHog />
 	</head>
 	<body class="bg-darkbg container">
 		<SidebarCS2 />
