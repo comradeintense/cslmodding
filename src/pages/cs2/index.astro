@@ -4,52 +4,10 @@ import { Icon } from 'astro-icon';
 
 const itemlinks = [
 	{
-		href: '/asset/building/',
-		title: 'Building',
-		description: 'The basics of building asset creation',
-		svgname: 'icon_Building',
-	},
-	{
-		href: '/asset/prop/',
-		title: 'Prop',
-		description: 'The basics of prop asset creation',
-		svgname: 'icon_Prop',
-	},
-	{
-		href: '/asset/tree/',
-		title: 'Tree',
-		description: 'The basics of tree asset creation',
-		svgname: 'icon_Tree',
-	},
-	{
-		href: '/asset/vehicle/',
-		title: 'Vehicle',
-		description: 'The basics of vehicle asset creation',
-		svgname: 'icon_Vehicle',
-	},
-	{
-		href: '/asset/citizen/',
-		title: 'Citizen',
-		description: 'The basics of citizen asset creation',
-		svgname: 'icon_Citizen',
-	},
-	{
-		href: '/asset/network/',
-		title: 'Network',
-		description: 'The basics of road and other network asset creation',
-		svgname: 'icon_Network',
-	},
-	{
-		href: '/theme/',
-		title: 'Theme',
-		description: 'Textures, colors and other properties of map themes',
-		svgname: 'icon_Theme',
-	},
-	{
-		href: '/lut/',
-		title: 'LUT',
-		description: 'Look-up tables for color correction and adjustments',
-		svgname: 'icon_LUT',
+		href: '/textures/',
+		title: 'Textures',
+		description: 'The basics of texture creation',
+		svgname: 'icon_Textures',
 	},
 ];
 ---
@@ -58,22 +16,13 @@ const itemlinks = [
 	<section class="pt-12 pb-48 sm:ml-64">
 		<h1 class="text-2xl font-bold text-title mb-6">Cities: Skylines II</h1>
 
-		<div
-			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 border-2 border-hit-gray-950 rounded-lg"
-		>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 border-2 border-hit-gray-950 rounded-lg">
 			{
 				itemlinks.map((item) => (
-					<a
-						href={item.href}
-						class="inline-flex flex-col group p-8 items-center justify-start text-center mb-4"
-					>
+					<a href={item.href} class="inline-flex flex-col group p-8 items-center justify-start text-center mb-4">
 						<Icon class="w-24 h-24 mb-4 fill-hit-gray-300 group-hover:fill-hoverlink" name={item.svgname} />
-						<span class="text-[1.25rem] leading-[1.75rem] text-hit-gray-200 group-hover:text-hoverlink">
-							{item.title}
-						</span>
-						<p class="mt-4 text-[1rem] leading-[1.25rem] text-hit-gray-400 group-hover:text-hoverlink">
-							{item.description}
-						</p>
+						<span class="text-[1.25rem] leading-[1.75rem] text-hit-gray-200 group-hover:text-hoverlink">{item.title}</span>
+						<p class="mt-4 text-[1rem] leading-[1.25rem] text-hit-gray-400 group-hover:text-hoverlink">{item.description}</p>
 					</a>
 				))
 			}
